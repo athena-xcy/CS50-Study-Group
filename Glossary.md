@@ -1,4 +1,4 @@
-| Terms       | Translation | Note          |
+| 术语       | 翻译 | 备注          |
 | :-----------: | :-----------: | :-----------: |
 | Abstraction |  抽象        |               |
 |  String     |  字符串      |               |
