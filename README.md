@@ -30,9 +30,19 @@
 [软件说明](http://docs.aegisub.org/3.2/Main_Page/)
 
 #### 软件界面
+
 #### 文件格式
 字幕文件格式为 srt。先确认字幕文件的编码是unicode，然后用ae打开后，点击【文件】再【配置】按照下图设置。
+
+![Aegisub 设置界面]
+
+(https://raw.github.com/athena-xcy/Subtitle-Translation/blob/master/%E7%BF%BB%E8%AF%91%E6%95%99%E7%A8%8B%E6%8F%92%E5%9B%BE/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E7%95%8C%E9%9D%A2.png)
+
 srt 文件也可以用记事本, Notepad++, Sublime Text 等其他文本编辑器打开。
+
+![文本编辑器界面]
+(https://raw.github.com/athena-xcy/Subtitle-Translation/blob/master/%E7%BF%BB%E8%AF%91%E6%95%99%E7%A8%8B%E6%8F%92%E5%9B%BE/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E7%95%8C%E9%9D%A2.png)
+
 
 #### 文本格式
 第一行为字幕条序号，第二行为时间轴，第三行为中文翻译，第四行为英文翻译。
