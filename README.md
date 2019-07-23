@@ -1,10 +1,15 @@
 # 字幕翻译教程 v3.0
 
-翻译计划：[字幕译者招募帖](https://www.douban.com/group/topic/144969173/)
+翻译计划：[CS50字幕译者计划招募帖](https://www.douban.com/group/topic/144969173/)
 
-最新更新：07/20/2019
+翻译讨论：[CS50学习组第0次分享讨论](https://github.com/athena-xcy/Subtitle-Translation/blob/master/CS50%20Study%20Group%20Discussion%200.md)
 
-## 翻译原则
+最新更新：07/22/2019
+
+## 翻译原则 
+
+[详细讲解](https://github.com/athena-xcy/Subtitle-Translation/blob/master/Principles%20of%20Translation.md)
+
 **严禁盲翻**：只有结合场景剧情才能翻译的准确出彩。
 > 反例：即不看视频直接拿文本翻译。  
 
