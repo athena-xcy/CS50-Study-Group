@@ -1,5 +1,4 @@
 # CS50 学习组第0次分享讨论 
-### CS50 Study Group Discussion 0
 
 _Athena 主讲_
 
