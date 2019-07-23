@@ -4,6 +4,9 @@ _Athena、Liliana 供稿_
 
 _Leo 整理_
 
+相关讨论：[CS50学习组第0次分享讨论](https://github.com/athena-xcy/CS50-Study-Group/blob/master/study-group-discussion0.md)
+
+
 ## 【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩
 
 盲翻是指不看视频翻，禁止从字幕文本直接翻译。这个问题在 MOOC 课程视频的翻译中可能相对好一些，但在电视剧电影翻译中，如果不看视频，对文字的理解可能会有很大的问题
