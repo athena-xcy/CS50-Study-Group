@@ -2,13 +2,13 @@
 
 翻译计划：[CS50字幕译者计划招募帖](https://www.douban.com/group/topic/144969173/)
 
-翻译讨论：[CS50学习组第0次分享讨论](https://github.com/athena-xcy/Subtitle-Translation/blob/master/CS50%20Study%20Group%20Discussion%200.md)
+翻译讨论：[CS50学习组第0次分享讨论](https://github.com/athena-xcy/CS50-Study-Group/blob/master/study-group-discussion0.md)
 
-最新更新：07/22/2019
+最新更新：07/23/2019
 
 ## 翻译原则 
 
-[详细讲解](https://github.com/athena-xcy/Subtitle-Translation/blob/master/Principles%20of%20Translation.md)
+[详细讲解](https://github.com/athena-xcy/CS50-Study-Group/blob/master/principles-of-subtitle-translation.md)
 
 **严禁盲翻**：只有结合场景剧情才能翻译的准确出彩。
 > 反例：即不看视频直接拿文本翻译。  
