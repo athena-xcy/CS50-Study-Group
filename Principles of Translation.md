@@ -1,10 +1,10 @@
-# CS50 字幕翻译原则
+# 字幕翻译原则 Principles of Subtitle Translation 
 
-_by AthenaX_
+_Athena、Liliana 供稿_
 
 _Leo 整理_
 
-_Liliana莉莉安、如意小熊猫🍒、Elvarez、Maggie、精灵兔、Kelu、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono、胖香皂、Elvarez、郝亚南 Cris 参与讨论对本文亦有贡献_
+_如意小熊猫🍒、精灵兔、郝亚南 Cris、nono、Maggie、Kelu、L!nk ooooo、Sharonron、菠萝包流沙包椰蓉包🥞、Tina、胖香皂、Elvarez 参与讨论，对本文亦有贡献_
 
 ## 【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩
 
