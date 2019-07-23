@@ -1,4 +1,5 @@
-# CS50 学习组第0次分享讨论
+# CS50 学习组第0次分享讨论 
+### CS50 Study Group Discussion 0
 
 _Athena 主讲_
 
@@ -34,9 +35,9 @@ _如意小熊猫🍒、精灵兔、郝亚南 Cris 颜木林、Elvarez、Maggie�
 
 > such an amazing support structure with so many office hours and sections and materials and beyond
 
-`support structure`译成“帮助”比较符合中文习惯，译成“支持系统”可以勉强理解为支持学生学习，但译为“支撑结构”就具有物理上的含义了，比较生硬。
+`support structure` 译成“帮助”比较符合中文习惯，译成“支持系统”可以勉强理解为支持学生学习，但译为“支撑结构”就具有物理上的含义了，比较生硬。
 
-`office hours`在美国的大学教育体系中表示的是“答疑时间”。翻译成“办公时间” 或者 “办公室时间”并不合适。
+`office hours` 在美国的大学教育体系中表示的是“答疑时间”。翻译成“办公时间” 或者 “办公室时间”并不合适。
 
 `sections` 表示学生分组参与的辅导班。美国高校中，人数多的的大课，教授有时候会把学生分成几组（sections），每一组开一个辅导小班，助教来带领辅导小班，讲解作业，回答问题，扩充课外知识等等。
 
@@ -98,7 +99,7 @@ _如意小熊猫🍒、精灵兔、郝亚南 Cris 颜木林、Elvarez、Maggie�
 
 `low level` 和 `implementation details` 需要有计算机背景的专业知识才能理解。**底层（low level）**一般指的是相对远离用户操作（界面）的部分，比如说硬件（CPU、内存）、操作系统内核等等。**上层（high level）**则是指更贴近用户、贴近应用软件的部分。
 
-底层技术的具体原理、**实现细节（implementation details）**并不需要被用户所了解。换句话说被**抽象（abstraction）**了
+底层技术的具体原理、**实现细节(implementation details)** 并不需要被用户所了解。换句话说被 **抽象(abstraction)**了
 
 值得注意的是，low-high 是一个相对的概念，以手机为例，手机用户并不需要聊天程序是如何写的，聊天程序就算是底层；编写聊天程序的程序员也不需要知道手机操作系统是如何调度硬件资源的，手机操作系统就是底层。
 
