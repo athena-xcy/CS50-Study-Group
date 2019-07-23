@@ -6,8 +6,10 @@ _Liliana、Athena 供稿_
 
 _[Leo](github.com/LeoTsui) (@LeoTsui) 整理_
 
-
 _如意小熊猫🍒、精灵兔、[郝亚南 Cris](github.com/Cr1s1) (@Cr1s1)、颜木林、Elvarez、Maggie、[Kelu](github.com/kelzr) (@kelzr)、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono、胖香皂、参与讨论，对本文亦有贡献_
+
+_参考 [翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/master/principles-of-subtitle-translation.md)_
+
 
 ## 例句一
 
