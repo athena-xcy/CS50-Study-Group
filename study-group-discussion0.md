@@ -1,15 +1,14 @@
 # CS50 学习组第0次分享讨论 
 
-_[Athena](github.com/athena-xcy]) (@athena-xcy) 主讲_
+_Athena([Athena](https://www.github.com/athena-xcy)) 主讲_
 
 _Liliana、Athena 供稿_
 
-_[Leo](github.com/LeoTsui) (@LeoTsui) 整理_
+_Leo Tsui([Leo](https://www.github.com/LeoTsui))整理_
 
-_如意小熊猫🍒、精灵兔、[郝亚南 Cris](github.com/Cr1s1) (@Cr1s1)、颜木林、Elvarez、Maggie、[Kelu](github.com/kelzr) (@kelzr)、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono、胖香皂、参与讨论，对本文亦有贡献_
+_如意小熊猫🍒、精灵兔、郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1))、颜木林、Elvarez、Maggie、Kelu([kelzr](https://www.github.com/kelzr))、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono 和胖香皂参与讨论，对本文亦有贡献_
 
-_参考 [翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/master/principles-of-subtitle-translation.md)_
-
+_参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 ## 例句一
 
@@ -47,7 +46,7 @@ _参考 [翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/maste
 
 > where you end up relative to your classmates in week 10
 
-`relative to classmates` 中 `relatively` 意思是相对地。这个短语的意思是和同学相比。一种错误的理解是“和同学建立联系”，如果教授要表达这个意思，那需要说成 connect with your classmates。`connect` 才是和某人建立联系，在领英上可以见到 `sb wants to connect with you` 说某个人人脉很广 `the has a lot of connections`。
+`relative to classmates` 中 `relatively` 意思是相对地。这个短语的意思是和同学相比。一种错误的理解是“和同学建立联系”，如果教授要表达这个意思，那需要说成 connect with your classmates。connect 才是和某人建立联系，在领英上可以见到 sb. wants to connect with you 说某个人人脉很广 the has a lot of connections。
 
 ### 第二句 
 
@@ -87,7 +86,7 @@ _参考 [翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/maste
 
 `fancy` 这个词在试译答案中的翻译五花八门：复杂、有想象力、有趣、迷人、美丽、华丽、新颖、时髦、酷炫、浮夸、精妙，等等等等。在该语境中比较好的翻译是：花哨、时髦、高级。高级是意译 和后文的 `low level` 呼应。
 
-`abstraction` 一词在计算机科学中被称为“抽象”。比如，人们在通过计算机计算`开平方`运算的时候，并不需要思考这个计算是如何实现的，对于使用者来说该运算被**抽象**了。
+`abstraction` 一词在计算机科学中被称为“抽象”。比如，人们在通过计算机计算开平方运算的时候，并不需要思考这个计算是如何实现的，对于使用者来说该运算被**抽象**了。
 
 ### 第二句
 
@@ -99,9 +98,9 @@ _参考 [翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/maste
 
 > we'll soon see in programming for taking some low level-- like literally low level--implementation details,
 
-`low level` 和 `implementation details` 需要有计算机背景的专业知识才能理解。**底层（low level）**一般指的是相对远离用户操作（界面）的部分，比如说硬件（CPU、内存）、操作系统内核等等。**上层（high level）**则是指更贴近用户、贴近应用软件的部分。
+`low level` 和 `implementation details` 需要有计算机背景的专业知识才能理解。**底层（low level）** 一般指的是相对远离用户操作（界面）的部分，比如说硬件（CPU、内存）、操作系统内核等等。**上层（high level）** 则是指更贴近用户、贴近应用软件的部分。
 
-底层技术的具体原理、**实现细节(implementation details)** 并不需要被用户所了解。换句话说被 **抽象(abstraction)**了
+底层技术的具体原理、**实现细节(implementation details)** 并不需要被用户所了解。换句话说被 **抽象(abstraction)** 了
 
 值得注意的是，low-high 是一个相对的概念，以手机为例，手机用户并不需要聊天程序是如何写的，聊天程序就算是底层；编写聊天程序的程序员也不需要知道手机操作系统是如何调度硬件资源的，手机操作系统就是底层。
 
