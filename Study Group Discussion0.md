@@ -1,12 +1,13 @@
 # CS50 学习组第0次分享讨论 
 
-_Athena 主讲_
+_[Athena](github.com/athena-xcy]) (@athena-xcy) 主讲_
 
 _Liliana、Athena 供稿_
 
-_Leo 整理_
+_[Leo](github.com/LeoTsui) (@LeoTsui) 整理_
 
-_如意小熊猫🍒、精灵兔、郝亚南 Cris 颜木林、Elvarez、Maggie、Kelu、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono、胖香皂、参与讨论，对本文亦有贡献_
+
+_如意小熊猫🍒、精灵兔、[郝亚南 Cris](github.com/Cr1s1) (@Cr1s1)、颜木林、Elvarez、Maggie、Kelu、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono、胖香皂、参与讨论，对本文亦有贡献_
 
 ## 例句一
 
