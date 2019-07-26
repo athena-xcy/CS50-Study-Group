@@ -1,6 +1,6 @@
 # CS50 学习组第0次分享讨论 
 
-_Athena([Athena](https://www.github.com/athena-xcy)) 主讲_
+_Athena([athena-xcy](https://www.github.com/athena-xcy)) 主讲_
 
 _Liliana、Athena 供稿_
 
