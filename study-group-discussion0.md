@@ -4,7 +4,7 @@ _Athena([athena-xcy](https://www.github.com/athena-xcy)) 主讲_
 
 _Liliana、Athena 供稿_
 
-_Leo Tsui([Leo](https://www.github.com/LeoTsui))整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
 
 _如意小熊猫🍒、精灵兔、郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1))、颜木林、Elvarez、Maggie、Kelu([kelzr](https://www.github.com/kelzr))、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono 和胖香皂参与讨论，对本文亦有贡献_
 
