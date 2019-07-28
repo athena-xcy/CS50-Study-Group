@@ -10,13 +10,24 @@ _如意小熊猫🍒、精灵兔、郝亚南 Cris([Cr1s1](https://www.github.com
 
 _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
+---
+
+- [例句一](#%e4%be%8b%e5%8f%a5%e4%b8%80)
+  - [例句一的第一句](#%e4%be%8b%e5%8f%a5%e4%b8%80%e7%9a%84%e7%ac%ac%e4%b8%80%e5%8f%a5)
+  - [例句一的第二句](#%e4%be%8b%e5%8f%a5%e4%b8%80%e7%9a%84%e7%ac%ac%e4%ba%8c%e5%8f%a5)
+  - [例句一的参考译文](#%e4%be%8b%e5%8f%a5%e4%b8%80%e7%9a%84%e5%8f%82%e8%80%83%e8%af%91%e6%96%87)
+- [例句二](#%e4%be%8b%e5%8f%a5%e4%ba%8c)
+  - [例句二的第一句](#%e4%be%8b%e5%8f%a5%e4%ba%8c%e7%9a%84%e7%ac%ac%e4%b8%80%e5%8f%a5)
+  - [例句二的第二句](#%e4%be%8b%e5%8f%a5%e4%ba%8c%e7%9a%84%e7%ac%ac%e4%ba%8c%e5%8f%a5)
+  - [例句二的参考译文](#%e4%be%8b%e5%8f%a5%e4%ba%8c%e7%9a%84%e5%8f%82%e8%80%83%e8%af%91%e6%96%87)
+
 ## 例句一
 
 > But realize, too, that with such an amazing support structure with so many office hours and sections and materials and beyond, realize that what's ultimately important in this course is not so much where you end up relative to your classmates in week 10, our final week, but where you end up relative to yourself in week zero. And indeed, that is where we now are. And as it turns out, computer scientists start counting at zero.
 
 该部分的语境是教授在第一节课开头，介绍 CS50，鼓励有无基础的同学都不用担心，CS50 给学生提供了很好的支持。
 
-### 第一句
+### 例句一的第一句
 
 > But realize, too, that with such an amazing support structure with so many office hours and sections and materials and beyond, realize that what's ultimately important in this course is not so much where you end up relative to your classmates in week 10, our final week, but where you end up relative to yourself in week zero. 
 
@@ -48,7 +59,7 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 `relative to classmates` 中 `relatively` 意思是相对地。这个短语的意思是和同学相比。一种错误的理解是“和同学建立联系”，如果教授要表达这个意思，那需要说成 connect with your classmates。connect 才是和某人建立联系，在领英上可以见到 sb. wants to connect with you 说某个人人脉很广 the has a lot of connections。
 
-### 第二句 
+### 例句一的第二句 
 
 > And indeed, that is where we now are. And as it turns out, computer scientists start counting at zero.
 
@@ -68,7 +79,7 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 在翻译一个单词、短语的时候，推荐检索英文解释，看英文例句。语言中有许多很微妙（subtle）的东西，是很难直接用一个中文词去描述的，但英文解释就能表述的很到位，帮助大家全面理解一个词的意思。这也是字幕组绝对不允许机器翻译，也不鼓励用英中辞典的原因。
 
-### 参考译文
+### 例句一的参考译文
 
 > 但你要认识到，有这么多答疑时间、辅导课和资料的帮助，最重要的不是在第10周课程结束时你与别的同学拉开多少差距，而是与第0周时相比你自己取得多少进步。我们此刻这周正是第0周。而计算机正好是从0开始计数的。——颜木林
 
@@ -78,9 +89,11 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 > Well, let me introduce a fancier word now known as abstraction. Abstraction is just a term generally used in computer science and we'll soon see in programming for taking some low level-- like literally low level--implementation details, like minutiae even, and understanding them at some point, but then deciding this is not a useful level conceptually to think about problems.
 
-### 第一句
+### 例句二的第一句
 
 > Well, let me introduce a fancier word now known as abstraction.
+
+`let me introduce` 注意教授的语气非常的客气，很文雅，在字幕的翻译中应体现出教授的语言风格。
 
 `Well` 常见的翻译方式有 “好” “好的” “好吧” “那么” ”嗯“ 或者不翻的。这几种处理方式都还可以接受。但是，不建议不翻，因为语气词在句中也是有含义的。不直译的话，也要在整个句子的翻译中反应出这个语气词的含义。在该课程中，教授特别喜欢用 well。一般是表示 “那么”，但具体情况还说是要看语境。（举出这里例子是为了表明翻译过程中，理解语境的重要性。）
 
@@ -88,7 +101,7 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 `abstraction` 一词在计算机科学中被称为“抽象”。比如，人们在通过计算机计算开平方运算的时候，并不需要思考这个计算是如何实现的，对于使用者来说该运算被**抽象**了。
 
-### 第二句
+### 例句二的第二句
 
 > Abstraction is just a term generally used in computer science and we'll soon see in programming for taking some low level-- like literally low level--implementation details, like minutiae even, and understanding them at some point, but then deciding this is not a useful level conceptually to think about problems.
 
@@ -118,7 +131,9 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 > understanding them at some point, but then deciding this is not a useful level conceptually to think about problems
 
-这句话大意是，我们可以先理解他们 (底层编程，细节等等)，再来决定 这么去思考问题是没有什么用的
+这句话大意是，我们可以先理解他们 (底层编程，细节等等)，再来决定这么去思考问题是没有什么用的
+
+`deciding` 表示逻辑上的推测，也就意味教授在课堂上是和学生一起来分析这一问题，得出结论。翻译为认定、推定是比较恰当的。
 
 `conceptually` 常常会被翻译成“从概念上来说”。这是直接从 concept 这个中文意思上得来的翻译。但在查阅 conceptually 的英文解释后可以发现：
 
@@ -128,11 +143,11 @@ _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
 * conceptual thinking: The ability to analyze hypothetical situations or abstract concepts to compile insight. Conceptual thinkers have an astute understanding of why something is being done. They can think at an abstract level and easily apply their insights to the situation.
 
-通过上面的英文解释，就能很容易地发现 conceptual 就隐含着“抽象”的意思。“They can think at an abstract level and easily apply their insights to the situation” 这句话就很好的解释了 conceptually 在例句中的意思。
+通过上面的英文解释，就能很容易地发现 conceptual 就隐含着“抽象”的意思。conceptual thinking 可以理解为构思。
 
 从计算机专业的角度来解释，就是人们用手机聊天时并不关心程序是如何编写的，就是说底层的实现细节并不有助于“conceptually to think”。
 
-### 参考译文
+### 例句二的参考译文
 
 > 好，让我介绍一个更炫酷的词，“抽象”。“抽象”是一个在计算机科学领域被广泛使用的术语。我们在接下来的底层编程中可以看到一些底层实现细节，同时在一定程度理解它们，但是在思考问题的时候底层的细节在概念上并不会带来很多用处。——颜木林
 
