@@ -6,7 +6,7 @@ _颜木林 供稿_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
 
-_如意小熊猫🍒、精灵兔、Yuehua Veronica、f、AthenaX([athena-xcy](https://github.com/athena-xcy))和 blue hydrangea参与讨论，对本文亦有贡献_
+_如意小熊猫🍒、精灵兔、Yuehua Veronica、f、AthenaX([athena-xcy](https://github.com/athena-xcy))和 blue hydrangea参与讨论，sharonron、精灵兔、亦清、菠萝包流沙包椰蓉包、Yuehua Li、毛灵杰、Leo提交翻译练习答案，对本文亦有贡献_
 
 ## 例句讨论
 ### 00:42:45,660 三声猫叫
