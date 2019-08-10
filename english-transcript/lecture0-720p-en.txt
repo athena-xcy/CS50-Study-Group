@@ -1,0 +1,1643 @@
+[Introduction]
+DAVID MALAN: This is CS50, Harvard University's introduction
+to the intellectual enterprises of computer science
+and the art of programming.
+My name is David Malan, and if you are among those
+in the room who are thinking, why am I in a class of computer science,
+realize that I too felt that exact same way.
+In fact, my freshman year, I didn't quite
+get up the nerve to take this class or computer science more generally,
+and that was largely because I was intimidated by it.
+I was a little nervous.
+It felt well out of my comfort zone.
+And I really didn't know at the end of the day what it actually was.
+But realize if you, too, are feeling a little bit of that,
+or even if you're among those more comfortable who
+have dabbled in computer science or programming,
+realize that there's so many blanks that we can fill in along the way
+so that ultimately, at the end of the semester, everyone
+will feel themselves on the same page.
+And until then, rest assured that 68% of the people sitting to your left
+and to your right and behind and in front
+have never taken a CS course before, which may very well be
+the demographic into which you fit.
+But realize, too, that with such an amazing support
+structure with so many office hours and sections and materials and beyond,
+realize that what's ultimately important in this course
+is not so much where you end up relative to your classmates
+in week 10, our final week, but where you end up relative to yourself
+in week zero.
+And indeed, that is where we now are.
+And as it turns out, computer scientists start counting at zero.
+And so over the next 11 weeks, we will take you
+from being among those less comfortable or perhaps
+somewhere in between less comfortable and more
+to feeling much more comfortable and confident and capable than that.
+But to get there, we need to understand what computer science really is.
+And this was something I didn't understand until I set foot in a room
+like this.
+And I dare say we can distill computer science into just this picture.
+Computer science is about problem solving.
+And I know that high school courses typically do kind of paint
+a misleading picture that it's only about
+and it's entirely about programming and people with their heads
+down in the computer lab working fairly anti-socially on code,
+but the reality is it's all about solving problems, and very often,
+solving problems collaboratively either in person or by leveraging code,
+programs that others have written in the past.
+And what does it mean to solve a problem?
+Well, you need inputs.
+So there's a problem you're trying to solve.
+That is the input.
+And you want output.
+You want the solution to that problem.
+And the sort of secret sauce of computer science
+is going to be everything in this proverbial black box
+in the middle over the next several weeks,
+where you begin to understand exactly what you can do with that.
+But in order to start solving problems, we kind of just
+need to decide as a group how we're going to represent these problems
+and what might a problem be.
+Well, in this room, there's a whole bunch of people.
+If we wanted to take attendance or count the number of people in this room,
+I might need to start keeping track of how many people I see.
+But how do I represent the number of people I see?
+Well, I can do it sort of old school and I can just take out a piece of chalk
+or whatnot and say, all right.
+I see 1, 2, 3, 4, 5.
+I can do little stylistic conventions like that
+to save space and remind myself.
+6, 7, 8, 9, 10, and so forth.
+Or I can, of course, just do that on my own hand.
+So 1, 2, 3, 4, 5, and so forth.
+But obviously, how high can I count on just one hand?
+So 5 you would think, but that's just because we haven't really
+thought hard enough about this problem.
+It turns out that with just these five fingers, let alone these five more,
+I can actually count rather higher because after all, the system
+I'm using of hashmarks on the board or just
+now with my fingers is just kind of keeping my fingers down and putting
+them up to represent ones, really.
+But what if I actually took into account the order of my fingers
+and sort of permuted them, so to speak, so that it's really patterns of fingers
+that represent the number of people in the room,
+and not just the mere presence of a finger going up or down.
+In other words, this can remain zero.
+This could still be one.
+But what if two is not just this, the obvious?
+But what if it's just this?
+So raising just one, my second finger.
+What if, then, three is this?
+So we have 0, 1, 2, 3.
+That's going to lead us to four somewhat offensively.
+But if we begin to jump ahead to five, I might now
+permute this finger and this finger up.
+And if I want to now represent six, I could do this.
+And now seven.
+In other words, I've expressed so many more patterns on my hand already
+and if we keep doing this, I think I can actually
+represent painfully perhaps like 32 different patterns, and therefore
+32 different people, on my hands alone.
+Or 31 people if I start counting at zero.
+So what is that-- what's the relationship
+and how did we even get here?
+Well, it turns out that computers are kind of simplistic,
+much like our hands here.
+At the end of the day, your computer is plugged into the wall
+or it's got a battery, so it either has or it does not have electricity.
+At the end of the day, that is the physical resource
+that drives these things and our phones and all of technology today.
+So if there is either electricity or not, that kind of maps nicely
+to no finger or yes finger.
+And indeed, computers, as you probably know, only speak what language?
+What alphabet, so to speak?
+Yeah.
+Binary.
+Bi meaning two.
+And indeed, that refers to the fact that in binary in computers,
+you only have two digits--
+zero and one.
+We humans, of course, have 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+and then we can combine those to count even higher.
+But computers only have 0, 1, and then that's it.
+Because at the end of the day, there's actually
+a direct mapping between power being off and it being a zero or power being on
+and it being one, or some electrons or whatever flowing from your battery
+or from the wall.
+So this is why computers tend to speak only binary,
+because at the end of the day, it just maps really cleanly
+to what it is that's powering them in the first place.
+But how is this actually useful?
+If computers only have zeros and ones, how can they do anything useful?
+Well, think about our human world, where you might have this pattern of symbols.
+This is decimal, dec meaning 10 because you have 0 through 9.
+And this is, of course, 123.
+But why?
+If you haven't thought about this in quite some time,
+this is really just a pattern of three symbols, one and two and three shapes,
+or glyphs, on the screen.
+But we humans, ever since grade school, have started ascribing meaning
+to each of these numbers, right?
+If you think back, this is the ones column, this is the tens column,
+this is the hundreds column, and so forth, and we could keep going.
+And so why does this pattern-- one, two, three-- mean 123?
+Well, it's because all of us sort of intuitively
+nowadays are just quickly in our head doing 100 times 1 plus 10 times
+2 plus 1 times 3, which of course gives us 100 plus 20 plus three,
+and then the number we know mathematically as 123.
+But we're all doing this so quickly, you don't really think about this anymore.
+Well, computers work fundamentally the same way.
+They don't have as many digits--
+0 through 9-- as we do.
+They only have zeros and ones.
+And so if they were to store values, you're
+only going to see zeros and ones on the screen,
+but those zeros and ones just mean different things.
+Instead of having a ones place, tens, a hundreds,
+they're going to have a ones place, a twos place, a fours place,
+and then eights and 16 and beyond.
+Now, why?
+Well, one and 10 and 100, turns out those are powers of 10.
+10 to the 0 is technically 1.
+10 to the 1 is just 10.
+10 to the 2 is 100.
+And that's why you have ones, tens hundreds, thousands, and so forth.
+Computers are apparently using powers of 2.
+Not surprising.
+Binary-- two.
+So if you only have ones, twos, and fours as your placeholders,
+if a computer were storing these digits--
+0, 0, 0-- that computer is presumably storing what number so far as we
+humans understand it?
+Well, that's how a computer would store zero.
+If a computer is storing literally 0, 0, 0, just
+like in our human world, that also is 0, but that's technically
+because it's 4 times 0 plus 2 times 0 plus 1 times zero, which is obviously
+zero.
+Meanwhile, if a computer is actually storing not just,
+say, 0, 0, 0, but instead is storing this value in binary,
+what does that map to in decimal?
+So that's one.
+And now, why, if we change this 0 and 1 to this value here, is this two?
+Well, mathematically, for the exact same reasons.
+And so earlier, I had five fingers, but if you consider just my first three,
+when I did this holding up one finger, I was representing two.
+And if I want to represent three, recall that I put up the second finger.
+And so the reason that could nicely represent three
+is because all I was doing with my human hand was counting in binary.
+And I could keep counting more and more and more.
+And so if I have five fingers or five bits, bit meaning binary digits,
+I could count up, it turns out, if we do the math,
+as high as 31 by starting to zero.
+It's going to be hard to physically do that, but we could.
+So why is this useful?
+At the end of the day, a computer, therefore,
+can represent any number of values from 0 to 1 to 2 to 3 to some number much,
+much, much higher than that.
+All it needs is enough bits, enough zeros and ones.
+Well, what are those bits?
+Well, all of us have these days in our phones sources of light, for instance.
+So I could actually say that this physical device right now--
+might be a little hard to tell--
+it does have a flashlight and it's technically off at the moment.
+But if I turn this flashlight on, thereby using some of the electricity,
+now, I'm storing a one.
+And so the phone is on.
+Now, it's off.
+Now, it's on.
+And if I see--
+can I borrow someone's phone real quick?
+May I?
+OK.
+And flashlight.
+How do I turn on the flashlight?
+Oh.
+Shake it.
+That's OK.
+OK.
+Thank you.
+Oh.
+Thank you.
+OK.
+So this is great.
+Now, I can count higher.
+Now, this represents the number what if I have two light bulbs or two switches
+on at the moment?
+Yeah.
+Three.
+Because I have a one, I have a one, and I
+have two, which of course is going to end up equaling three.
+And if I pick up a third phone somehow, I could count even higher.
+Technically, if I had three light bulbs on--
+one, one, one-- what would that value be?
+Seven.
+Because it's a four plus a two plus a one, and so forth.
+Thank you so much for the spontaneity.
+So why does this not lead to limitations for us?
+I can count in decimal as high as I want.
+I can now count in binary as high as I want, so long as I have enough bits.
+But how do I actually represent other information?
+Well, if I want to represent something like a letter, how do I get there?
+If computers only have electricity in them and they use binary to count,
+and yet somehow they're much more useful than just doing math--
+they can have text messages and e-mails and websites and videos and more--
+how do we get from zeros and ones to letters?
+Well, we-- yeah.
+Sorry.
+A little louder.
+Yeah.
+We just need to kind of relate the numbers to letters.
+In other words, all the people in this room just need to decide at some point
+that, you know what?
+If we want to represent something like the capital letter A,
+we just need to decide on a pattern of bits,
+a pattern of fingers, that's going to represent A.
+And it turns out humans years ago just unilaterally
+decided 65 shall be the decimal number that represents capital letter A.
+And you might guess capital B is represented by what decimal number?
+66.
+And then C is 67 and so forth.
+And there's a mapping of like 128 or even 256 possible values
+for all the keys you might see on a typical keyboard
+in order to represent letters.
+Now, how does a computer distinguish, though, numbers from letters?
+Well, just depends on the context.
+If you're using like a calculator program on your Mac
+or PC or iPhone or Android, well, the computer, the device,
+is just going to know contextually, let me interpret this pattern of zeros
+and ones as actual numbers to do math.
+But if you're using the SMS app or the messages app on your phone,
+you're going to actually be in the context of text,
+and so your phone is going to interpret that same pattern of zeros and ones,
+or light bulbs being off, or, at the end of the day, transistors,
+tiny pieces of hardware and computers that are either on or off--
+it's going to interpret those patterns as just representing a letter.
+If you're in the context of a text messaging application or Microsoft Word
+or Google Docs or the like, it completely depends on context.
+The system we humans came up with just called ASCII, American Standard Code
+for Information Interchange.
+The name isn't interesting, but the fact that we all agreed years ago
+that 65 is A and so forth is what's important.
+And so for instance, if we look at this mapping here
+of just the first few letters, what does this mean?
+If I were to now get a text message and I had the ability somehow
+to look underneath the hood, so to speak, at the pattern of zeros and ones
+that someone had just texted me, and that pattern,
+if I convert it to decimal, technically said, let's say, 72 and 73--
+so I get a whole bunch of zeros and ones.
+I do some math and I realize, OK, I just received 72 and 73,
+but this is texting, and so it's not just numbers my friend is sending me.
+It's a message.
+What message did my friend likely send me if he or she sent 72 and then 73?
+Yeah.
+Hi.
+H-I. Because if you skim ahead at the right there,
+that just happens to be in ASCII the mapping between 72 and 73, H and I.
+If technically, the message had a third byte, if you will.
+A byte, if you've ever wondered, is just eight bits.
+It's convenient to talk not in terms of single bits,
+where you can't count very high, but with a byte, or eight bits,
+you can count higher.
+And so it turns out if I received a third byte, another sequence of eight
+zeros and ones together--
+33.
+How would we know what this message now is?
+Yeah.
+So it turns out you would not know this other
+than by guessing or Googling or just coming in with this knowledge.
+This is now "HI!"
+with an exclamation point because 33 just so happens, if you look it up,
+to map to an exclamation point, as well.
+Now, if we actually looked at the binary of this,
+you would actually see this pattern of zeros and ones.
+This is how you represent 72 in binary.
+This is you represent 73.
+And this is how you represent 33.
+And notice I've only used one, two, three, four, five, six bits,
+even though I technically tend to receive things in units of 8,
+units of bytes.
+But why did I not bother writing another 00 here and another 0 here?
+Does it matter when you write these things out?
+No.
+Not really.
+Like in English, in our human world, if you were to write one, two, three,
+that's 123.
+If you were to write 0, 1, 2, 3, that's still 123.
+So even though we tend to get them in clusters of 8,
+we don't necessarily need to write those when just talking about them.
+So what have we done?
+Well, let me introduce a fancier word now known as abstraction.
+Abstraction is just a term generally used in computer science and we'll soon
+see in programming for taking some low level-- like literally low level--
+implementation details, like minutiae even, and understanding them
+at some point, but then deciding this is not a useful level conceptually
+to think about problems.
+I really don't want to solve problems in this world of thinking in 0's and 1's.
+I'd much rather think about things minimally in decimal, or better yet,
+in the context of letters if I'm actually receiving text, or even
+some other representation.
+So abstraction is about taking fairly low level details
+and just simplifying them so that we can have a more useful conversation
+and never again worry about where the electricity is coming from.
+We can just stipulate my computer can represent zeros and ones.
+Therefore, it can represent numbers.
+Therefore, it can also represent ASCII or letters.
+And we can kind of move on and start solving more interesting problems.
+But it would seem that we can't solve all problems because on my keyboard
+here, this American keyboard here, there's a whole bunch of symbols,
+like a 100 or 200 maybe in total if we actually hit shift and option and all
+of that.
+But what you don't see are some pretty common characters.
+Especially in a very international audience,
+what can I apparently not even type on this keyboard?
+What kinds of symbols?
+Yeah.
+Anything with an accent.
+If you have accents over vowels or other letters.
+What else?
+I'm sorry.
+Umlauts or other characters above letters.
+Yeah.
+Like pound symbol?
+Oh.
+Like the UK pound symbol.
+Sure.
+And other countries, too.
+Any number of Asian languages.
+There's so many symbols that are not depicted on this keyboard,
+and yet somehow, all of us with international keyboards or phones
+can surely express themselves.
+But that's because phones and computers these days don't just use ASCII.
+ASCII literally used just eight bits total.
+Technically seven, but then, ultimately, really eight.
+And with eight bits, if you actually do the math--
+if you have eight bits or eight fingers, you
+can only permute them in 256 total possible ways, which
+is to say that you can only represent 256 characters using ASCII with numbers
+underneath the hood, and that's not enough to represent
+so many different symbols like those enumerated here.
+You can't represent any of the accents that you can nonetheless
+type on your Macs and PCs and you certainly
+can't type these things, which are very much in vogue.
+Which even though they're pictures, they're actually just characters.
+Because it turns out some years ago, the world decided eight bits is not enough.
+Let's start using something called Unicode, where you actually use
+one or two or three or even four bytes.
+So eight bits or 16 bits, 24 bits, or even 32 bits to represent characters.
+And now, we have the ability to represent thousands or even
+millions of characters.
+And frankly, daresay, the result of that huge amount of availability
+is partly why there are so many of these things these days.
+And they just keep making more because there's just so many different numbers
+available to us.
+So Unicode is often a specific version of it called UTF-8,
+which we'll see before long.
+But let me ask this question here.
+This is a crying face with joy, I think this is called.
+So it turns out, according to Apple or iOS,
+this is the most popular emoji that at least iPhone people
+are sending to each other.
+So when you're receiving this, though, if we can really take the fun out
+of this, what pattern of bits are you actually receiving from your friend?
+He or she is clearly trying to express some emotion,
+but really, what your friend is sending you-- the decimal number 128,514.
+Or really, if you looked at the zeros and ones coming
+to you over the internet or airwaves, you're
+getting this pattern of zeros and ones, which is hardly joyful or hardly
+descriptive, but all your phone or computer
+are doing is seeing this pattern of bits,
+looking it up in like a little cheat sheet, and saying, oh.
+Whenever I see this pattern of bits in the context of text like texting,
+I should actually display it as that picture.
+Now, that picture has a lot of yellow and other colors
+in it, but how do we even get there?
+Well, it turns out that this same pattern of numbers--
+72, 73, 33-- which just to be sure, a moment ago, meant what?
+Hi.
+In the context of a textual program like Microsoft Word, Google Docs, texting,
+this means hi.
+But what if you saw this same pattern of bytes--
+and again, we could draw the zeros and ones,
+but it's not interesting anymore, so we're going
+to abstract away at the decimal level.
+If you got this same pattern of zeros and ones
+or numbers in the context of like Photoshop or a browser
+or some kind of photo program, well, it might make more sense
+to interpret it not as text, but as imagery, some kind of colors.
+Well, it turns out there's this other system in the world--
+you might have seen this acronym before--
+called RGB-- red, green, blue.
+And this is just a way of humans having standardized years
+ago that you know what?
+If we want to represent a dot on someone's screen, otherwise known
+as a pixel a tiny little square on the screen
+of your phone, your laptop, or even TV these days,
+we're going to use three bytes--
+one byte to specify how much red should be in that specific pixel,
+one more byte to specify how much green should be combined with red to form
+that pixel, and then one more byte, a third,
+to represent how much blue to combine with those other two colors
+to make a new color all together.
+So it's kind of like combining paints, except in this case,
+it's more really waves of light in order to get a specific color using just
+red, green, and blue as your palette.
+And so if we were to see this red, green, blue pattern and say,
+you know what?
+Give me 72 red, 73 of green, and 33 of blue.
+If the total possible range that I alluded to earlier is like 0 to 256,
+or technically 0 to 255 if you start counting in computer science from zero,
+this is like a medium amount of red, medium amount of green,
+and just a little bit of blue, if the range goes from 0 to 255.
+So if you combine these three things together
+and you want to know what color you get--
+yeah.
+So it's kind of a light yellow that looks like this.
+So if a computer is storing a single dot on the screen that
+happens to be in yellow, what the computer's actually storing
+is not this dot physically, but a pattern of three
+bytes-- how much red, how much green, how much blue should the computer
+display at this particular point.
+So if we look at this crying face of joy and we kind of enhance or zoom in
+on it here, you can actually see it start to pixelate, so to speak,
+where you start to see the dots.
+If I punch in a little more, now you can really
+start to see the dots on the screen.
+And if I go an even further, you can actually
+see the tiny little squares that compose this image, most of which
+at the zoom level are yellow, but a bunch of which are black,
+a bunch of which are light black or dark yellow.
+And that's what composes this image ultimately.
+So this is to say if you count up all of the pixels on the screen
+and then multiply it by one, two, three bytes, that's
+how many bytes or kilobytes or megabytes, if you've heard those terms,
+are going to be stored on your computer just to represent an image.
+So we've gone from electricity to down here, so to speak, to zeros and ones,
+to decimal, now to colors.
+Well, with colors, you can get images.
+What comes after images?
+Well, we've all watched videos or movies certainly digitally these days.
+Well, what is a movie or a video file?
+How might that be implemented?
+Say it a little louder.
+Yeah.
+It's a collection of images.
+If you've ever heard of frames per second--
+like movies tend to be 24 frames per second or 30 frames per second--
+that just means that a typical movie, every second
+is showing you 24 or 30 images per second
+and they're just flying by so quickly that you actually
+don't notice you're just watching a sequence of static images.
+It's like as a kid, if you ever had one of those paper flip books where there's
+tons of drawings in them, and as you flip through the pages,
+you see things moving, but that's just because your eyes are just
+seeing little snapshots ever so quickly of something moving on the paper.
+That's all a video file actually is.
+So if you have an iPhone and you've ever played with these animojis,
+so to speak, well, all those are are little video files
+composed of lots and lots and lots of images
+that you have saved on your phone or texted to someone else.
+And if we just think, now, we're at the point of video, but that's OK.
+Videos are just bunches of images.
+Images are just bunches of colors.
+Colors are just patterns of bits.
+And bits, at the end of the day, are just
+the result of electricity coming into my machine or transistors
+turning switches on and off.
+Like we've all of a sudden to hold this entire story, but none of us
+ever is going to need to really think about binary in the context of videos
+because a video is just an abstraction on top of bunches of images,
+and images are just an abstraction on top bunches of pixels, and so forth.
+So we can keep painting this hierarchy that
+just allows us to talk about things at a more useful level,
+and the reason we had this conversation is
+just because we needed a way to represent
+inputs and outputs to problems.
+Let me pause there for just a second to see if there's any questions.
+Anything at all?
+No?
+All right.
+So what's inside this black box?
+Well, it turns out this is where the really interesting work starts
+to happen and the thought starts to come in.
+This is the proverbial algorithms, step by step instructions
+for solving some problem.
+And some of you might have solved this problem before,
+either digitally or textually, but of course,
+if you have contacts in your phone these days
+and you've got bunches of friends and family,
+odds are they're alphabetized by first name or last name.
+And you have auto complete these days, but it really is just
+a long list of names and numbers.
+That's not all that different from yesteryear's implementation
+of the same problem, which was this device here, a phonebook.
+Now, this phonebook might have a friend of ours in it, say Mike Smith,
+whose last name starts with S. And I could, of course,
+if trying to find Mike Smith, start by looking
+at the first page, the second page, the third page, the fourth page,
+and eventually, just hopefully find Mike Smith.
+Indeed, is this algorithm, this step by step process,
+correct for finding someone like Mike Smith?
+Yeah.
+It's correct.
+It's stupid and slow perhaps because it's
+going to take forever in a phone book of this size,
+but it is correct because if Mike's in here, I will, in fact, find him.
+But I could do this better.
+I could do it sort of two at a time.
+So two, four, six, eight, 10-- or imperfectly--
+10, 12, 14.
+Is that faster?
+Obviously, it's going twice as fast.
+Is it correct?
+No.
+Why is it not correct?
+Yeah.
+I might miss him, right?
+Mike just accidentally might eventually get sandwiched between two pages
+and I have the unlucky experience of just missing him.
+Now, is it fixable?
+Yeah.
+I can probably, once I hit like SN or the T section, for instance--
+I can just say, obviously, I've gone too far for Mike.
+Let me just double back one or just a few pages.
+So it is fixable.
+And so long as I've saved time by flying through this twice as fast,
+can I at least afford to spend a few more steps at the very end just
+to find Mike Smith?
+But none of us are going to do that.
+And our Apple devices and Android devices certainly
+don't do that for efficiency today.
+Odds are most of us are going to do what to find someone in any book like this?
+Yeah.
+Open to roughly the middle or maybe bias ourselves toward the end
+because S is after the middle.
+But you know, I'm in the middle of the phonebook here.
+And now, if I know that Mike is in the S's and therefore over here,
+where do I know he's not?
+He's not in the beginning and I can literally
+tear a problem like this in half, throw figuratively and literally half
+of the problem away, and be left with fundamentally the same problem,
+but it's half as big.
+I went from like-- whatever--
+1,000 pages to 500 pages and I can now repeat this algorithm.
+I look down.
+I'm a little too far.
+I'm in the T section now.
+OK.
+I can again tear the problem in half, throw that half away,
+taking a 500 page byte out, a 250 page byte out, now leaving myself
+with just 250 pages more.
+And notice just how quickly I got here.
+The first two algorithms got me from 1,000 to 999 to 998, or 1,000 to 998
+to 996.
+But here, I went from 1,000 to 500 to 250.
+Feels like we're making up time here.
+And indeed, if I keep repeating this process,
+hopefully, I'll be left with just one page of the book
+that Mike is either on or not, at which point, I will call him.
+And so that's an algorithm that honestly leverages probably all the intuition we
+have and a lot of what programming is going to be,
+is thinking about a problem like this, figuring out how to divide and conquer
+it, and then expressing yourself in a way
+that the computer can then solve that problem for you.
+And just to paint a picture of how much better this algorithm is, well,
+if this is just a very abstract chart where we have on the vertical,
+or y-axis, how much time it takes to solve a problem,
+and on the horizontal axis how big the problem is--
+so the farther out you go this way, the more pages in the problem,
+the more pages in the phonebook.
+And the higher you go up here, the more seconds or page
+turns it's going to take.
+That first algorithm is just like a linear slope,
+so to speak, because for every additional page in the book,
+it might take me one more second.
+Right, up.
+It's just a one for one relationship with pages.
+The second algorithm, if I plot it, where
+I'm flying through twice as fast, what is
+that line going to look like instead?
+Yeah.
+It's going to look lower than this one.
+It's still going to be a straight line because now, there's a two to one
+relationship, but if you've got a phone book that's got this many pages,
+and in the first algorithm, it took this long, here,
+well, in the second algorithm, it will take half as many steps, plus or minus
+or two if you need to actually double back a little bit.
+But that third algorithm is what we'll call logarithmic.
+If n is the number of pages in the phone book,
+the first algorithm, in the very worst case,
+might take all n pages to find Mike Smith.
+The second algorithm is going to take half as many steps because I'm
+flying through it two at a time.
+But the third algorithm is going to look and feel like this.
+It's going to be curved and ever so slowly rising and rising and rising,
+the implication of which is if Verizon or the phone company
+doubles the number of pages in the phonebook
+next year because Cambridge and Somerville merged together in the phone
+book and we now have 2,000 pages.
+Well, how many more steps does my third algorithm take?
+Just one.
+Because I can take a 1,000 page bite out of the problem
+with that clever algorithm, whereas my first two algorithms would take it
+one or just two pages at a time.
+So that is to say we have to hugely increase the size of this problem
+just for the number of seconds or page turns to appreciably actually increase.
+And so as we start to learn about programming,
+it's, again, going to be leveraging of this intuition in order
+to actually solve problems and code more effectively than we
+might without that intuition alone.
+So let's formalize this now.
+So that was kind of a very intuitive way of dividing and conquering a problem.
+Just kind of made sense to go in the middle,
+tear it, then go to the other half or the other half
+and tear it again, and so forth.
+But a computer, even as cool as Alexa and Google Home and all of this are,
+you can't really just talk to them as another human
+and have them execute things correctly.
+I struggle just to get Siri to set a timer on my phone.
+So we're not quite there yet, so we're still at the age
+where we have to be ever so precise with computers,
+voice activated or otherwise, and so thus enter pseudocode for now.
+Pseudocode has no formal definition.
+This is just a way of saying use English like syntax or any spoken language
+and just express yourself succinctly and correctly
+so that a computer or a robot or even another person
+can understand what it is you're trying to say.
+So here, I propose, is an algorithm written
+in pseudocode, English like syntax, that just gets my point across.
+And I could write this in any number of ways.
+I've numbered the steps from zero on up, just for the sake of discussion,
+but this would seem to capture what I did there.
+Pick up the phone book.
+Open to the middle of the phone.
+Look at the names.
+If Smith is among the names, call Mike.
+Else, if Mike Smith is earlier in the book,
+go to the left, specifically the middle of the left half of the book,
+and then go back to step two.
+Because indeed, I was just doing the same thing again and again,
+and the reason I wasn't doing it forever was because every time I
+repeated myself by opening and tearing, I was shrinking the problem.
+And I can only shrink a problem of some fixed finite size
+so many times until I get just one page, and so
+if I continue this logic looking to the right or to the left or just quitting,
+if I don't find Mike at all on the last page,
+this would seem to capture more precisely that code.
+Well, let's actually excerpt from this now a few concepts
+and then start to apply them to actual code.
+Highlighted in yellow here, I dare say, are all of the verbs or actions.
+These are the functions, as we're going to start calling them,
+in this algorithm.
+A function is just a specific step, a specific action
+you take in order to do something.
+And so in yellow here-- pick up, open to, look at, call, open, quit
+are all actions or verbs.
+Are henceforth, we'll call them functions.
+Meanwhile, highlighted in yellow here-- if, else if, else if, else.
+These are kind of starting to ask questions.
+What might these be called if you have some familiarity?
+Yes.
+Turns out many programming languages, if you've seen any before,
+would call these conditions.
+They're branches, or proverbial forks in the road.
+If this is true, go this way.
+Else, maybe go this other way, or perhaps a third or fourth direction
+altogether.
+Meanwhile, if we actually look at these highlighted phrases--
+if Smith is among names or if Smith is earlier in book
+or Smith is later in book--
+these are the specific questions we're asking in order to make that decision.
+These are known as Boolean expressions, named after a gentleman
+by the last name of Boole some years ago.
+And so a Boolean expression is just a question
+that has a yes or no answer, a true false answer, a one zero
+answer, if you will.
+And that's a nice mapping to what computers are really good at.
+So within conditions, you have Boolean expressions
+to decide which fork in the road you want to go down.
+And then lastly, highlighted in yellow here
+is go back to step 2 in a couple of places.
+This is inducing some kind of cycle or loop
+that's telling the computer to do something again and again and again.
+So in short, we have these building blocks already conceptually.
+And it turns out, we can now start to translate these
+to an actual programming language.
+The first of the languages we'll introduce in CS50
+is something called Scratch.
+Turns out this is not a text based language,
+like in my English pseudocode there, but it's graphical
+and things look like puzzle pieces that you can drag and drop
+and they interconnect if it makes logical sense to do so.
+And in fact, some of you might have played this back in the day as kids
+or even more recently because it's actually targeted typically
+at students in like after school programs who
+just want to learn more methodical, more algorithmic, or computational thinking.
+And we're going to use it to explore not only these building
+blocks, but a few others, as well.
+It turns out in the other languages we'll explore in CS50 and beyond,
+are languages like C that we'll actually transition to as quickly as next week,
+to then translate what we do this week in Scratch to next week in C.
+And in languages like Python and JavaScript
+and SQL, which we'll also explore, do we have other capabilities--
+the ability to store data in variables, so to speak,
+to use threads, which means get the computer to do multiple things at once,
+events, to mean listen for things happening, like a click
+on the page or a human typing or even saying something.
+We'll be able to do all of the things that you take
+for granted in your very own phones.
+And we'll do this first by way of this guy.
+So this is Scratch, the default cat that comes with this programming
+language from MIT's media lab.
+And via Scratch can we start programming him to move up,
+down, left, right, say something, utter something, and other commands
+all together.
+In fact, let me go ahead and switch contexts here
+to show you the very first thing I ever wrote in Scratch.
+It was back in the day when I was in graduate school
+and Scratch had just been invented by MIT.
+Let me go ahead and open this.
+And I called it Oscar Time.
+And if we could perhaps have a volunteer come on up for just a moment.
+You have to be comfortable being on stage and on the internet.
+How about here in the white shirt?
+I saw your hand first.
+Come on down.
+So this is Oscar Time.
+It's implemented in a language called Scratch.
+And at the end of the day, all that is underneath the hood of this program
+is functions and loops and conditions and a few other of these concepts.
+Hi.
+What's your name?
+AVIVA: Aviva.
+DAVID MALAN: Aviva.
+David.
+Nice to meet you.
+Come on over here.
+And in just a moment, I'm going to go ahead and click
+the green flag at the top left hand corner, which
+is going to play this game.
+And we'll see on the screen the instructions.
+[MUSIC PLAYING]
+OSCAR: (SINGING) Oh, I love trash.
+Anything dirty or dingy or dusty.
+Anything ragged or rotten or rusty.
+Yes, I love trash.
+If you really want to see something trashy, look at this.
+I have here a sneaker that's tattered and worn.
+It's all full of holes and the laces are torn.
+A gift from my mother the day I was born.
+I love it because it's trash.
+Oh, I love trash.
+Anything dirty or dingy or dusty.
+Anything ragged or rotten or rusty.
+Yes, I love trash.
+Here's some more rotten stuff.
+I have here some newspaper 13 months old.
+DAVID MALAN: All right.
+Everybody, give a round of applause for Aviva for coming on up.
+Thank you.
+Here.
+Aviva.
+[APPLAUSE]
+A little CS50 stress ball.
+So suffice it to say, if you're tired of this song,
+consider how tired I was eight hours later while debugging and building
+this program.
+But consider what it is we just saw.
+It's this interactive game and stuff is animated and music is playing.
+But if you focus on decomposing, so to speak, this program into just
+basic building blocks, this is just kind of a big abstraction over some lower
+level pieces of functionality.
+Like this trash can here.
+At the moment, it's just a picture, and on occasion,
+as soon as Aviva dropped something into the trash, the lid came up
+and Oscar came out, he said something, and then he went back down.
+But that animation is super simplistic.
+It was just a sequence of 1, 2, 3, or so images displaying and then
+going back down to create the illusion of animation.
+Meanwhile, every time Oscar said something,
+that was keeping track of her score in what's called a variable.
+In algebra, you have x and y and z, but in programming, you have the same idea,
+but it's generally more useful to call them more descriptively,
+like your score.
+And so there's probably a variable in this game called
+score that was just keeping track of how many times
+Aviva had dropped something into the trash.
+Meanwhile, the trash itself and the shoe and the newspaper-- and even more
+things happen eventually-- were falling from the sky
+at sort of random locations, and that's because I programmed the game
+to sort of start the trash here or over here, just
+to make it a little more challenging as the game picked up.
+And in fact, things start falling faster and faster over time,
+like a typical game, getting more and more difficult.
+So how do we get to something like that?
+Well, let me go ahead and open up Scratch itself
+and introduce the environment.
+So in Scratch, you essentially have three general areas.
+And it's web based, and so you can do this on any computer.
+And in the left hand side here, you have those puzzle pieces
+to which I referred earlier.
+These puzzle pieces are all mapping to functions or loops or conditions
+or variables, things that we saw before, and I'm
+going to able to drag and drop them into the middle in order
+to interconnect them and write my program,
+which we'll do in just a moment.
+Meanwhile, Scratch lives in this stage, this world, where he can move up,
+down, left, right.
+You can change what Scratch looks like.
+You can add other characters, otherwise known as sprites,
+in order to have multiple things happening at once.
+And of course, you can fullscreen it.
+And so the Oscar Time game a moment ago was actually a whole bunch of sprites.
+Oscar's trash can was one.
+Each piece of trash was another sprite.
+The newspaper was a sprite, and so forth.
+So each of them were separate programs running in parallel at the same time.
+So let's actually make him do something.
+It turns out that if I jump down to, say, events,
+I'm going to see one of the most powerful blocks
+from the get go, which is this when green flag clicked.
+That's indeed how I started the game with Aviva,
+by clicking just above Scratch's world this green flag.
+And if I wanted to stop it, as I did, you
+can click the red stop sign to say stop.
+Meanwhile, the green flag, I can constantly
+listen for by dragging and dropping this puzzle piece.
+When the green flag is clicked, what do I want to do?
+Well, let me go up to looks.
+And these are just different categories.
+And we can scroll through all the different colorful blocks,
+but they pretty much just do what they say.
+I'm going to go under looks, where I know there to be a block that's called
+say, and I'm going to go ahead and type the most canonical computer science
+thing-- hello world--
+in this box.
+So notice that functions themselves can actually
+take inputs and the input to this function, say,
+is going to be hello world.
+If I now go over to the green flag and click it--
+hello world.
+All right.
+So not all that difficult. Not all that interesting.
+But it actually got the job done, and so my program is indeed just this.
+Well, how might I make this a little more interesting?
+Just saying, hello world all the time isn't all that compelling.
+Well, you know what?
+Let me think.
+Let me undo this.
+Let me scroll down to sensing.
+And notice this.
+Functions can also take input from a human
+and functions can hand you back a value, a so-called return value.
+So this block here, ask something-- by default, it says,
+what's your name and weight--
+is another function built into Scratch that allows me to do this.
+So I'm going to go ahead and drag this here
+and I'm going to let it say, what's your name?
+Notice now that below this block is a special block,
+whatever it is the block returns.
+So answer is whatever the human is going to type in.
+And if I want to now say what the human typed in, let me go again to looks.
+Go to say.
+And notice that these blocks are kind of magnetic.
+They want to snap together.
+So I'm going to go ahead and let go there.
+And if I go back to sensing and grab answer,
+notice that even though it's not quite the same size,
+it's going to grow to fill, and now, I can
+have my program ask the user what his or her name is and then
+say whatever that answer is.
+So let me go ahead and stop and click play again.
+Notice it's asking me for my name, so let me go ahead and type in David.
+Enter.
+OK.
+It's a little weird way to greet someone.
+David.
+So it'd be nice to clean that up a bit.
+So you know what?
+I know this only from having poked around before.
+Not all of this is obvious at first glance.
+But it turns out that under operators, the category,
+there's this thing here-- join apple and banana.
+Which are just default values.
+You can change them.
+Because what do I want to do?
+I want to say hello, David, or whoever, so I kind of want to say hello, comma,
+and then, David-- whatever the human typed in.
+And that's what join lets you do.
+It lets you join or concatenate two phrases that are somehow
+provided by you or the user.
+So let me pull this out, the answer.
+Let me go ahead and grab the join block.
+Notice it, too, is going to grow to fill.
+Let me go ahead and say, hello, comma, space, and now, drag answer into there.
+And notice this nesting.
+Just like in math.
+This nesting of functions.
+I can first join hello and answer by taking those two things as input
+and then pass them to say as another input
+because these things are layered on top.
+And so now, if I stop this and play it again and say, David--
+hello, David.
+Now, we have the makings of a more interesting interactive program
+that isn't just hardcoded.
+Of course, it's not nearly as audible as something like Oscar Time a moment ago.
+So let me go ahead and do this.
+Let me start over altogether and treat Scratch like the cat he is
+and just start the sound called meow.
+So it turns out there's a category of blocks called sound,
+and within sound, there is play some default sounds.
+So start sound meow.
+And now, things will get a little cuter.
+[MEOW]
+Aw.
+And now, again.
+[MEOW]
+And I can kind of simulate a cat by [MEOW] standing here for a while
+and keeping to click this button.
+But you know what?
+Let me make him meow few times because that's more realistic.
+So let me grab a second one and a third one.
+And you can get this infinite supply of blocks.
+Let me hit play.
+[MEOW]
+Seems like a bug.
+Let's try again.
+Play.
+[MEOW]
+This is my first bug, or mistake.
+This looks correct.
+It says when green flag clicked, start sound meow, start sound meow,
+start sound meow.
+Why am I only hearing one meow?
+Yeah.
+They're kind of at the same time or so close to the same time
+that the sounds are kind of tripping over each other and just overlapping,
+right?
+The block literally says, start sound meow.
+But computers are really fast.
+If you've heard of the expression gigahertz, that's a unit of measure.
+And if your computer has a one gigahertz CPU, central processing unit, or brain,
+that means it can literally do like a billion things per second.
+It can certainly start three sounds super fast.
+And if they're effectively all happening one after the other
+before the sound even finishes, you're just hearing one net effect.
+So how can we fix this?
+Well, I can actually go and fix this with this block here--
+play sound meow until done.
+Play sound meow until done.
+And now.
+[MEOWING]
+OK.
+It's a little unhappy, this particular cat,
+but at least it's now more correct.
+And, as it turns out, if I go to control--
+you know what?
+There's this block here-- wait some number of seconds.
+I can go ahead and insert this here.
+Let me do another one here.
+And now, hit play.
+[MEOWING]
+You know, it's not bad.
+It now sounds a little more realistic.
+But honestly, if I keep doing this-- or you know what?
+You can actually right click or control click on blocks,
+duplicate them, and just copy and paste even more if you want them.
+So if I were to do this, now, it's just going to go six times.
+And then I could copy it again and go 12 times.
+But there's got to be a better way, right?
+This is now bad programming.
+This is bad design.
+Because I'm literally copying and pasting, albeit, graphically.
+But we've already seen a building block with which
+we can design this program better.
+It's correct, but it's not well designed.
+What would the building block be that I need to make this a little cleaner?
+OK.
+A four loop.
+Doesn't quite exist in Scratch.
+But a loop fundamentally does something cyclically.
+And indeed, if I go under control and start poking around,
+you'll notice that there's a few blocks that might apply here.
+There's the repeat block some number of times
+or the forever block, both of which sound like loops, or cycles.
+So sure enough, let me go ahead here and I can throw away blocks
+by just dragging them to the left.
+Let me pull this out for a second.
+And then just say forever play this sound, and then wait one second.
+So now, my program looks like this.
+[MEOWING]
+You know, we'll never know if it's technically correct because it's just
+going to go, we think, forever, but it looks like this is correct.
+And it was a lot less code and it's a lot easier
+to maintain because if I want him to kind of get sleepy,
+I can then maybe say two seconds instead.
+[MEOW]
+You know, and we can adjust this on the fly as we go.
+But let's start to combine some of these ideas
+now and change what it is the ultimate effect is.
+Let me go ahead and open an example I made in advance.
+This one's called Count Zero.
+And we'll put this on the website later so that you can play with if you like.
+And this is kind of the opposite of counting sheep.
+Rather than me or the person sleeping counting sheep,
+this sheep will count itself.
+So let me go ahead and just play.
+And adorably, he seems to just be counting 1, 2, 3.
+But why is that?
+He's just going to count forever.
+But let's look at the blocks with which he is counting forever.
+When green flag clicked, set counter.
+Turns out this orange box is what we called a variable.
+So in algebra, it would be like x or y or z.
+Those are not descriptive.
+I called this one counter instead, but I could have called it x or y or z.
+And then I forever say the counter for one second, then wait one second,
+and then change the counter by one, which
+technically means just increment it.
+Add 1 to it.
+And the sheep is just going to therefore count up and up and up.
+Now, this is a little tedious, but that's
+kind of the point of counting sheep, of course, to fall asleep.
+But what if the sheep actually kind of liked counting a little faster?
+Well, let me go under operators here.
+Multiplication sounds like it could get us places quicker.
+And let me go ahead and go to variables.
+And instead of changing the counter by one,
+let me go ahead and just keep setting it to something else.
+So let me drag and drop this.
+Set the counter equal to something times something, specifically
+the counter times two, thereby doubling, doubling, doubling, doubling.
+That would seem to grow, so to speak, a lot faster.
+Let's see.
+1, 2, 4.
+So he's counting faster, but it's still kind of tedious.
+What if we instead do this?
+Let's stop waiting and let's go ahead and, with the looks,
+not say counter for one second, but let's just quickly say counter.
+So I'm going to say the counter.
+Whoops.
+I'm going to say the counter and then I'm going to set it to itself times 2.
+So here's where we're at.
+Initialize, or set the counter to 1 initially, say it, then double it,
+then double it, then double it, saying it along the way.
+So here we go.
+That's impressive.
+So now the sheep has counted up to 10 to the 60th so far.
+10 to the 100th.
+OK.
+Now, it doesn't even fit in the speech bubble, but he's still going.
+How high can he go?
+What's the biggest number you can count to in a computer?
+Anyone want to guess?
+Could be here a while.
+10 to the 270th now.
+How high can you count, or rather--
+OK.
+So we gave up and just called it infinity.
+So it turns out infinity does have a precise value--
+10 to the 250th or so.
+But what happens here?
+Well, because computers, at the end of the day,
+are just storing information digitally-- but that information digitally has
+to be physically stored using electricity, using these lower level
+switches called transistors.
+At the end of the day, my phone, my laptop, whatever device in question
+only has a finite amount of those things.
+I only have a finite number of fingers.
+Using unary, my old school hashmark approach,
+I can count to five on this hand.
+Using binary, I claimed I could count to 31 on this hand.
+But it's still finite.
+I cannot count to infinity on this hand because I only have five fingers.
+Similarly does a computer only have so many transistors or so
+many bytes or bits of memory, and at some point,
+the programmer has to think about what is he
+or she going to do when the user wants to count so high that you
+can't physically fit it anymore.
+You have to give up like this and say something semi accurately
+or you have to handle that issue in some other way.
+And we'll see when we get to C that how you handle this problem is not
+necessarily straightforward, and indeed a lot of software
+out there does not handle this problem.
+And odds are, all of us have programs that if you
+type big enough words or big enough numbers into them,
+they might very well break or crash or freeze
+because the humans, unlike MIT, did not anticipate that that might actually
+happen and handle it.
+Well, let me go ahead and do this.
+Let me open up this program and see if we can't read the code now.
+This is called Pet Zero and this is a program that simulates petting.
+So if I click play and don't touch the keyboard,
+nothing seems to be happening, but if I now move my cursor over to the cat--
+[MEOW]
+Aw.
+It's kind of cute.
+[MEOW]
+Right now, it's more only meowing on demand when you pet the cat.
+Why?
+Well, notice I've added some other building blocks.
+We haven't used this one before, but it intuitively
+probably makes pretty clear sense.
+When the green flag is clicked, forever do the following.
+If the cat is touching the mouse pointer-- this thing in blue
+is what we called earlier a Boolean expression.
+It has a yes/no, a true/false, a one/zero answer.
+And touching mouse pointer is one of the options in the little drop
+down here if you tinker with it.
+So if the cat is touching the mouse pointer, then and only then,
+play sound meow until done.
+So we've combined now functions with loops with a condition.
+But why the loop?
+The cat's only meowing once when I pet him.
+Why am I doing anything forever here?
+Someone-- yeah.
+Yeah.
+I might want to pet it again, so I want the program to anticipate that.
+And honestly, if I omitted this forever block and my program
+instead looked just like this--
+so let me get rid of that and this--
+and then I clicked play, and now, I hover over him,
+why is it not working even once?
+Say it again.
+Yeah.
+So I mean, at this point, if I can summarize,
+the computer is so damn fast that this already
+happened by the time I moved my cursor over to the cat, and at the moment
+I clicked play, I was not touching the cat.
+Those blocks executed, so to speak, top to bottom.
+That's it for the program.
+So by the time I move the cursor over to the cat, the program is over.
+It's not listening.
+And so forever, this way I can actually listen in perpetuity for something
+to actually happen.
+What if I want to do something not just if something is true,
+but handle two cases?
+If or else.
+Well, let me go ahead and open up Pet One.
+And this is another example.
+And could someone perhaps describe, after reading this code, what
+this program is going to do instead?
+Yeah.
+Exactly.
+And let me summarize more verbally.
+So if this time, you're touching the cat, it's going to roar instead.
+Else, it's just going to meow sweetly.
+So this time, it is meowing perpetually once every second,
+but if you touch this particular cat, it doesn't like it.
+So play.
+[MEOW]
+Meow.
+[MEOW]
+Meow.
+[MEOW]
+And now.
+[ROAR]
+Don't touch the cat.
+So now, we might interact in two different ways
+by having two different roads that you can go down.
+Well, let's actually make something a little more interactive.
+Let me go ahead and open another example.
+This one's called Bounce Zero because now, we
+can start to see some design elements from what Oscar Time was.
+Like this now it's getting a little interesting.
+What is actually going on here?
+So let me zoom in on the blocks here.
+This block is just saying forever move 10 steps, which
+is another block we haven't seen.
+But 10 steps is like 10 pixels.
+So move 10 pixels on the screen.
+But if you're touching the edge, then turn around 180 degrees.
+And you can see exactly that happening.
+Scratch is turning around 180 degrees and this rotation style just
+means double back.
+Don't like loop around 180 degrees.
+So that's kind of cool.
+But this is not how humans or cats walk.
+Like what is obviously unnatural about this?
+Yeah.
+I mean, I mean, I can't even simulate it, right?
+Like his feet are in static position, yet sliding back and forth
+on the screen.
+And yet, that is not what walking is.
+Like walking presumably has some kind of movement and what?
+Well, we could just kind of simulate it like--
+OK, I could just walk--
+walking and you can imagine taking like really quick photographs of my legs
+or the cat's leg moving and then just deciding this photo
+will be representative of one step.
+This photo will be representative another.
+And you know, with just two of those steps,
+I'd wager we could actually do a pretty good job of simulating
+what walking looks like.
+In fact, if I go back to where we began, this picture of Scratch,
+what if I just move his legs ever so slightly, then go back,
+then go forward?
+And even just in my PDF, I can simulate animation by hitting up arrow,
+down arrow, up arrow, down arrow because it kind of
+looks like he's walking now, when really, your human eyes are just seeing
+two different pictures again and again.
+So how can I do this?
+Well, if I go back to Scratch, he's still walking.
+Let me go ahead and open up Bounce One, the second version of this, and now,
+do this.
+OK.
+So how did I add this?
+There's a little purple block that we haven't seen yet,
+but if you poke around the categories, you'll
+see other blocks like this next costume that just keeps
+changing the costume that he's wearing.
+It turns out Scratch exists as a picture and his default picture
+is him not moving, but if I go up here to top left and click costumes,
+you can actually see that here's his one costume.
+Here's his second costume.
+And so that purple block that says next costume, because it's
+in the forever loop, it just keeps doing next, next, next, next, next, just
+showing one costume or the other.
+They're clearly mimicking walking.
+Now, this is not very unnatural.
+Why don't we slow him down to, say, five steps at a time and have him go again?
+Now, this is still going pretty fast.
+Let me go ahead and say--
+we could have control.
+We could have him wait a second after moving very dramatically.
+We could probably speed this up.
+So let's wait 1/10 of a second, 0.1.
+Or maybe let's do 0.01, 1/100 of a second.
+Now, it's getting a little more realistic.
+But this is what animation is.
+If you've ever watched a cartoon or a movie based on pictures like this,
+you're just tinkering with some of these parameters, these inputs,
+in order to produce this output by understanding
+what the fundamental representation of these things is, which in this case
+are just pictures, again and again and again in order
+to create that animation.
+But what about interactivity?
+Let me do this one myself.
+Let me go ahead and get rid of this, go back to events, and say,
+when green flag clicked.
+Then, let me go ahead and grab a forever block
+so that this keeps going again and again.
+And then, let me go ahead to go to motion.
+It turns out that under motion, there's this block we haven't seen--
+point towards the mouse pointer.
+And let me go ahead and pull this in here.
+And then, let me have it move just like one step at a time, instead of 10.
+What is this going to do?
+What's this program do?
+Yeah.
+Say it again.
+Follow the mouse.
+Yeah.
+This is kind of like a way of taking your cat for a walk.
+Perhaps not quite the animal we intended, but he'll follow the cursor.
+And I can actually speed this up a little bit.
+So let's have him move 10 steps.
+OK.
+Now, there we go.
+So now, he's moving up and down, and so now, it's interactive.
+So you might recall that when we were playing Oscar Time earlier and picking
+up--
+OK.
+Don't do that.
+See, that's a bug.
+He's just confused.
+He's constantly moving toward it, but you're already--
+OK.
+So we're going to stop.
+OK.
+So now, he's following, but that's how we might now create,
+for instance, the ability to move those pieces of trash
+around and have them follow the mouse cursor.
+If you think back to Oscar Time, every time you picked up a piece of trash,
+he'd follow the cursor because there was a forever loop and a block like this
+pointing toward the mouse pointer.
+Well, now, let's integrate multiple ideas
+and actually have multiple scripts.
+I proposed earlier that programs can actually have multiple threads.
+A thread is just a fancy way of saying, in our context, multiple scripts.
+Multiple scripts in one program that are happening essentially in parallel.
+A computer can effectively do multiple things at a time thanks to threading,
+and more on that down the road.
+So these are more involved, but let's see
+if we can-- let's understand first what this program does.
+Let me go ahead and hit play.
+And this one tends to be a little loud.
+[SEA LION BARKING]
+So the sea lion is just barking endlessly, annoyingly.
+So by reading the code, how can I stop him from barking?
+Hit the spacebar.
+All right.
+So hit the spacebar.
+OK.
+I could just stop the program, obviously,
+but this program is still running, technically.
+But why did that work?
+Well, notice this on the left hand side is the first script.
+When the green flag is clicked, set this variable that I called muted to false.
+Could have called it x or y or z or counter, but none of those
+really make sense, so I called it muted.
+And I set it equal to false, which is, again, a Boolean value.
+True or false just mean yes or no.
+Forever, if the keyspace is pressed, then do this.
+If muted is currently false, then change muted to true.
+Else, change muted to false.
+So if muted is false, change it to true.
+If muted is true, change it to false.
+Any time the human hits the spacebar, update that variable.
+Now, if we look at the other script, which is also driving the sea lion,
+what is he doing?
+Forever, if muted is false.
+So if he's not muted.
+If muted is false means not muted.
+Start the sound sea lion and then think hi, hi, hi for two seconds,
+and then wait for one more second.
+And then just repeat, repeat, repeat.
+But if I change with the spacebar muted to true,
+he's going to say if muted equals false, that's not so.
+I'm not going to play a sound this time.
+And so now, we have the ability to integrate multiple scripts together
+in order to achieve a more interactive result.
+And what about this?
+Back when I was a kid, might have played in the summers Marco Polo.
+Super simple game.
+We played it in the pool, for some reason, where
+one person in the pool very safely is blindfolded,
+and then he or she yells Marco.
+And then, everyone around him or her is supposed to yell polo.
+And then, the person who's blindfolded is
+supposed to go chase the other kids in the pool and tag them,
+and then they become it.
+But in other words, it's this like signaling mechanism.
+Someone yells, Marco and everyone else responds
+to that broadcast of the word Marco.
+Well, it turns out we can simulate this with these two puppets.
+This guy here-- notice that I've highlighted the orange puppet
+because there's a second blue puppet there.
+Separate sprites.
+And these are just photographs we uploaded to the game.
+Forever, if the key space is pressed, so if the spacebar is pressed,
+say Marco for two seconds and then broadcast an event.
+Meanwhile, the blue puppet here has a super simple block,
+but it's fundamentally different from the ones we've seen.
+He's not starting when the green flag is clicked.
+He is starting only when he receives an event.
+So it turns out that sprites and Scratch can't hear or see
+what the other one is saying in those speech bubbles.
+You have to use a fancier technique, which
+is the special block called broadcast, which
+is like passing a note digitally from one sprite to another
+that the other one can read or receive, so to speak.
+So only when he receives this event, so to speak,
+does he say polo for two seconds.
+And again, the orange puppet sends that secret message
+just using this other puzzle piece.
+Broadcast an event, like passing a note that the human doesn't actually see.
+So if I now hit the green flag and hit the spacebar, orange yells Marco.
+Blue guy yells polo in response.
+But those aren't timed together.
+Rather, the blue guy is hearing with the orange one has said,
+thereby allowing multiple sprites to actually intercommunicate.
+So how did we get here?
+Well, recall that we had all of these building blocks a moment ago.
+First, we started out with just functions and conditions
+and Boolean expressions and loops.
+We've now added to that the ability to store information
+in variables and threads to do multiple things at once, and then, if you do
+have multiple things happening, events, where
+they can enter communicate somehow.
+Yet another building block.
+So if we now take a step back and consider
+how we can make functions of our own, we have the final piece
+of the puzzle, so to speak.
+Let me go ahead and do this.
+Let me go ahead and create a simple program with, when green flag clipped,
+that simply simulates coughing for a cat.
+So this cat is going to say not hello, but cough for one second.
+And then he's going to go ahead and wait for one second.
+And then I'm going to go ahead and copy paste, as I did before--
+this is one of those do as I say, not as I do-- to implement this program here,
+where he coughs three times.
+We already know, though, from earlier that this is not good design.
+Why?
+You're repeating yourself.
+Don't repeat yourself.
+DRY is an acronym, actually.
+Don't repeat yourself because you're doing
+three times as many times something that you only really need to do once.
+The solution before, of course, was just use a loop of some sort.
+So let me actually take that out.
+Let me use a repeat block, change 10 to three,
+and then just use two of these blocks.
+And notice already, the program is so much more compact.
+And now, if I want to change the three to a 30 or to a 10 or any number,
+I just change one simple value.
+I don't have to rewrite or copy paste or delete things.
+I can update the program much more readily,
+and now, the same thing is going to happen with just cough, cough, cough.
+But it turns out that it would be nice to henceforth abstract away from this,
+right?
+I just want any program I write to know how to cough.
+And coughing is really just saying something, perhaps
+some number of times.
+But it turns out we can abstract this away in code.
+Let me go down to my blocks here and this allows
+me to click this button-- make a block.
+It allows me to make my own function.
+I get this dialog window here.
+And I'm just going to call this block cough.
+I'm going to go ahead and click OK.
+And now, I have this new pink block that itself can have blocks underneath it.
+And you know what I'm going to do?
+I'm going to go ahead and do this.
+I'm going to go ahead and say cough under there.
+And now, notice on the left, I now have access to this new pink piece.
+I can now put this in here.
+So now, notice even though, yes, this is how coughing is implemented
+on the left hand side here, next time, when I write a program,
+I just want to call cough.
+And I don't care about those lower level implementation details.
+I don't care about the party or any of that.
+I just want this to be an abstraction.
+But I could do better than this wouldn't it
+be nice if instead of just repeating cough three times,
+what if I made that a feature of cough?
+So let me do this.
+I can go ahead and right click on this pink piece and I can edit it.
+That brings up that same window from before.
+And notice this.
+Add an input.
+So when I make a custom block, I can actually make pretty fancy blocks
+just like the ones MIT gives us with the software,
+and now, I can type in something like n.
+And if I add a label just to make it more descriptive, I can just say times.
+So now, I've made a special custom puzzle
+piece that says cough some number of times, where n for number
+is just the go to variable that programmers tend to use.
+So now, I can actually move this repeat block into cough itself,
+but rather than hard code 3, notice this.
+I can steal that variable and now say cough this many times by repeating
+saying this again and again and again.
+And now, when I cough in my actual program, I just type in three here.
+So I have this beautiful abstraction now, so to speak.
+Cough this many times and I and no one else in the world
+never again needs to care about what it means to cough because we've already
+implemented that before.
+And so just as MIT has given us so much functionality
+that we ourselves don't have to think about, so can
+I now make functionality that I don't have to think about.
+And as we progress to higher level languages like C and JavaScript
+and Python, we're going to continue this process, sometimes
+solving problems ourselves by making our own custom puzzle pieces,
+but very often using things called libraries,
+code that other humans wrote before us that's just useful to get the job done,
+just as Scratch has done here in part for us.
+Let me go ahead, then, and bring all of this
+together by opening this other example here.
+Let me go ahead and open up this one, which isn't something we've seen,
+but it's kind of an interactive game like this made by a former student.
+[MUSIC PLAYING]
+Should we have an apple?
+Yes.
+A little animation.
+OK.
+That didn't end well.
+Let's try again.
+Play again.
+And notice the say block is happening.
+There's some kind of ask block.
+The student was checking if the human typed in yes or no.
+Let's type no this time.
+No apple.
+Ooh.
+Cupcake.
+OK.
+Yes.
+Enter.
+OK.
+Don't do that.
+One more life.
+Here we go.
+[MUSIC PLAYING]
+OK.
+No apple.
+No cupcake.
+Little variable.
+[SCREAMING]
+[LAUGHTER]
+OK.
+So I won the game.
+In our final moments here, let me go ahead and open one final example.
+As you know, CS50 is offered not only at Harvard, but at Yale, as well,
+so it seems fitting to perhaps end on a note that
+pits one campus perhaps against the other by way of another game
+that a former student wrote called Ivy's Hardest Game.
+But for this, I think we need one final volunteer who's company coming up.
+OK.
+First hand.
+Right there.
+Come on down.
+So in Ivy's Hardest Game, it's a game played with the keyboard.
+And even though it might look a little overwhelming at first glance,
+just like Oscar Time did and just like the gingerbread animation might,
+realize that if you decompose it in just your mind's eye thinking about what
+those individual building blocks are, you can probably
+guess what the puzzle pieces are.
+Hi.
+What's your name?
+ANDREA: Hi.
+I'm Andrea.
+DAVID MALAN: Andrea.
+David.
+Nice to meet you.
+Here is Ivy's Hardest Game.
+Pits you against all of the Ivies here.
+And then right after this will we adjourn for cupcakes in the transept.
+Ready?
+[MUSIC PLAYING]
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+MC HAMMER: (SINGING) You can't touch this.
+You can't touch this.
+DAVID MALAN: Nice.
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+MC HAMMER: (SINGING) You can't touch this.
+My, my, my, my.
+Music hits you so hard.
+Makes me say, oh my lord.
+Thank you for blessing me with a mind to rhyme and two hype feet.
+It feels good when you know you're down.
+A super dope homeboy from the Oaktown.
+And I'm known as such.
+And this is the beat you can't touch.
+I told you, homeboy, you can't touch this.
+Yeah.
+That's how we're living and you know you can't touch this.
+Look in my eyes.
+Man, you can't touch this.
+[APPLAUSE]
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+(SINGING) Fresh new kicks and pants.
+You got it like that and now you know you want to dance.
+So move out of your seat and get a fly girl
+and catch this beat while it's rolling.
+Hold on.
+Pump a little bit and let me know it's going on like that.
+Like that.
+Cold on a mission so pull on back.
+Let them know that you're too much and this is the beat you can't touch.
+Yo, I told you, you can't touch this.
+Why you standing there, man?
+You can't touch this.
+Yo, sound the bells.
+School is in, sucker.
+You can't touch this.
+Give me a song or rhythm.
+Making them sweat.
+That's what I'm giving them.
+Now they know when you talk about the Hammer,
+you talking about a show that's hyped and tight.
+Singers are sweating so pass them a wipe or a tape
+to learn what it's going to take in the 90s to burn the charts.
+DAVID MALAN: Second to last level.
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+MC HAMMER: (SINGING) Either work hard or you might as well quit.
+That's word because you know you can't touch this.
+You can't touch this.
+Break it down.
+Stop.
+Hammer time.
+Go with the flow, it is said.
+If you can't groove to this, then you probably are dead.
+So wave your hands in the air.
+Bust a few moves.
+Run your fingers through your hair.
+This is it for a winner.
+Dance to this and you're going to get thinner.
+Move.
+Slide your rump.
+Just for a minute, let's all do the bump, bump, bump.
+Yeah.
+You can't touch this.
+Look, man.
+You can't touch this.
+You better get hype, boy, because you know--
+[CROWD YELLING]
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+(SINGING) Break it down.
+DAVID MALAN: [INAUDIBLE]
+ANDREA: [INAUDIBLE]
+DAVID MALAN: No.
+It's OK.
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+One more life.
+[MUSIC - MC HAMMER, "U CAN'T TOUCH THIS"]
+MC HAMMER: (SINGING) Stop.
+Hammer time.
+DAVID MALAN: All right.
+A round of applause for Andrea, if we could.
+[APPLAUSE]
+OK.
+That's it for CS50.
+See the website for details.
+We'll see you for cake in the transept.
+Welcome aboard.

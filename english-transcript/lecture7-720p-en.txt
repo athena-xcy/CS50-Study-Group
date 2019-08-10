@@ -1,0 +1,2437 @@
+
+[MUSIC PLAYING]
+
+DAVID MALAN: All right.
+This CS50 and this is lecture 7 wherein we pick up
+where we left off last time in talking more about Python,
+but this time using Python for even more powerful purposes,
+an alliteration I didn't intend until I just said it there.
+But the goal here with Python now is to actually use
+this language to generate another language, in particular HTML.
+And what we'll do is start to provide all the more of a mental model
+for what you would call separation of concerns, whereby
+when you design more complicated web based, or rather when you design
+more complicated software, you tend to try to adopt certain design patterns so
+that you're not just writing everything in one big file that
+gets a little confusing, unwieldy to maintain and to add to over time.
+But you start to separate your concerns, and your functionality,
+and your features, and your collaborators' work
+into different files and different methodologies.
+So we'll try to give you some of these industry standard approaches today
+and why they actually solved problems.
+But, of course, how did we get here?
+A few weeks ago, we talked about this thing,
+this virtual envelope that just represents
+packets of information, zeros and ones, going across the internet from point A
+to point B. And among the messages in these envelopes
+might be for web requests.
+And we talked about HTTP, a protocol, hypertext transfer protocol,
+that just sends message like this inside of the envelope.
+And this is requesting, of course, the default page
+of a website as implied by the slash.
+And in many cases, but not always, this implies
+a default file name of index.html.
+But that's a human convention, not a requirement.
+Hopefully, the server responds with a numeric code equal to what integer?
+
+200, hopefully, a number that we never actually
+really see unless you get more comfortable
+and start poking around Chrome's inspector
+and you look at your network traffic.
+Right.
+So here is an actual successful response,
+which means everything is indeed OK.
+And if the browser looks a little farther down in the virtual envelope,
+if you will, it will see another language called HTML, HyperText Markup
+Language, which is the stuff we wrote a couple of weeks ago
+and you'll continue writing this week as you now dynamically generate websites.
+But what we'll introduce today is what's also known as a framework,
+or, more precisely, a microframework, because we'll see in just a few minutes
+time that it can actually be really annoying and really tedious
+to generate websites automatically using Python
+if you have to write Python code alone.
+And so humans, over the past several years,
+have noticed, wow, every time I make a web application using Python,
+I find myself typing the same lines of code
+again and again just to get started, or when I'm collaborating with someone
+else, I find that, ooh, it's a little hard to collaborate
+if we're all working in the same file.
+So humans have invented what are called frameworks.
+And this is an example of code written in Python
+but using a framework called Flask.
+So whereas Bootstrap, which you've played with a little bit,
+is a framework for CSS and JavaScript, they have some dynamic features
+as well, Flask is a framework for Python that
+just gives you some library code that you can use freely
+in your own applications.
+And it just makes it, ultimately, a little easier to get your work done
+and build the thing you want to build as opposed
+to having to reinvent the wheel again and again like people before you.
+And so here is a methodology to which I alluded earlier just to have
+a mental model for the coming weeks.
+So up until now, pretty much every program
+we've written in C and most recently in Python
+you could call like controller code or controller logic or business logic.
+Right.
+It's all about getting something done logically,
+usually in one file, maybe two files if you have another helpers.ce or header
+file or whatnot.
+But we've been writing logic.
+But today and two weeks ago when we will focus
+on web programming in HTML and CSS, there's the second part of our world.
+There's like the logic that gets the interesting work done with loops,
+and conditions, and all that.
+But there's also now going to be the aesthetics,
+the stuff that the user actually sees and the way you present your data.
+So we're going to just introduce two letters of an acronym
+today moving forward.
+Anytime you start writing logical code in Python,
+it's going to be called your controller.
+It's sort of like the machine that operates your entire web application,
+but anytime you do something more aesthetic,
+we're going to call that your view code, so C and V being the letters here.
+And this just refers to a separation of concerns.
+Your logic goes in this file.
+And your aesthetics and formatting go in this other file.
+Next week, we'll introduce databases in SQL, structured query language.
+And we'll introduce an M here, because the acronym that's
+in vogue for quite some time now is MVC, though there
+are alternatives to this mental model.
+And that just means there are three different types
+of things you should be thinking about when building an application.
+But today we're going to focus on these two, controller and view.
+And up until now, we've pretty much been doing entirely controller stuff
+when writing code.
+So the motivation, ultimately, will be to get to the point of building,
+essentially, this, the freshman intramural sports website,
+which I was the first one to make back in 1996 as a sophomore,
+maybe 1997 as a junior, after having only taken CS50 and a follow
+on class CS51.
+And even though this is horrifying to see nowadays, underneath the hood
+was a whole bunch of controller logic and a whole bunch of model code,
+even though I don't think MVC existed as an acronym
+back then till humans figured out the pattern.
+But what it did have via the menu up here was a whole lot of functionality.
+So no longer did you have to walk across campus filling out a form
+and drop off a sheet of paper in an RA or a proctor's dorm room.
+You can instead just go on the web, which all of us surely take for granted
+today, fill out a web-based form.
+And then at the time, the proctor in charge of froshims
+would get an email confirming who had actually registered for a sport.
+And eventually we added CSV files, comma separated values
+files like spreadsheets, in which the data was saved.
+Then we had this really cool tournament bracket
+thing, which was all very dynamic and impressive I'm sure at the time.
+But we'll focus on really just the fundamentals today.
+So how do we get there?
+Well, let me go ahead and open up CS50 IDE
+and propose that if we want to make a website, a web
+application really, and by application I mean something that does have logic.
+By website, it's generally something that's static.
+So that's what a web app is.
+It's something that changes based on who's using it, when you're using it,
+and what you're doing with it.
+Let me go ahead, and in the most annoying tedious way possible,
+implement a web application using Python.
+So I'm going to go ahead and open a file called serve.pie to serve up a website.
+And I'm going to go ahead and import some library code.
+So from HTTP server, import something called base HTTP request handler
+and also something called HTTP server.
+And then I'm going to go ahead and use this keyword class, which
+is HTTP server, server request, request handler, base HTTP request handler--
+handler.
+Then I'm going to go ahead and in here implement
+a function called def do_GET, which implies--
+this is a function in Python that should be called anytime a user
+visits my web server via GET, the type of verb
+that we've talked about in the context of the web.
+So suppose that my only goal here is to make
+a web-based application that for the moment just says hello world.
+We know how to do this with HTML, but with HTML that's just a file.
+Let's write a program that not just prints hello world,
+but generates a web page containing hello world.
+So the way I might do this is this.
+I can literally say self, because self refers to the web server in this case.
+And I can go ahead and send a response code of 200,
+just kind of presumptuously assuming everything's
+going to be OK in a moment.
+Then I'm going to go ahead and send a header, which
+recall, we've discussed briefly in the past,
+whereby this header is going to be content type and its value
+is going to be text HTML, which is a clue to browser
+that it's receiving not a GIF, or JPEG, or something else,
+but an actual HTML page.
+And then I'm going to go ahead and say that's it for the headers.
+I'm going to call function called end headers.
+And then lastly, I'm going to use Python code
+to dynamically generate my website.
+Now, what does the website have to have?
+Just hello world at the end of the day, but there's a whole bunch of html
+we need to do in order to get to that point.
+So I'm going to use a function called wfile write in order
+to write out the following.
+Let me go ahead and write out doctype--
+whoops, exclamation point doctype HTML.
+Then let me go ahead and do the same thing, wfile.write, let me go ahead
+and copy paste this moving forward, which, of course, is always
+a bad instinct.
+Then let me go ahead and output HTML lang equals en for English.
+And notice I'm using single quotes inside my double quotes
+so that Python doesn't get confused.
+Then let me go ahead and output head tag here.
+Then what comes after the head tag typically?
+Yeah, so usually title lately.
+So title will be like hello title, close the title tag.
+And now we're going to go ahead and what comes after title?
+Close head, I think, if I'm doing this right.
+And then after this we probably have a body.
+And then oh my God, this is the worst way to build a website.
+But let's go ahead and now say something simple like hello world.
+And now let's go in here and say something like body.
+And then finally, let's go ahead and end the page and say slash HTML.
+Done.
+OK, and now I actually need to configure the server to listen on a port.
+So let me go ahead and define a TCP port of 8080, which we've been using.
+Let me go ahead and define the server's address as being,
+oh 0.0.0.0, which is what the IDE uses by default, like a lot of servers.
+And then let me create the web server, HTTP server.
+server_address HTTP server request handler, httpd.serve_forever.
+OK, that is how you make a web-based application that
+dynamically generates HTML.
+In retrospect, I really regret typing all of that out because the whole point
+now is to throw this code away.
+Like, this is why frameworks exist.
+If my goal quite simply at hand is to write Python code that dynamically
+generates HTML, then calling lots of functions like write,
+which is essentially the equivalent of print in this context, is just tedious.
+I got bored writing it, I accomplished so terribly
+little at the end of the day.
+And so frameworks exist to make our lives easier.
+But what's going on underneath the hood is exactly this.
+When we start using this framework called Flask,
+it's just going to make all of this automated for us.
+It's going to make it easier to specify the IP address that you
+want to run your web server on, it's going
+to make it easier to specify the port number that you want your server
+to be listening on, and it's going to make it easier
+to respond to get requests because Flask will
+take care of the implementation of some function like this one called do get.
+So all of this is there underneath the hood,
+but the flask framework gives us essentially an abstraction
+on top of that.
+So what do I actually mean by that?
+If we want to distill this now into a simpler web application,
+first let's go ahead and do this.
+Let me go ahead and open up a terminal window and let me go into my code
+here and go ahead and run Python of serve.py.
+And you'll see nothing seems to be happening just yet.
+So I'm going to go to cs50 IDE web server
+to open up a tab containing the web server that I'm now running.
+And you'll see that's it.
+That's the only thing I accomplished right now.
+It's not dynamic to be sure, but there is code and Python code
+there with which I could actually do something dynamically.
+But let's instead do this now with Flask, this framework
+that seems to make our lives easier.
+I'm going to go ahead and make a program called application.py, which
+is just a convention.
+I could call it anything I want.
+And I'm going to go ahead and say the following.
+Let's first go ahead and import this framework called Flask.
+And specifically import capitalized flask, which
+is the name of the framework itself.
+And then let me preemptively import a couple of functions
+called render template and then this special global variable called request.
+You would only know to do this from reading the documentation.
+But now let me go ahead and say, hey Flask,
+could you please give me a web application?
+And this is copy paste.
+You need this at the top of any Flask application,
+and it just means turn this file--
+application.py-- into a web application.
+Then lastly, I'm going to go ahead and do this.
+I'm going to tell Flask I want to build an app that
+has a route that's listening for slash inside of that virtual envelope.
+And whenever, Flask, you see a request for slash from some user,
+go ahead and call this function which I arbitrarily called index,
+but I could call it foo, or bar, or whatever.
+And what I want you to do is this, return hello world.
+And that's it.
+So all of those other lines I tediously wrote out a moment ago
+are now distilled into just 7 lines, which none of which
+are completely obvious how they work just yet.
+But if you assume that this means give me access to the library,
+turned my file into a web application, and listen now
+for get requests on slash, it kind of makes sense
+and fits into the mental model that we introduced a couple of weeks
+ago with HTML and CSS itself.
+And to run this server, what I'm going to do now in my hello directory, which
+is where a online copy of this is on the course's website,
+I'm going to go ahead and quite simply say Flask run.
+So Flask is not only a framework or code that you have access
+to as free and open source code, but it's also
+a program you can run at the command line that also figures out
+how to turn the server on and just run it forever.
+You're going to see some diagnostic output at first glance, most of which
+you don't have to care about.
+But there will be a few URL that's spit out which
+is based on your own user name.
+Mine today is jharvard 3 just for demonstration purposes.
+And if you click on that URL and then click Open,
+you'll see now this version of the same application doing just this.
+Now, I'm kind of cheating, though.
+Because if I open up Chrome and view my page source, notice that of course
+I'm cheating because all I've done is print out hello world.
+And if I view the source of this page, I'm
+literally only going to say hello world and no actual HTML
+because I literally didn't type out any HTML in my file.
+But it turns out that Flask makes this easy, as well.
+So let me go ahead and stop the server here for just a moment.
+Control-c is your friend, it gets you out
+of whatever program is actually running.
+And let me go ahead and do this.
+Let me go ahead and not just return quote-unquote hello world
+as a hardcoded value.
+Let me go ahead and return the rendering of a template called index.html.
+And so this is a feature of Flask, too.
+If you want to separate your logic--
+your controller-- from your HTML--
+your view-- you literally put the former in application.pi,
+and you put the latter in an HTML file like this.
+And you tell the controller code--
+application.py-- show the user, to render
+for the user the index.html file.
+So where do I put this?
+The convention would be to make a directory called templates.
+And then in that directory, go ahead and put a file called index.html.
+And if I go ahead and open up the file that I already
+created in advance of class here, let me just show you what this looks like.
+And then we'll take a look at it in a browser.
+Here is HTML now with a pretty fancy feature
+that we're about to reveal the utility of.
+What jumps out at you is new in this file?
+AUDIENCE: Two curly braces on the name.
+DAVID MALAN: Yeah, two curly braces.
+And somehow or other that used to be saying world,
+but in my final version of this I actually
+am hinting at some more powerful capabilities.
+This kind of looks like a placeholder, if you will.
+Maybe someone's actual name.
+And here's where the power of something like Flask comes into play.
+It makes it really easy to do something like this.
+So let me go ahead and actually turn this
+into something a little more interesting.
+Let me go into application.py.
+And before I actually render this HTML file, let me go ahead and do this.
+Let me go ahead and declare a variable called name.
+And let me go ahead and check the incoming request,
+the inside of that virtual envelope.
+Let me check its arguments or any of the HTTP parameters that were passed in
+and try to get something called name like this.
+Let me go ahead and save that and then notice this.
+Render template takes multiple arguments.
+The first one should be the name of the template you want to render.
+But if you want to pass in data dynamically,
+you can use named parameters in Python.
+Recall from last week that you can do things like this, x equals y,
+and z equals w.
+You can pass in the names of the things you want to pass in
+and their corresponding values.
+So if I want to pass in a name variable and set it equal to the name variable
+that I just defined, watch what we can do here.
+Let me go back to my console.
+Let me go ahead and rerun in my hello directory, which is available online,
+Flask run.
+And now let me go over to this where it previously said hello world.
+Let me now, just like with our Google example a couple of weeks
+ago, type in not q equals cats, which is what we did last time,
+but maybe name equals David to simulate a get request.
+And if I did everything right, when I hit Enter I now see this dynamically.
+And if I change this now from David to, say, Veronica, of course,
+this is going to dynamically output this.
+Can someone now try to break my code?
+Propose an input that I should try to see if I messed up somewhere.
+AUDIENCE: No entry.
+DAVID MALAN: OK, no input.
+Or what's that?
+say again?
+Name equals name, I like that one, too.
+So let's try that, name equals name.
+So OK, I mean it's kind of maybe like a grammatical bug or semantic bug,
+but not really a code bug per se.
+That's just user error.
+But what if I just get rid of it?
+OK, that just looks a little stupid.
+So an aesthetic bug, but we should probably start handling this.
+What if I get rid of name altogether?
+Interesting.
+It seems that my final version actually has some built in functionality.
+So where is that coming from?
+Well, what if I did this?
+It turns out that I could say something like this.
+If not name, then go ahead and set name equal to world
+would be one way of doing it.
+Or I could actually use the function here.
+Turns out that this get function can take a default value.
+And so if you read the documentation, you'll
+see that the second value you provide will be
+used if the user hasn't provided one.
+And so indeed, if I reload now and see nothing, I get world.
+And if I instead do name equals, say, Brian, I get that dynamic output.
+And so when I say web application, this is just a hint of what I mean.
+This is dynamically generated content.
+It's not hardcoded, because it's actually coming from the user.
+So when Google implements its slash search web application,
+this is the kind of thing they're doing.
+It's way more involved, of course.
+They're searching a database, looking for cats, and dogs, or whatever
+it is you're searching for and then generating HTML.
+But notice with just this simple approach
+can we ourselves generate any HTML we want dynamically.
+Because all we have to do in that template
+called index.html is exactly this.
+Hello, comma, and then a placeholder where
+name is the variable you're passing in.
+And so to be clear, it doesn't have to be called name.
+I could do something like foo, which would be a little nonsensical.
+But if I do that, the variable I plug in needs to be called foo here.
+And so there's a one to one correspondence
+between the things before the equal signs and where they get
+plugged in down here.
+Any questions, then, on this simple example, but building block?
+Yeah?
+AUDIENCE: [INAUDIBLE] dynamically generated.
+DAVID MALAN: Sure.
+By dynamically generated, I mean I have not written in advance by typing it out
+manually a web page that says hello David, or hello Brian,
+or hello Veronica.
+Those pages are all generated dynamically based on user input.
+I wrote most of those pages.
+I wrote everything up into and after the comma, but then-- sorry,
+up to the comma, but then the names are dynamically added.
+Good question.
+Other questions?
+All right.
+So why don't we rewind to 1997 or so and see
+if we can't build a more dynamic web application that actually allow
+students to register for something that's
+a little more compelling than just providing their name?
+So let me go ahead and open up froshim0, which is the first larger scale
+application we have here today.
+And notice that I have a few files.
+So already things are going to escalate quickly whereby we're
+going to suddenly introduce multiple templates,
+but we'll do this in order to solve a problem.
+But first let me go ahead and open up application,py,
+which just like your main function in C is kind of the entry point now
+to a web-based application.
+So notice that-- let's start like this.
+Let me go ahead and delete that and start from the beginning here.
+Let's go ahead and do this.
+In froshim0, we have this default route of slash,
+and notice that it's going to render index.html.
+So when you start to read someone else's code,
+you kind of follow these breadcrumbs.
+So let me go ahead and open the same folder, froshim0.
+Let me go into--
+let me go ahead, rather, let's do this from scratch, actually.
+Let's do this.
+Index.html, and let me do the familiar doctype HTML.
+Then let me go ahead and do an HTML tag here, it finishes my thought for me.
+The head tag here, the title tag here, froshim0 will be the title here.
+Let me go ahead and create a body.
+And now for this web page, I want to go ahead
+and have a few things via which the user can actually register for froshim.
+So let me go ahead and have just some title text
+here, like register for froshims like I did back in the day.
+Then let me go ahead and start a form tag.
+And then in here, what information might a student
+want to provide when registering for something like a sports team?
+AUDIENCE: Name.
+DAVID MALAN: OK, the student's name.
+So input type equals text.
+The name of this input probably shouldn't be something generic like q,
+it should probably be more descriptive like name.
+So its a little weird looking, but name equals name.
+And we'll go ahead and do this.
+And if we really want to be fancy, we can
+do like a placeholder text of name just to in light gray text show the user
+what we want.
+And then back in the day, minimally the students
+registering for sports had to provide their dorm,
+so the building in which they lived.
+So in HTML, we've got a bunch of input types.
+We've got text boxes, turns out there's text areas which are even bigger,
+check boxes, radio buttons, what's most apt perhaps for choosing your dorm?
+AUDIENCE: Dropdown list.
+DAVID MALAN: Like a dropdown list, otherwise called a menu.
+But which tag?
+AUDIENCE: Container?
+DAVID MALAN: Not a container, a little more precise than that.
+With what tag can you generate a dropdown list
+if you've done this before in HTML?
+AUDIENCE: Select.
+DAVID MALAN: Select.
+So it's not perfectly clearly named, but it's, indeed, a select menu by name.
+And so I can actually do this.
+Select, and the name of this field will be dorm, for instance.
+And then inside of this I'm going to go ahead and have a few options.
+So one option might be let's say Apley Court, which
+is one of the buildings in which freshmen live.
+There might be another one called Canoday,
+and then there's going to be bunches of others.
+And then notice, too, if you've never used a select menu, which you wouldn't
+have really had occasion to yet unless you've done this
+before, these options also have to have values, which for my purposes
+are going to be exactly the same.
+But whereas what's between the tags is what the human sees,
+it's what's between these quotes as the value of value
+that the computer actually sees.
+So these are the words that populate the dropdown menu,
+these are the values that actually gets stuffed into the virtual envelope
+that the student him or herself actually see.
+So let me go ahead and save this.
+Let me go ahead and now open up my console.
+And I'm going to borrow a little code just so
+that we can do this from scratch here.
+So let me go ahead and grab from froshim0 my application.py file
+and go into my workspace.
+So let me go ahead now and run Flask run wherein
+I have this application.py file.
+I'm going to see the URL at which my code now lives.
+And if I open this up, I'm going to see an internal server error.
+So intended at some point because internal server error, recall,
+was one of the more arcane status codes, 500, that you probably
+have not seen unless you're visiting a website where something has actually
+going wrong.
+So how do I begin to figure out what has gone wrong now
+that I'm actually writing code and not just writing hard coded HTML?
+Well, all of the clues are going to be found
+here inside of the console window.
+So when you're running Flask you are running a full fledged web server.
+You are listening via TCP/IP for incoming requests from users.
+And so what you'll see in the console is not just the diagnostic output
+when you first start Flask, but you're going to see all of the error messages
+that might actually happen thereafter.
+And this is a little cryptic looking.
+Frankly, it's overwhelming to see this text at first glance.
+But whereas in Clang and in C it generally
+helps to look at the very top, sometimes the error messages
+here in this context of Flask are kind of toward the bottom.
+And here we have template not found.
+Template because it can't find index.html.
+And that's just because I screwed up.
+So let me actually exit Flask by typing control-c.
+And if I type ls in my directory, notice that I haven't quite
+practiced what I've preached.
+It's perhaps a little subtle, but I haven't organized myself
+in the right way.
+What have I done wrong?
+Yeah?
+AUDIENCE: Didn't make a templates directory.
+DAVID MALAN: Yeah, it's kind of a silly mistake.
+I didn't make a templates directory.
+So you can do this in a few different ways.
+By the folder icon up here, you can create a new folder
+by right clicking or control clicking.
+Or in Linux you can do make dir for make directory.
+And so I can do make dir templates enter.
+And then I can move my index.html file, which
+I wrote a moment ago, into my templates directory by just using mv for move.
+And now I can go ahead and run Flask run, cross my fingers,
+go back to the browser tab and click reload,
+and voila, now I actually see the form.
+So have these kinds of instincts.
+I didn't actually intend that, but I forgot to create the folder.
+I got this server error.
+You don't have to just stare at the browser, which
+is not going to have much information.
+But if you look at the console, the terminal window
+that you have control over will you see those clang-like error messages.
+So here we have a basic HTML form.
+It's not complete because I didn't bother typing out
+all of the dorm names, but I do have an input of type text
+as well as the Select menu.
+And I'm also kind of missing a key detail, it seems.
+What should I probably add to this form?
+AUDIENCE: Where you're selecting.
+DAVID MALAN: Well, I'm selecting--
+I could be selecting dorm, so I could clean this up in a couple ways.
+I also am missing a Submit button.
+Now, it turns out you could probably hit Enter
+and it would actually be submitted by default. But we can fix this.
+So let me go into index.html.
+Let me shrink this tab just a little bit and let me fix both of these things.
+So let me go ahead and open up this latest version, which
+is now in that templates directory.
+Let me go ahead and at the bottom here do an input type equals submit,
+the value of which is going to be a register, just to make
+clear to the human what's going on.
+Let me go ahead and go back to my form, click reload.
+And nothing's happened just yet.
+And that's because by default when you make changes to some of your files,
+Flask is not going to notice.
+And we'll fix this actually in the coming problem
+set by adding more code and a little more
+complexity to automate this for you.
+But when in doubt, just control-c to quit flask.
+Then go ahead and rerun flask, that will reload all
+of your HTML, all of your Python code.
+And if I now go back here and click reload, we'll see the Register button.
+So there should never be any surprises.
+And if there are, just try to get to the diagnosis thereof.
+This is also a little unclear, too, to what this menu is.
+So it turns out that if you actually create a bogus option like this
+that has no value and say something like dorm, you can save this.
+Let's go ahead and restart Flask and reload the page here.
+You'll see that now you see dorm.
+Unfortunately, this is kind of stupid because now dorm
+is where you can literally live apparently,
+which doesn't quite feel right.
+So there's HTML fixes for this too.
+I can actually go in here and technically say disabled,
+so you can't actually select that.
+Now if I rerun Flask and reload, now it still shows it there.
+But because I already selected Apley Court, you can see it in gray.
+And we can actually be a little more specific,
+if you want to not only disable it, but select it by default and then go ahead
+and reload the page here, now you'll see hopefully
+what's familiar on most websites.
+It says dorm, but it's disabled.
+And even though the silly checkmark is there,
+you're forced to choose an actual dorm.
+So these are minor aesthetics, but the kind of things
+you now have control over.
+So what's going to happen?
+I haven't actually specified where this form should
+go when I actually register because I'm missing some key details on the form
+tag.
+And we haven't done this in a couple of weeks.
+But when we were playfully reimplementing Google,
+what else did we add to the form tag?
+What attributes?
+
+Anyone remember?
+Yeah.
+Oh, say again?
+Action, which means what?
+AUDIENCE: What to do.
+DAVID MALAN: What to do.
+All right, so the action we want to take,
+even though this is not necessarily perfectly well named,
+is where do you want to submit the form to?
+And I could actually submit this in a few different ways.
+I'm going to go ahead and say, you know what,
+submit it to a reasonably named route slash register.
+Google, for instance, might have code that instead says
+to submit their form to slash search.
+But we're not searching for something, we're registering.
+So the name of the route is entirely up to us.
+And via what method should we submit this information?
+What are our two options?
+AUDIENCE: Get or post.
+DAVID MALAN: Get or post.
+Get tends to be the default if you don't mention in links.
+Why might you want to use post instead?
+AUDIENCE: You want it to go to a database in order to do something.
+DAVID MALAN: Yeah, you want it to go to a database and do something.
+And the right verb to use there is to post information
+as opposed to getting information.
+And even more specifically when it comes to privacy, when you use post,
+the information doesn't end up in the user's URL,
+and therefore doesn't end up in his or her history,
+and therefore doesn't end up in a place that siblings, or roommates, or anyone
+else can actually see just by poking around.
+So we'll, indeed, go ahead, because this is my name, and dorm, and maybe
+my phone number, and email, and credit card number,
+and the like on some other website.
+I'm going to use post for that instead.
+So the catch here is that this week, we now
+have the ability to implement slash register.
+Two weeks ago we could just send people to Google's slash search,
+but now we have the ability to make our own routes.
+But how many routes have we defined thus far in application.py?
+Just the one.
+And again, some new syntax with the funky at sign and the route
+keyword here.
+But let me actually just intuitively guess
+that if I go ahead and say app.route slash register,
+I bet I could implement a second route and tell the web server
+to listen in two places, on slash as well as on slash register.
+But if I wanted to listen specifically on post, it actually has to be this.
+Methods equals quote-unquote post.
+Because by default just for convenience, it assumes only gets.
+So I need to add that.
+You'd only know that from the documentation.
+Now I'm going to go ahead and define a function.
+This is slightly an annoying feature of Flask.
+You have to give the function a name even though you'll probably
+never reference it anywhere.
+So I'm going to go ahead and just reasonably call this register.
+And now I have a to do.
+What am I going to want to do when the user clicks that Submit button?
+AUDIENCE: Store it.
+DAVID MALAN: I want to store it somewhere.
+So I probably want to store it.
+But what might I want to do first before he or she is actually
+allowed to register, even though they've clicked that submit form?
+Maybe confirm their information, right?
+Because if a lazy user comes in, or if a user accidentally clicks the button
+or hits enter, they might actually submit nothing-- no name, no dorm.
+That's not useful information.
+It could just be perceived as spam.
+So we probably want to ask some kind of logical question
+like if they didn't give us a name or they didn't give us a dorm,
+yell at the user in some way.
+So I'm going to go ahead and do that.
+So let me actually express this in Python,
+kind of like we did last week with some error checking.
+So recall that the user's name can be gotten from an HTTP parameter.
+From the request.args get, and then ask for the name parameter.
+Their dorm, meanwhile, can come from request.args get dorm.
+And again, this request.args is something
+we gave ourselves access to up here when we said, hey Flask,
+please give me access to the user's request, that virtual envelope.
+Request.arg refers to all of the HTTP parameters in the URL.
+And get is just a function or a method built into that special Flask
+feature that allows us to get a specific parameter like name,
+or dorm, or anything else.
+And recall that in Python, what's kind of nice is that you can say pretty
+English-like, if not name or not--
+not dorm, let's go ahead and reprimand the user.
+For instance, we could say failure because he or she did not actually
+cooperate as we intended.
+Otherwise if they did cooperate, I'm going
+to go ahead and render template success.
+And we'll flesh this out in just a moment.
+So I've got two scenarios handled.
+If they didn't cooperate or if they did, render quote-unquote failure
+or a full fledged HTML template.
+So now that I've implemented slash register and I'm listening for a route
+by a post, let's go ahead and reload the page for good measure.
+Type in my name.
+Not going to tell you my dorm, but you're going to notice as much.
+OK, so now the server has noticed that I didn't actually cooperate and provide
+both a name and a dorm.
+And so it's returning to me just quote-unquote failure.
+So that's good because now I know, all right, I did something wrong clearly.
+Let me go back let me go ahead and maybe do Canaday here.
+And now let me go ahead and register.
+But, but, but, but, this I know in advance is going to err.
+Why?
+I don't have a success.html.
+OK, so let's preemptively address this.
+Let me actually go in here to my templates directory.
+I'm going to go ahead and create a new file called success.html.
+Let me go into the templates to save it there.
+And you know what, success can be a pretty simple page.
+And let me open my index page, let me copy that, let me go into success,
+let me paste this.
+Let me get rid of all of that body and just say success, for instance.
+So let me now go ahead and go restart Flask,
+because I've made a new template.
+Let me go ahead and reload the form just for good measure.
+Let me go ahead and give you my name this time, and OK, I live in Canaday,
+and register.
+And what did I do wrong this time?
+So it turns out you can't do it this way, obviously.
+[LAUGHTER] So when you're actually submitting information to
+via a form via get, Flask very cleverly puts
+that information in a different place.
+Because by definition, as I claim very correctly earlier,
+in request.args are all of the key value pairs
+that are in the URL that are coming in from the user's request.
+But when you submit via post, for reasons I wish were now otherwise
+you actually have to access those values via a different variable.
+So instead of using request.args, you have to use request.form both here
+and here to make clear-- and this is horribly named for exactly the reasons
+that I think I'm tripping over here--
+because they actually are both coming in via a form, via a get or post.
+But Flask puts get arguments in args and puts post arguments in form.
+Thereby leading clearly to potential confusion.
+But if I go ahead now and load this version of the site and I keep hoping,
+I'm going to go ahead now run Flask, restart this page, type in David,
+give you my dorm, and register and successfully register for froshim.
+See how easy web programming is?
+So hopefully now we can at least focus on the structure of what I've done
+and now begin to improve it.
+Because notice that I kind of did not practice what I preached a moment ago.
+What habit did I violate when I whipped up success.html?
+How did I get to that point?
+Yeah?
+AUDIENCE: Copy and paste.
+DAVID MALAN: Yeah, I copied and paste.
+Which again, usually in programming not the right thing to do.
+Might get the job done super fast, but it's probably the wrong instinct,
+because it's going to get harder and harder to maintain.
+Now, why is that?
+You've played HTML a couple of weeks ago.
+And recall from that problem set when you had to make a home page,
+you probably found yourselves copying and pasting across your two,
+or three, or four pages because you wanted them to kind of look the same.
+And therefore it made sense for them to have some commonalities.
+But in HTML alone, there was no way to say use the same layout for my whole
+site-- use the same color scheme, the same fonts, the same CSS--
+but just change the body of the page for each individual page.
+And so some of you very rightly on discourse and beyond like
+posted questions asking, could you do this?
+And you can't really in HTML alone.
+But now that we have access to Python, an actual programming language
+they can do things logically, now you can actually
+start to factor those things out, too.
+And notice in this file, success.html, as well as in index.html,
+what are some of the commonalities, suffice it to say?
+The form is only in one of them, but what
+else is obviously redundant everywhere?
+The title, the head of the page more generally, the doctype at the very top,
+the body tag alone.
+And you could imagine there'd be even more details like from your own home
+pages that you wanted to be the same across multiple pages.
+So let's actually take a look at a refactorization of this code,
+the one I did write in advance in froshim0,
+and you'll see why it actually makes sense
+to have not only multiple files, each of which
+represents one of your routes or your views,
+but also to have this file called layout.html.
+In Flask, when building a web application that you know
+is going to follow a certain structural pattern, commonalities
+across all of your pages, you can actually do this.
+So in this file here, layout.html is a whole bunch of hardcoded HTML.
+And it's pretty simple.
+It's got my HTML tag, head tag, title tag, body tag, and a few other things,
+but that's the general structure of the page.
+And notice it has this funky syntax in the middle.
+In white here is what's called the block.
+This is now Flask specific.
+Just like Flask supports those two curly braces on the left
+and the right that says put a value here, flask
+also supports this other notation, curly brace percent and percent curly
+brace that actually allows you to put placeholders for actual chunks of HTML.
+Not just variables, but actual chunks of HTML.
+And so this layout you can think of as a mold or a template
+literally that all of your other pages are going to be structured based on,
+but they are going to vary in this line and only this line.
+And we're going to put as much HTML between the body tags as we want,
+the open and the close tag.
+This just indicates to Flask this is the stuff that should be changing.
+So if I now look at my index.html, which recall earlier
+contained my form index.html.
+Notice that here's the form, and I finished it earlier.
+I went ahead and typed out all of the freshman dorms,
+not just the two of them.
+And you'll see that the file starts almost the same
+and then continues with more stuff.
+But notice what's missing from index.html this time.
+No doctype.
+No HTML tag.
+No head tag, no title tag, no body tag.
+All of the common stuff has been factored out.
+But there's some funky new syntax that, again, is Flask specific.
+This first line is the link between this file and the layout.
+That first line says, hey Flask, this index.html file
+extends the definition of layout.html.
+So it says grab that template and plug myself in there.
+What do you want to plug in?
+The same syntax here.
+When you actually put stuff between the block tag
+and the end block tag, which is down below, that's when you say to Flask,
+go ahead and take this stuff and plug it into the placeholder in the layout.
+So meanwhile, the success page also now can be a little more sophisticated.
+If I go into success, it's not very complicated.
+And honestly, it doesn't even look like HTML
+anymore because we're using these more dynamic features.
+But this just says, hey Flask, use the same layout
+so the page is structured exactly the same.
+But for the body, go ahead and plug in this value instead.
+So indeed, when you go ahead and load this success message,
+you see this message here-- not just success,
+I expounded here and said you are registered.
+Well, not really, that's because there's no database yet.
+But that's going to generate a full fledged HTML page.
+And what about failure?
+Before I was just cheating and just saying return failure,
+quote-unquote, no HTML at all.
+The failure page is going to be almost the same,
+but now I can actually provide some descriptive text.
+This body just says you must provide your name and dorm,
+thereby admonishing the user for not having cooperated properly.
+So now your home pages, if you kind of extrapolate from this,
+could have the exact same layout, aesthetics and menu bars,
+and all of that fanciness, but only the content would have to change.
+And you can get out of the business of just copying and pasting.
+So there, too, to your question earlier about dynamism,
+the dynamism doesn't have to just come from the user.
+It can also come from the construction dynamically of a website
+based on multiple pages.
+So at the end of the day, the browser has
+no idea that Python exists, has no familiarity with Flask.
+All the browser still sees is an HTML page.
+But what Flask and in turn Python are doing
+for us is constructing that page dynamically, following
+the rules from two weeks to go in HTML and CSS,
+and following last week's rules on how Python works.
+Questions?
+AUDIENCE: So even though [INAUDIBLE]
+
+DAVID MALAN: It's not.
+Good question.
+This new syntax, the double curly braces that we saw earlier and now
+the curly brace percent signs, this is actually yet another language
+called jinja--
+J-I-N-J-A-- which is a templating language.
+And there's dozens of these things in the world, people just come up
+with their own syntax.
+And the reason for the funky syntax is that the author of jinja
+presumably could think of no other language that
+uses like a curly brace and a percent sign
+and a percent sign and a curly brace.
+And so therefore they decided, you know what,
+I'm going to use this syntax because it will look distinct from HTML,
+and CSS, and Python So that frameworks like Flask
+don't confuse it with something else.
+AUDIENCE: So do you have to upload that into [INAUDIBLE],, or is it automatic?
+DAVID MALAN: It's automatically supported.
+So Flask by default supports jinja.
+It could have come up with its own templating syntax.
+But whoever invented Flask decided I don't need to reinvent this wheel,
+someone else already made a templating language
+that gives me this functionality.
+So I'm going to combine our works into one.
+And I didn't call it a language a moment ago,
+because frankly, HTML, CSS, Python, JavaScript--
+I mean, we're already running out of fingers here.
+But jinja is, indeed, yet another language.
+It's just not a programming language per se,
+though it will have some control flow features
+that we'll see in a little bit.
+It's just much more limited than Python.
+Other questions?
+AUDIENCE: Is it possible to combine the success and failure HTML
+files into one just for better design?
+DAVID MALAN: Good question.
+Could you combine the success and the failure pages into one?
+Short answer, yes.
+And let me not show it yet, because it'll get a little more complicated.
+But yes, I could imagine passing a variable in that's a Boolean--
+true or false--
+into just one of these templates.
+And maybe I call the new template result.html.
+I can actually then have an if condition in my template that
+says if the result is true, say this.
+Else if the result is false, say this other thing.
+So you could do that, yes.
+Generally, though, it's probably cleaner to keep messaging separate
+if they functionally do something else.
+After all, these files are pretty small anyway.
+Yeah?
+AUDIENCE: Just for question, what does the user
+see if they were to open up the debugging console on Chrome
+and look at at it, what do they see as the HTML that shows up?
+DAVID MALAN: Really good question.
+What does the user see?
+We can answer this by just literally opening Chrome and opening
+View Page Source or the Inspector.
+This is what the browser sees.
+So when I claimed earlier that the browser has no idea of Python or Flask
+are even involved, that is, indeed, true.
+Because what browser's receiving at the end of the day
+is just this, the dynamically constructed HTML.
+Good question.
+Yeah?
+AUDIENCE: [INAUDIBLE] can you also put Python code in there,
+or is it just HTML?
+Good question.
+We'll see more of this in just a little bit.
+The question is, can you between the curly brace and percent signs
+put actual Python code?
+You can put stuff that looks like Python code, but not all of Python.
+And so more of that in a bit.
+AUDIENCE: Is there a function call or something like that?
+DAVID MALAN: Only certain functions.
+Templating languages, long story short, are sandbox so
+that they are not as expressive as a real programming language.
+Otherwise you are vulnerable to potential hacks.
+You want their functionality to be very limited because they're
+only about displaying data, not about thinking or doing logic generally.
+More on that in a bit.
+All right, that was a lot all at once.
+Let's take a five minute break here, turn on some music, come back,
+and we'll make this act better.
+All right, we are back.
+So to recap where froshim0 left off, we now
+have this structure which is pretty much conventional.
+Any web application we make here on out is
+going to follow this pattern of having an application.py entry point where
+all the interesting stuff starts, a layout.html file
+in your templates directory that lays out
+the whole site and any commonalities, and then one or more other pages that
+actually represent your individual views that correspond to one or more
+of your actual routes.
+So now we're at the point of a stable baseline,
+but had we dived in right to this, it would perhaps not make as much sense
+as to why we did this various factorization.
+So let's now improve this.
+Because of course, if you look at success.html,
+it just claims you are registered.
+Well, not really.
+Because in application.py, did we do anything with the user's information?
+No.
+We just checked, did they give us information?
+And if so, we claim success.
+Else if they missed their name and/or their dorm, we just claimed failure.
+So what might a data structure be in Python
+where we could store registrants?
+We don't have databases yet, we don't have SQL yet.
+That's a week ahead.
+AUDIENCE: Array.
+DAVID MALAN: Yeah, we could use an array, otherwise known
+as a list in Python.
+So let me propose how we might do this.
+Let me actually open up froshims1 for our second iteration of this program.
+And in application.py, notice this.
+At the very top of the file, not only am I
+creating my application using the same line as before,
+and I've commented things this time in advance using the hash symbol,
+notice that I claim that on line 6 and 7 here, here
+is an empty list for all of the students who have registered.
+This way we can keep the information around.
+And we only did this briefly last time, but does anyone
+remember how you add something to a list in Python?
+By what function?
+Append.
+So if you have .append at the end of a list's name,
+you can add something to it.
+So where is that going to go?
+Well, here is my route for slash, implies, again, get by default.
+That's the default route that a human might get,
+and they are going to see index.html, which contains that form.
+If I scroll down now, you'll see that I have a register route just like before.
+But I'm doing one additional step.
+Which is the new line here, to be clear?
+Yeah, 26.
+So I could implement this in any number of ways.
+But the key detail is that I reference the list name-- students,
+but I could have called it anything.
+.append, as someone proposed, is how you add something to the end of the list.
+And then I can add anything I want.
+To keep it simple, I'm just going to add a string.
+And I'm going to keep it super simple and just
+say the string is so-and-so from such and such a dorm.
+So David from Matthews Hall, or Brian from wherever.
+And so here we have placeholders using f strings in Python.
+So this has nothing to do with Flask, this
+has nothing to do with jinja or anything we just talked about.
+This has to do everything with last week's syntax in Python alone.
+So this appends to that list this name from this dorm.
+So let's go ahead now and try this version out.
+If I go into my source sub and directory for today's code into froshims1
+and run flask run, we'll see a URL that I can now visit.
+Let me go ahead and open that for froshims1.
+Notice that I have that complete dropdown now.
+Let me go ahead and say David, but I'm not going to tell you my dorm
+yet and try to register.
+Now I see a more friendly message, not just failure.
+And that's because of my new and improved template.
+OK, I'll go ahead and be David, and I'll be from Matthews here.
+Let me go ahead and register and voila.
+Now we see David from Matthews has registered.
+And it seems to be all of a sudden in the form of a new bulleted list.
+But where did that actually come from?
+Well, I don't know.
+Let me try this again.
+Let me go back to slash, which is the route that gives me the form.
+Let me go ahead and type in not David this time, but say, Brian.
+And Brian, which dorm are you in?
+AUDIENCE: Pennypacker.
+DAVID MALAN: Pennypacker.
+So let me choose this from the menu instead and click Register.
+And now we see Brian from Pennypacker.
+So somehow the application is changing state,
+and notice the URL that we're at is called slash registrants.
+So that seems to be a third route this time that apparently is not interactive
+per se, it just spits out the list of registered students.
+So let's just put the proverbial engineering hat on.
+If we go about implementing this slash registrants route,
+logically what must that code be doing in verbal pseudocode, if you will?
+AUDIENCE: A for loop?
+DAVID MALAN: Like a for loop, iterating over what?
+AUDIENCE: In the list that saves all the registrants.
+DAVID MALAN: Yeah.
+Iterating over the list of students which
+contains all of those registrants.
+And the template, meanwhile, probably has like an LI tag for list item
+and a UL tag for unordered list, which gives me the bulleted list.
+So let's take a look at that.
+So how do we follow these breadcrumbs?
+Well, if I scroll up in application.py, we'll
+see a route called slash registrants.
+And you'll see that all it does apparently
+is it returns a template called registered.html,
+where registered.html is probably a template that is generating that list.
+But there's something different this time.
+I'm passing in an argument.
+And we saw this earlier.
+When I wanted to pass in name equals David or name equals Brian,
+I just grabbed that from a variable.
+This time I'm not doing request.args, I'm not doing request.form.
+Because what is students?
+
+Where did this come from?
+That's the list from higher up.
+Recall that we have this global variable at the top of the program, students,
+which is initialized to an empty list.
+But recall that we keep appending to it in my register route.
+So I can go ahead and say, you know what?
+Go ahead and pass into register.html a template-- or rather, a list--
+called students whose value is exactly that.
+And again, it's stupid looking that you have the same word on the left
+and the right of the variable name.
+You could do this differently.
+Again, you could say foo, you could say x, or y, or anything.
+But frankly, it tends to make most sense, just pass
+in the same name as the variable that you care about so that the template can
+see exactly that.
+So what's the next breadcrumb?
+If I want to understand exactly what is happening,
+what file should I open up next perhaps?
+Probably register.html.
+So let's go in there.
+It's in my templates directory by definition,
+and you'll see, indeed, a failure message which allows me to error check.
+Index, which contains the form; layout, which contains the overall structure;
+and finally, registered.html.
+And now we can answer the question that you asked earlier about Python code
+in the template.
+So this one looks more advanced than before,
+but notice it follows a pattern.
+Register.html extends that same layout.
+So it borrows from that same mold, so it looks the same.
+The body of this page, though, is just this snippet of HTML.
+Give me an unordered list, open and closed, and this
+is what you can do now with jinja.
+Again, it's almost identical to Python, so you
+don't have to worry about thinking about learning yet another language.
+It's just a subset of Python essentially.
+So if I want to output in the list of all of the students,
+I use my jinja syntax here, my template syntax with curly brace percent.
+And I say for student and students.
+Just like in Python, that induces an iteration over that list.
+And then what do I want to output?
+Well, we can borrow our curly braces from our name example
+and just do list item, plug in the name of the student, close list item.
+And then endfor.
+So this is the one stupid thing with the templates.
+Whereas in Python proper, recall that you can just
+say for student in students, you have a colon
+and then indentation handles everything.
+The problem with that in the world of HTML
+is that browsers recall ignore all whitespace,
+like whitespace has no special significance, but in Python it does.
+So the way people solve this is you literally,
+if a little weirdly, say endfor--
+one word, no space.
+And that's it.
+And indentation helps you read something like this.
+So what is the HTML I'm getting back?
+I can actually look at this.
+Let me go ahead and view page source in Chrome,
+and you'll see it's not quite as pretty as might be ideal
+because there's a lot of whitespace which comes from those templates
+from my having pretty printed those, as well.
+But this is syntactically correct, and I'm dynamically putting
+this part inside of this layout.
+Any questions, then, on this?
+AUDIENCE: So if we restart the server, whatever's stored
+in the list, that goes away, right?
+DAVID MALAN: Good question.
+Let's kill Flask with control-c.
+Let's rerun the server.
+And let me go back to my registrants route and reload.
+And sadly, yes, this is not the best way to register students for a sport.
+Because if the server ever goes offline, loses power, you hit control-c,
+you obviously, indeed, lose everyone.
+And notice, too, even though we've generally
+frowned upon using global variables, which this students list indeed
+is, why did I define it up here in line 7 and not,
+for instance, in my register route here?
+Because indeed, I'm appending to the list here.
+But I very deliberately did not declare the list there.
+Yeah?
+AUDIENCE: You're using it in other parts.
+DAVID MALAN: I'm using it elsewhere in my other routes, the registrants route.
+And also even more to the point, if I declared a list here,
+it becomes by definition a local variable.
+Which means as soon as this function exits,
+now I've just thrown away those students who register immediately not
+even after a control-c.
+So this was a better approach to do it, but it's not
+what I did way back in my day.
+I actually did something that was a little fancier.
+So at the time, I didn't really know-- at least in,
+what, 1997-- anything about databases.
+I don't think I even knew about CSV files just yet, or at least
+how to create them dynamically.
+So I instead took this approach.
+Let me go into froshims2, and it has noticed the same templates as before.
+And indeed, I pretty much copied and pasted for this second example.
+But in application.py, notice this fanciness.
+So here I have almost the same thing up top in terms of Flask,
+but I'm also using this OS library, more on that in a bit.
+But what about line 2?
+It's subtle, but I rattled this acronym off I think just once weeks ago, SMTP.
+Does anyone know what that stands for?
+AUDIENCE: Simple mail transfer protocol?
+DAVID MALAN: Yeah, simple mail transfer protocol-- email, that is.
+So Python comes with built in functionality
+via which you can send emails, and this is exactly what I
+did when I first made this website.
+Didn't know anything about databases, I didn't know anything
+about saving things to files just yet, I was still learning.
+But I didn't realize, hm, I could use programming
+to send an email to the proctor or the RA who was overseeing the sports
+program so that they could just save it in a folder
+and know who had registered.
+It's not super user friendly, but it at least
+got the job done because they were then able to track everything.
+So in this program, notice that I have my route for my form.
+And I have this register route but a few new lines of code.
+And you would only know how to do this by reading the documentation.
+But in this case here, notice what I'm doing in my register route.
+I'm first getting the user's name and their email this time and their dorm.
+Then I'm error checking.
+If they didn't give me a name, or their email, or the dorm,
+render failure.html to apprise them as much.
+Then go ahead and do these lines of code.
+And this is more of a mouthful, and you would only, again,
+know this from the documentation.
+But it turns out if you read the documentation
+for this SMTP lib or library, you can use lines of code like this as follows.
+You can tell the library what server to use for sending email.
+And it turns out if you read Gmail's documentation,
+you can use smtp.gmail.com to automatically send e-mails not using
+the web UI, but using code.
+587 is the TCP port that they use.
+So it's not 80, it's not 443, it's 587 by convention.
+Starttls, if you read the documentation, says turn on encryption.
+So the email is encrypted between you and Gmail.
+Then go ahead and log in with a certain username and password.
+I created an account in advance called jharvard@cs50.net, and my password
+is in my IDE's environment.
+I stored it elsewhere so that it's not visible on screen,
+otherwise people could send emails as John.
+Then I go ahead and call literally a function called send mail.
+And if you read the documentation, this one
+takes as argument who you want to send email to,
+the contents of the email that you want to send,
+and the message that you actually want to send here.
+Or rather, this is the from address, the to address,
+and the actual message that you want to send.
+After that, you just go ahead and render template and assume success.
+I could add more error checking, like I should probably
+check if anything went wrong here, but I'm keeping it simple.
+But these new lines that are highlighted actually send an email.
+So let's try this.
+Let me go into froshims2 and let me go ahead and do Flask run.
+Let me go ahead and open up the page here, slash.
+And notice I do, indeed, have a second field for text now.
+So this will be David, and this will be--
+let's see, how about let's go ahead and just register not myself,
+since it's not my email account, but John Harvard who we claim's
+email is cs50.net, jharvard thereat.
+And he lives in say, Weld.
+Let's go ahead and click Register.
+All right, it's taking a little longer this time,
+but it was doing a little more work sending an email.
+So now let's try to go to gmail.com, open this up.
+Ooh.
+In my inbox, you are registered.
+If I open this up, notice jharvard@cs50.net
+has sent me an email by a BC seed, at least keep part of the information
+private.
+And it just says in the body of the message if I move the cursor,
+you are registered.
+So I did a little more back in 1997, but I
+included like the user's name, and their email address, and their dorm,
+and maybe their phone number or whatnot, and the sports they were interested in.
+But the idea is exactly that.
+You can send any information you want just by now using code.
+You could not do that with HTML or with CSS alone.
+Any questions, then, on this?
+Yeah?
+AUDIENCE: Last week when we wrote code in Python we had to like
+say if name equals the function to like execute that.
+How come in this we're not doing that?
+DAVID MALAN: That was all in JavaScript.
+So that allusion to if name equals, and then you assign it to a function,
+I think you're referring to our JavaScript examples, no?
+OK.
+So we'll actually come back to that in a little bit
+where we reintroduce a bit of JavaScript,
+which actually gives us some more functionality reminiscent
+of those examples.
+Other question?
+AUDIENCE: What email address did you send that email from,
+and don't you need to enter like a password to make sure
+that no one just randomly sends email?
+DAVID MALAN: Yeah, it's a really good question.
+So via what email address did I send that, and to whom was it sent?
+So again, this is the from address, this is the to address,
+and this is now the message.
+And just because I only have one email account open, I had John send himself
+an email in this case.
+Theoretically if I were running the freshmen intramural sports program,
+I could try to do this and change this from address to be myself.
+The catch is that Gmail actually has protections in place so that if you've
+logged in as jharvard with his password, then
+the email, no matter what you specify as the from address,
+is actually going to be overridden to be from John Harvard.
+However, this does speak to the potential insecurity of email.
+If you don't use Gmail but you use a third party
+service that is not so rigorous with its error checking,
+it is incredibly easy to fake emails from one person to another.
+I mean, look through your spam folder sometime.
+Most of those people who send you those spams don't exist.
+Like, the email addresses and/or the names are fake.
+And yet they might appear to actually be from a sibling of yours, a family
+member, or a friend, even though those humans did not send e-mails.
+And that's because some spammer has written code
+like this in Python or some other language,
+but has overridden these fields, but used a server that's not Gmail
+that doesn't enforce these policies.
+Other questions?
+Fun fact, also in 1995, I learned how to send--
+or how to change the from address on an email.
+And turns out at Harvard there's this entity called the ad
+board who doesn't like doing this.
+So don't do that.
+Sometimes there's human defenses in place for this, not just technological.
+Thankfully, my friend whom I faked an email from did not--
+it worked out OK.
+All right.
+You have now great power, don't use it for evil.
+All right, so let's go ahead now and do another example, but that takes this
+a further step, adding, finally some persistence of information.
+Let's go ahead into froshims3 now and open up application.py.
+So recall that we can use CSV files-- comma separated value files--
+to create the illusion of like spreadsheets,
+but now we're actually going to create them ourselves.
+The code for this is a little more involved,
+and the only thing I've changed now really is the register method.
+So in version one of this code, I saved it in a global list just in memory.
+That was not good because it gets thrown away too easily.
+Version two of this we just sent an email
+to the proctor who runs the program.
+That was a little better, because at least they can then save the email.
+Version three, we're going to use a very lightweight database called
+the CSV file that saves it to my hard drive permanently.
+So even when the server stops, the data is still there.
+So in Python, how does this work?
+Well, notice that I've improved my register route this time as follows.
+If the user did not give me their name or dorm,
+then I go ahead and render a failure.
+That's pretty much the same logic as before,
+but I didn't bother declaring the variables this time,
+I just called the functions directly.
+Here's a new line of code that might be reminiscent of some of your past file
+I/O code.
+In line 16 here, I'm telling Python to go ahead and open a file called
+registered.csv quote-unquote a.
+So we've seen R, we've seen W for read and write.
+Anyone recall what a is, or no?
+AUDIENCE: Append.
+DAVID MALAN: It happens to mean append, which means just
+add a row to the file, which is nice.
+Because if there's already students registered, when a new one registers
+we just want to append to the bottom of the file.
+Quote-unquote a is supported by Python with this open function.
+That gives me back a reference or like a pointer to file,
+even though Python does not have pointers.
+Then this is the new feature.
+And here, too, you'd only know this from having seen an example
+or you reading the documentation.
+You can use the CSV library, which we'll see as imported up above.
+And you can ask for a writer, a piece of code that writes out-- that is,
+creates--
+CSV files.
+And specifically, you want to write to this file.
+That library-- the CSV library-- comes with a function
+called write row, which does what it says.
+If you pass it in a comma separated list of fields
+that you want to represent your first column, your second column,
+and your third column, it will handle the writing for you
+so you don't have to get into the weeds of file I/O
+like you did several problem sets ago.
+Notice the subtlety.
+You do need to have these second pair of parentheses,
+because technically what you're giving it is a tuple.
+We talked very briefly about that last week,
+which is just like an x comma y pair, or latitude comma longitude.
+Same idea here.
+First column, second column, and so forth is a so-called tuple.
+Then I close the file, then I render the template.
+So what does this actually do for me?
+Well, let me go into my folder froshims3 here.
+And notice register.csv at the moment is empty.
+This is a CSV file.
+Nothing's going on inside of that.
+There's no one registered yet.
+But let me go ahead, then, and go into froshims3, run Flask run.
+Let me go ahead and load this up.
+And you'll see the same kind of form, but also a new link.
+Notice that no one's registered yet if I click on that link.
+But if I go into here and register David from Matthews and click Register,
+now it claims I am registered really.
+Let me click this link and notice that it's very small on the screen,
+but slash registered is where this is going to lead
+me, which is just where I was before.
+You see that now David from Matthews registered.
+Let me go back to the form itself.
+Let's register, say, Brian from Pennypacker.
+Click Register.
+He, too, is apparently registered.
+Let's click that link.
+Brian from Pennypacker.
+All right, so where is this data going?
+Let me go back to the IDE, close my registered CSV file,
+because it's probably changed and open it up.
+And voila, indeed, it's prompting me to reload it.
+There is the file.
+And notice David comma Matthews, Brian comma Pennypacker, all of those rows
+were written out for me.
+So now I actually have a database.
+And even though it's kind of a simple database, you know what I can do?
+Let me go ahead and right click or control click on it in the IDE,
+download it into my Downloads folder.
+And then if I actually open this thing, if I
+have Excel installed or Apple Numbers, which
+is the first time I've ever used it, let me go ahead and open that file.
+Opening register.csv.
+And voila, here now is a file.
+And Numbers is formatting it in kind of a funky way,
+but it is showing rows and columns.
+Those of you who are more familiar with Excel we can do that, too.
+Let me go down here.
+Let me go into my Downloads folder.
+Control click or right click here, and this time open it with Microsoft Excel.
+And if you've seen Excel before, we'll probably see a very similar UI.
+Because anytime Excel or Numbers--
+OK, first time I've used Excel.
+So that, too, will open up some rows and columns, as well.
+So CSV files are just very lightweight spreadsheets.
+But what's cool about them is that you can create them so easily.
+You just have to put commas in there.
+Now, as an aside, can you contrive a user's input
+that could potentially break a CSV file?
+What could a human type in that could potentially break your own CSV files?
+A comma, right?
+If it's like David Mayland comma junior, or something like that.
+Or anything with weird punctuation.
+This is why you use libraries.
+That CSV library in this code, which we're
+importing at the very top of this version 3 of the code,
+is actually handling all of that complexity for us.
+When the library encounters David Mayland comma junior if that's
+the user's input, it will then additionally
+put quotes around my whole name, thereby making sure
+that my comma is inside quotes and not, therefore,
+confused with the special comma that demarcates the start of other columns.
+So again, that's why you don't reinvent the wheel,
+because corner cases like that arise.
+Well, what about slash registered, which is this list that's
+generating an unordered list?
+Let's see how that works.
+If I scroll down to this code, notice that it's not
+just a simple matter of grabbing a global variable,
+because there is no global variable anymore.
+Now I have to read it from that CSV file.
+So here's three new lines of code that work as follows.
+I'm going to go ahead and open this file, register.csv, in Read mode
+this time, not append.
+I'm going to go ahead now and say hey Python, use the CSV reader--
+which is the opposite of writer--
+on that file.
+And then, hey Python, go ahead and turn that whole reader into a list.
+So you'd only know this from reading the documentation.
+It turns out this is the recommendation.
+If you want to take a reader and just read the whole thing into memory
+at once and convert it to a Python list, you literally just pass it
+to this list function.
+That gives me a list I'm going to call students,
+and then I can do my same code as before.
+For good measure, I should probably do what
+I did last time, which is file.close to close the file, as well, just
+to make sure it's closed the next time it's opened.
+But I can actually simplify this, and you'll see more of these examples
+online.
+It's actually more conventional in Python not to do this,
+but instead to change your code as follows.
+To not bother closing it explicitly, to instead use a keyword called with
+to instead put the variable name back there and indent everything underneath.
+Doesn't matter for our purposes which one you do.
+The first one was correct.
+The second one is correct.
+This is just more conventional, if only because it handles
+the closing of the file for you.
+So if you see this online, that's all that's happening there.
+But it's just like in C doing fopen and fclose, or in this case open and close
+like I had a moment ago.
+Any questions, then?
+AUDIENCE: How would you handle duplicates?
+DAVID MALAN: How would I duplicates?
+good question.
+So haven't handled duplicates here at all, and David from Matthews
+could register again and again.
+But logically what might I do?
+Well, it probably belongs here in my register route.
+I probably want to do more error checking than just these two lines.
+Because what I probably want to do to see if David from Matthews
+is already registered is open the CSV file,
+iterate over its lines looking for David and for Matthews on the same line
+and then show a failure to the user if he or she is
+trying to register for a second time.
+I've not made it easy with this code, and frankly that's
+going to be so much easier next week with SQL.
+SQL, this other language for databases, will
+make it easy to search data that has already been saved.
+CSV files do not make this easy.
+It's doable, but you have to write more lines of code.
+So more on that to come.
+Other questions?
+
+All right, so let's skip ahead to one final example,
+froshim6, which we'll do something a little more for us here.
+So if I go ahead into froshim6, notice that if I
+do Flask run, and go back to the website here, and reload the screen,
+and I go ahead and give you my name, but no, I'm not going to give you my dorm,
+we have this feature.
+It's ugly again, but where did we see this kind of functionality
+when the user does not cooperate?
+
+Or how did I implement this, apparently?
+AUDIENCE: JavaScript?
+DAVID MALAN: Yeah, JavaScript.
+So it turns out that with Python, you can obviously
+validate the user's input on the server by just checking what's
+in request.args or request.form and then yell at the user success or failure
+accordingly.
+But you can also use JavaScript-- and honestly, we did this two weeks ago,
+so we just seem to be solving the same problems again.
+So how do you think about this?
+Should I be checking for the user's name and dorm in JavaScript?
+Should I be checking for the user's name and dorm on the server?
+
+I mean, mixed messages now.
+AUDIENCE: Whatever's fastest.
+DAVID MALAN: Whatever fastest.
+That's a pretty good heuristic to use, what's fastest.
+And we can make it prettier by using Bootstrap or some library
+to give you like a colorful box, or red error text or something like that.
+So which probably is faster, Python or JavaScript?
+AUDIENCE: JavaScript.
+DAVID MALAN: JavaScript.
+Why, is JavaScript just a better, faster language?
+AUDIENCE: You're not creating it [INAUDIBLE]
+DAVID MALAN: Say again?
+AUDIENCE: You're not creating it on a new server,
+so it's all happening on the same--
+DAVID MALAN: That's why, yeah.
+We don't have to get into the religious debate of which language
+is better or faster, but where they're running is certainly important.
+JavaScript is running, recall, by definition, in the browser.
+It is sent as JavaScript code to the browser
+which then executes it client side.
+Python by definition today is doing everything server side.
+And indeed, the browser doesn't even know
+Python is involved, because all it gets is the HTML code that results.
+So OK, that seems to be an argument for not
+doing all of the new work we did today with if not name, if not dorm,
+and all of that, and just use JavaScript.
+But the problem is that if you get a little sloppy or a little clever
+and only implement your error checking client side.
+Because as you say, it's faster, and frankly once I make it prettier,
+it's just going to be more interactive and more seamless.
+The problem is you can't and should not trust users.
+Suppose that I'm a malicious user and I just
+want to inject some bogus data into your website, or I want to spam you,
+or subscribe 1,000 freshmen who don't actually exist, or just
+generally create problems for you.
+Well, you might think, well, that's OK, I
+have some defenses in place, and JavaScript code,
+and this adversary is going to get very quick feedback, very pretty
+feedback that they've not provided these various fields.
+But honestly, you can't trust anything ever coming from the human.
+If I open up Chrome's developer tools, and I
+go to this down here to the dot dot dot menu, and I go to Settings,
+and I go down here, there.
+That's all it takes to disable all of your hard work.
+He or she can just open up their browser--
+Chrome or something else--
+turn off JavaScript.
+So now when I actually submit this form, there's
+going to be no on-submit checking, no on-click handling.
+All of that is disabled.
+So if I go ahead and click Register, I at least
+still, in this version of froshims, have server side checking, as well.
+So this might be a little frustrating, but it's kind of the reality.
+It is perfectly fine to use JavaScript code
+and use client side code to give the user a better experience-- a.k.a.
+UX, user experience.
+But you can't cut corners and not implement
+the same kind of logic server side because you
+need to defend against this.
+Otherwise bogus data is going to end up in your database,
+things are going to go wrong.
+Never, ever, ever trust the user.
+Any questions?
+AUDIENCE: Can you do the same via CSS?
+DAVID MALAN: Can you do the same with CSS?
+AUDIENCE: Yes, can you [INAUDIBLE] JavaScript [INAUDIBLE]??
+DAVID MALAN: Not with CSS alone.
+You can use CSS to make the error messages far prettier, yes,
+but not logically enough with CSS alone.
+And in fact, just to give you a sense now how you can make things prettier
+since I keep alluding to better design skills than the ones I'm showing here.
+If we go to Bootstrap, this very popular, free, and open source
+library for CSS, it actually has some interactive features, as well.
+And if I go under components in the documentation and I scroll down
+and I go to forms, you'll see, one, notice
+that these forms are already way prettier than the ones
+I've been making, right?
+It's like black text, and gray text, and small text.
+It just looks nicer and cleaner.
+But it's relatively easy to do this.
+And indeed, for the next problems that you'll
+be welcome to copy and paste some of this sample code and HTML,
+use Bootstrap CSS just to make your forms prettier.
+But what it can really do if I go to the sub menu over here,
+notice that there's this validation section in Bootstrap.
+And other libraries have this, too.
+And you'll want to read the actual documentation.
+But if I just scroll down for a while, here's a sample form in Bootstrap.
+It already looks a little prettier than anything I've made in just raw HTML.
+But notice if I don't cooperate, you can do really cool validation of forms
+with green and red text if the user does or doesn't
+cooperate by using a mix of CSS, but with some JavaScript code.
+And so what Bootstrap does for you is it actually
+automates some of the process of that JavaScript code
+that we saw two weeks ago and just used now.
+But it doesn't just pop up a message for the user,
+it actually gives them more immediate feedback.
+And almost any popular web site you visit these days gives you
+this more immediate proximal input.
+Generally you don't see some simple error message popping up,
+even though that's easier to do.
+Any questions?
+All right, so where did that logic come from?
+So let me go into, for instance, my template
+file now for the form in froshim6--
+again, the last of these examples--
+and you'll notice that I did this.
+If I scroll through this file, you'll see the same HTML
+as we've been using for some time.
+But notice at the bottom of the page that I draw some inspiration
+from two weeks back when we looked at HTML, and CSS, and JavaScript.
+So just as a quick refresher, notice how this is working.
+This line of code says in JavaScript check
+the document using the query selector, which lets you select anything
+in the web page looking for a form.
+When that form is submitted, call the following anonymous function.
+If the document query selector finds an input that does not have a value--
+and I say not because of the exclamation point here--
+then yell at the user with this, you must provide your name
+and return false.
+Else if the user did not provide a value for the select menu-- a.k.a. the dorm--
+go ahead and alert them that they must provide the dorm,
+otherwise return true.
+And just to be clear and to recall from two weeks ago,
+what am I returning false?
+What does that effect have logically?
+
+Yeah, say again?
+What was that?
+I heard a whisper here.
+No?
+Yeah, it prevents submission of the form.
+The default behavior of a form is it wants to be submitted.
+That's why they exist.
+But if you return false in JavaScript, it
+will short circuit that and prevent that default behavior,
+thereby stopping the user from submitting the form at all.
+So let's take one step back now, there's now so much going on in this one file
+alone.
+In this sixth and final example, notice that we
+have application.py, which is the entry point, the so-called controller
+of this web application.
+It has a route which very simply for slash looks like this.
+When the user gets slash, this template is simply returned.
+What is in that index.html template?
+Well, it contains a partial HTML file.
+It contains this HTML.
+But it does not contain the doctype, the HTML tag, head tag, the body tag,
+the title tag, and all of that.
+It only contains the stuff that should go inside of the body tag.
+Because this file is using a bit of jinja,
+which is the templating language that Flask uses.
+You can just think of it as Flask, that's fine.
+It uses some HTML here, but it also in the bottom of the file uses JavaScript.
+And so just as before when we've looked at the source of the page, what
+I'm going to see in the browser on this forms page is no jinja,
+no Python, nothing related to Flask.
+Just a fully formed HTML page that also now contains
+some of that client side code.
+And so I have this mixture now of several different language,
+but each of which solves a very distinct problem.
+Yeah?
+AUDIENCE: So I think it was a week ago or two weeks ago when
+we were working on JavaScript and CSS, you
+were saying that it's preferable to split languages, not
+mix them in the same document.
+Right now we are mixing multiple languages.
+DAVID MALAN: Really good observation.
+So a couple of weeks ago I really preached the separation of concerns,
+and therefore separation of files.
+And that's why we introduced a .css file,
+we also briefly showed examples of a .js file.
+The short answer is as your applications get more complex,
+life starts to get messy.
+And the team and I were actually talking about this
+earlier as to how to present some of these examples,
+because what you are seeing in my design decision here is a tension.
+So that tension here is as follows.
+It is not necessarily the best practice to just have your logical JavaScript
+code comingled with your HTML.
+It makes it harder to collaborate with someone else.
+If one of you is really good at design and wants to work on the HTML and CSS,
+the other person really wants to do the JavaScript code, kind of hard
+to do that when they're both in the same file.
+So we could factor this out.
+I could change this line, just to be super clear, to be this.
+Instead of putting my actual code in the file, I could do something like this.
+The source of this shall be form.js, and that is just it.
+And then I have a separate file maybe my colleague works in as follows.
+But at some point the thoughts that go through my head
+are, it's only like 10 lines of code and I just
+have to create a second file now, and that second file
+is going to be maybe in a different folder as my template.
+And you know, it feels like this is just overengineering a solution
+to the problem.
+However, once it's 20 lines, 100 lines, now OK, now it's feeling messy.
+Somewhere there's this inflection point.
+And this is where reasonable people will disagree, and I might argue one way,
+you might argue the other way.
+And honestly, both of us are probably right.
+And so this just speaks to the web's development over time.
+And there's fancier frameworks now. and if we tie things earlier
+into the question about CS50 beyond, an opportunity after this class that
+looks more closely at web programming, there
+are even fancier frameworks nowadays than Flask and than Bootstrap
+that if tried to solve this problem.
+React is one of the most popular ones developed by Facebook,
+now open source and used by so many people
+around the world that actually addresses this issue.
+And it allows you to separate your HTML from your CSS
+from your JavaScript in different parts of the file but still in the same file.
+And that was their particular solution.
+And View and Angular, there are so many different solutions to these problems.
+And unfortunately, once we take the training wheels of CS50 off,
+this is what's ahead of you.
+The world is messy.
+And the reason there are so many darn languages and frameworks is
+because people like you have these instincts and think,
+this could be done better.
+And thus do we iterate and have new and new technologies.
+But this is the kind of stuff-- and honestly, this
+is the kind of silliness that changes over time.
+The fundamentals of HTTP, and client side code,
+and JavaScript code, those fundamentals are invariant
+even as the implementation details change.
+So the short answer is, could this be better?
+Probably.
+Could it be much better?
+I don't know.
+It really now becomes more of a debate among developers.
+Good question.
+All right, so let's now use some of these basic building
+blocks to make a final set of examples that demonstrates
+a feature with which most of us are pretty familiar reminiscent of what we
+did two weeks ago with Google Search.
+At the time we searched for cats.
+Today we'll keep it a little simpler and a little less graphical
+and just search for words.
+Because you'll recall from our speller problem set,
+you implemented a spell checker with 140,000 plus English words.
+That's a pretty juicy dataset to search over,
+and you're probably all familiar with autocomplete these days.
+There's hardly a website these days that when you start typing it
+doesn't try to finish your thought for you.
+Google, Facebook, any a number of other sites.
+So autocomplete, how does that work?
+Well, let me propose the following mental model.
+If you do have some data set like a big list of words,
+or a big list of Facebook friends, or a big list of whatever,
+you might store that server side because it's a lot, a lot of data.
+And in fact, next week you might store in a big database.
+But for today we'll just store it in a file
+like we did for the speller piece set.
+But if you want to create an interactive experience
+for the human, what language are you're probably
+going to want to use so that he or she gets immediate feedback?
+Probably JavaScript, right?
+That's the whole principle.
+Client side code is just going to execute faster because there's
+no internet between you and the code.
+But with Python, you have access to files.
+And yet with JavaScript code you have closer access to the user,
+so there's these tensions.
+So how could we go about building a site that lets a human via form search
+across that file for words?
+Well, let's start as follows.
+So in word 0 we have the following.
+Large, which is just a text file borrowed from the speller problem set,
+140,000 words, one poor line therein.
+I'm not even going to double click and open it
+because it's so darn big it'll take a few seconds to open.
+In application.py we have probably the entry point to this application,
+and in templates we have just three templates this time.
+So just when you're reading someone else's code for the first time,
+where should our entry point be?
+Where should we start looking to understand what's going on?
+
+Maybe application.py.
+Or honestly, you know what?
+If you want to see what something does, run it.
+No harm in doing that.
+So lets run Flask run.
+Make this a little bit bigger.
+Let me open up the URL here, open, and I see a very simple form
+asking me for a query.
+Let me go ahead and search for a and click Search.
+And after a moment, OK.
+This is a lot of words, but apparently these
+are all the English words that our dictionary knows
+about that start with the letter a.
+And if I go all the way to the bottom, you'll
+see it stops with az whatever with no B words, in fact.
+Well, let's make sure this actually works and isn't just a trick.
+Let's search for b words.
+OK, so that seems to work, as well.
+And notice I borrowed some inspiration from Google.
+Notice that the route I'm using is called slash search like two weeks ago.
+Does take a cue parameter for query, and b is whatever the human typed in.
+So if I want to search for z the words, enter,
+I should hopefully get back now z words.
+So now unlike two weeks ago, we can implement both the front end
+and the back end for a search engine.
+But our search engine's searching now just for words.
+So let's look at application.py as proposed, which is the entry point,
+and let's see how I'm doing this.
+So this is some code that I borrowed a little bit from last week
+when we quickly implemented the spell checker
+in like 12 or 20 lines of Python code.
+I'm declaring a global variable called words,
+and I capitalized it just to be reminiscent of last time
+and the problem set.
+I'm using this syntax which I alluded to earlier
+is just more conventional or Pythonic.
+Open the large file in Read mode and call the variable file.
+Then here is a for loop via which you can iterate over
+every line in the file, reading one at a time.
+But recall, what does every line in this file end with?
+
+Like a backslash n, and we don't really want those as part of the words.
+That's not part of the English word.
+So R strip, right strip removes any whitespace from the end of the string.
+And that's why I needed to add that extra line.
+So I'm just cleaning up the file or massaging the data
+as you might do with any sort of data based application.
+So then I just seem to have this route that renders the template.
+If I look in index.html, let's follow the bread crumbs.
+Go into index.html.
+OK, not that much going on here.
+Looks like an HTML form, the action of which is slash search,
+just like Google's.
+The method of which is is get just like Google's.
+There's nothing really private about the words I'm searching for here,
+so I don't care.
+There's some fancier features here.
+Notice placeholder is the grayed out text the human sees.
+Auto focus.
+What does this do again?
+This is just a UI feature, better user experience.
+AUDIENCE: Puts the like, right in the text box.
+DAVID MALAN: Yeah, it puts the cursor right in the text box.
+To focus on something in a web page means make it what's
+interacting with the user right now.
+And Mac OS, for instance, highlights it in blue.
+So when you first load the page, the cursoe's
+blinking in the choice of text boxes that you care about most.
+Autocomplete off just disables the browser's version of autocomplete.
+So I don't see past searches, just because the whole point here
+is to implement this ourselves ultimately,
+and then I have my search button.
+This is just jinja stuff from Flask so that I have a layout file.
+Lets follow that breadcrumb.
+Lay out.html, nothing really that interesting going on there.
+If you've ever wondered why we have these in a lot of our demos,
+this cryptic looking line here just makes web sites look better
+on mobile devices.
+Typically by default if you pull up your phone and look at a website,
+if it doesn't have that kind of line, like
+the text is going to be super tiny unless you pinch and zoom.
+By using this line and variations thereof,
+it will increase the default font size a bit
+to make it a little more tolerable on small screen.
+So it's an easy win for users experience.
+OK, I seem to have exhausted all the interesting stuff in these templates.
+Let's look at another and final route.
+Here's my search route, and this is pretty Pythonic.
+This is a mouthful, and will re-implement it
+in a different way in just a moment.
+So I have a search route that listens for get requests on slash search.
+Then this crazy looking line is about as Pythonic as code gets.
+And I'll explain what this is doing and why
+it's conventional as opposed to straightforward at first glance.
+And then I render the template, passing in these words.
+So this one liner on line 17 actually has the effect
+of searching 140,000 words for whatever words
+start with what the user typed in.
+See, this would be a pain in the neck to do.
+In Python you can do it with literally one line.
+A long line, but one line nonetheless.
+Let me make this more clear.
+If I were to search for words in this big file,
+I might do something like this.
+Words is an empty list.
+So this lower case words is all of the words that match,
+that I want to send back to the user.
+So by default I have no idea what to send back.
+But I do know I can do this.
+For word in Words--
+which is the capitalized variable, the constant up at the top
+that has the whole-- or not even constant,
+but the global variable that has all of the words from the file, here
+is a for loop over those.
+I can now say something like this.
+If the current word starts with whatever the user typed in-- well,
+what's the user typing in?
+Well, q equals request.args.get quote-unquote q,
+gives me the user's name, dorm, or in this case Q value for query.
+So if the word that we're currently iterating over starts with q,
+I can go ahead and append to my-- whoops, append to this list that word.
+Would you say you're comfortable with these lines here?
+To recap, give me an empty list in which to store the search results,
+iterate over all possible 140,000 plus words, get--
+and actually, this was stupid.
+I should just put this up here, because I only need to check for that once.
+So store the user's input in a variable called q.
+For each word among the 140,000, check if it starts with the user's input--
+a, b, z, whatever.
+And if so, append it to there.
+So let's temporarily get rid of this and just render the template.
+So notice this gets the job done, but this is very C-like logic.
+It's not wrong, it's perfectly correct.
+But Python is a language that's meant to be
+a little more human readable and a little more elegant,
+if a little more non-obvious.
+So this one line does the exact same thing
+using a feature called a list comprehension, which
+is ironic if you don't quite comprehend how it's working.
+But here's the variable I want to create called Words.
+These square brackets here say give me a list.
+What do you want to put in that list?
+I want to put a word in this list.
+Which word do you want to put in this list?
+The result of inducing this loop and then only putting in this list
+a word if it starts with what the human typed in.
+So it takes some getting used to, but this is just
+a one liner way, a very Pythonic way of expressing those several lines of very
+procedural code into a simple one line.
+Is it better?
+Not if you can't read it.
+But once you get more comfortable with Python,
+yes, it's better because it's less code.
+Yeah?
+AUDIENCE: You said Python uses notation to tell where conditions are.
+How is [INAUDIBLE]?
+DAVID MALAN: Good question.
+In this case of a list comprehension, you can only
+have one line or one condition.
+You can't have multiple lines therein, so I cannot start hitting Enter
+and indenting here.
+It's just not allowed.
+So you would only use this-- and I'm frankly really pushing the limits.
+You should only really use this syntax when it fits on your screen
+or fits on a reasonable person's screen.
+After that you should probably do something a little more expressive.
+Other questions?
+But this is very common to see online.
+So any tutorials, if you ever see this kind of one liner,
+just try to think about it from that approach what it is actually doing.
+OK, so propose from a user experience perspective
+how could this program be better?
+Because this is just our first version.
+So what could be better for the user than this?
+
+What could be better?
+Yeah?
+AUDIENCE: Just going back, can you explain words in caps?
+DAVID MALAN: Oh, sure.
+Words in caps is this global variable I defined up here that stores all 140,000
+plus words.
+That's the really big file called large, the text file.
+Down here I just need a local variable.
+And if it's more clear, I could call it results and then just
+say results equals results.
+That is the subset of words that start with a, or b,
+or whatever the human typed in.
+That's all.
+Good question.
+Yeah?
+AUDIENCE: Why do we change the last time-- why
+did you have to change args to form?
+DAVID MALAN: Why did I have to change my args to--
+AUDIENCE: Forms?
+DAVID MALAN: So earlier today when I didn't understand what was going on,
+you should use request.args for get requests.
+You should use request.form for post requests.
+AUDIENCE: But it's still .get after?
+DAVID MALAN: It's always .get, yes.
+But you change what you're getting things from.
+In an ideal world, it would have been something-- oh, I see what you mean.
+Get in this sense is the verb.
+We humans mean go get something.
+Args in this sense, if they had done get--
+I'm making this up, but this is probably why they did this.
+Because get from get seems weird, whereas get from post is less weird.
+But it's just they called it args and form instead.
+OK, so let's actually improve this, but how?
+What could be better for the user?
+Yeah?
+AUDIENCE: They could search a word, not just the first letter.
+DAVID MALAN: OK, maybe searching a whole word
+would be good, not just the first letter.
+What else could we do?
+AUDIENCE: We can create an index list of letters and words?
+DAVID MALAN: OK, we could create an index list.
+So maybe using a hash or some form of inspiration from our problem
+set with Speller and actually use a more sophisticated data structure
+to get these answers more quickly.
+And let me propose, too, the goal here is to actually implement autocomplete,
+and this was not auto complete.
+This was like old school search.
+Type in a query, hit Enter, get a page of results.
+What if we want to do something more immediate?
+So let me actually propose this.
+Before looking at the code, let me go into words 1.
+Let me go ahead and run Flask in that directory.
+Let me go ahead and reload the form here,
+and now notice no Submit button because there's not going
+to be any actual submissions here.
+But I'm going to go ahead and hit the letter A, and ooh, that's kind of cool.
+Let me delete that, goes away.
+B, there's all the B words.
+Let me go B-A words, B-A-B words, B-A-B-A words.
+This is how autocomplete works.
+So it seems to be responding immediately to my input, so something's happening.
+But I'm not actually submitting the form.
+So I'm kind of using it now, it seems client side JavaScript
+to maybe talk to the server?
+Let's infer.
+So here, too, this should be your instinct.
+Whenever you're trying to understand how someone's website works,
+if you want to learn from it or mimic certain fundamental functionality,
+go ahead and inspect the page.
+And you don't probably care too much about the HTML yet.
+Where is this data coming from?
+Let me click on the Network tab, which we looked at a couple of weeks ago.
+Let me go ahead and restart this and let me clear this and start
+from the beginning of the story.
+Let's see what happens when I type the letter A. Interesting.
+There is a web request.
+So if I zoom in down here, notice that my browser actually searched
+for Q equals A, the human's input.
+Let me go ahead and-- it keeps searching because I'm
+using keyboard shortcuts here.
+But let me go ahead and click this row.
+Notice what happened.
+I made a request to slash search question mark q equals a via get.
+Let's see what the response was.
+The response here, if I view the source--
+or rather, if I read the response--
+notice what came back.
+It looks like my server returned to me a fragment of HTML containing hundreds,
+maybe thousands of words starting with A. But notice there's no UL tag,
+there's no head tag, no title, no body, it's just a partial HTML fragment.
+But that's interesting, because I know with Python I can do exactly that.
+I can generate anything I want on the server,
+and then maybe the browser can just plug in those changed the results.
+So let me go ahead and look at the code for this page.
+If I go now to the browser's source code, the view page source,
+you'll see a few new lines.
+So to do this easily, I'm actually using another library.
+This one is called jQuery.
+This was for many years super, super popular.
+It's kind of starting to fall out of vogue,
+but it's still so powerful and so useful.
+And it's used by Bootstrap, the other CSS library we've talked about,
+so it's perfectly reasonable to use it here.
+Notice how I'm including it with the script tag,
+and it's hosted on a third party website so
+that I don't have to save a copy of it myself on my own IDE.
+Then let's look at the code I actually wrote.
+So notice that atop this file is not even a full fledged form,
+it is just the HTML input.
+Because I don't need a full form.
+I don't need an action, I don't need a method,
+because I'm not submitting it anywhere with the human's cooperation.
+I'm going to use my own code.
+So in my script tag here, my JavaScript code, notice what I'm doing.
+This is some code from like two weeks ago.
+I'm going to search the tree that represents this web page.
+And indeed, it is meant to be a tree.
+Recall from that time when we looked at an HTML page,
+there is in memory, thanks to the browser, something treelike--
+a DOM, document object model-- that represents your page.
+Using JavaScript, can we change that page after the fact?
+So what am I going to do?
+I'm going to tell the browser whenever this input hears an event called on key
+up-- so whenever the field has focus-- it's blue in Mac OS--
+and the human hits the key and then let's go,
+and the key goes up, go ahead and call the following anonymous function.
+What do you want that to do?
+Now, this code is a little cryptic, but let
+me walk us through it because it's only three lines.
+This code here is using a special feature--
+dollar sign-- that comes from this library called jQuery.
+More on that in a moment.
+That library, somewhat confusingly named, has a function called get,
+which has nothing to do with Python or the one we just talked about.
+But this has to do with an HTTP get.
+With this line of code, you can tell a browser,
+even after a web page has been loaded, go get me this other URL, please.
+So what URL do you want to get?
+Go ahead and get me from the same server slash search q equals,
+and then what does plus mean in JavaScript if you recall?
+Concatenation.
+So it means just append one string to the other.
+So this is like saying, go ahead and get me
+the URL that ends with slash search, question mark, Q equals A, or Q equals
+B, or Q equals Z. Whatever the human typed and just gets
+slapped onto the end.
+And then that's where we're getting it from.
+Input.value is the user's input, the value thereof.
+And then the last line-- and this is perhaps the fanciest--
+notice that I have an anonymous function.
+In this library called jQuery, there is this function
+called get that gets a URL.
+When the server responds to your request with a virtual envelope of its own,
+this anonymous function gets called and the response envelope
+gets handed to you, so to speak, as a data argument, as a data variable.
+Then what you can you do?
+Document.queryselector UL.
+What is UL?
+It's an unordered list that by default on this page has nothing in it.
+But recall that what the server is sending back is a bunch of LI tags.
+That's great, because I want to put those LI tags right in between here.
+So how do I do that?
+I go into the so-called inner HTML of the UL tag,
+and you might not have seen this before.
+But you can change the contents of an existing tag inside of it
+by using inner HTML and just plop the data in there.
+And so what's happening is this.
+Let me go ahead and open up Chrome's inspector.
+Reload the page so it's empty.
+Let me open up Chrome's inspector.
+Go to elements, as is the default. And notice on this page,
+notice that UL tag is opened and closed with nothing inside of it.
+The moment, though, I search for something, watch what happens.
+If I search for a, all of a sudden--
+ooh, it blinked, it's a little small.
+Now there's a little triangle there.
+What's inside of it?
+All of those LI tags that came from the server.
+So with JavaScript, we have this amazing power now
+to change what's inside of a web page by just asking the server for more data.
+So if you've ever used Facebook, or you've
+used Google Chat, or any websites that's dynamically changing every second,
+every minute and each time you get a message, you can literally,
+if you get a little nosy, open up Chrome's inspector and watch the DOM,
+watch this elements tab.
+And you'll see new stuff popping up every time
+you get a message, or a chat, or any other such notification on the screen.
+Now as an aside, this is a little sloppy to be returning HTML,
+but let's see how it's done.
+Let me go into application.py for words one, which is this example here.
+And in application.py, notice what I'm doing is this.
+Rather than return a whole page of results,
+I'm returning a template called search.html.
+All of the rest of this code is identical to before.
+If I go into my templates and go into search.html, look how terribly simple
+the code is on the server.
+If all you want to do is spit out a bunch of list items,
+this is all you need.
+There's no template.
+Like there's no extends layout because you're not returning a whole web page,
+you're returning a tiny, tiny, tiny fragment of HTML.
+But this is arguably a little sloppy, because there's
+a lot of redundancy in what's coming back.
+If I look at this tag that's coming back from the server,
+what is obviously redundant about all of this information that's coming back?
+And if I look at the Network tab, you really see it under response.
+What's redundant?
+AUDIENCE: You're doing a bunch of calls to the same address and to the same--
+DAVID MALAN: This was just because I hit some, like, zoom in and zoom out,
+so it pretended to make multiple requests.
+So red herring there.
+Focus only on this part here.
+What's redundant about all of the data coming back?
+It's just keeps saying list item, word, close list item.
+List item, word, clothes list item.
+I mean come on, just use a more efficient syntax.
+Just separate things with commas or something lighter weight.
+This is sending way many bytes.
+I mean, look.
+There's thousands of bytes.
+This is kilobytes by definition of information
+that we're sending just to send open bracket,
+LI close bracket again and again.
+This is not very efficient.
+And so the world actually has adopted a different approach,
+and I'm going to show this in words 2 that actually returns something called
+JavaScript Object Notation, which is a more succinct representation of this
+as follows.
+Let me go into words 2, run Flask in there.
+Search for the same kind of thing and then watch
+what happens over the network panel this time.
+When I search for A, immediately get back the same visual result.
+But if I look at this search query, now look what comes back.
+I claim that this is a much more compact representation of the same information.
+It's a little annoying that there's double quotes,
+because those are a little redundant.
+But at least double quotes are a lot more efficient
+than open bracket, LI, closed bracket, and then the opposite at the end.
+So this is what's called JavaScript Object Notation.
+And as this square bracket here and thousands
+of words later the square bracket on the end implies,
+this is a JavaScript array that's being sent back from the server.
+So the only thing that's changed here is as follows.
+In words 2, this example, notice that I don't even
+need to return a template anymore.
+This code is the same as the past two examples.
+This is how I'm searching 140,000 words quickly.
+But if I include now a fancier function from Flask called jsonify--
+which is not really a word.
+But jsonify, that takes any data structure
+you have data in like this list of words, the matches,
+and it turns it into that text based representation with quotes and commas.
+And you don't even have to write a template yourself.
+And indeed, I got rid of search.html.
+The only thing you have to do to give yourself access to this feature
+is import not just render template, and request,
+and Flask, but jsonify, as well, from the Flask library.
+Which is just one more feature.
+Any questions on that before we bring it all together with one final example?
+Yeah?
+AUDIENCE: Can double quotes break that into [INAUDIBLE]??
+DAVID MALAN: Can double quotes break that?
+Good question, great instincts.
+No because the author of jsonify was smart about this.
+And if that author notices a quote like an apostrophe, or like something
+in your own name that has a quote, it will escape it in some way,
+usually with a backslash.
+Good instincts.
+But that's why you probably wouldn't want to write this code yourself
+because then you have to think of all of those corner cases as opposed
+to focusing on the parts you care about.
+All right, so there's one final example.
+And it's perhaps to come full circle here, do we even need the server?
+These 140,000 words right now are in a file called large.
+My web application loads that file into memory and then searches it.
+But who else could search over a big list of files?
+
+Where else could we put this logic?
+The browser, right?
+Browser gives you JavaScript, JavaScript's a language,
+languages can search things.
+So let me try this instead.
+In our words 3 example here, notice that I've got one new file.
+In advance, you know, I took my big text file that just had one word per line
+and I put it into a standard format just because it
+makes my life a little easier.
+And I called it large.json.
+And in there, actually, where if I open up this folder, you'll see large.js,
+which is a second file, this time a JavaScript file,
+in which I've just declared a JavaScript array of all 140,000 words
+for better or for worse.
+I just put them into a slightly different format
+with commas, and quotes, and square brackets,
+and I gave this whole thing a variable name at the very top of the file.
+Now, why is this useful?
+Well, if I go into index.html, notice that there
+is no more application.py or templates for this example whatsoever.
+We've gotten rid of Python entirely, I don't
+know if it's for the better or worse, but we'll now see.
+So in this file, notice we have an input tag as before,
+a placeholder for all of the ULs, but we're also
+now including this large.js file.
+Thereby telling the browser please download all 140,000 words
+and then search them locally.
+How am I going to search it locally?
+I've essentially converted the language I wrote in Python a bit
+ago into JavaScript as follows.
+Here says the browser go get me the input that the user can type into.
+This tells the browser, go ahead and listen for key up.
+Whenever that happens, please call this function
+which has no name, because I want you to just call it immediately,
+I don't need its name.
+This function is defined by these several lines.
+These several lines have to do a bit more work than before.
+Because before the server was doing all the hard work
+sending back all of the data, and we just jammed it into the web page.
+But here I'm going to build up a list a little more manually.
+So I'm going to let a variable called html
+equals quote unquote, because I want to build up the unordered list myself.
+Then if the human, indeed, types something in--
+so if their input is non null, so if they type at least one character,
+do the following.
+This is weird in JavaScript, but when you
+iterate over an array in JavaScript, you use the preposition of not in.
+So for word of words, go ahead and do the following.
+If the current word starts with-- notice the capitalized w-- also
+different from Python, but same idea, just different spelling--
+if the word I'm iterating over starts with whatever the human inputted,
+we found a match.
+Go ahead and append to this HTML variable,
+open bracket LI closed bracket, concatenate the word to it,
+and then close bracket, as well.
+So I'm constructing a variable in the browser's memory
+containing HTML that I want to jam into the DOM ultimately.
+How do I do that.
+Well, at the very last line I say to the document, select the UL tag,
+go inside of its HTML, and change whatever
+is there to this string of HTML, which is presumably 0 or more LI tags
+now based on those search results.
+So now let me go back to words 1--
+rather, let me go back to this example here.
+Let me go ahead and serve this up.
+It's not Flask anymore, so I have to use our server from two weeks ago,
+HTTP server, to serve up HTML.
+Let me go ahead and reload the screen here, open up index.html, and now
+notice we're good to go.
+What do you want to search for?
+A, B, C. And let's open up the Network tab.
+Inspect, Network.
+Let's see what happens every time I search.
+Z, Y, Q, A. Why is there no network traffic now?
+AUDIENCE: There's no network traffic.
+DAVID MALAN: OK, but that's what I said.
+But why is there no network traffic?
+It's not sending any routes, it's not talking to a backend server.
+Why?
+Because all the data I might need is already local.
+So mixed messages here, too.
+Which is better, which is right?
+What's the takeaway?
+How do you think about this?
+Because now, whereas a lot of our programs early on in the semester
+were relatively small even though they didn't feel that way at the time,
+now we have even more design possibilities.
+And the answers are increasingly non-obvious,
+and this is why you as programmers will just
+get more comfortable with conventions, you'll maybe
+practice what you've seen preached first,
+then you'll decide as you might be already saying,
+I don't like that, I'm going to do this some other way.
+So how do you think about which of these several words examples is best?
+Version 0 was let the server do all the work
+and just send back a full new page of results like Google in 1999 did.
+Then version 1, we added a bit of JavaScript
+that used jQuery the library to talk to the server using
+a technique called Ajax--
+asynchronous JavaScript and XML--
+but that just means go get me more data and we returned LI elements.
+Then we decided that's a little sloppy, don't
+seem to send me all these useless tags, just
+send a comma separated list of words.
+That was version 2.
+And then this last version gets rid of all of that
+and just sends all the words to the browser
+and lets it deal with it entirely.
+Who likes which best, 0, 1, 2, or 3?
+What do you think?
+AUDIENCE: So if you aren't supposed to trust the user in case
+they turn off the JavaScript, then their decision of the functionality
+of the website works.
+DAVID MALAN: That's a good trade-off.
+So if the user turns off JavaScript, 3--
+OK, it won't offend anyone--
+3 2, and 1 won't work anymore because JavaScript's disabled.
+Now, do you care about that?
+Maybe not.
+It's a small number of users on the internet who
+are so concerned with this they just turn off JavaScript altogether,
+and the reality is so many websites just break these days without JavaScript.
+That might be a reasonable cost of doing business.
+Other thoughts?
+Yeah?
+AUDIENCE: Is the last version the fastest?
+DAVID MALAN: Is the last version the fastest?
+I don't know, how could we assess that?
+Yeah, I mean, we can literally measure it.
+And honestly, built into Chrome in other tabs that I've not even clicked on
+are a lot of performance tools where you can actually
+monitor how long everything's taking.
+This is called benchmarking more generally,
+and this is what you did essentially in the speller problems
+that even though we wrote the code that timed everything
+and measured everything, to answer that question,
+you could just try timing every one of the examples
+and then decide for yourself which is best, sure.
+Yeah?
+AUDIENCE: The last thing I have with problematic issue
+is like my phone's old, and it doesn't have a lot of memory,
+and I may not have the fastest plan on Earth.
+So you might be charging me more data, you might be slowing my phone down.
+DAVID MALAN: Very reasonable concern.
+Let me go into our dictionary file here and list the size of this.
+That large.js file is 2.2 megabytes, which on mobile devices,
+especially in places where your signal is slow, or your bytes are expensive,
+or you only have intermittent access, I mean,
+that's kind of obnoxious to send two megabytes to the user
+if you can avoid it, especially when you can send only the subset of results,
+a few kilobytes maybe, of matches instead.
+So a very reasonable concern.
+Cost, user experience, performance.
+Other thoughts?
+
+Which is better for people on university and corporate campuses who tend
+to have really good internet access?
+Say again?
+3, OK.
+But what if it's not 140,000 words, but it's
+like a billion pictures of cats that Google indexes?
+Or hundreds or thousands of friends and all of their profile data?
+Like at some point there's this inflection point
+where too much data, right?
+It's not reasonable, it's too much.
+You don't want to just get a copy of your corporate database
+to every one of your users just for them to search more locally.
+So again, these are the non-obvious questions.
+And one of the goals of, frankly, the final project
+if you do something web based, or mobile based, or C based, or anything,
+is all of these questions now boil down to you.
+Like we have no well-defined answers in mind
+as to what your final project should do and how it should do it best.
+But in the weeks ahead, you'll be pre-proposing some project ideas,
+proposing an actual project idea, and then designing and implementing this.
+And you, too, will probably feel this tension
+where the answer is not always obvious, your teaching fellow might not even
+know how to answer your question, because he or she will
+have thoughts of their own.
+But it's ultimately up to you.
+And we're now at the point of a level of coding maturity
+where we're taking the training wheels off and more of the decisions
+are now left to you.
+Let's end here.
+Stick around for one on one questions, and we'll
+see you next week for databases.

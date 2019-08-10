@@ -1,0 +1,2655 @@
+[MUSIC PLAYING]
+
+[MUSIC - FERGIE & Q TIP & GOONROCK, "A LITTLE PARTY NEVER KILLED NOBODY"]
+FERGIE & Q-TIP & GOONROCK: (SINGING) Just one night,
+all we got, just one nigh, all we got, just one night, all we
+got, just one night, all we got.
+A little party never killed nobody.
+So we going to dance until we drop, drop, drop.
+Mm, a little party never killed nobody.
+Right here, right now, is all we got. skeeten-bod-op-bop.
+[MUSIC - FERGIE & Q TIP &
+GOONROCK, "A LITTLE PARTY NEVER KILLED NOBODY"]
+(SINGING) A little party never killed nobody.
+So we're going to dance until we drop.
+Let's go.
+A little party never killed nobody.
+Right here, right now is all we got.
+Oh, a little party never killed nobody.
+So we're going to dance until we drop.
+A little party never killed nobody.
+
+[MUSIC - FERGIE & Q TIP &
+GOONROCK, "A LITTLE PARTY NEVER KILLED NOBODY"]
+MUPPET: [SNORING]
+
+DAVID J. MALAN: All right.
+This is CS50, and this is lecture 8.
+And that was a look at the so-called CS50 hackathon, this annual tradition
+with which we nearly end the semester that will start around 7:00 PM here
+in Cambridge, will then end around 7:00 AM the next day in Cambridge.
+And punctuating the evening will be quite a bit of work
+on final projects, which is the overarching goal of the evening
+to give students, both an academic and a very
+social and collaborative environment in which to tackle
+their final achievements in the course.
+But also, as you gleaned there will be a bit of distraction, a bit of food
+from Felipe's, typically, around 9:00 PM, a little bit of Domino's Pizza
+around 1:00 AM.
+And for those still standing as in the muppet there,
+we'll treat you to breakfast at IHOP if you still have the energy.
+Thereafter, we'll be the so-called CS50 Fair, the climax of everything
+that you've done in CS50.
+And more on that in the weeks to come.
+So without further ado, where have we been these past several weeks?
+Well, recall that, over the past couple of weeks,
+we've been introducing web programming.
+And most recently, did we try to tie together a lot of the topics
+from the past few weeks.
+HTML and CSS and JavaScript, and then Python, and then another framework,
+another piece of software called Flask that
+just made it easier and more possible to build web-based applications.
+And the simplest example of that last week, recall,
+looked a little something like this.
+And this past week with the problems on similarities and survey,
+have you been building your own web-based applications.
+But they haven't quite had all of the pieces
+that you might want to assemble into a web-based app.
+And so today, we'll fill in those final blanks.
+But recall that we've been trying to frame these applications, not
+as one-offs or just tools that you built, but as part
+of a common paradigm or a methodology.
+And indeed, when you're learning computer science and software
+engineering, you start to notice patterns in the software,
+in the code that you're writing.
+And humans tend to adopt these patterns because they save you time.
+And then everyone can speak the same language, so to speak.
+So MVC was the acronym we introduced last week, Model View Controller.
+And that just speaks to this paradigm whereby
+you organized certain type of code in one file, certain types of other code
+and another file.
+So your Python code goes in application.py.
+Your HTML goes in your HTML files, your CSS in your CSS files, and so forth.
+But what we didn't have last week was this thing here, really.
+Model generally refers to your data.
+And while survey, your most recent problem,
+did have data, a CSV file that's arguably a model,
+CSV is not terribly expressive.
+You can pretty much just write rows to a text file, not unlike a spreadsheet.
+But you can't really query it.
+You can't easily insert or delete.
+You pretty much would have to reconstruct the whole file.
+And indeed, that's exactly what I did back in the day.
+The very first web-based application I wrote back in sophomore or junior year
+was the freshman intramural website.
+And all I had available to me, both technologically and conceptually,
+we're CSV files.
+I had no idea what databases were, didn't realize how much easier they
+could make my life.
+So I stored all of the data behind these links here just
+in very simple text files.
+But today, will give you so much more power.
+And especially, if you're coming into the class with an interest
+in applying CS to other fields in medicine or the arts
+or any world in which there's data, particularly,
+in STEM and data science and the like, realize
+that SQL has really become this incredibly powerful language
+with which to solve problems in those and so many domains.
+And ultimately, what your build, this coming week--
+your very last CS50 problem set--
+you have now peaked just about-- will be CD50
+Finance, a web-based application by which you can buy,
+or "buy" and sell stocks.
+And so what you're going to do this coming week is write code
+that implements a web application that resembles this whereby
+your users and yourself will be able to register for an account,
+log into that account.
+You'll be given for free, thanks to us, 10,000 virtual dollars.
+And then you can go ahead and buy and sell stocks via their symbol
+using this application.
+So for instance, if I go ahead and register myself here.
+Let's say, username Malan, password 12345--
+shouldn't have said that.
+Go ahead and register here.
+You'll see that, by default, I get this free $10,000 in virtual cash.
+You know what, I'm going to go ahead and buy myself
+a share of maybe Netflix, whose symbol is NFLX.
+I'm going to go ahead and try to buy one share.
+Voila.
+And now you'll see that, not only do I have less cash left, about $9,600,
+I now own a share of stock.
+And if we reload this throughout the lecture, frankly,
+the price might go a little up or a little down
+because this web application you'll build
+will also talk to an API, an Application Programming Interface--
+so some third-party website that provides you with stock data.
+So you ask it for the current price of a stock.
+It gives you an answer in JSON format, if you
+recall our short discussion of that.
+And you'll integrate it, ultimately, into this interface.
+So this will be the culmination of so many of the ideas
+and the building blocks with which you've experimented.
+But we need a few final pieces today.
+So first and foremost, when I registered for this site, I created an account.
+And indeed, I can go ahead and log out now.
+And if I go ahead and log back in--
+if no one's stolen my password yet, I can see my account and only my account.
+But we haven't yet seen any mechanism in code
+whereby you can implement this notion of logging in, right?
+What is the underlying logic via which a website knows that you are logged in
+or you're not logged in, right?
+Clearly, when I went to this website just a moment ago,
+it prompted me to log in because I was not because I had logged out.
+But how did it know that?
+And now that I am logged in, how does it know that I can click on "quote"
+to get just the stock quote or "buy" just to buy a stock or "sell."
+Why does it not prompt me every time I click a link to log back
+in with my username or password?
+What do you think?
+AUDIENCE: Isn't cookies little files that
+saves the data inside your browser's cache that let it know what's going on.
+DAVID J. MALAN: Yeah, cookies--
+little files that get saved by websites on your computer.
+Now odds are, most everyone here has probably heard in some form,
+cookies-- bad.
+Maybe bad, privacy-invading, yes?
+OK.
+So true.
+But most of the web would not work without them.
+So someone else, what do you understand a cookie to be?
+What is a cookie?
+AUDIENCE: Basically saves your information
+so you don't have to put it in every time.
+DAVID J. MALAN: Yeah.
+It saves your information so you don't have to put it in every time.
+So in simplest form, it's exactly a combination of those answers.
+Whereby, when I log into a website, you could
+imagine that website just remembering my username and my password
+by just saving them in a little file on my Mac or PC
+so that the next time I visit a web page,
+it just automatically sends them for me, so that the human doesn't
+have to type them again and again.
+Now let's find fault with that.
+Feels like that would work, but what's a downside of that naive implementation?
+What do you think instinctively?
+AUDIENCE: The data is just out there?
+DAVID J. MALAN: The data is just out there, right?
+I have people in the office or at home or in a library
+that I might not want to just be able to walk up to that computer
+and just see this little text file planted on my computer.
+Because then they could log in to my account by just digging around.
+So it feels a little invasive.
+Indeed, that's one of the threats of cookies.
+So it turns out cookies or websites tend not to do that, at least,
+if they're implemented well.
+They instead just plant a really big random number on your hard drive
+or in your computer's ram or memory.
+So 1234567-- like, some really big number maybe with letters and numbers
+maybe even some punctuation that uniquely identifies me.
+And thereafter, any time I click a link on that same website,
+after logging in, my browser, thanks to HTTP--
+the language that browsers and servers speak that we discussed a few weeks
+back--
+just magically sends that same big random number
+to the server again and again.
+And so long as the server remembers that that big random number corresponds
+to user name Malan, it can figure out whose account to show.
+And why is it a big random number?
+Why is it not just my password or my username?
+Why am I proposing that it be a big random number?
+AUDIENCE: Sometimes people can guess it by just using a random generator.
+DAVID J. MALAN: Exactly.
+In computer science, randomness is this incredibly powerful ingredient.
+If you pick a big enough word or a big enough string
+or sentence, the probability that some random adversary, or bad person
+on the internet, is going to be able to guess or try
+to guess that value is just so low, it's just not realistically
+ever going to happen in your lifetime statistically.
+And so random this gives us that capability.
+And so you can think about this metaphorically in the real world
+as being like a hand stamp.
+If you've ever gone to an amusement park or a bar
+or a club where you have to show your ID or you
+have to pay for a ticket on the way in, sometimes they'll
+stamp you with either visible or invisible ink.
+And that's largely for efficiency so that, thereafter,
+when you're in the amusement park, you can come and go.
+And you don't have to repay or reprocess.
+If you're in the bar or the club, you don't have to keep showing your ID.
+They can check once, and then more efficiently let you come and go
+as you please.
+Because you're just presenting your hand or this virtual hand
+stamp to the bouncer or to the gatekeeper at those places.
+So cookies are exactly like that.
+Unbeknownst to us all this time, anytime you visit a website into which you've
+logged in, your browser is secretly but usefully
+presenting a hand stamp to that server to remind it who you are.
+Or rather, not really who you are, but of that big random number
+so that, if the server remembers who that number belongs to,
+it can figure out whose account to then show.
+So put more concretely, if I actually pull up some of the HTTP examples
+that we looked at in the past, let's consider this in context.
+So almost everyone here has probably used Gmail at some point.
+And you log in generally via page like this.
+So it might be infrequent because you're not often
+prompted to log into email because of-- surprise, surprise-- cookies
+from Google being on your computer.
+But let's see where those come from.
+So when you request Google or gmail.com, you might send, in a virtual envelope,
+so to speak, from your Mac or PC to the server, a message like this.
+Families who've not seen this before, this
+is what your browser is actually sending to a server in order
+to request a home page of gmail.com.
+Now, I'm going to simplify this a little bit
+because there's a bunch of redirects--
+HTTP 302s and 301's involved that aren't that interesting today.
+So let's just assume that Gmail responds immediately.
+Typically, Gmail would respond with this, saying 200 OK.
+Here's the login page.
+And here's a web page in text/html format.
+But once you've logged in, what your Gmail actually does
+is it also sends this.
+Recall that we call these things HTTP headers--
+key value pairs separated by colons that are semi-secretly sent from browser
+to server and from server to browser.
+Now we, more sophisticated developer types can see this stuff, right?
+You can open up Chrome's network tab and start poking around.
+And it's not secret per se.
+It's just most people don't know it's there.
+And what Google and other companies are doing is
+they literally send a header called set-cookie, the value of which
+is that big random value that the server has decided for you.
+Your browser, assuming that it speaks HTTP properly,
+should then save that value in RAM, your computer's memory,
+or on your hard drive.
+And then, every other click you make on gmail.com should send,
+not just headers like this, but it should send the opposite header--
+just cookie, not set-cookie, but cookie, which
+is the presentation of that hand stamp.
+And so every time you click a page on Gmail, or Facebook,
+or almost any website into which you've logged in.
+Those cookies have been planted on your computer.
+Now recently, in both Europe and in the US,
+have laws been passed that are increasingly putting pressure
+on companies that operate internationally to present you
+with cookie-based information, right?
+You get these little pop-ups increasingly.
+And you've been getting them for years in Europe saying,
+can we plant cookies on your computer?
+So given all of this, what might happen if you say
+no, no cookies on my computer?
+AUDIENCE: You have to keep logging in.
+DAVID J. MALAN: You're going to have to keep logging in, right?
+If you take away this fundamental HTTP feature, much of the web
+breaks, or the user experience deteriorates significantly.
+Now the flip side is cookies can be used, not only for good, so to speak,
+but also for evil.
+It turns out that there are a lot of ads on the internet, of course.
+And that's what drives a lot of the revenue that makes it all possible.
+Those ads typically come from image tags in your HTML or script tags
+or some of the HTML tags we have seen in the class.
+But they go to third-party servers, somewhereelse.com.
+And the problem arises with cookies when those third parties are allowed
+to plant cookies on your computer.
+Because if you go to Google, and you go to Facebook,
+and you go to Twitter-- bunches of websites.
+Suppose they all have some middlemen advertising service advertising
+on each of these websites.
+That middlemen, so to speak, because they
+have their ads and, therefore, their HTTP headers on this site,
+and this site, and this site, there are big third parties
+out there-- lots of them advertising networks-- that know everywhere
+little old you is going because they see your cookie appearing
+from multiple different other sites.
+And so here's where cookies become, not a computer science, engineering feat,
+but really a threat to one's privacy because they
+can be used so easily for tracking.
+And frankly, AT&T and Verizon, as an aside, got into trouble--
+not enough people know this--
+some years back when they started injecting, forcibly, additional HTTP
+headers similar in spirit to this to all of people's cell phone traffic--
+so not things you could even opt out of initially.
+Because this was a way for advertisers and for themselves
+to be able to track users.
+So these HTTP headers on which cookies are based
+are very powerful, but also very invasive.
+And we're only now starting to see, societally and politically,
+pushback on this very simple mechanism that, hopefully, we as CS types
+just understand the mechanics of and, therefore, now the implications.
+So let's see this in context, for instance.
+Let me go ahead and open up a relatively small example in CS50 IDE.
+For those unfamiliar, CS50 IDE is a web-based application
+via which you can write programs in the cloud,
+just using any browser on a Mac or PC.
+I'm going to go ahead into my account here.
+And I'm going to go into Store.
+And I'm going to go into the Templates directory
+and show that this example here has a few files.
+This will look familiar to students in the room.
+Application.py is the web-based application.
+And then we have some template files, so to speak.
+In my Terminal window here, I'm going to go ahead and, with just my keyboard,
+go into this directory called Store in source 8, which is available online.
+And I'm going to go ahead and do a flask run, which, for those unfamiliar,
+is the command via which you can start a web server
+and start running a web-based application.
+So now that I have that, I'm going to go ahead and visit exactly this URL here.
+And we'll see a relatively simple and super ugly web store.
+Let me go ahead and zoom in a bit.
+And this web store allows me to buy three things-- foos, bars,
+and bazes, whatever those are.
+And this is a very simple e-commerce-like site
+where I just have to type the quantity of foos, bars, and bazes that I want.
+And then I can go ahead and buy them.
+So I'm going to go ahead and say, give me one foo, how about zero bars,
+and these two bazes.
+And I'm going to go ahead and click Purchase.
+And now you'll see my shopping cart.
+But if I continue shopping, you'll see that it
+resets, just like if you keep browsing Amazon or whatever other website.
+But if you want to check shopping cart again,
+notice it's remembered what I'm looking for.
+And in fact, you know what?
+I'm going to go ahead and close the window.
+Oops.
+I actually lost the website.
+But you know what?
+If I go back to that URL and reopen, I see the storefront.
+But if I view my shopping cart, it has remembered my state.
+So notice the power now of cookies.
+It's not just to remember with a hand stamp who you are.
+But now you can remember anything about that user that you want, right?
+A shopping cart on Amazon or any website is the best example of this
+because it would be horrible, horrible, horrible for a User Experience or UX
+if every time you click the darn link, you
+lost the contents of your shopping cart because the website forgot who you are.
+So this is a compelling feature to remember.
+And it's cookies that implement this feature too.
+Because more generally, what's going on with cookies is this.
+When you set a cookie using the set-cookie header that
+looked like this, there is a key value pair
+to the right that we might call session, and that has the value.
+Value is the hand stamp.
+Session is just a term of art that refers to this abstraction
+that you can think of really as a shopping cart.
+But it doesn't have to have anything to do with actual shopping or e-commerce.
+It's just a container in which you can store stuff.
+So this is telling the website that my session value, my hand stamp
+is 12345-- and big really random number.
+The website can then say, you know what?
+I'm going to store a container for you.
+Let's call it a Python dictionary, or dict for you,
+inside of which I can put anything I want.
+And so in fact, when you go to a shopping cart like this,
+what is the server actually doing?
+Well, upon seeing your hand stamp, and realizing, oh, you are user 1234567.
+Oh, that's username Malan.
+Let me go ahead and grab the dictionary, the Python dict
+from memory, or even from a CSV file if you want,
+and show you the contents of your shopping cart.
+Meanwhile, someone else, Brian visits the same exact website
+and logs in with his account.
+He's going to present a different hand stamp, presumably.
+And so the website can look for a different dictionary
+and show Brian the different contents of his shopping cart.
+And the same for everyone in this room.
+So this simple mechanism--
+I mean, consider the power.
+This is just a stupid text value key:value.
+And from all of that does all of the web's capabilities now come.
+And we won't look in too much detail into the code here,
+but let me show one snippet of it.
+If I go into application.py, the magic that makes this possible in flask
+is just to import this additional feature.
+You'll recall, from the past couple of problems
+you've worked on, you import from flask a few things--
+render template, redirect, request.
+Well, if you Add session to that list, which
+is the code abstraction of this hand-stamp idea, what you can now do
+is this.
+Let me scroll down to the juicy part here.
+And notice that you can do lines of code now,
+and for the next CS50 finance problem, lines of code like this.
+Session is just a Python dictionary, or dict.
+You can index into it using any word--
+foo, or bar, or baz, just like you could with dictionaries more generally.
+And you can store in it anything you want.
+In my case, I want to store a number--
+0 foos, or 1 foo, or 2 foos or whatever.
+So I can simply convert to an int, the user's request forms
+item, whatever that is.
+And let me wave my hand at some of the code above because it just
+sets the whole thing up.
+But the new line of code, the new feature
+that now will empower us to build something like a stock trading website
+is quite simply this line here.
+Because what you can also do to remember that a user is logged in,
+just go ahead and store in this so-called session,
+a value of, like, true.
+And if the value true is there, you can infer that the human is logged in.
+And if there's no such value in the dictionary, they are not logged in.
+And so we'll hold your hand a bit more in the next problem set
+with this introduction of CS50 Finance.
+And we'll write some of the code that handles the login,
+so you can see by example how to do this.
+But it'll be up to you thereafter to start
+remembering what stocks a user actually has
+using sessions to retain the fact that they've logged in already.
+All right.
+So that was a lot all at once.
+But any questions on cookies and the feature they provide,
+these things called sessions?
+Anything at a all?
+Yeah?
+AUDIENCE: Is the session saved on the user side or the server?
+DAVID J. MALAN: Is the session saved on the user side or the server?
+Really good question.
+And the answer can be it depends.
+You could store on the user's client, on their browser.
+And as the gentleman over here proposed, you could theoretically store literally
+their user name and password-- maybe I proposed that earlier--
+on their computer.
+And that's bad for the reasons that we surmised earlier.
+But you could also store the contents of their shopping cart, foos, bars,
+and bazes.
+That's not quite as invasive as storing their password.
+But if you're buying things you don't really want people knowing,
+that is then invasive.
+So maybe we can do better.
+And better is often, store it on the server.
+So a well-designed website will typically
+store only this big random value, the hand stamp, on the Mac or PC.
+And then all of the interesting and maybe sensitive stuff
+is stored in a database or CSV file or just the server's RAM or memory
+like in a global variable.
+Good question.
+Other questions?
+Other questions?
+No.
+All right.
+So that's one problem solved.
+We know now we can implement login forms.
+And we know that we can remember that people are logged in.
+So let's just stipulate that is now possible.
+But over the past couple of weeks, it's not been incredibly powerful
+to only have access to things like CSV files, comma separated values, which
+create the illusion of Excel and Google Spreadsheets
+and Apple Numbers like columns and rows.
+Why?
+Well, it's pretty much a linear search for everything, right?
+A CSV file is just rows and rows and rows and rows of data.
+And if you want to search for anything in that
+file, like you might have wanted to for your survey implementation,
+how do you find it?
+Well, you open the file with Open.
+You maybe use a for loop and iterate over every single line
+looking for some value, and then you close the file.
+That is big O of n.
+And in the worst case, the thing you care about is at the very end.
+And it's not terribly efficient.
+Now, you can append to files pretty efficiently.
+Recall that when we opened files with quote unquote, "A" for Append mode.
+We did this with a brief example, instead of "W" for Write.
+You get the operating system's help and add rose to the file
+at the very bottom, which is more efficient.
+But you can't insert things in the middle very efficiently.
+You can't delete things very easily.
+You would have to literally, for those kinds of scenarios, open the file,
+read the whole darn thing, then write out parts of it
+or add to it as you're writing out.
+And so humans years ago realized, well, this is stupid.
+All of us humans in the world are constantly
+writing code to open files, change files, save files.
+Why don't a few of us do an even better job of implementing that feature,
+then share it with the world?
+And thus were born, effectively, databases.
+And these days, there are so many different types of databases--
+you might be familiar with tools, commercial software like Oracle,
+or SQL Server, or Microsoft Access.
+And in the open source world, there's Postgres and MySQL,
+and SQLite and others.
+And many of them, as even those names imply,
+use a special language called SQL, Structured Query Language, which
+is the very last language we'll introduce
+you to in CS50 unless you go off on your own with final projects
+to pick up something more.
+But with SQL, you have the ability to select data from a database,
+to insert it, to delete it, to updated it.
+All of the things that you could absolutely do with Python and CSVs,
+it would just be so darn tedious to write those lines of code yourself.
+So what's the right mental model?
+Here is, I claim, essentially a database.
+Like most everyone in this room has probably
+used Google Spreadsheets, and if you've not, probably
+Excel or maybe Apple Numbers.
+So these are spreadsheets.
+And they're essentially what you could call a relational database.
+Relational-- implying that there's relationships
+among the various data in the rows and the columns decided by you
+or whoever made it.
+And this is a spreadsheet of course.
+And it has rows where your actual data goes.
+And columns-- and what's noteworthy about the columns?
+It's just conventional to do what with the columns,
+especially in that first row?
+AUDIENCE: Headers.
+DAVID J. MALAN: Yeah, put some header values, right?
+You could certainly put them in the left.
+It's just humans prefer, it seems, to read top
+to bottom instead of left to all the way to the right.
+So we just adopted a conventioneers ago that your columns represent
+different types of data, and the rows represent different values
+for those fields or for those columns, so to speak.
+So if you wanted to store a spreadsheet of values
+for a bunch of students in a class or in a university,
+one column might be ID number, like their Harvard ID or the Yale ID.
+Another column might be their name, their email address, phone number, age,
+and so forth.
+And you could just lay that all out.
+You can make it pretty and boldface the top and organize things and sort it.
+But at some point, this isn't quite the right tool.
+And in fact, I ran into this in grad school years
+ago where I was analyzing large sets of data.
+And it was just convenient to double-click on the CSV file,
+open it in Excel, and just manipulate it and answer the data
+questions that I had.
+But back in the day, Excel actually had a limit of 65,536 rows.
+Sounds like a lot--
+and that's 2 to the 16th power, if you call the reference there.
+And so humans at Microsoft decided years ago, that's enough.
+And frankly, it kind of was.
+Because even in the thousands of rows, like,
+my Mac just became unusable because it was just too much memory being used.
+So it was just an impractical limit anyway.
+But at some point, you might want to store
+65,537 rows of data or hundreds of thousands of rows or millions of rows
+or even more.
+I mean, there are so many websites, Google and Facebook
+and others that surely do this already.
+You can't just use a program on your Mac or PC anymore.
+You need to use fancier software.
+But that fancier software often still works the same way.
+You have one main file called a spreadsheet in our human world.
+But in the server world, you might call it a database instead.
+And whereas, in our human world, we might
+have things called Sheets or individual spreadsheets within the bigger file,
+in a database, you're going to have things called tables.
+But they're the exact same thing with rows and columns.
+And so when we want to actually store data,
+we can actually store it in exactly those ways.
+So let me go ahead and do this.
+Let me go ahead and open up Google Spreadsheets just
+as representative of a database.
+And let me go ahead and create a new file here.
+So New Spreadsheet-- and just so that we can represent things like students.
+I'm going to call this spreadsheet Students.
+And over here I'm going to put their ID number and their name, and what
+are some other fields I rattled off that come to mind?
+AUDIENCE: Email.
+DAVID J. MALAN: Email.
+AUDIENCE: Dorm.
+DAVID J. MALAN: Say again.
+AUDIENCE: Dorm.
+DAVID J. MALAN: Dorm.
+Good.
+AUDIENCE: Sports and stuff they want to do.
+DAVID J. MALAN: OK.
+So sports they want to do, sure.
+That's fine-- a little longer.
+What else?
+AUDIENCE: Graduation year.
+DAVID J. MALAN: Graduation year, age, OK, good.
+So graduation year, age, concentration--
+OK, and we can probably keep going, and it just gets wider and wider.
+And these are my columns, if you will, or the fields in the database.
+And frankly, I could name this if I really want to be tidy here,
+and I could call this Students.
+And you know what?
+Maybe I should call this not students but university.
+Because I might want to have another tab here that we'll preemptively
+name to, say, faculty.
+And faculty probably have ID numbers, and they have names,
+and they probably have departments, for instance.
+And they also probably have emails and so forth.
+So phone number is another one.
+But I might want to kind of cluster these different types
+of data in different spreadsheets because they're
+kind of apples and oranges.
+There might be some overlap, but they're distinct inside different sheets.
+In the database world, you do the exact same thing,
+except you call the whole thing a database,
+and you call these things tables to be clear.
+But more importantly, with a real database, so to speak,
+you have to be a little more proactive about telling the database what
+types of data you want to store.
+Now, those of you who've used Google Spreadsheets and Apple
+numbers and Excel know that you can go to the format menu or the data menu
+or whatever, and you can show things to different decimal places.
+You can turn things to percents.
+And you can format the data.
+But that doesn't tend to have any functional impact on your data.
+It's just an aesthetic detail, like, how long or short do
+you want to show the numbers to be in your columns and cells.
+But with databases, you can actually provide juicy hints
+to the database that will help that database store and find data for you
+more efficiently.
+For instance, there's this laundry list of data types
+to which we have access in SQL.
+So SQL is the language with which we're going to be able to query a database.
+Frankly, in something like Google Spreadsheets and Microsoft Excel,
+how do you find data?
+We'll usually hit Command-F or Control-F, and you search for it.
+That's not very programmatic.
+You can do it with macros and such.
+And we'll do this with code.
+But with SQL, you're going to have to make a few decisions first.
+SQL supports a few different data types, at least, in one of its forms.
+So it turns out there's a lot of competition out there.
+SQL is a general language.
+But different companies and different nonprofit groups
+have come up with their own dialects.
+So much like we humans might speak--
+bunches of us might speak Spanish.
+Well, there are different variations of Spanish, not to mention
+many, many, many other languages.
+And so similarly, in the programming world,
+as there's sort of a common subset of words in a language.
+But then different companies and different people
+might have added and subtracted their own features just because they think
+that's better for their use cases.
+So in SQLite, which is the database technology we will use in CS50 IDE,
+and Android uses this, and it's very popular in other contexts
+too, IOS as well--
+they only have a few data types.
+Blob, of all things, integer, numeric, real, and text.
+Now what does that mean?
+Well, it turns out, it means different things with different databases.
+In another popular database, it's called Postgres or PostgreSQL.
+This is a very popular one for high-performing websites.
+So if you're trying to build a business, you're
+trying to make an application used by everyone on campus, generally,
+you would use a fancier technology than SQLite, which is, by definition,
+lightweight.
+And you'd do something like Postgres.
+And so we'll introduce you to both of these dialects along the way
+because each of them allows us to do different things
+with a different degree of precision.
+So in SQL, let's claim, even though it's a simplification,
+there are at least these data types.
+When deciding what type of data to store in your database table,
+you have to decide, not just what it's called, like ID, and name, and email,
+and dorm.
+You have to decide what data type it is.
+So we've kind of come full circle.
+Because the last time we did this was in what language?
+C.
+So in SQL too you do this, but it's not to be nitpicky.
+It's to actually improve performance.
+So this is to help you get at that data more efficiently.
+Because the more the server, the database, knows about your data,
+the faster it can find it essentially.
+So in the world of databases, you generally
+have to decide, not just to store an integer, but either
+a small int of integer, or a big int.
+And generally speaking, at least in most databases, this might be 2 bytes.
+This might be 4 bytes.
+This might be 8 bytes.
+So let's maybe impress the families here.
+If you have a 32-bit integer, or 4 bytes,
+what's the biggest integer you can store in your database?
+(WHISPERS) 4 billion.
+Someone please, impress.
+AUDIENCE: 4 billion.
+DAVID J. MALAN: 4 billion is exactly correct.
+And it might be 4 billion positive values, or maybe it's only 2 billion
+if you also want to have 2 billion or so negative numbers as well.
+Big int uses 64-bit, which is just massively, massively bigger.
+And tiny int or small int rather--
+there's also tiny int in some dialects-- small int is just 2 bytes,
+and it actually counts up as high as 65,535, as I alluded to earlier.
+So you just need to decide.
+Now, why would you choose one or the other, when you could just use big int
+and store small numbers and big numbers alike?
+Well, why might you just intuitively not want to make all of your integer values
+in a database big ints.
+It's just simple-- give me as much headroom as I want.
+AUDIENCE: You would be using memory.
+DAVID J. MALAN: Yeah.
+You're just using memory unnecessarily, right?
+Why use more memory than you need to?
+Now, arguably-- god, memory is so cheap these days.
+Computers are getting bigger and faster.
+So in some contexts, it's not a big deal.
+But if you have lots of data, and every one of your rows in a database
+is 2 bytes bigger than needs to be, and you have 1 million rows,
+that's already huge numbers of bytes that you're just wasting and throwing
+away.
+So it behooves you to actually give some thought to these data types.
+Of course, you don't want to go too small
+because, if you use a small int or maybe even an integer,
+but business is so darn good that you have over 4 billion users or 4
+billion rows or 4 billion foos and bars and bazes that have been sold,
+which absolutely happens to the Googles and Facebooks of the world,
+you better start using 64 bits to represent unique values instead of just
+32.
+Because eventually, you'll run out.
+Well, what else?
+Besides integer values in SQL, you might want to use floating point values.
+Those are real numbers that have decimal points in them.
+This is quite like C. They're called a little something different.
+And annoyingly, it uses two words in this case.
+But a real number is a 32-bit value that is a floating point
+value, like a float in C, and double precision
+is like a double in C, which is 64-bits.
+And that just lets you get even finer-grained control
+over the decimal point as we've seen.
+Because of course, you can't represent numbers precisely
+because of imprecision, as we've seen in both Python and C.
+Numeric is kind of a catch-all for a bunch of number-related things
+that aren't quite integers or reals necessarily.
+Boolean, a true or false value, dates if you
+want to literally store, like, year, year, year, year, dash, month, month,
+dash, day, day in a standard computer format,
+even though human cultures vary how they write that.
+Datetime if you want have a date and a time right after it--
+numeric is actually a solution to a problem.
+Turns out that, finally, after all this time,
+we have a built-in mechanism for storing numbers precisely.
+And this is perfectly timed because, in CS50 Finance, when
+you're dealing with money, it would kind of be nice if you don't accidentally
+round off how much money someone has either slightly lower or slightly
+higher.
+Those of you may be families especially because, from a few movies back
+in the day, if you ever saw Superman III,
+this is how some money was made by shaving fractions of pennies
+off of computer systems and, more moderately, Office Space.
+Office Space did this as well-- big scam trying to round off these pennies.
+Well, if you use the right technology and language, with SQL,
+you can actually specify a numeric data type, which is like a floating point
+value, but you specify, essentially, the total number of digits you
+want it to handle and how many of them should be after the decimal point.
+So it's common in stock markets to actually use
+four decimal points of precision.
+So not just cents to the tenths and the hundredths place,
+but to the thousandths and ten-thousandths place,
+you can now specify that with a value of four for precision.
+And you don't have to worry about those round
+off errors we talked about before.
+Time and time stamps-- just how much time
+has passed since the date and date and time are also available to you in SQL.
+And then lastly here, text values--
+turns out you have a choice of values for when
+it comes to deciding how many characters do you use to store your data.
+You can use char, which just like in C with an array,
+you have to decide in advance for a string how many bytes to use.
+And if you say char 8, you are getting 8 bytes.
+And if the name is Malan, M-A-L-A-N, you are wasting 3,
+or if we null terminate it, 2 of those bytes.
+But SQL introduces a solution that Python kind of gave us too.
+Varchar as the name implies-- variable number of chars
+allows you to specify just an upper bound.
+So if you know that one of your columns is going to be called Name.
+And a person's name might be M-A-L-A-N-- like five letters,
+or maybe certainly more for people with longer last names are first names,
+you can say varchar 100.
+And that's the upper bound on how long it is.
+But the database will be smart.
+If you only need five characters or 5 bytes,
+it won't waste 95 others for you.
+It will optimize that for you.
+And then lastly text, if you want to store tens of thousands,
+like paragraphs or pages of text, that's even bigger than varchar
+where you don't necessarily want a well-defined upper bound.
+You just want a good chunk of memory.
+But there are implications here.
+And just quickly, char and varchar seem not even complimentary.
+Just char seems unnecessary.
+Why paint yourself into a corner and say give me
+only 8 bytes when you could just say, eh, give me
+up to 100 bites, and you, the database server,
+figure out how many to actually use?
+Why do these two data types exist?
+Yeah?
+AUDIENCE: Time.
+DAVID J. MALAN: Time.
+AUDIENCE: It would be longer to run.
+DAVID J. MALAN: Yeah.
+So time is spot on.
+It might actually take longer to use one data type or the other.
+How could that possibly be?
+Well, if you've got a value like char where you specify
+a precise number of characters like 8.
+If you think about the columns in Google Spreadsheets and Excel,
+every one of those columns, those cells is exactly the same width, right?
+It's 8 bytes, 8 bytes, 8 bytes, 8 bytes.
+And as soon as you have perfectly constant offsets--
+this is byte 0, this is 8, this is 16, this is 24, this is 32,
+and so forth, you reintroduce the capability
+that in C we had with arrays.
+You have random access doing simple, simple arithmetic-- multiplication,
+addition, and subtraction, you can just jump to any element in a column
+if it's using the same number of bytes for every cell.
+But with varchar, if you need to have small narrow cells and wide cells,
+you're going to have what's called a ragged array where
+one side of it, the left-hand side, so to speak,
+is going to be very straight and rigid.
+But the other side my kind of vary based on how long the word is in that column.
+And to your point about time, it's going to take the computer more time
+to search a varchar field.
+Because it can't just jump to the third element.
+It has to search all of them, potentially.
+But thankfully, at the end of the day, databases don't do that.
+They don't just devolve into linear search.
+CSVs devolve, for our purposes, into linear search.
+The magic and the intellectual property and the secret sauce, so to speak,
+that goes into databases--
+Oracle SQL Server, Microsoft Access, Postgres, MySQL, and SQLite
+is that really smart computer scientists have decided to implement algorithms
+and fancy data structures, often tree-based--
+if you recall our discussion of binary trees
+or tries on a hash tables and those fancier data structures-- they
+had baked those kinds of data structures and designs
+into their database software.
+They've made it freely available or commercially available.
+And so we now just have an abstraction called a database
+into which we can store data and just read it, update it, write it,
+and change it quickly without having to implement all
+of that low-level plumbing ourselves.
+And so that's ultimately what a database is going to give us.
+But we have to actually have access to a database to do that.
+And we need to actually decide first to help
+the database by telling it what to store where and how to store it as a type.
+So why don't we do this?
+Let me go ahead and do exactly that with a couple of examples.
+Let me go ahead and open up CS50 IDE again,
+our web-based programming environment.
+And let me go into our Terminal window.
+So for those unfamiliar, a terminal window is just this black and white
+or this blue and white window in which you can type commands.
+And rather than point and click and double click on things,
+you can only do things textually in this window.
+And it turns out that, in the world of SQLite,
+we can actually use a command called SQLite3,
+which allows us to create a database.
+So in our human world, for CSVs, you've seen how, in code, you
+can just create rows and columns.
+You can literally type it in a text box.
+SQLite is a database technology that uses binary format, 0s and 1s.
+And so you're going to have to actually store your data differently
+using a program.
+So if I want to make a file called, for instance, froshims.db,
+I can literally say SQLite three froshims.db,
+and then I'm in this program.
+This is a text-based program via which I can create my rows and columns.
+And it, by designer, is going to be a little arcane for a moment.
+It's going to look a little cryptic.
+But if I want to go ahead and create a table, like a spreadsheet in here,
+I'm going to literally type CREATE TABLE.
+I'm going to call this registrants just like last week
+when we were looking at froshims examples.
+And the freshman intramural sports program
+has students registering for sports.
+So I'm going to have a registrants table here.
+I'm going to go ahead now and specify that I
+want a few columns for this database table, one of which I want to call ID,
+one of which I want to call name, and one of which I want to call dorm.
+So I'm going to keep-- whoops.
+I didn't mean to hit Enter.
+Let me just clean this up.
+So now I have three columns, ID, name, and dorm.
+And if I were to hit Enter, theoretically, it
+should create a database.
+It's not going to be graphical like Excel or Google Spreadsheets,
+but it will exist in my IDE in a file called froshims.db.
+But I can't just hit Enter yet.
+Because I have to tell the database a bit more.
+I need to tell it that, you know what?
+My ID value should probably be an integer.
+And you know what?
+My name should probably be char, or varchar?
+What should the name of a student be stored as?
+AUDIENCE: varchar.
+DAVID J. MALAN: Varchar, OK?
+So varchar because they're going to vary, right?
+If you can think of bunches of your friends,
+they might have short names or long names.
+OK, what's the upper bound?
+What's the length of your friends' longest name?
+AUDIENCE: 50.
+DAVID J. MALAN: 16?
+All right.
+Is anyone in here having a name, first name and last, that's longer than 16?
+AUDIENCE: That's 50, sorry.
+DAVID J. MALAN: Oh, 50.
+Sorry.
+I heard 16, I thought.
+Because you're not going be able to register for froshims
+because the database is going to truncate.
+And as an aside, if you've ever gone to a website and tried typing into a form
+field and either your keyboard stops working
+or you do type a long word or paragraph in, and then you hit Enter,
+and it's some of it's gone, well, that's because the database likely
+can only store so many bytes.
+And frankly, this often happens on customer service forums, right?
+They don't really want you being too verbose with the customer support
+staff.
+They'll cap the length of the field into which you're typing.
+And they're also doing that on the database,
+but also probably for practical human reasons,
+they don't want to read a big complaint that's this long as well.
+So 50-- anyone have a name longer than 50 characters?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, not many names.
+But you know what?
+We have technology to answer this.
+Longest name in world--
+and it's this guy.
+Guinness Book of World Records is probably right.
+So his name is Barnaby Marmaduke Aloysius Benjy Cobweb Dartagnan Egbert
+Felix Gaspar Humbert Ignatius Jayden Kasper Leroy Maximilian Neddy Obiajulu
+Pepin Quilliam Rosenkranz Sexton Teddy Upwood Vivatma Wayland Xylon Yardley
+Zachary Usansky.
+But he also goes by Nick, apparently.
+But OK.
+Let me go ahead and highlight this.
+And I could count this manually.
+But I'm sure someone has made a website to count characters in a string.
+There we go, lettercount.com.
+OK.
+Let's go ahead and paste that in, count the characters, 225--
+so nick will not be registering unless we don't support just 16 or 50.
+Looks like we need at least 225.
+So at some point, you do have to make a decision.
+And honestly, it's not always obvious.
+You do have to specify that varchar is going to be-- eh, it could be 16,
+could be 50, could be 225.
+But you know what? if he has kids--
+so let's just round up a bit and call it varchar 255, honestly,
+only because it was a convention.
+So back in the day, 255 tended to be the max length
+for this field in older databases.
+And that at least feels like it's probably enough wiggle room for names.
+But you have to make a judgment call at some point.
+We could ignore the problem say 1,000 characters.
+But if that's never really going to happen,
+and your potentially wasting space, you probably shouldn't.
+Because even though it's an upper bound, you're sacrificing something like time,
+potentially, to search that field if you're just
+telling the database that it's going to be bigger than it ever actually
+will be.
+It needs to be more finely hinted.
+So what about dorm?
+Oh, god, now we have to do this again.
+How do we do it with dorm?
+What's the longest length of a dorm or a house on campus?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: I'm, like, OK [INAUDIBLE],, house maybe.
+But honestly, at some point, it doesn't matter too much.
+But being consistent is what matters.
+It's a matter of style.
+It's a matter of design.
+At some point, you don't have to nitpick every little value.
+But you should probably pick some reasonable value
+that you could justify to a roommate or to a colleague or to a teaching fellow.
+And then say this feels like enough without it being actually excessive.
+And there's one last thing I'm going to do here is just
+end my thought with a semicolon.
+I apologize, they're back.
+But at the end of my start here, if I haven't made any typographical errors,
+and I'm going to go and hit Enter.
+Nothing seems to happen.
+And ironically, in CS50, in programming, nothing happening
+is usually a good thing because it means no errors have happened.
+If, in SQLite, I type schema, I can actually
+just see a regurgitation of the table I just created.
+But more importantly, I can start to insert data into this.
+Now unfortunately, it's not yet graphical.
+But if I want to insert data into this, I can do this.
+INSERT INTO registrants-- well, what do you want to insert?
+I want to go ahead and insert an ID, a name, and a dorm.
+Well, with what values?
+Well, with these values--
+the ID will be-- the first registrant will be 1.
+The first one to register will be Brian.
+And his dorm, Brian where did you live?
+BRIAN: Out on Pennypacker.
+DAVID J. MALAN: Pennypacker.
+So it's good.
+That might be close to four timer too lengthwise.
+So I'm going to go ahead and do this.
+Here is an example of a SQL statement.
+CREATE TABLE is one verb or expression you can use.
+INSERT INTO is another.
+You specify the name of the table, the fields of the table, and then values.
+And now I'm capitalizing just to make clear what are SQL commands
+and what are actually just words I, the human developer, chose.
+But it's just a convention.
+These uppercase words could probably be lower case in most contexts too.
+But it helps things, I think visually, to distinguish.
+Now I go ahead and enter.
+Nothing seemed to happen.
+That's probably a good thing.
+Let's go ahead and register one other person.
+I'll be the second registrant.
+So maybe David from Matthews.
+And so Matthews here, Enter.
+And now, if I want to select all of the students in the database,
+I can go ahead and say SELECT FROM--
+or you know what?
+Let's select everything as denoted in many languages by star,
+from registrants semicolon enter, and there we have it.
+It's kind of a tiny super simple, lightweight database.
+But there are my rows and columns much like Excel
+and Google Spreadsheets would lay them out for me.
+But it gets better than this.
+Suppose I want to search this database for all of the students who
+registered for Matthews.
+And suppose that time passes and more students
+actually register for forshims.
+I can actually filter this data.
+I can do something like SELECT star FROM registrants WHERE
+dorm equals quote unquote, "Matthews."
+And so I can filter it, hit Enter, and now I get back just one row.
+And if your should mind starts to wander--
+wow, if I could introduce Python or JavaScript into this,
+you know what I could do?
+I could probably get back, not this and this ASCII-based table, this text
+table.
+Maybe I could get back an actual list of rows
+so that I can actually do something with that data.
+And that's, indeed, where we're going with this.
+So if I want to select someone else, I could do hmm--
+maybe SELECT just the NAME from registrants
+where dorm equals "Mathews."
+If I only care about knowing who registered,
+I could do that and whittle it down to even less data.
+So already, in just these few commands, I
+can express so much more functionality than you could with a CSV.
+To do this and CSV, you would have had to write all
+of these lines of Python code yourself.
+What if Brian moved?
+So Brian really didn't like the Union dorm,
+so we're going to go ahead and UPDATE registrants
+and SET dorm equal to-- where do want to move to?
+BRIAN: Canaday.
+DAVID J. MALAN: "Canaday" WHERE--
+I could do this a few ways.
+What's your instinct?
+How could I identify Brian and only Brian so--
+I don't want to move to Canaday.
+How do we move just Brian?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+Maybe we could WHERE name equals quote unquote "Brian" and Enter.
+I like this, but someone find fault with this if you could.
+AUDIENCE: Two Brians.
+DAVID J. MALAN: If there are two Brians, we're moving both of them
+are all three of them.
+So maybe better, honestly, would be to say, mm,
+let's just say where the ID equals 1.
+Now, of course, I need to know Brian's Harvard ID number or whatnot.
+But this is going to be more precise.
+Because the supposition here is that the leftmost column or ID
+field, by human convention, should be unique so that it uniquely identifies
+the room so we can have as many Brians as we want,
+but we're not going to confuse them.
+If I go ahead and hit Enter now, nothing seems to happen.
+But if I select star from registrants again, and hit Enter, notice now,
+Brian has indeed been moved to Canaday.
+So there are so many other things.
+Brian, you know what?
+You're not very good at sports the team concluded.
+So delete from registrants WHERE ID equals 1.
+And now if we select star from registrants, we have just me left.
+But Brian is gone as well.
+So we have the ability to INSERT, to SELECT, to UPDATE, and DELETE,
+and CREATE, all the while filtering.
+And we've only just scratched the surface here of what's possible.
+Because it turns out, we can store so much data in these databases.
+All of our students, all of our faculty--
+if you're a company, you can start to store
+all of the products in your database, all of the orders,
+all of your customers.
+But as soon as you start going down that road, well, gee, what's a customer?
+Customers have names and ID numbers and maybe email addresses
+and postal addresses.
+Those are going to get messy-- phone numbers,
+which are kind of like integers, but not quite.
+So there are so many questions we still need to answer.
+But feels like it's time for some fruit and some muffins.
+So why don't we go ahead and take a five-minute break, turn on some music.
+If parents need to depart, that's fine.
+And we'll see you back here in five or so minutes.
+All right.
+So we're back.
+And where we left off was exactly here using
+SQLite3, which is the version 3 of the SQLite command, which
+is just a text-based interface to the technology
+that we should think of as SQLite.
+SQLite is interesting and it's lightweight in the sense
+that it's not a server, it's not fancy software that you have to run.
+It literally stores all of your data in a file, but that, by convention,
+ends in .db or maybe even .sqlite.
+But it's just a binary file, 0s and 1s.
+It's not text that you can open with Excel or something like that.
+So it's not a CSV.
+So it's stored on file.
+This means that you don't need particular experience
+with setting up a database server.
+You don't need memory and software to actually run on the computer.
+You can store everything locally, but you do pay a price.
+Because recall from our past discussions, disks are slow.
+And if you're storing your data on the disk,
+it's not going to be nearly as fast as storing it only in RAM.
+And that's why these other technologies like Postgres and MySQL,
+and Microsoft Access, and SQL Server, and Oracle exist.
+Those are fancier products where someone literally does double-click an icon
+or run a command that runs a program that
+stays running in the computer's memory and gives you even better performance.
+But for our purposes, pedagogically SQLite is handy.
+But we're still going to ask the questions about data types
+because SQLite does support fancier data types like those in Postgres
+and SQL Server, MySQL, and Oracle, and those are the lower-case ones
+we introduced a bit ago.
+But honestly, this is going to get tedious quickly.
+Even I rarely remember exactly the right syntax when creating tables,
+the order in which everything has to go.
+So I tend to use a Graphical User Interface, or GUI myself.
+And there are lots of tools out there.
+But we've built one that's free and open source the CS50
+IDE that just makes it a little easier to edit your SQL tables.
+So I'm going to go ahead and Exit out of SQLite.
+And I'm going to go ahead over here.
+And you'll notice that we have all of the files
+from today including, most recently, froshims.db.
+That is the file I created with SQLite3.
+But if you double-click it when using CS50 IDE,
+it's actually going to open a program that's called phpLiteAdmin.
+It happens to be written in another language called PHP,
+has nothing to do with databases, just the name of the product here.
+But it's a tool that, using pretty simple HTML tables,
+just gives us a graphical user interface over the exact same functionality.
+And personally, I just find this easier to use.
+And pedagogically, it's going to be better
+because it's going to show us the available data types for our table.
+So for instance, notice here-- there's a lot going on the screen.
+But a lot of this is just uninteresting details.
+But notice here, I see a table called registrants.
+And then I can browse it.
+I can see its structure.
+I can execute manual SQL by typing it in.
+I can search it, insert.
+I can do bunches of things to it.
+And that's why this graphical user interface is just convenient.
+Let me go ahead and click on registrants.
+And by default, you'll see these tabs now, Browse, Structure, SQL, and then
+a bunch of others.
+And notice over here.
+You'll see the one row and the one registrant who actually remains.
+Because when we last left off, we removed Brian forcibly from the team.
+So suppose I want to go ahead and add more rows just
+for the sake of discussion.
+I can just do it manually here.
+I can go in here and I can say, let's say the third player
+is going to be Veronica.
+I think she was also in Matthews so I can just type that in here.
+And I can just go ahead and click Insert.
+But what's nice about phpLiteAdmin is that it will not only
+insert the rows for you, it will show you
+the SQLite code with which you could have done it yourself.
+So it's a nice visual reinforcement of that exact same command.
+And you'll notice they use double quotes instead of my single quotes before.
+They're sometimes interchangeable, but not always.
+So it's a wonderful way of just learning how you can actually
+do this with the right SQL code so you're not oversimplifying it
+with the GUI.
+But you know what?
+Let's do this.
+I'm going to go ahead and start over because I
+want to make some better decisions.
+I'm going to go ahead and, literally, right-click or Control-click
+this, delete froshims.db.
+And let's actually start this from scratch.
+Now previously when I did this, I could have,
+in my Terminal window, gone ahead and done SQLite3 and then, what was it?
+Froshims.db and created the file.
+For now, I'm going to actually just go ahead and touch
+a file called that name, which is a simple command that
+just literally creates it, but puts nothing in it,
+just so I have an empty file.
+And you'll see that it just popped up again
+on the left-hand side, which is handy.
+And now I can double-click this version of it, which has nothing in it yet.
+And I'm back to phpLiteAdmin.
+But notice no table in database.
+So let's start to ask some of the harder questions
+as to actually how to create data in a database.
+So let me go ahead and go to this field here-- create
+new table on database froshims.
+I'll go ahead and call it registrants again.
+But how many fields?
+So let's go with ID, name, and dorm, what else?
+Email I heard earlier.
+Age I heard earlier.
+AUDIENCE: Sports you want to be in.
+DAVID J. MALAN: Sorry.
+So sports you want-- excuse me--
+sports you want to be in.
+OK. six fields, six fields, let's go with that.
+So it's, actually, you know what?
+Seven fields.
+I want phone numbers too this time.
+So let me go ahead and click Go.
+And now you'll see just a GUI way of prompting you for all the answers
+to the same questions as before.
+And maybe this is clearer.
+Maybe it's not.
+But just no alternative to the memorizing
+exactly what the commands need to be.
+So top to bottom, here are all of the fields I need to decide on.
+Ironically, the fields is just a synonym for columns.
+And yet my columns are currently laid out in rows,
+but that's just a UI issue.
+So let me go ahead and decide.
+By convention, my first field is almost always ID or probably should be.
+And we'll see why this is powerful and just a little bit.
+The data type for that, by convention, should be integer,
+unless you've got a lot of data like a Facebook,
+and then big int might make more sense.
+But notice this Dropdown actually gives us
+a nice menu of options just as before.
+And you'll see in gray text, the category,
+or in fancy terms, the affinity of these various types in SQLite
+and in lower case black words here, you'll
+see the actual data type supported by big popular databases like Postgres
+that you might want to use for your final projects.
+In fact, we're introducing these with eye
+toward your using these for final projects in the cloud, not in CS50 IDE,
+but actually getting your own domain name
+and putting your website, if you do a web app, out there.
+So here, we have all of my available types.
+And under Integer, I'm going to go ahead and literally choose Integer for my ID.
+All right.
+Next, go ahead and Zoom Out.
+Let me go ahead and choose a student's name.
+Before did we do did we decide on char or varchar?
+AUDIENCE: varchar.
+DAVID J. MALAN: OK, varchar, and what size?
+AUDIENCE: 255.
+DAVID J. MALAN: 255.
+So the user interface here just allows me to type it in.
+So the syntax is a little different because it's a GUI, but 255.
+But you know what?
+The last field was dorm.
+That too, I think we said varchar.
+So let me choose that.
+And 255, though, this one's a little more debatable.
+I'm not sure what the right number is, so in the absence of clarity,
+I'm just going to standardize on some same value without being too wasteful.
+But notice there are a few questions here that we haven't come to.
+But our perfect segue earlier hinted at this.
+It turns out, you need to make a few other decisions
+when designing a database.
+If you know in advance that one of your fields
+is the primary piece of data to uniquely identify users,
+that's what's going to be called a primary key--
+the column or fields that, guaranteed, is going to identify users uniquely.
+So if you've got two Brians, each of them is going to have its own ID.
+That therefore, is your primary key, not the name field Brian.
+So I'm going to tell the database, this is the primary key.
+And it's going to help me keep track of that uniqueness.
+Moreover, this is a fancy feature.
+Before, I was manually and very arbitrarily
+saying Brian will be number 1, I'll be number 2, Veronica will be number 3.
+That's tedious.
+Like, computer should be able to solve that problem for me.
+I don't want to think about who is idea number what.
+You can auto-increment the field.
+So if I actually check this box, SQL for me
+will just plus-plus, plus-plus the idea field every time
+I insert a new name and a new dorm.
+I don't have to even bother specifying an ID anymore.
+Now there's another column here, not null,
+where you can specify this column should never be null.
+And this is important because, if you're building a website that has important
+data that you must have from the users-- like,
+your app won't work without the user's username or their password
+or their email address--
+you can say not null.
+And your database will ensure that you can't even
+insert a row into this database unless you give it a value for that field.
+So it helps you protect you against yourself.
+Because you could certainly implement that
+logically in Python or any language.
+But the database is a final gauntlet as well.
+A default value doesn't really make sense here.
+But for certain types of fields, you can say, database,
+insert the current time or the current date for me?
+Now, why might you want that?
+Why date and time by default?
+Why might that be useful?
+AUDIENCE: When the account was created?
+DAVID J. MALAN: When the account was created, when they bought
+a foo, when they shipped a bar-- any number of reasons.
+You might just want to know, what is the time right now?
+But you don't have to write code for that.
+The database can answer those questions for you.
+So just so much more functionality than we got, of course, with CSVs alone.
+So name, should it be a primary key?
+No.
+Otherwise, we couldn't have two Brians.
+And generally, your primary key will be one field, though,
+theoretically you could make joint columns if you wanted.
+But generally, it'll be a single one.
+Should we auto-increment Brian-- so it's, like, well--
+Brian28, or Brian2, Brian3, and so forth?
+No.
+Doesn't really make sense.
+Not null?
+Probably.
+I want all of the freshmen's names so that we
+know who is signing up for sports.
+And dorm?
+Yeah, not null.
+But oh, corner case--
+can anyone think of a corner case where dorm maybe
+should kind of sort of be null?
+AUDIENCE: They're off-campus.
+DAVID J. MALAN: They commute, they're off-campus--
+it's not many students.
+But if you have 1%, 5% of students living off-campus,
+this is a design question now.
+And all of us have probably visited some website
+where you just can't fill out the form in the right way
+because you don't fit their mold or their expectations.
+And that's just because of a poor design decision.
+So let's allow it to be null just in case.
+Now what else?
+We said a phone number was when I proposed.
+Gosh, there's no phone number type.
+So what do you want to go with?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: I'm sorry?
+AUDIENCE: [INAUDIBLE] varchar.
+DAVID J. MALAN: Varchar.
+OK.
+So we can pick varchar and maybe use 10 or so for 10 digits in the US,
+at least, though, maybe, like, 12 with the dashes, or 13 with the parentheses,
+or--
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: What's that?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: I hear murmuring.
+Sorry.
+AUDIENCE: A small int.
+DAVID J. MALAN: A small int and just treated
+as a number, maybe that could work too.
+Another alternative?
+Anything else?
+AUDIENCE: [INAUDIBLE] precision.
+DAVID J. MALAN: Precision-- so a specific number.
+AUDIENCE: [INAUDIBLE] make sure you have the correct number.
+DAVID J. MALAN: Good.
+So not a bad instinct.
+But it turns out with the numeric data type, where you specify scale
+as it's called-- the total number of digits in precision--
+that's generally meant for floating point values-- so
+real numbers with decimal points.
+Because even though you're specifying a max limit,
+you don't require that many digits.
+It's just a max.
+Yeah?
+AUDIENCE: I would think that giving it--
+doing some sort of chars would be a bad design because then you
+can enter nonnumerical values.
+DAVID J. MALAN: Yeah.
+We can kind of find fault, I think, both of these ideas, though both of them
+are reasonable.
+If you allow for char or varchar, I could
+type in like foo or bar or baz and not a number.
+So maybe we should go with int.
+But can someone think of a counter-example to why
+you shouldn't use integer?
+AUDIENCE: It's got a variable length to it, doesn't it?
+So you'd get whatever number--
+DAVID J. MALAN: Variable length.
+But if we actually do the math, maybe 65,
+maybe-- there are enough bytes there.
+We could use a big int, and that gives us a really long phone number.
+So there's probably a reasonable max.
+Yeah?
+AUDIENCE: Let's say [INAUDIBLE] in between [INAUDIBLE] integer.
+DAVID J. MALAN: Hyphens and parentheses.
+We have to decide, do we want to support those?
+And honestly, all of us are perhaps a little US-centric right now, most of us
+here.
+But when you make a local call in some zones, like, you type 0 first.
+And some human might type 0 as their number.
+But what's going to happen if you type 0 into an integer field?
+AUDIENCE: You're going to ignore it.
+DAVID J. MALAN: You're going to ignore it.
+So now there's that corner case.
+So dammit.
+Like, there's no way to solve this problem it would seem.
+So what's best?
+We have to make a compromise and just accept
+that we have to solve this with code.
+AUDIENCE: Varchar.
+DAVID J. MALAN: Varchar?
+All right.
+So varchars or char.
+All right.
+So maybe let's simplify the problem.
+No one from outside the US can take freshman intramural sports.
+That simplifies the world.
+Because if we only support US phone numbers, now we can say 10 digits.
+And if we say, you know what?
+I don't care about the hyphens or the parentheses.
+I can use code, JavaScript or Python, to throw away the syntax.
+And I can just store 10 digits.
+Maybe char 10 is sufficient--
+3 for the area code, then the rest of the number, the all seven digits
+thereof.
+But you could find fault with this too.
+And we're really alienating that international population on campus.
+But again, these are just non-obvious design decisions.
+And so here we are, at the end of the semester.
+We don't always have good answers.
+And reasonable people will disagree.
+But let me simplify our assumptions and just do US numbers, 10 digits,
+and trust that I will use code in Python or some other language
+to throw away the syntax, the punctuation and whatnot
+of parentheses and hyphens.
+And I'll make sure the human hasn't typed in any letters of the alphabet.
+I can do that in code.
+And you know we can do that even in JavaScript when a human submits a form.
+We'll leave for the end, sports, what was it sports--
+AUDIENCE: Sports they want to do.
+DAVID J. MALAN: Sports they might want to do.
+So this is a good example of, you shouldn't really have spaces
+in your field name, so the convention would be sports_they_ really or might
+or let's just call it sports in this case.
+We'll come back to that.
+I think there were two other ideas we had.
+Phone number.
+AUDIENCE: Email.
+DAVID J. MALAN: Email.
+OK.
+Email is a good one.
+What should that one be?
+There's no email type, unfortunately, even though there
+is an HTML, an input type for email.
+AUDIENCE: Varchar.
+DAVID J. MALAN: What's that?
+AUDIENCE: Varchar.
+DAVID J. MALAN: Yeah, I feel like we probably need a varchar here.
+But here, a little non-obvious, what is the longest email address in the world?
+Maybe it's Nick's?
+So I don't know.
+But let's pick a reasonable upper bound that we can maybe
+be comfortable with as a group.
+And let's see-- anything else here?
+No?
+OK.
+And was there one more field?
+AUDIENCE: Graduation year.
+DAVID J. MALAN: Oh, grad-- oh, age.
+Let's go with age.
+So age-- finally, something simple.
+What you want this to be?
+AUDIENCE: Small int.
+DAVID J. MALAN: Small int, right.
+We will not support people older than 65,535 years old.
+Someone want to find fault with this idea though?
+
+I would argue, there's no one right answer to any of these.
+AUDIENCE: You need month.
+DAVID J. MALAN: Month--
+oh, it depends.
+Do we want month?
+AUDIENCE: Yeah.
+We might need [INAUDIBLE].
+AUDIENCE: --then you need the date, the year.
+DAVID J. MALAN: So you're assuming we want birth date.
+I think I've called it age.
+So maybe that's the problem.
+Like, if it's age, small int's fine.
+Like, you can be 0 years old or 65,000 years old.
+We have a good range.
+AUDIENCE: All about the age, date of birth.
+DAVID J. MALAN: If it's age, I think we're OK.
+But I think you allude to a good point, which is, why would we maybe want
+to store birth date and not age?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+The damn thing's always changing, otherwise, right?
+Like, I'm going to have to update my database tomorrow and then
+the next day, let alone every hour or every minute just
+because my users' ages are changing.
+Like, that seems silly.
+Let me, instead, fix a value--
+so do something like birth date.
+Birth date-- maybe specify not an int.
+But let's actually use the date field.
+We could store time if we really care what time they
+were born on a certain day.
+But here, I can say date is going to be a little better because, now I
+know in Python, JavaScript, even C, I can do a little bit of math.
+And if I know they were born on such and such a day and month and year,
+well, I'll just subtract that from the current day, month, and year
+and figure out how many days or years old they are-- so a better design
+decision there perhaps.
+But we do have to standardize the format.
+We can't just allow people from the US and Europe and Asia
+to all kind of choose their own formats.
+SQL standardizes this-- year, year, year, year dash
+month, month dash day, day.
+And that's the value of having these data types again.
+All right.
+So how about sports-- the last one?
+AUDIENCE: Varchar.
+DAVID J. MALAN: Varchar, all right.
+What's the longest number of words in the sport?
+AUDIENCE: I didn't say might want to do, so I could get up there,
+but 255 probably makes the most sense.
+DAVID J. MALAN: Maybe unless they're very athletic.
+Yeah.
+Here too I don't know.
+But just for the sake of opening up possibilities,
+when you think the human might be a little expository
+and actually write a paragraph of all the sports they're
+involved in or whatnot or even bigger than a paragraph, text is even bigger.
+Sports, this probably isn't compelling.
+And I'll change it back to varchar.
+But if someone is typing in their college essay
+into the Common Application, or if you're
+asking people to paste their resumes, or the like, you might want to use text.
+Because I have no idea how many words someone's going to have.
+Text allows you to store even more data.
+But it stores it a little differently.
+It tends to store it not in the column, but using pointers.
+If you recall from a few weeks back, it uses the equivalent
+of that to store it over there, which takes a little more time to get to.
+So again, there's just a trade-off here.
+So we could do varchar 255--
+makes me a little nervous.
+So I'm going to go with another common value.
+1024, it's a power of 2, but there's no one right answer here.
+But these are the non-obvious design decisions we have to make.
+If I didn't make any mistakes here, I'm going
+to go ahead and click Create, and whoo--
+table has been created.
+You can even see now all of the data that's been created there.
+And voila, if I go back to froshims, and I go back to the registrants table,
+not only can I browse it-- there's nothing in there yet.
+I can look at the structure and actually see all of those same values
+and edit some of them like renaming.
+But you can't completely mutilate it.
+You might have to start over if you make too many changes.
+All right.
+Any questions then about this?
+Yeah?
+AUDIENCE: Why do you use 1024 instead of 1023?
+DAVID J. MALAN: Oh, why do I use 1024 instead of 1023.
+Typically, when you choose a ma-- oh, convention.
+I can't justify this.
+255 was the max because I think one of the bites was reserved for some value,
+historically.
+But that's not really the case.
+That bound has been lifted, and no good reason.
+AUDIENCE: You could have used 255.
+DAVID J. MALAN: Nowadays, yes.
+Years ago, 255 was an actual limit.
+And so it got adopted.
+Now, I don't know.
+I just pick powers of 2 often.
+And then at my next go-to would be 2048, 4096, and so forth, just because.
+Yeah?
+AUDIENCE: What's the difference between varchar and char?
+DAVID J. MALAN: Varchar--
+What's the difference between varchar and char?
+Char uses a fixed number of bytes no matter how many of them you are using,
+the advantage of which is your columns, conceptually,
+are perfectly straight on both the left edge and the right edge, which
+means you have random access because every cell is some fixed
+number of bytes from the rest.
+Varchar user a ragged array, as it's called,
+where one side, the right-hand side is shorter or longer in different cells.
+So there's only a maximum length on each of those cells.
+But searching it can be slower as a result
+because you can't just jump to cell to cell.
+You have to follow the lengths of those things.
+That's the trade-off.
+Yeah?
+AUDIENCE: If you [INAUDIBLE] education, how do you add it?
+DAVID J. MALAN: Oh, if I wanted to add an education field now and modify
+the table--
+if you realize too late, oh, darn, like, I need to actually add something
+to this, in the GUI tool, we can add 1 fields to the end of the table,
+literally.
+So let's do that.
+Let me go ahead and click Go.
+I'll be prompted with a similar form, but smaller.
+I can go ahead and type in something like education.
+Let me propose this is varchar, maybe 255,
+though we could have that debate too.
+I'm going to go ahead and say add fields.
+And now notice that the table has been altered successfully.
+It actually, for whatever reason, it's not showing me
+the code for that particular command.
+But there is literally an ALTER command in SQL
+that would allow you to change it.
+And if I go back to the structure now, you'll
+see that I have another column called education shown ironically
+here as a row.
+Yeah?
+AUDIENCE: Does the order of the columns matter?
+DAVID J. MALAN: Good question.
+Does the order of the columns matter?
+Fundamentally, no.
+By convention, you would typically put the ID first.
+And then I, personally, by design, put the most important fields
+next like name feels like the right choice,
+maybe email feels like the right choice, though, I clearly thought
+of it a little too late this time.
+It's not easy in SQLite to reorder things, but in other databases you can.
+So there, it's more of a human convention.
+Yeah?
+AUDIENCE: Is it convention to have one single primary key,
+or can you have multiple?
+DAVID J. MALAN: Good question.
+Is it a convention to have one single primary key, or can you have multiple?
+By definition, you can only have one.
+But that primary key can span multiple columns.
+So we haven't seen a use case for this yet.
+But there are scenarios in which you would want to say,
+I want to guarantee that these two columns together are unique,
+but not each individual one unique.
+But we won't encounter that just yet.
+Other questions, yeah?
+AUDIENCE: What if you had added education
+after you had started the database, and that was a not null field?
+DAVID J. MALAN: Really good question.
+What if you had added education after you already had real data in there,
+but you specified not null, which is problematic.
+Because what is the educational backgrounds of the previous people?
+Typically, what the database would do is either reject it,
+or it would just put the "empty string," quote unquote.
+So it's not technically null, but there's nothing actually there.
+It's just a string of length 0.
+Really good question.
+All right.
+So what can we now do that's a little more powerful about this?
+Well, let me go ahead and quickly insert some data here.
+I'm going to keep most of it blank.
+But you know what?
+I'm not even going to bother with ID.
+Brian you're back on the team.
+Let's go ahead and insert Brian.
+Let's go ahead now into registrants again.
+Let's go ahead and add Veronica again.
+So I'm just inserting a few rows manually.
+And again, notice it's executing all of this for me
+without me having to bother typing it out.
+But I absolutely could.
+In fact, just for good measure, let's do one manually.
+If I click the SQL tab, notice that I get a default suggestion here.
+That is the syntax with which you can select everything.
+Or I can just type INSERT into registrants.
+But now, if I only want to insert a name,
+I don't have to do all of the columns.
+I can just say go ahead and insert here, Erin, for instance,
+semicolon, zoom out and click Go.
+That seemed to work.
+If I go back to browse now, Erin is in there as well.
+But you'll see the difference.
+The query that's being generated automatically by the GUI
+was lazily just inserting quote unquote, the so-called empty string of length 0.
+I, by omitting even mention of those columns,
+was deliberately inserting null.
+So frankly, my database is getting a little messy here.
+So you generally don't use phpLiteAdmin or a GUI to insert data.
+You might use it to conveniently create your tables
+and get your application ready.
+But then you're going to write code ultimately.
+And that's the direction we're going.
+And I'm going to go ahead and insert one more person.
+Oh, I forgot I'm not on the team at all because we started over.
+So let me put myself back on the team, David.
+And let me go ahead and click INSERT, go back to registrants,
+and now you'll see there are four of us.
+My ID changed because they've been inserted in different orders.
+But notice all of the auto incrementing has been happening magically for me.
+And that's useful because I don't have to even think about it.
+And who cares what my ID is.
+I just need to have, in many cases, in a database, a unique ID.
+So now let's actually write a little bit of code, right?
+Thus far we haven't done anything useful.
+We've shown you this black and white window in which you
+can select in certain update data.
+But that doesn't really solve any problems we know about yet.
+We have this graphical web-based interface
+via which you can create tables and add data, but who cares?
+We're trying to solve actual problems.
+And the problems of late have been to build
+software that would solve any number of human problems
+like serving users and showing the results
+or finding similarities in documents.
+So suppose the problem at hand now is to actually build
+something like the froshims website and let students register and then see
+who is registered.
+Well, back in my day, I fairly lazily, for lack of technical know-how,
+just emailed the registrations to the proctor or the RA who was
+managing the intramural sports program.
+But I-- they later started putting it in CSV files.
+Suppose now, version 3, 20 years later, I want to store in an actual database.
+How can I actually do that and then see the results?
+Well, let me go into the IDE again and open up,
+for instance, a New File that I'll go ahead and call lecture.py.
+And suppose I just want to write a simple Python program via which
+to select data from a database.
+So it turns out I can do a few things here.
+First of all, let me go ahead and do, let's say, from CS50,
+I previously have done things like import get_string and get_int
+and so forth.
+It turns out that the CS50 library for Python also supports SQL.
+And it's going to give us a function called
+EXECUTE that will let you execute any SQL command, but in Python code.
+So instead of pulling up SQLite3 via my own hands
+or going to a graphical user interface phpLiteAdmin,
+I can write code that talks directly to froshims.db,
+and eliminate all of those tools altogether, and just now write code.
+So how do I do this?
+I'm going to declare a variable called db for Database.
+So I could call it anything I want.
+And I'm going to go ahead and call this SQL function.
+And I'm going to pass in a somewhat funky looking string as an argument,
+but it's a standard convention, to say what
+database technology do you want to use?
+Then you do colon, slash, slash, slash-- so it's three slashes, not
+the usual two in a URL.
+And I'm going to specify froshims.db.
+This now will give me a Python variable called
+database that is kind of like a portal, if you will, into that database
+file that I can send SELECTs, and INSERTs, and DELETEs, and UPDATEs to.
+How do I do this?
+Well, if at the end of the day, I want to execute
+the equivalent of SELECT star from registrants, how do I do that?
+Well, I'm just in a text editor, right?
+This is CS50 IDE.
+I'm just typing text.
+Moreover, I'm typing text in a Python file, and this is not Python.
+And indeed, the IDE has this little red x saying, mm-mm, can't do this.
+But I could pass SQL code as an input to a Python function
+and let that function talk to the database.
+And indeed, that's what we're going to get here from CS50's library.
+I'm going to go ahead and do this.
+You know what?
+Access the database and EXECUTE the following SQL code,
+quote unquote, "that" close parentheses.
+Now, what is select return by convention?
+What should it return?
+Well, in SQLite3, we just saw a pretty text-based table
+with lines and slashes that looked like a table, but was just text.
+phpLiteAdmin, we actually saw HTML tables when I browsed the database.
+And I proposed verbally, a bit ago that, you know what?
+If I were to get back all of this data in code, what data type
+would I like it to me as?
+
+Rows.
+I want rows from a table.
+Show me all the students who've registered.
+What data structure in Python seems apt?
+AUDIENCE: List.
+DAVID J. MALAN: Yeah, just a list, right?
+A list that's ordered from first row to last row.
+So we'll call that a list or an array, back in the day of C. So you know what?
+I'm going to assume that's correct.
+And if I read the documentation, I would see that it's correct.
+CS50's EXECUTE function, if you select, returns to you a list of rows.
+It might have 0 rows if there are no matches.
+But it might have 1,000 rows if there are lots of matches.
+I'm going to store those results, wherever they are, in my rows array.
+Now, suppose I want to print out who has registered in my database
+from whatever froshims website exists.
+I'm assuming students have registered on the web.
+Now I'm just the proctor or the RA who's actually now
+trying to manipulate the data and do something with it.
+So what can I do?
+Well, for row in rows, what do I want to do?
+Let me go ahead and just print out that so-and-so registered.
+So so-and-so registered.
+Well, how do I plug in so-and-so?
+Well, there are a few ways to do this.
+And let's see.
+First of all, I could use my placeholder syntax for print.
+And then, I want to print out the row.
+But what do I want from that row?
+What columns are in any row in this database?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: ID and name and dorm and phone and sports.
+Well, it turns out, those are going to be handed to you as Python dictionaries
+or dict structures.
+So I can just say row quote unquote, 'name' here.
+And I'll use single quotes just to make more clear what's going on here.
+And then I need to make one fix.
+How do I--
+AUDIENCE: F.
+DAVID J. MALAN: --F for Format string.
+So it looks a little cryptic.
+But this is just Python stuff now.
+The only thing that's new is SQL.
+But if we stipulate that SQL, when using this execute function
+is just going to hand you all a list of rows, each of which
+is a dictionary so that you can get at this column or this column--
+ID, or name, or dorm--
+this would seem to be now a nice convergence of this week--
+now, with the past couple of weeks.
+So let me go ahead and save this.
+Let me go ahead and View my Console, so I have a Terminal window.
+And let me go ahead and run Python of lecture.py.
+And in just a moment, if I cross my fingers,
+I should hopefully see who has registered.
+Amazing.
+I've seen who's registered.
+Now there's one line of output that I didn't expect, which is just this one.
+This is the library just being pedagogically helpful.
+It's showing me every command that I sent to the database.
+But you'll see that so-and-so has registered.
+So this is kind of interesting.
+It's kind of a stupid program, right?
+Because most proctors aren't going to be hacking
+froshims by using a terminal window and running Python scripts.
+They're probably going to want to do this by a web page
+and actually see who is registered.
+But if we have the ability in Python code to do this, like,
+iteration, what could I do instead of just printing to the screen?
+What could I print out per last week and per the past problems set?
+I could print out HTML, right?
+Like, each of the students who register, kind of
+feels like an opportunity for an unordered list
+or an ordered list or a table or whatever.
+You can now generate HTML.
+So let me do this.
+Let me actually go into an example I've made in advance.
+What if I went ahead and opened up layout.html.
+Here is a simple layout for a web application using Flask.
+For those unfamiliar, this is mostly HTML
+plus a technology called Jinja, which is a web-based technology for generating
+websites dynamically.
+The body of this page is clearly what's of interest.
+And you know what?
+I bet I could do some logic right in there.
+So let me go ahead and do this.
+Let me go ahead and Create, let's say, a New File.
+Let's call this application.py.
+I'm going to go ahead and, just for time's sake,
+do a little bit of copy-paste to save myself some keystrokes.
+So here's a very simple web app.
+And this is going to be my to-do.
+So if I go in here to templates, let me open up index.html--
+and let me go head into here.
+So long story short--
+here's where we're going with this.
+What if I instead generate an unordered list using code from last week,
+but I use my for loop here inside of my web app
+instead of actually just with a simple lecture.py file.
+Well, recall that I could do something like this.
+I can have a Jinja loop.
+So I could say something like for row in rows.
+And then, down here, I can preemptively say something
+like andfor, which is our weird syntax from last week.
+And then, in here, I can just do a list item.
+And then, if I want to show who registered, what do I type here?
+Something in between these curly braces if each row represents a registrant?
+AUDIENCE: Row.
+DAVID J. MALAN: Row name registered.
+I can just do something like this.
+So same idea, I'm just wrapping it with a little bit of HTML.
+Now let me go to my application.py file because I'm
+going to have to fill in some blanks.
+And let me see, how can I do this?
+Well, ultimately, I want to return the result of rendering
+a template called index.html.
+For families unfamiliar, this is just a line of code
+that says go show that file to the user.
+But I don't want to just show them the file as-is.
+But let's at least get this set up.
+I'm worried that it might not work yet because I need to get the actual data.
+So how can I get all of the rows for my registrants?
+Well, I can do rows gets db.execute.
+And I can go ahead and select star from registrants and store that in there.
+This file is called froshims.db that I created earlier.
+And everything else is just Flask stuff from last week.
+Nothing else is new.
+The only thing that's new is this line here,
+this line here, and now this line here where
+I'm using SQL inside of a Python call by passing
+it is an argument to a function called EXECUTE.
+How do I pass the rows to index.html?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah, like rows equals rows is the convention we've adopted.
+You call it anything you want, x equals y,
+but this is a little more straightforward.
+So this is saying, hey, database, get me all of the rows from my registrants,
+and then render the template index.html, and pass in these rows.
+And now, if I hold my breath and run flask run, no syntax errors.
+If I go ahead and visit this here and open--
+dammit-- the tab, I see an internal server error.
+So teachable moment, families.
+Let's go back into that browser window here and see what happened.
+OK.
+Template syntax error-- so pretty stupid mistake.
+It looks like I expected a square bracket instead of a curly brace.
+That's fixable.
+Let me go into index.html.
+And oh, I didn't finish my thought.
+So that's some of the frustrations of programming for those
+who are seeing this for the first time.
+Let me save that.
+Let me go back to the browser here, and we'll just reload.
+And oh my god, voila, now I have a web page
+via which you can see who has registered.
+But you know what?
+We can make this more powerful.
+Recall that we've been playing with HTTP for some time.
+And if this is the URL I'm accessing, recall
+that we played around with reimplementing search functionality.
+Well, what if I want to support search such that I can just visit q
+equals and then search for people named, say, Brian
+and see how many Brians are registered.
+Could we add support for something like this?
+Well, maybe.
+Let me go back into the IDE, into application.py.
+And let me go ahead and say something like this.
+q equals request.args get q to see if anything is actually there.
+And then let me go ahead and do this.
+SELECT star FROM registrants WHERE--
+let me see-- q where what?
+NAME equals q.
+But I need a placeholder.
+So maybe I should do this.
+And as soon as I do this, I need a what?
+F for a format string.
+So I could just create, on the fly, a SQL command
+that plugs in the value of q between those curly
+braces to express the logic of select all
+of the registrants whose names equal Brian or Veronica
+or whoever's name I typed in.
+Let me go back to the browser here.
+Let me go over and do something like this now.
+Question mark q equals Brian-- cross my fingers as before.
+Dammit.
+OK.
+And what did I do wrong here?
+
+What did I do wrong here?
+This is subtle.
+And we're seeing it for the first time.
+It thinks there's a column called Brian.
+But why would it think that?
+Well, what I've effectively done is sent in this.
+Brian is not a keyword in SQL.
+And because it's an actual string that I'm comparing against,
+what I really need to be doing is this.
+Otherwise, SQLite is going to think it's like the name of a column or something
+I pre-created so we have to fix this.
+But that's OK.
+I can put the quotes there.
+But I should probably put the q there in quotes.
+Let's save this, go back to the browser, reload.
+And there we go.
+Now we have functionality for Brian.
+And so with this basic building block, what have we done?
+Well, in SQL, we have several commands at our disposal--
+creating a table, which frankly gets tedious by typing it out.
+I myself tend to use and recommend phpLiteAdmin just to create your table
+and get it going.
+But then you can certainly manually, with SQLite3 or phpLiteAdmin INSERT,
+or UPDATE, or DELETE, or SELECT information
+once it's actually in the database.
+And that's pretty powerful.
+But once you do that, you can now use that same new syntax, that new language
+SQL, passing it in as an input with a "string" to our EXECUTE function,
+and now start pulling any data you want from your database.
+Last week, with CSV files, if you wanted to do this,
+you'd have to open the CSV file, use a for loop to iterate over it,
+look over every column and row for your data, then pass it in.
+And that's fine.
+That's correct.
+That's not bad.
+But it's tedious.
+And you're reinventing the wheel again and again.
+And there's no filtration built in as there is to SQL itself.
+So you now have a more sophisticated tool
+in your toolkit so to speak with which to solve that same kind of problem.
+Any questions then on this technique?
+All right.
+Well, let's look at a bigger database and see where we can go with this?
+So if you go on the course's website, you'll
+see a larger database that's actually available in multiple formats, SQLite,
+which we'll see in a moment, but also Google Spreadsheets.
+Because frankly, it's a lot more pleasant to look
+at your rows and columns in a GUI than it is, necessarily,
+with the file itself.
+So this happens to be a free and open source sample database.
+Like, some guy, years ago, took his actual iTunes database--
+all the music he'd ever bought, he wrote a program
+to like analyze Apple's file format in iTunes
+and extract all of the data that seemed to be stored about him,
+I think was the story, and just made it publicly available as a sample
+database for students and teachers to just use to manipulate data.
+But what's interesting is that this database
+demonstrates some other principles that we really haven't touched on.
+For instance, if I were to store, again and again,
+all of these students who are registering for froshims,
+what do you start to see in certain fields?
+Well, I was a little lazy, and I didn't bother typing in everyone's dorm.
+But suppose that hundreds of students have registered for froshims.
+A lot of them are going to be from Matthews, some from Pennypacker,
+some from Candaday, some from Weld, and bunches of other buildings on campus.
+It starts to get a little ridiculous when
+you see Matthews, Matthews, Matthews, Matthews,
+Matthews-- like, 100 or more times.
+If there are 1,600 freshmen, there are a lot of kids in Matthews.
+That's a lot of bytes to store M-A-T-T-H-E-W--
+I don't know.
+It's not important.
+Doesn't matter how it's spelled.
+That's a lot of bytes to actually store in your database again and again
+and again.
+It feels like there should be an opportunity
+to factor out the commonalities.
+And what humans do with databases is, once they recognize a recurring
+pattern of data, same darn strings again and again and again, you know what?
+Rather than use-- now it matters--
+M-A-T-T-H-E-W-S-- which is 8 bytes.
+Or P-E-N-N-Y-P-A-C-K-E-R, which is 11, then we have a lot of bytes being used
+again and again and again to store all of these dorms.
+You know what?
+What's better than 11 bytes or 8 bytes?
+Let's just use an int, or let's even use a small int--
+2 bytes or 4 bytes to represent dorms.
+So instead of storing Matthews, let's just store the number 10.
+And instead of Penny Packer, lets just store the number 11, thereby,
+using some bytes, but fewer and, therefore,
+saving bytes in the long run.
+And so with this database demonstrates is exactly that principle.
+Certainly, when it comes to music, where artists have multiple albums
+and artists have multiple songs, it's probably
+a little silly in a musical database to store the name of the album
+again and again and again and again for all 10 or 12
+or 20 tracks or songs on that particular album.
+So what this person did was this.
+Notice here, we have a whole bunch of sheets.
+Or in database-speak, these would be tables.
+And notice that these tables have columns.
+And notice that these columns are album ID,
+in the album table, album ID and title.
+But notice what he did very cleverly with this field, artist ID.
+Artists or singers have lots of songs to their name, eventually.
+And so he's assigned each of them unique value,
+or Apple did, in iTunes underneath the hood.
+So how do I know what this artist's name is?
+How would you figure this out?
+It's not that interesting to us humans do know, ooh, artist ID number 2.
+This is just-- what's that?
+AUDIENCE: You need another table with artists.
+DAVID J. MALAN: Yeah.
+We need another table with artists, which is right over here.
+So let me go ahead and look there.
+So if I want to see-- let's see, "Let there be rock," artist number 1.
+Let's go to the artists table.
+And turns out, AC/DC, the band is who created that.
+Now we've added a step here, which maybe is costing us a little bit of time.
+But it's going to save a space in the long run if I'm not storing long
+artist's names-- although, AC/DC isn't terribly long--
+again and again and again.
+Now, which is better?
+Well, it's a trade-off.
+Are you more comfortable wasting space and storing everything together?
+Or do you prefer to save space and just spend a little more time
+joining the data back together?
+But it's going to be really annoying if, now,
+if I want to make a website that shows me the names of the songs
+that I have in a database and the artists for them,
+let alone the albums, and more of that, the titles of the tracks, and so forth.
+It feels like that's three queries, right?
+Like SELECT the album, SELECT the artist, SELECT the titles--
+but no.
+With SQL, you can collapse that altogether.
+Because notice, in this table here, artist,
+there is a column called Artist ID that's numbers.
+And notice, if you kind of picture this, it's
+like finger tips here-- let's propose metaphorically--
+represent the artist ID.
+If I go into album now, notice that we have album ID and title,
+but we also have artist ID.
+And so if you imagine these two tables sharing this common column, what if we
+kind of stitch them together like this, lining up one
+on the left, the other on the right, thereby reconstructing
+all of the information and duplicating it as
+needed so that I get back just the album and the title and the artist.
+Well, how can express that?
+Well, let me go ahead into CS50 IDE where I have a copy of this file.
+Let me close all of my tabs from earlier go into this file called lecture.db.
+And in lecture.db, in phpLiteAdmin, we'll see all of those same tables.
+And I literally just imported it into a SQLite.
+You'll see all of these same tables.
+We can browse album just as before.
+And we just see a different format for the same data.
+It's the same data from the Google Spreadsheet,
+which is just more user-friendly.
+And let me go ahead and do this.
+I could, of course, SELECT star from album
+Where our artist ID equals 1 to get back all of AC/DC's albums.
+And indeed, here, I have two.
+They have For those about to rock, We salute you, and Let there be rock.
+They have two.
+But notice, the rows I got back contain only what information?
+Album ID title, and artist ID.
+I just know, as a human, that oh, these are AC/DC's albums.
+But what if I want to know, well, OK, I see that artist ID is 1.
+So all right, well, let me open another tab here.
+And now let me SELECT star from artist WHERE artist ID equals 1.
+And so if I want to learn something about that artist-- let me go ahead
+and Zoom Out, click Go, and OK-- now I get AC/DC.
+Well, this is great.
+Now I have to results, two sets of rows.
+This is stupid.
+Now I'm just creating work for myself by having two return values.
+I could call db EXECUTE twice.
+But there's a better way.
+It turns out, SQL allows you to join tables just using SQL itself.
+So I'm going to go ahead and do this.
+I'm going to go ahead and SELECT star FROM album,
+but also FROM artist WHERE Album.Artistid--
+let me scroll to the right--
+equals Artist.Artistid.
+So notice I'm saying select everything from two tables,
+but only do so where the album tables, artist ID
+column has the same value as the artist tables artist ID column.
+That's kind of the stitching, metaphorically, of my fingers
+together, looking for that common column.
+If I go ahead and click Go, wow, look at what I've just constructed.
+It's a lot of information, but I have album ID and title,
+I have artists ID still, but I have the name of that artist altogether.
+So if you now let your mind wander back to the Python code,
+oh, I could now get a whole bunch of rows containing
+everything I care about all at once.
+I don't need two select queries.
+I can join these tables in this way.
+And I use join very deliberately.
+It turns out that there's another way to express this same thing.
+Instead of using that comma syntax I did, you might see as well this,
+Select star From Artist JOIN Album ON Artist.Artistid equals--
+let me scroll over--
+Album.Artistid.
+This is going to have the exact same effect,
+but you might just find that it reads a little more intuitively to you.
+Select everything from the result of joining these two tables.
+How do you want to join them?
+Well, join them on this equaling that--
+just another way of expressing the same idea.
+And if I click Go, I get back the same information.
+So ultimately, with JOINs do we have the ability to reassemble data.
+So on the one hand, it's just good practice to normalize your database.
+Identify columns that have lots and lots and lots of redundancy, and only
+store that information once.
+For instance, CS50 Finance, if you're supporting
+many different users, every time Malan or Brian or Veronica buys a stock,
+feels like it would be a little silly to store Malan
+or Brian or Veronica along with Netflix, the symbol, and the number of shares
+one of us bought.
+Because Malan, Malan, Malan, Malan is going
+to appear all throughout the database.
+And what if I change my username or my name or someone gets married
+and, therefore, it changes?
+Like, why do you create that messiness for yourself?
+Instead, give Brian and Veronica and me and everyone else a unique ID.
+And when they buy something, just store their user ID or customer ID
+or however you want to think about it, just like with album ID and artist ID.
+And so normalizing a database is all about finding those commonalities
+and moving the data into its own table.
+And if you care about rejoining it, just use
+SQL to reconstruct that view of the data, so to speak.
+So what else can we do here as well?
+It turns out that there is in SQL, not just primary keys,
+but there are unique constraints in some databases where you can specify,
+this isn't my primary key, but I want it to be unique.
+You can specify that something should be indexed.
+So it turns out that, if you just know there's a field in your database
+that you want to be able to search on very efficiently,
+you can index it in advance.
+And you'll see or be able to do this if you'd like for final projects
+or even for the next problem set if you'd like.
+But what this enables are queries like this.
+If I want to go ahead and search for, for instance--
+
+what would be a good example?
+Rock.
+I'm interested in rock.
+So if I want to go into My SQL tab here.
+I could say something like this.
+SELECT star FROM Album WHERE Name not equals,
+but where name is LIKE and then I'm going to say 'Rock.'
+But if I want any number of characters to come before that word,
+I can use a percent sign.
+And if any number of characters after, I can use a percent sign.
+These are like wildcards.
+In most languages, you would use star.
+In SQL, you use percent signs.
+But it means the same thing.
+And if I go ahead and say go, now I get back--
+oh, I get the got wrong lecture, album, oh, title I think is what I wanted.
+Let me try that again, sorry--
+WHERE Title LIKE 'Rock'--
+let me go ahead and click Go.
+And voila, here are all of the albums in the database that
+have the word rock in them.
+Now, as an aside, this table has a lot of more albums in it.
+And frankly, it's small enough though.
+It has hundreds of rows, maybe a few thousand rows.
+None of us humans are really going to notice how slow linear search is.
+But if you start having thousands of rows, tens of thousands
+of rows, millions of rows, not having an index
+means that searching for something like rock is going to start at the top
+and search every darn field all the way to the bottom, big O of n.
+If you instead tell the database, I know I'm
+going to be searching on this column a lot, please index it for me,
+here comes the secret sauce.
+SQLite, Oracle, Microsoft Access, and so forth, they
+will, using their own intellectual property,
+build up some fancy data structures-- trees, or hash tables,
+or whatever in memory, store the data for you invisibly in that format
+so that, when you do ask for a question like, show me all the albums like rock,
+they can answer you in much faster time than linear.
+And that too is what you get with SQL that you don't get with CSVs.
+CSVs are, by nature, only linear.
+So we can do better.
+But you, the programmer, have to help the database
+and actually give it those hints, not just the types,
+but also hints like this.
+And as an aside, there's also the notion of foreign keys
+where, if you really want to lock things down, you can specify that,
+if you ever see in album ID in another table,
+if it's a primary key in the album table,
+by definition, in the other table, it's going to be called a foreign key.
+Because it doesn't really belong there, but it's
+referencing a column elsewhere.
+So there's a lot more technology and vocabulary.
+And you're welcome to dive in deeper.
+And odds are, many of you will for final projects,
+by nature of wanting certain features, among them, even
+the ones we've seen like auto incrementing and not null.
+As an aside too, SQL even has functions.
+And for data scientists and statisticians
+it's super useful to be able to just do math and summaries of data right
+within SQL without ever writing Python code or R or anything else.
+Built into a SQLite and other databases are
+functions like this for average, counting things, getting
+the min, max, sum, and so forth--
+all of that you get for free with a lot of databases.
+All it takes in the context of Python is a line like this.
+But, but, but, but, but there are some problems.
+And let's end by taking a look at two fundamental problems and threats that
+are too often underappreciated.
+And in fact, we have to fix a very serious vulnerability that I introduced
+into my very own code earlier.
+But first, the so-called race condition.
+In survey-- or rather, let's see--
+suppose that we think back at the very start of the semester, most of you
+signed up for a GitHub account for the very first time.
+And you went to github.com/signup.
+For those unfamiliar, GitHub is a website
+where you can save and store programming code that you've written
+and want to collaborate with others on.
+And you chose a username.
+And let me go ahead and try choosing a username like, say, jharvard
+for John Harvard.
+Notice that the website immediately said the user name is taken.
+All right, that's useful.
+And you can probably guess how this is done-- maybe a little JavaScript,
+using AJAX, talking to the server, getting the response,
+changing the HTML or the CSS or whatever.
+Might take some time to wire all that together.
+But that's probably what's going on.
+So let me try a really long random username that is not taken.
+Hey, it's available.
+But probably is not a good thing that I'm streaming this on the internet.
+Because if I wait long enough, I bet someone could, for playful reasons,
+just sign up for this, let alone anyone in this room.
+But you've just told me it's available.
+So good.
+I'm really excited.
+I've got my username.
+Let me go ahead and type in my email address,
+malan@harvard.edu, my password, 12345-- take a few moments there.
+Verify my account and so forth.
+And I click Submit.
+Suppose that I'm told, momentarily, sorry, that username has been taken.
+Could that happen?
+Yeah, if any of you were trying to mess with me right now,
+you would have signed up for that username and beaten me to the punch
+so that when I hit Join, I get an error.
+That's the definition of a race condition where two people or two users
+or two computers or two threads--
+if we really roll back to our discussion of threads in Scratch--
+are trying to do the same thing at roughly the same time.
+And if those two things, threads or humans,
+check the state of a variable, which is a fancy way of saying
+is the username available, they both get back answers.
+But then some number of split seconds later,
+then they make a decision based on that information, there is a window of time,
+either split seconds or even seconds or minutes,
+where the state of that variable could, of course, change.
+So if you two, literally, right now on your laptop,
+typed that very long username, all of us would probably be told, green light,
+it's available.
+But only one of us is actually going to get it.
+And that's because of a race condition.
+Literally, all of us might be racing to sign up for that value.
+And it's when state can change in between things happening.
+This is a bad thing because it makes your data
+vulnerable to changes by someone you don't necessarily intend.
+Or if the database isn't smart, you might
+be able to do especially bad things.
+ATMs are a canonical example of this.
+If you had a malicious adversary trying to log into two bank accounts at once
+or two physical machines at once, either with two cards or two accounts and two
+laptops, you could imagine both of them trying to deduct, like,
+$100 from the same account instantly.
+Because imagine a poorly-implemented bank website.
+It checks the account balance of the user logged in.
+Do you have $100?
+If the answer is yes, maybe both websites are going to say yes,
+you may deduct $100.
+You hit enter and voila, you deduct $100.
+The user gets it somehow because it's transferred to some other account.
+But the bank thinks it only did that once, deducts $100,
+but you've just walked away with $200 because you made a decision based
+on the same answer in two different threads
+or two different programs or two different computers.
+So long story short, this can happen even in the real world.
+An example I was taught by my advisor years ago was this.
+Suppose you and your roommates have a little dorm fridge.
+And you're in the habit, of course, of drinking a lot of milk.
+And so the fridge has run out of milk.
+And you come home, the first roommate after classes.
+And you realize, oh, I really need a drink of milk.
+And so you check the fridge.
+There's nothing there.
+So you close the fridge, and you walk into the square, go to CVS,
+and get in line to buy some milk.
+Meanwhile, your roommate comes home.
+Also, they really need a drink of milk.
+And so they check the state of the variable.
+Argh, no milk.
+Close the fridge, and then walk to like Tommy's Convenience or some other place
+nearby and get in line for some milk.
+You of course, then both get home eventually.
+And what happens now?
+Dammit, now you have twice as much milk.
+And milk goes bad quickly.
+So now this is a problem, a very bad problem.
+You have twice as much milk as you could possibly drink.
+But what's the origin of that problem fundamentally?
+AUDIENCE: You're out of something.
+DAVID J. MALAN: You're out of something, but--
+AUDIENCE: You need it.
+DAVID J. MALAN: --you need it.
+But why did I end up with two?
+AUDIENCE: There's no flag.
+DAVID J. MALAN: There's no flag, right?
+There's no indication.
+There's no sharing of state.
+You both inspected the value of the variable,
+made a decision independently on it.
+But the state of that variable changed on one of you.
+Because when one of you came home, the later person, damn, like,
+the milk has already been refilled.
+So how do you solve this?
+In the real world, how could you avoid this problem?
+You just, one, never do errands for your roommate.
+AUDIENCE: The magnet you put on the refrigerator says get this.
+DAVID J. MALAN: Mag-- yes.
+A shopping list, right-- gone for milk--
+Arrested Development.
+Always leave a note, right?
+You could convey that information.
+You could more dramatically lock the refrigerator, right?
+Padlock the thing, and so your roommate can't
+inspect the state of the refrigerator while you are gone, therefore,
+not making us vulnerable to this.
+And I use the word lock deliberately because,
+in databases, that's how they solve this.
+There is a feature in databases called locks.
+Or fancier versions of this are called transactions,
+whereby, you can guarantee something called atomicity,
+where atomicity means you can do multiple things back to back to back
+without getting interrupted.
+So in the case of a bank, it is possible, with SQL, using slightly
+fancier syntax that we won't dive into today to solve this problem by saying,
+you know what?
+Begin the following transaction.
+Check the state of the bank account, deduct this amount of money,
+and now commit the results.
+And while I'm doing that, lock everyone else out.
+Don't let any other customer or any other user
+do exactly that information that touches the same data until I am done.
+Long story short-- you pay a price, perhaps.
+You're literally preventing your roommate from accessing the fridge,
+and that's annoying.
+Or you're preventing other customers from doing transactions.
+So hopefully the computer is fast at this, and your fast at shopping.
+But you've at least ensured that you have atomicity.
+No operation can get inserted into your sequence of operations
+as by your roommate or some other computer or thread.
+So that's a problem with databases that we're only going to skirt over.
+And GitHub might solve this, how?
+Well, by just not caring, potentially.
+I don't know what's going to happen if multiple of us try.
+I'm guessing they will just give n minus 1 of us an error message saying, sorry,
+that username is no longer available.
+Think about this.
+If you've ever bought airline tickets, this
+is a solved problem in that industry.
+That would be really annoying.
+If you just spent an hour of stressful price-hunting
+for a good airplane ticket, you start checking out
+after adding it to your shopping cart.
+And five minutes later, after your name and email address and credit card
+number, the ticket is gone.
+So what do airlines do?
+They often give you a five-minute window.
+And some of the fancier websites show you the clock saying,
+we guarantee this for the next five minutes.
+Hotels might do this too where they locked the refrigerator for you
+by somehow altering the database to say, mm-mm.
+No one else can buy this ticket or this room for the next five minutes,
+much like the note or the padlock.
+So those kinds of things are all around us.
+But let's look at one final example that's the worst threat of all is this.
+Previously, I allowed myself to search by name.
+So q equals Brian or q equals David or Veronica or the like.
+And what did I do with that information?
+Well, if we go back into the IDE and actually look
+at that file in application.py, I simply formatted it using an F string
+inside of this SQL string.
+But what if my users were a little bit malicious?
+And suppose that someone doesn't want to just search for Brian.
+But you know what?
+Suppose they do something like, my query is DELETE FROM registrants WHERE--
+sorry Brian-- NAME equals Brian--
+something like this.
+Now, this is not valid at the moment, because this string,
+while I'm certainly allowed to type it in,
+is going to get plugged into my code, but in the wrong place logically.
+Like, I'm going to look for someone's name called "DELETE FROM registrants
+WHERE name equals Brian," which is just nonsensical.
+It will return 0 results.
+But what if I do something like this where I say,
+Brian or DELETE from registrants where I finish
+the thought that the programmer had and then start my own new thought.
+Or another way of doing this is to use special syntax semicolon, something
+like this.
+Long story short, I could contrive a human malicious input that
+finishes the programmer's thought and returns zero rows, but by the way,
+also sneaks one additional rogue query into the database.
+This is what's known as a SQL injection attack.
+And if you naively and very, very, very badly and incorrectly write code like I
+did-- don't ever do this--
+you will be vulnerable to exactly this attack
+because you are blindly plugging in the user's input to a string
+that you are then passing to a database.
+This is a fundamental flaw in lots of applications, lots of languages
+where you have to distrust your users.
+It doesn't matter if it's for just students on campus
+or it's just for you and your friends.
+Never ever, ever trust users' input because either someone's
+going to mistype something and something is going to go awry,
+or you're going to have a bad apple trying
+to hack into your website or your application
+by trying these kinds of commands.
+And you have to always write code defensively.
+So how to do this?
+There are a bunch of ways.
+But it turns out that, what's dangerous about something
+like I just typed in is that it's the semicolon, for instance,
+and that's the quote marks over "elsewhere."
+So the safest thing to do is, no matter what the user types in, escape things.
+You can use special syntax.
+We saw this in C-- generally, putting a backslash in front of something means,
+don't let it have its default behavior.
+Instead, treat it specially.
+So you could use special code in Python that
+just says remove any bad characters, or replace things.
+Frankly, you've probably been to a website where you've been told,
+sorry, you can't use that character in your password.
+Or sorry, you can't use that in your username.
+That's just dumb.
+Like, that is the lazy approach to this.
+There is no reason to prevent users from typing
+any characters into their keyboard for their password and maybe even
+their username.
+That's kind of a lazy way of defending against this by saying,
+mm-mm, I don't trust any percent sign, any semicolons,
+any dashes, any apostrophes.
+Rather, just escape things.
+But it's silly for all of us in this room
+to write our own code for scaping users' input or scrubbing it, as it's called,
+or sanitizing it, as it's called-- same things.
+Why don't we just use a library?
+Now, there are many libraries out there.
+The one that we're using at the moment is CS50's.
+And the EXECUTE function does this for us.
+Instead of using F strings, which you should not use like this.
+You should instead do this.
+If you want to plug in a placeholder value to a SQL query,
+you literally use a standard convention, that we have adopted too,
+where you just put in a variable's name, but with a colon in front of it.
+And it can be anything.
+It can be q.
+It can be x.
+It doesn't matter.
+But you want to just plug in some value there.
+So I'm going to call it name, by convention.
+Then you close your quote and finish your thought.
+And then you go ahead and pass in the actual value, name equals q.
+And now you have constructed, dynamically,
+a SQL string with a place holder that is not
+Python's own curly brace placeholder.
+This is a special SQL convention where you say plug in value here.
+What value?
+We'll plug in this names value, q, whatever the human has typed in.
+And what are execute function will do for you
+is all of the fancy backslashing and all of the escaping
+and will protect you from the user's data.
+And this is how truly simple it is.
+It doesn't have to be CS50's library.
+This is ever so common in all languages, but too few people know about it
+and use it.
+And so half the time you read about some database getting hacked
+or your data getting stolen, it is because
+of a stupid oversight like that.
+So just use libraries and escape users' input.
+We can see this now more concretely.
+All of the undergrads in the room have surely
+logged into, either Yale's website or Harvard's website,
+which looks a little something like this here.
+You're prompted for your login name and your password,
+or your Harvard key or the like.
+Well, how does this take effect in real terms?
+If I were to type in my email address--
+but then weird syntax like this-- let's look at an example.
+Quote "or" quote unquote "1" equals quote "1."
+Notice it's not balanced.
+It's missing a quote over here, missing a quote over here.
+Because the presumption is that maybe Harvard is vulnerable to this.
+I don't think they are.
+But suppose that the code running Harvard key
+and Harvard's login page looks a little something like this.
+This is bad.
+This is dangerous because they're just using f strings or format
+strings, which are just going to blindly plug anything in there.
+
+And so if you let the human type in something cryptic like that,
+notice what has happened logically.
+Where username equals me at example your email provider.com and password
+equals quote unquote, so nothing, or 1 equals 1.
+And why 1 equals 1?
+If I go back, notice that there's a quote here and a quote here.
+And the reason that I didn't finish my second quote here or my second quote
+here is because I'm assuming, as a bad guy,
+I think Harvard is just going to blindly plug my input
+into a single quotes of their own.
+Therefore, I can finish their thought nonsensically.
+But notice, logically, what happens.
+Select all users from the database where the user name is me at example email
+provider and the password is nothing.
+Or 1 equals 1.
+Well, when does 1 equal 1?
+Like, always.
+So this will always return users from the database,
+and presumably, therefore, let me log in as one of those users--
+so incredibly simple to defend against this.
+Just use placeholder syntax and distrust and sanitize users' input.
+The syntax in SQL and the CS50 library is quite simply with that colon.
+But in other libraries, it might be quite the same.
+So now you are all, families and students alike,
+inaugurated into the small class of folks
+in the world who understand particularly geeky humor.
+You might notice this meme that's gone around the internet for many years
+now where someone either maliciously or humorously
+decided to paint this over their license platelets.
+Let's enhance.
+Why would someone do this?
+
+AUDIENCE: Scanners.
+DAVID J. MALAN: Scanners, yeah.
+Tollbooths are going away, at least in the US.
+And they instead have cameras or readers that are scanning the front of your car
+and trying to optically do OCR, Optical Character Recognition,
+on your license plate.
+And the presumption here is, maybe in some municipality,
+there's some badly written code where they just blindly plug
+your license plate into their code.
+And hopefully you finish the thought where ZU 0666--
+whatever that is, it's part of the license plate--
+but "semicolon drop database table dot dot dot."
+And we didn't even look at that because DROP is pretty extreme.
+It literally deletes a database itself.
+But this is a nice way of getting off the hook from a total price.
+And most canonical perhaps, XKCD is a very popular cartoon strip.
+It's particularly geek-oriented.
+And you'll perhaps understand this joke now as well among CS circles.
+[LAUGHING]
+
+I can hear the laughter making its way through.
+So from here on out, if you take nothing else away,
+remember little Bobby Tables with pset.
+Our final, will you actually implement CS50 Finance
+and coalesce all these ideas.
+Thank you so much to all of our families for joining.
+And we will see you next time.
+[APPLAUSE]

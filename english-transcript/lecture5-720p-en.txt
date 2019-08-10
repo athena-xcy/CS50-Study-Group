@@ -1,0 +1,2391 @@
+[MUSIC PLAYING]
+
+DAVID J. MALAN: This is CS50.
+And today, we transition from the world of C and, with it, pointers
+and some of the struggles that you might have felt over the past few weeks
+to a more familiar world, that of web programming.
+I'm using web browsers and mobile devices and laptops and desktops
+and creating more graphical and more interactive experience
+than our traditional command-line terminals have allowed.
+And we'll see, though, along the way that a lot of the ideas that we've
+been exploring over the past few weeks are still going to remain with us.
+And we're going to see them in different ways.
+We're going to see them in the form of other languages and other syntax.
+But the ideas will remain quite reminiscent of what
+we did back in week 0.
+So TCP/IP is perhaps the most technical way
+and the most low-level way we can quickly make the web uninteresting.
+But you've probably, at least, seen this acronym somewhere, maybe
+on your Mac, your PC, some setting maybe once upon a time.
+And this, actually, just refers to a protocol
+or, really, a pair of protocols, languages of sorts
+that computers speak in order to transmit information
+from one computer to another.
+And this is what makes most of the internet today work.
+The fact that you can pull up your laptop and desktop
+and talk to any computer on the internet is because of these protocols,
+conventions that humans decided shall exist some years ago.
+And they just dictate how computers intercommunicate.
+But let's make it a lot more familiar.
+In our human world, you've probably, at some point, sent or received a letter.
+These days, it's perhaps more electronic.
+But, at least, you've gotten one such letter
+from probably a human, maybe a grandparent or the liked,
+or sent something yourself.
+But before you can actually send that message to the recipient
+and put it through the US mail or the international mail services,
+what needs to go on the envelope?
+AUDIENCE: Address.
+DAVID J. MALAN: Yeah-- so some kind of address.
+And what does an address consist of?
+AUDIENCE: Name.
+DAVID J. MALAN: Name.
+AUDIENCE: Where they are.
+DAVID J. MALAN: Where they are.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: So where they are might include a street address and a city,
+a state, a ZIP code in the US, or a postal code, more generally,
+and the country, if you really want to be specific.
+And so all of that goes on the front of the envelope,
+generally in the center of the envelope.
+And then what often goes on the top left-hand corner in most countries?
+AUDIENCE: The return.
+DAVID J. MALAN: Yeah.
+So the return address-- so that if something goes wrong,
+albeit infrequently, that letter can get-- make its way back to you,
+and also the recipient knows just immediately who actually sent them
+the no.
+So that is enough information to get a letter from point A
+to point B because these addresses, these postal addresses
+in our human world, uniquely identify houses or buildings or people,
+in some sense, in the world.
+So right now, we're at 45 Quincy Street, Cambridge, Massachusetts, 02138, USA.
+That is probably enough specificity for anyone in the world
+to mail us a postcard saying "Hello world" in written form
+and get it to this building.
+Meanwhile, if we wanted to send something to the Science Center,
+1 Oxford Street, Cambridge, Mass, 02138, USA, that's its unique address.
+So it stands to reason that computers, including our own Macs and PCs
+and Android phones and iPhones and the like,
+all have unique addresses, as well, because, after all, they
+want to communicate.
+And they need to get bits, zeros and ones, from point A to point B.
+But they're not quite as verbose as those kinds of addresses.
+Computers have what you probably know as IP addresses,
+Internet Protocol addresses.
+And this just means that humans decided years ago
+that every computer in the internet is going
+to have a unique number identifying it.
+And that number is generally of the form something dot something dot something
+dot something.
+And, as it turns out, each of these somethings between the dots
+is a number from 0 to 255.
+And now, after all these weeks of CS50, your mind
+can probably jump to a quick answer.
+How many bits must each of these numbers be taking up
+if the range is from 0 to 255?
+Eight.
+So eight-- and why is that eight?
+So 256 has been a recurring theme.
+And if you don't recall, that's fine.
+But yes, this is eight bits, eight bits, eight bits, eight bits,
+which means the numbers that we humans use to uniquely identify our computers
+on the internet are 32 bits in total.
+Well, there's probably another number that can roughly come to mind.
+If you've got 32 bits, how high can you count, roughly speaking, from 0 to--
+I heard a murmur--
+AUDIENCE: Four billion.
+DAVID J. MALAN: Four billion.
+So it's roughly four billion.
+And we brought that up in week 0 with a four billion-page phone book,
+imagining that.
+So four billion is roughly what you can count up to with 32 bits.
+So that means there can be four billion computers, devices, or anything
+on the internet, uniquely identified-- small white
+lie because that's actually not quite enough these days with all the devices
+and all the humans in the world.
+But we found workarounds for that.
+Question?
+AUDIENCE: [INAUDIBLE]
+
+DAVID J. MALAN: But only half of them at the time.
+No.
+So yes, if by 2023 or whatever year humans are projected
+to be almost entirely online, and there's
+some-- billions and billions of people, eight billion or so,
+then that's a problem for this system.
+Thankfully, as long ago as 20 years ago did people realized,
+mathematically, this was going to be a problem.
+And so there's actually a newer version of IP, Internet Protocol.
+This is version 4 we're talking about, which is still
+pretty omnipresent in the world.
+Version 6 actually uses not 32 bits, but 128 bits, which is massive.
+And I can't even pronounce how big of a number that is.
+So we're thinking about it.
+And the biggest companies of the world have already
+transitioned to using bigger addresses rather than these 32-bit addresses.
+But these are still pretty common in almost any device you might own or see
+on campus or elsewhere.
+So if you have a unique address, that's enough to put
+on the front of the envelope.
+And it turns out that if you're sending an email or a chat message
+or whatever, you, too-- your Mac, PC, or phone-- has an IP address.
+So that's enough to put in the top left-hand corner, conceptually.
+But you need one more piece of information.
+It turns out that on the internet, there are servers, computers,
+that are just constantly listening for people to connect
+to them, like us, checking our email and visiting Facebook
+and Gmail and other such websites.
+And those servers, though, can do multiple things.
+Google has lots of businesses.
+They give you email and web services and video conferencing
+and lots of other internet-based services.
+And so humans also decided, years ago, to identify
+all of these possible internet services with just unique numbers--
+names also, but also unique numbers.
+And it turns out that humans decided years ago
+that when you visit a website, there's one more piece of information that's
+got to go on this envelope, not just the server's IP address
+that you're trying to connect to, but also the number 80
+because 80 equals HTTP, acronym you're surely familiar with by now.
+And that just denotes this is a web request.
+If, instead, it said something like 25, that's SMTP, which is email.
+So that might mean inside of this virtual envelope
+is actually an email message going to Gmail or the like.
+And there's bunches more numbers.
+But the point is that there are numbers that uniquely identify.
+So when Google gets a virtual envelope, just a whole bunch of bits, zeros
+and ones, that, in some way, has an IP address on it as the destination,
+it also knows, oh, is this an email or is this a video conference message
+or is this a chat message or something else.
+So just to make this more real then, if I'm
+going to go ahead and write this down, my IP address to whom
+I'm sending something might be 1.2.3.4.
+Generally, then, I'm going to send it to, say, port 80.
+Maybe my IP address is 5.6.7.8.
+And so an envelope--
+I'll be at [INAUDIBLE]---- and it's really just going to have those pieces
+of information-- the destination address, colon,
+and then the number of the service you care about, HTTP or whatever,
+and then your own IP address, and more information.
+But the point is both sender and recipient in dresses--
+that's enough to get data from one computer in the world to another.
+And there's so much more complexity.
+This is a whole field in computer science of networking,
+if you like this kind of stuff.
+But that's how, in a nutshell, the internet gets data from point A
+to point B. And this envelope just represents
+a whole bunch of zeros and ones.
+But what's inside of that envelope?
+And that's where we'll focus today and in the weeks to come.
+It's actually content.
+It's the email you care about or the web page you care about.
+And how do we actually decide what server we're connecting to?
+Well, typically, you might go to a so-called URL, Uniform Resource
+Locator.
+A URL is just the address of a server.
+And that's going to be the-- really, the ultimate recipient of that envelope
+that we're trying to send.
+But this, of course, is not an IP address.
+This does not follow the pattern something dot
+something dot something dot something.
+So if all of us humans are constantly typing stuff like this
+into our browsers, yet the whole story just
+told is about numbers and port numbers and low-level stuff,
+where's the connection?
+Does anyone already know how you get from typing this
+to a bunch of zeros and ones that are somehow addressed with numbers?
+DNS, I heard.
+What's DNS?
+Yeah.
+So it turns out there's a technology in the world-- domain name system,
+in fact.
+And DNS, Domain Name System, is just a type of service on the internet
+that Harvard maintains and Yale maintains,
+and Comcast and Verizon and a lot of the big players
+in the world, whose purpose in life is to run
+servers that convert what are called domain names to IP addresses,
+and vice versa, so that when we humans type in www.example.com into a browser,
+it's our Mac or PC or phone that contacts a local server, a DNS server,
+on the local campus or university or apartment or whatever,
+asks what is the IP address for www.example.com.
+And then what your Mac or PC or phone does
+is it writes that address on the envelope.
+But it puts a request for specific web page inside of the envelope.
+And when you get back a response from that server,
+it's going to be your address that's on the front of the envelope.
+And inside of the envelope is going to be
+the web page or the email or the chat message
+or whatever it is you were trying to actually access.
+So let's tease this apart into some of its components.
+First of all, this thing here highlighted in yellow
+is officially the domain name.
+You've probably all used this term before.
+It's usually something dot something.
+"Com" typically refers to commerce or commercial, although anyone,
+for any purpose, can use .com.
+Back in the day, very popular were .com, .net, .org, .edu, .gov, .mil.
+And these were all very US-centric because it
+tended to be the United States that really kicked off
+this use of the internet and DNS.
+But now it's certainly spread globally.
+And so there's hundreds now of what are called TLDs, Top-Level Domains.
+They tend to be three or more characters if they denote a word.
+And they tend to be two characters if they denote a country,
+like US is United States, JP is Japan, UK--
+United Kingdom, and so forth.
+Those are just country codes that do the same thing.
+But what's this at the front?
+Worldwide web, or www, here, more generally, is an example of what,
+technically speaking?
+
+What is this?
+
+What does this mean?
+Yeah?
+AUDIENCE: Subdomain.
+DAVID J. MALAN: It's a subdomain-- is one way of thinking about it.
+In fact, all of you, many of you here, probably
+have email addresses of the form college.harvard.edu or g.harvard.edu
+or the like.
+Those are subdomains.
+Harvard's such a big place that they actually
+put everyone in different categories of domains, otherwise known as subdomains.
+And that might be a word or a phrase that comes before the domain name here.
+But it can also just mean the name of a server.
+So if example.com is the company or business whose website you're trying
+to visit, their domain is example.com.
+And they bought that domain name some years ago.
+And they spent a few dollars every year, probably, renewing the fee for that.
+And they have at least one server whose name is www.
+And that exists within their domain.
+They might have dozens or hundreds or just one server.
+Each of them can have a name.
+So this is generally called the hostname.
+So when it's an email address, it often implies a subdomain,
+like a category of addresses.
+But when it's in a URL like this, it means probably a specific machine
+or a specific set of machines-- conventionally,
+the web servers that the company runs--
+doesn't have to be called www.
+For historical purposes, MIT tends to use web.mit.edu.
+But almost everyone else in the world uses www or nothing at all.
+It's not required.
+You can actually just visit many websites without visiting any hostname.
+And it just works, as well, thanks to DNS giving you the IP address.
+But what about the file you're actually requesting?
+What does it actually mean to visit this URL?
+Well, on many servers, this implicitly means, hey, web server,
+give me a file, just a text file, called index.html.
+That's the name of the file, a text file,
+that you could create with CS50 IDE or even Notepad or TextEdit
+on your own Mac or PC that contains a language called HTML.
+And we'll take a look at that language in just a bit.
+And some of you might have seen it before.
+But the language in which web pages are written is HTML.
+And we'll give you the building blocks, conceptually and practically,
+for that today.
+You'll use it over the coming weeks in many different contexts.
+But we'll use it, ultimately, to create the contents of websites.
+But today, we'll focus first on this, HTTP.
+Anyone know what that stands for?
+Yeah?
+AUDIENCE: HyperText.
+DAVID J. MALAN: Yeah.
+HyperText Transfer Protocol.
+And honestly, in most of technology, it's
+not so much what the acronyms represent that's all that important,
+but, really, what the technology does.
+And in this case, HyperText Transfer Protocol--
+we'll see hypertext in a moment.
+That's another way of saying HTML.
+Transfer Protocol-- P for Protocol-- that's another buzzword.
+So protocols are not programming languages, per se.
+They are conventions.
+And we humans have conventions, too.
+For instance, if I were to meet someone for the first time,
+I probably wouldn't stand on stage and lean down like this to do it.
+But I might say, hi, I'm David.
+AUDIENCE: Hi.
+I'm Stephan.
+DAVID J. MALAN: Stephan, nice to meet you.
+And we have this weird handshake that was aborted prematurely there--
+that we have this weird convention-- us humans, at least in the US,
+of greeting someone with a handshake.
+And Stephan just knew to do that, however awkwardly.
+And then he disengaged because the transaction was complete.
+And that's not unlike what a web server does.
+When you request a web page, you're sending a request to someone
+as though you're extending your hand.
+You're expecting something in return.
+But in the case of a computer, of course,
+it's like the web page itself coming back in an envelope from point B
+to point A.
+So that's what a protocol is.
+We just have been programmed to know what
+to do when we want to request a greeting or information
+and get something back in return.
+It's like a client-server relationship in a restaurant.
+A customer requests something off the menu.
+The server, the waiter or waitress, brings it to them
+and, thus, completes that transaction as well.
+And that's what the internet is, too--
+clients and servers, browsers and servers, computers
+and other computers, ultimately.
+So with that relationship in mind, let's take a look
+at what's actually inside of this envelope.
+In the case of Stephan's and my greeting, it was more visual.
+But in the case of a computer, it's going to be more textual, literally.
+So inside of the envelope the, virtual envelopes,
+so to speak, that your browser sends to a server
+when trying to request a web page, is actually
+a message that looks like this.
+Thankfully, it's not terribly cryptic, although the dot, dot, dot
+implies there's more contents inside of the envelope.
+But the keyword here literally is gets, a verb.
+And there's other verbs that the browser can use.
+And this one literally means, get me the following home page.
+What home page you want to get?
+Well, the default one.
+This forward slash, as it's called, just represents the default web page
+on a website.
+And in many cases, that implicitly means an actual file called index.html, just
+a convention.
+It can be called other things and not exist at all.
+But in many cases, that means, implicitly,
+get me a file called index.html.
+And we'll see what that looks like in a moment.
+Http/1.1 just means, hey, Stephan, I speak HTTP version 1.1.
+Hopefully, you do as well.
+There can be other and newer and older versions of the same thing.
+Notice down here, though-- whoops-- notice now here, though,
+that the hostname is also in this envelope
+because it turns out that web servers can do multiple things at once.
+And they can serve multiple domains.
+You don't need your own personal unique server to serve a website.
+You can have tens, hundreds, thousands of different websites
+all on the same server.
+And if any of you ever paid for your own domain name or your own personal home
+page or the like, you are probably paying someone
+for shared space on one server or more servers,
+not for your own personal dedicated one.
+But again, this might implicitly mean the same thing as this.
+Give me index.html.
+So what is it that actually comes back from the server?
+The server, hopefully, responds with a message that looks like this.
+It responds with confirmation of the version of the protocol it speaks.
+That's like Stephan saying, yes, I speak HTTP 1.1 as well.
+200 is a numeric code that signifies literally OK.
+All is well.
+I understood you.
+Here is the information you requested.
+And Content-Type, below it, is a more technical way of saying,
+the type of content I'm handing back to you in my own envelope
+from point B to point A, or from Stephan to me,
+is in a language called HTML that happens to be text.
+Why does it look like this?
+Humans, years ago, just decided that this
+would be the sequence of characters that computers literally
+send to communicate that information.
+So let's actually try this in one case, maybe, for instance, with harvard.edu,
+and see what actually happens to see what else we might see.
+So let me go ahead and open up Chrome, or any browser,
+for that matter, that supports some kind of debugging and diagnostics.
+And I'm going to do this.
+And you can access this in different places.
+I'm going to go up to View, Developer, and View Developer Tools.
+This is something that comes with Chrome.
+You sometimes have to enable it in Safari and other browsers.
+But almost every browser these days has this capability.
+And you'll notice that this just opened up a whole bunch of tabs
+at the bottom of my screen here that I'm going
+to be able to use to actually explore what is--
+
+did I kick something else?
+Apologies.
+It's back-- won't step on there.
+So what is this going to allow us to do?
+Well, notice there's a lot of features here.
+It's overwhelming at first glance.
+But there's a tab here called Network.
+And it turns out that one of the features Chrome gives to developers,
+which you now all are-- is software developers--
+is the ability to see what's going on underneath the hood of a browser,
+to see what is inside of these virtual envelopes
+that your browser has all those years been sending
+from itself to servers elsewhere.
+So I'm going to go ahead and do this.
+I'm going to go ahead and actually visit http://harvard.edu and hit Enter.
+And you'll see a whole bunch of stuff happens,
+including the web page appearing at the top of the screen.
+I'm going to ignore all of this stuff at the bottom
+except for the very, very first request.
+If I zoom in on this, notice that highlighted in blue
+here is the very first request, harvard.edu.
+And if I click on that, I'm going to see a little more information at right.
+And if I go scroll down to what are called
+request headers, the lines of text that were inside the message
+that my browser sent, this is literally what
+my browser sent inside the envelope, unbeknownst to me,
+when I visited harvard.edu.
+Thankfully, it confirms my prediction earlier, get/http/1.1,
+because I requested harvard.edu's home page.
+Host is harvard.edu.
+Then there's the dot, dot, dot, the stuff that we don't particularly
+care about today.
+But let me go ahead and look at the response.
+So this was my request.
+This was my hand going out to Stephan.
+Let's see what his or the server's response
+is by scrolling up to this, which is called response headers.
+Harvard's server, fortunately, does speak the same protocol
+as me, 1.1 of HTTP.
+But apparently, Harvard moved permanently.
+What does that mean?
+I went to http://harvard.edu, not there.
+Where is it?
+Well, there's a little more information here.
+There's a lot of dot, dot, dot, things we don't care about.
+But if we focus on one that-- oh, location--
+where is Harvard now, apparently?
+Yeah, say--
+AUDIENCE: [INAUDIBLE]
+
+DAVID J. MALAN: Yeah.
+It looks like Harvard "moved" permanently from http://harvard.edu to,
+and let me highlight it, https://www.harvard.edu,
+with two notable changes.
+One, there's the www.
+And two, there's also what that might catch your eye?
+S, which most of you probably know these days means secure,
+and which implies encryption in the spirit of Caesar and Vigenere,
+but much more secure than those simple ciphers.
+The information is somehow scrambled now when I'm communicating
+between myself and harvard.edu.
+So there's two decisions there.
+Harvard has decided that they want to allow and, indeed, require
+users to visit their website securely so that no one--
+no company, no government, no family members--
+can necessarily see what is being requested of Harvard's website
+because that is scrambled information, much like using something
+like Caesar or Vigenere.
+And Harvard also, probably for branding reasons,
+but also partly for technical reasons, decided,
+we want you to think of our website as www.harvard.edu.
+And it's a mix of marketing and technical for a few different reasons,
+one of which is www we humans just all know means website.
+And if you see harvard.edu--
+this is less true these days--
+might not necessarily imply as obviously that this is a websites URL.
+Frankly, not too many years ago, even advertisements and TV ads and printed
+ads and the like would even show http:// to really make clear to viewers that
+this is a web address.
+But gradually, as more and more people get on the internet
+and understand technology and URLs and the like,
+we can just start dropping the stuff that is unnecessary clutter because all
+of us now know intuitively, oh, harvard.edu-- it's
+probably a web address that I can just type into a browser.
+And the browser or the server will finish my thought for me
+and actually prepend the secure URL or the www or the like.
+So we still haven't actually found Harvard, it seems.
+So let's do this instead.
+Let me go ahead and zoom out and visit a different URL.
+Let me go ahead and, again, go to View, Developer, Developer
+Tools, Network Tab.
+And now let me visit that more verbose URL, more precise URL, and hit Enter.
+Again, a whole bunch of stuff gets requested--
+more on that some other time.
+But now, if I click on the first such request
+and look at my response headers, you'll actually
+see, albeit in a different format now, that the status of this request is 200,
+which, recall, meant--
+AUDIENCE: OK.
+DAVID J. MALAN: OK.
+OK.
+So now these are two numbers that, honestly, you've
+probably not really seen or cared all that much about, 200 and 301.
+But odds are you've seen at least one other number when visiting URLs.
+For instance, besides actually seeing 200 and 301, you've probably seen 404.
+Now, it apparently refers to Not Found.
+But more in real terms, what does that mean?
+How do you induce that error?
+AUDIENCE: The site doesn't exist.
+DAVID J. MALAN: The site doesn't exist.
+You mistyped a URL.
+The web page doesn't exist.
+A system administrator just changed the name on something or it's an old URL.
+Any number of reasons can mean that the file was not found.
+That file might have been index.html or any other URL.
+But all this time when you visited a website and you've seen 404,
+it's not clear, frankly, why servers have been bothering to tell us 404.
+Most people don't need that level of information.
+But it derives from that HTTP response, that first line
+of text inside the envelope coming back from Stephan or the web server,
+more generally, that says 404, Not Found.
+And that means the user probably did something wrong
+or if the data has simply disappeared from the server.
+And there's so many more of these things as well.
+And in fact, you might get responses, like we just
+did from Harvard, supporting not just 1.1, but version 2 of HTTP.
+So just realize if you tinker with your own Mac or PC,
+the messages might look a little different
+based on your browser and the website.
+And that's just because things are evolving over time.
+And versions are changing.
+But there's so many others of these.
+And this is just a short, abbreviated list.
+200 and 301 we saw.
+404 you yourselves have probably seen.
+401 and 403 generally refer to you haven't logged in
+or you're just not authorized to access information
+because it doesn't belong to you, for instance.
+500 you're all going to experience before long--
+that 500 is Internal Server Error, which is not
+so much the server's error as your fault and my fault
+when we've written buggy code.
+So in the weeks to come, not this week, but when
+we start writing Python code and SQL to talk to databases,
+we're all going to screw up at some point.
+And a browser will often see a 500 error from a server
+if, indeed, there's a problem with code.
+418 doesn't actually exist.
+This was a April Fools' joke, I think, in, like, 1988,
+where some people with a lot of free time
+wrote up a whole formal specification for an HTTP status code, a 418,
+I am a teapot.
+And it's still kind of exists in lore, internet lore.
+So those are just some of the numbers you might see.
+But they're not all that technical if you just know where to look for them
+and you know, as a developer now, what they signify for you.
+Yeah?
+AUDIENCE: [INAUDIBLE]
+
+DAVID J. MALAN: Good question.
+What's the difference between 200 OK and 302 Found?
+So 302, if you read into the documentation,
+would actually tell you that this also induces
+a redirect, whereby, just like 301, when the browser gets a 301 or a 302,
+the browser should be redirected to the new URL that we saw in the header,
+so to speak, called location, colon, whatever it was.
+The difference is that Moved Permanently means
+that the browser should remember that this redirection is happening
+and stop bothering the server with the same original quest.
+Just remember what the new URL is.
+302 means found it, but don't rely on this.
+Keep asking me again and again.
+So it's just a performance optimization so you
+don't annoy the server unnecessarily in the case of 301s, which just
+costs time and money, in some sense.
+So you might have heard about this before--
+can only get away with this Cambridge, not so much New Haven.
+Has anyone ever visited safetyschool.org?
+AUDIENCE: Hey.
+DAVID J. MALAN: You're welcome to on your laptop or your phone.
+So some very clever Harvard students, I think, years ago bought this domain.
+Frankly, they've probably been paying, like, $10 or more
+per year ever since just to keep this joke alive.
+But it's wonderfully illustrative because if we go back
+to Chrome or any browser--
+and let me go ahead and open up a browser tab and go to safetyschool.org,
+Enter.
+Oh, interesting.
+Where did I get redirected?
+AUDIENCE: Hey.
+DAVID J. MALAN: Hey.
+So the more interesting question for us is, how are they doing that?
+Well, let me go back into the IDE for a--
+or actually, let me go into my browser and open up a new tab--
+View, Developer, Developer Tools.
+Look at the Network tab.
+And now let me go ahead--
+whoops-- let me go ahead and visit http://safetyschool.org.
+Enter.
+Scroll back up to the top, where I see the first request.
+And you can see, more technically, if this doesn't take the fun out
+of the joke, all these Harvard students did
+years ago was configure this domain name to return a 301,
+Moved Permanently to Yale University.
+Now, it's only fair, especially since the Yale students are watching
+this live right now from New Haven--
+let's take a look at one other site called harvardsucks.org.
+So this domain, too, does exist.
+Let me clear that screen and go to http://harvardsucks.org.
+Enter.
+And this is an actual website.
+So not only did these enterprising Yale students buy the domain name,
+they've also been hosting the website for years since.
+There's a wonderful YouTube video there that actually speaks to a very fun hack
+that they did some years ago at Harvard-Yale, the football game.
+But you can see here, oh, that--
+so there's a minor one.
+So harvardsucks.org actually now lives at www.harvardsucks.org.
+But then you actually stay there.
+And so I encourage you to go to this site, as well as the other, for all
+your Harvard and Yale shopping needs.
+So that is HTTP.
+HTTP is the protocol, the set of conventions, that browsers
+use when talking to web servers.
+And it's the protocol that governs how those web
+servers respond to the browsers.
+We've quantized this in the form of these virtual envelopes, which is just
+a physical incarnation of the zeros and ones that are technically going
+back and forth across the internet.
+But it's embodied in my handshake with Stephan, what's really happening.
+I initiate.
+He responds.
+And it's like a client-server type relationship.
+So how do you actually now do creative work?
+How do you make yale.edu?
+How do you make harvardsucks.org?
+How do you make CS50's own website or Google or Facebook?
+Well, what really matters now what's--
+is what's deeper inside of that envelope.
+In addition to these headers, this textual information,
+like 200 OK or 301 Moved Permanently, there's
+another language embedded inside of that envelope, deeper down,
+called HTML, HyperText Markup Language.
+This is the language, which is also text, in which web pages are written.
+And so if you've ever visited a website on the internet,
+and I just noticed that Erin is doing that on repeat, isn't she, what's--
+you're looking at is a browser's rendering of HTML.
+So HTML is just text.
+And we're going to see it in a moment.
+The browser reads that text top to bottom, left to right, much like Clang
+reads your C code top to bottom, left to right.
+But rather than convert your text to zeros and ones, what a browser does
+is interpret it line by line by line.
+And it does what you say.
+So if you say, hey, browser, put Erin's photo on the screen,
+it is going to do that.
+If you say, hey, browser, write the words "staff" in big black text,
+the browser's going to do that.
+If you tell the browser to lay out a whole menu, it's going to do that.
+And we'll see, in just a moment, how you convey those terms.
+HTML is not a programming language.
+It is, indeed, a markup language, which means it just lays things
+out structurally and aesthetically.
+So the website here that we're looking at has a bunch of images, all of which
+are what are called animated GIFs, which are
+very much in vogue these days on Reddit and phones and iMessage and the like.
+But those are just images, files, that are actually being transferred
+from CS50 server to your browser.
+But if I go up to View, Developer, and now View Source, and you can--
+could have been doing this all these years--
+you can actually see the so-called HTML that drives CD50's website.
+So this is all of the HTML, and I'm deliberately
+scrolling fast through it, that implements that CS50 staff page.
+And if we scroll all the way to the bottom,
+you'll see that 1,008 lines later is the web page done.
+But it's just text.
+And, in fact, let me scroll back up to the top and just point
+out a few salient details.
+You'll see familiar patterns in the examples
+we're about to start looking at.
+The very first line probably is that, DOCTYPE HTML, which
+is like a little hint to the browser that says,
+quite explicitly, hey, browser, the document type you're about to see
+is indeed HTML.
+But the rest of the web page follows a structural pattern.
+And you'll see that it's already nicely indented,
+even though some of these lines are a little long and are wrapping.
+But you'll see this convention, an open bracket, which is an angled bracket,
+like a less than sign, the keyword html, maybe some pattern like this,
+lang equals en-us--
+this sounds like language-- a US English, maybe--
+more on that in a bit-- and then this close bracket, or a greater than sign,
+that completes the thought.
+Then inside of that HTML tag, so to speak, indented beneath it,
+is this, the head of the web page.
+The head of the web page something that you mostly can't see.
+It generally refers to the tab at the top of the page and just
+invisible information.
+And if I scroll down further, we'll see, really, the guts of the web page,
+which are in the so-called body of the web page.
+So these things that I've just been highlighting,
+albeit in a very big context of a big, 1,000-line web page,
+are just called HTML tags.
+HTML is a tag-based language, a markup-based language,
+where you just say what you want to appear where you want it to appear.
+So what does that actually mean?
+Well, let's take a look at a simpler example
+in the form of this slide, which is perhaps the simplest web page
+that you can make, this one here.
+This is perhaps the simplest correct, syntactically correct, web
+page you can write that's saying, hey, browser, the type of document is HTML.
+Hey, browser, here's the start of my HTML page.
+Hey, browser, here's the head of my web page.
+Hey, browser, here comes the title of my web page.
+Hey, browser, the title of this page shall be, for the sake of discussion,
+"hello, title."
+But you could say literally anything there that you want.
+But now things get interesting.
+And some of you have certainly seen HTML before, and some of you haven't.
+But you can probably just infer, even if you
+haven't seen HTML, what this tag is doing because it looks the same,
+but yet a little different.
+So if this is saying, hey, browser, here comes the title,
+what is this probably saying, intuitively?
+AUDIENCE: Just ends.
+DAVID J. MALAN: Yeah.
+That's it for the title.
+Hey, browser, that's it for the title.
+So you might call this a start tag and this an end tag,
+or an open tag and a close tag.
+Think about it however you want.
+But in HTML, there's generally this nice symmetry.
+Once you start something, you eventually finish it.
+And you do it in the right order.
+So you do-- you start tags in one order.
+And then you close them in reverse order so that everything is nicely symmetric.
+And indeed, the indentation, just like in C,
+technically doesn't matter at all.
+You could have a really, really ugly web page with no whitespaces whatsoever.
+And it would still work fine for the browser because it doesn't care--
+just much harder for us humans to read.
+So this convention is to indent, just like in C,
+just so it's more clear what the hierarchy or the nesting
+is, so to speak.
+This line here means, hey, browser, that's it for the head.
+It's another close tag.
+Hey, browser, here comes the body of the page.
+So much like head here, body here, most of the page's content
+is, indeed, in the body of the web page.
+That's what you, the humans, actually see.
+And mostly in the head, we'll just see things like the title
+and just a couple of other things in a little bit.
+The message inside this web page is apparently, "hello, body,"
+then close body, close html.
+And that's it.
+So when I said earlier that inside of these envelopes
+is just a whole bunch of text, all I meant was this.
+This is what's inside of this envelope just below
+the protocol information, the HTTP information, that just said 200 OK
+or any of those other messages.
+So when the browser receives this envelope, it opens it up.
+It reads it top to bottom, left to right.
+And then it literally interprets that file top to bottom,
+doing exactly what you tell it to do.
+So how do we go about actually doing this?
+You can write HTML on any text program.
+You can write it in TextEdit, on a Mac, on Notepad, on a PC.
+You can, technically, use Microsoft Word or Google Docs.
+But that's out of context and bad.
+Those give you features you don't want.
+But you generally want a text editor.
+And we, of course, have a text editor in CS50 IDE.
+So let me actually go there.
+I'm going to go into CS50 IDE.
+And I'm going to go up to File, New.
+And I'm going to go and preemptively just save the file with the only file
+name I remember from earlier, which was index.html.
+Just like C programs end in files called something .c,
+HTML files often end in .html, sometimes .htm, but often .html.
+So let me go ahead and click Save there.
+And now I'm going to go ahead and do a-- type exactly that same code--
+so open bracket, exclamation point.
+And that's the only exclamation point we'll expect.
+The first line is, unfortunately, a little different from all the others.
+Then I'm going to do open bracket, html, close bracket.
+And you'll notice that, just like with C, the IDE tries to be a little helpful
+and finish your thought.
+So it already closed the tag for me.
+Now it's just on me to hit Enter to move it into place.
+Now I'm going to-- what came next inside the--
+uh-oh.
+What came next?
+The head-- so open bracket, head, close bracket.
+Inside of head was--
+yeah, title.
+And then I think it just said, "hello, title,"
+though I could call that anything I want.
+Then below the head, but inside the html tag still, was my body.
+So let me type that here.
+And I think I said, "hello, body."
+So-- bdoy, boday.
+OK, body-- save.
+So now I have a text file in the IDE.
+It seems to match up with what we showed as a canonical page before.
+Now we need to load it in a browser.
+And this is a little paradoxical because I'm,
+obviously, writing this text in a browser,
+and yet I need the browser to read it.
+So this is just because the IDE, Integrated Development Environment,
+that we've been using is, itself, web-based.
+That's just an incidental detail.
+The fact that I have written this code in a file now is what's important.
+It could be in the cloud as it is.
+It could be on my Mac.
+It could be on my PC.
+It could be on any other server on the internet.
+The point is I need to access this file somehow.
+And so it turns out that we're not going to compile it.
+There are no zeros and ones involved anymore.
+There is no machine code.
+We're going to leave it just like this.
+HTML is interpreted, literally, line by line, top to bottom--
+no zeros and ones needed.
+But I am going to need to run my own web server, not the IDE itself.
+I want to run, as the developer, my own web server.
+What is a web server?
+It's like Stephan.
+It's just a program sitting there, waiting and waiting
+and waiting for something to happen.
+And that's something is, presumably, a request from a browser, at which point
+it will respond with a handshake or, more specifically, with this file.
+So how do I do this?
+Well, in the IDE, we actually include a free program called http-server.
+All of the software in CS50 IDE is free and open source.
+So we've simply chosen some of the most popular packages, one of which
+is called, literally, http-server.
+And if I go ahead and hit Enter, you'll see somewhat cryptic information
+at first.
+But let's see.
+It's starting up the http-server.
+It's serving dot slash.
+Well, what does dot mean?
+This folder.
+So just serve up the contents of this current folder that I'm in.
+Now it's saying it's available on this URL.
+And this URL's going to vary by who is running this.
+If you're running it, you're going to see a different URL.
+But what is interesting is the number--
+turns out that, because this is my little own personal web server,
+it's not using port 80, which I claimed earlier was the default.
+It's using a different convention, 8080.
+8080 is just a human convention.
+It's not standardized in the same way.
+But this way, I can serve files separate from the IDE
+because the IDE itself is actually listening on port 80,
+or, technically, 443, because it's using HTTPS.
+And I don't want to confuse my files with CS50 IDE's own files,
+the actual user interface that you're all familiar with.
+So, just like Stephan can hear from--
+say hello to multiple people and Google servers can handle multiple services,
+so can my own IDE listen on multiple ports, as they're called--
+80, 25, 443, or, in this case, 8080.
+So what does this all mean?
+I'm going to go ahead and literally click on this URL,
+open it in another tab on my browser, and you'll see somewhat cryptic output.
+But this is just a succinct way of saying, here is the index, the listing,
+of slash, which is now the default area of my website.
+I've got two folders, source 5, which is on the course's website--
+it's all of today's files in case we want to look them up without writing
+them from scratch--
+and then the file I just created, index.html.
+So if I go ahead now and click on index.html, there we have it-- hello,
+body.
+And we don't see the tab just because I full-screened Chrome.
+But if I actually remove that full screening
+and zoom up to the top of the tab, you see "hello, title" there.
+And if I go back into this file, meanwhile, and I say,
+"hello, body, nice to meet you"-- this one got weird--
+now I'm going to go ahead and click reload.
+And now you see this.
+Let's go ahead and take a five-minute break
+sooner, rather than later, so that we can address the projector issue.
+And we'll be right back.
+So to recap, there are more tags than just html and head and title and body.
+There's things that give us images and sounds, certainly,
+and many, many, many other things.
+So let's take a look more manually at just one or two other examples
+and then get a sense of the whole menu of tags that might be available.
+Let me go ahead and create a new file now.
+And I'll go ahead and call this image.html.
+And in anticipation of making a demonstration now
+that has an image, to save time, I'm just
+going to go ahead and paste the contents of the previous file.
+But I'm going to go ahead and get rid of the body this time
+and start to actually embed an image in here.
+Now, in advance, I've downloaded an image of Yale's own bulldog, Handsome
+Dan, in a file called dan.jpeg.
+And I've uploaded it to the IDE in the same folder
+that index.html is in and now that image.html is in.
+And you can include an image by using an img tag.
+But you have to specify to the browser what the image you actually
+want to embed is.
+And so to do this, as you may know, we have attributes.
+So just like the html tag, as we saw earlier and can now see in the example
+here, has a language attribute specifying English as the default
+language for this page to help things like Google Translate and the like,
+so does the image tag get modified by this attribute called source.
+It's just src and img because those are more succinct
+representations of "image" and "source"-- saves us some keystrokes.
+And now I can type in here dan.jpeg.
+And then, just for good measure--
+well, rather, I can then close the tag using the corresponding angle
+bracket, the greater than sign.
+But whereas all of the other tags thus far
+have a notion of starting and stopping or opening and closing,
+the image tag doesn't because the image is either there or it's not.
+There's really no conceptual notion of starting an image
+and then eventually stopping an image.
+But let's add one other detail.
+It turns out that there's yet other attributes.
+So you can have zero or more on any tag.
+For folks who have trouble seeing content on web pages
+and, indeed, rely on tools like screen readers,
+there's actually attributes that can help in cases like that--
+turns out there's an alternative tag, or alt, where you can actually say,
+"photo of Handsome Dan," which is a textual description of whatever it
+is you're embedding in the web page.
+This way, someone who's not sighted but who
+has a screen reader that can read that to them
+can actually understand what it is that's on the web page.
+So most folks wouldn't see that unless you actually hover over it
+or have it spoken to you.
+So let me go ahead and save this file, go back to the index of the web server
+that I ran earlier with http-server, and now click on image.
+And voila.
+You'll see dan.jpeg embedded in the web page.
+Of course, this web page doesn't actually do all that much yet.
+And so suppose we actually wanted to link to one page or another.
+Well, we can do that as well.
+Let me go back to the IDE, copy this same code, just as a starting point,
+create a new file called link.html.
+And then in this file, we'll start with the same contents.
+But let me get rid of that body and simply say,
+for instance-- let's have people visit Harvard.
+So I could say visit https, for secure, www.harvard.edu/,
+or maybe even without the slash-- it doesn't matter for the default page--
+period.
+Let me save this.
+Let me go back to the index of the web server,
+reload so that I can see the new file, link.html, that I created,
+and now click link.html.
+And voila.
+So it's a URL visually.
+But it's not actually clickable.
+But that's because the browser's only going to do what you told it to do.
+And all I've implicitly told it to do is display this black text here.
+If I actually want to make it interactive, I need another tag.
+Well, it turns out in HTML, there's an anchor tag, somewhat cryptically named.
+And it's also succinctly written as a, for anchor.
+And with the anchor tag can you anchor at this point in the page
+a link, or a hyper-reference, as it was once called, to that specific URL.
+So that attribute, by convention, is called href, hyper-reference.
+That is the destination to which you want to link.
+I can now close that tag.
+But I now need to tell the user where they're going.
+So I could just say Harvard, for instance, and put my period out there.
+Save the file.
+Go back to the tab here.
+Click Reload.
+And now you'll see the dichotomy.
+I'm seeing one thing, Harvard.
+But if you hover over it, and it's super small here,
+you can actually see, as a safety check, in the bottom left-hand corner,
+typically, the URL that you'll actually be led to.
+Now, as an aside, with this very, very simple feature of HTML,
+you can actually socially engineer people,
+as is commonly done with phishing attacks, P-H-I-S-H-I-N-G.
+If you've ever gotten some spam, either in your inbox or your spam folder,
+odds are someone's tried to ask you for your username and password
+or for your money or for your PayPal account.
+PayPal is especially a common target here.
+But you can see how you can very easily, unfortunately,
+trick and mislead people, especially if they don't necessarily
+understand some of these fundamentals.
+Let me go back here, for instance, and say here--
+well, there's nothing stopping me from doing this little mischievous trick.
+I can change the href to Yale, but the text to Harvard,
+thereby tricking someone.
+Ha ha.
+You're actually going to Yale's website instead.
+But more maliciously, and in these phishing emails or spams
+that you might have been getting over the past several years,
+you could imagine typing anything you want here, like paypal.com.
+And then here could be www.SomeMaliciousWeb
+siteThatWantsYourMoney--
+
+hopefully, that does not exist-- .com.
+Save.
+Reload the page.
+And honestly, most people, myself included,
+are not going to always paranoically check where I'm actually going.
+I'm just going to click on a link.
+And voila.
+You might not notice the URL bar changing because you're
+being whisked away to some website.
+And honestly, it's not all that hard to recreate websites.
+In fact, just to really hammer this point home, let me go to paypal.com.
+And using today's primitives, notice that you
+can go to View, Developer, View Source.
+This is the HTML implementing PayPal's website--
+looks good.
+Let me copy and paste that into, say, a new file called paypal.html.
+Let me save that here.
+Now let me go back to my web server, reload, open paypal.html.
+And voila.
+I have made PayPal.
+So it's not even that hard to mimic where people think they are going.
+Now, intellectual property issues aside, that I just copied and pasted
+someone else's website, this is clearly not
+fully operational because what I don't have access to their database
+and their code on the server and all of the intellectual property and business
+logic, so to speak, that actually makes PayPal what it is.
+But HTML, the point is, is purely openly accessible by anyone.
+It's not encrypted.
+It's not zeros and ones.
+But it tends to be so aesthetic and structural in nature that that's not
+really the juicy stuff in a business.
+But this technique can certainly be abused in this way.
+So moving forward, just be more mindful of this because most emails
+you get these days by a Gmail or any tool
+are themselves implemented in HTML.
+Even when you're typing out a Gmail message
+and have never even thought about HTML, that email
+is actually being sent underneath the hood as HTML.
+Why-- well, if you've ever used a bulleted list or a numbered list,
+if you do boldfacing or italics or any of those aesthetic features in Gmail
+or other programs, those are implemented as HTML,
+but just using nice, user-friendly interfaces.
+So you can just click icons.
+You don't have to think about open bracket, something, close bracket.
+But we could do that.
+For instance, if we go ahead and look at a few other examples--
+let me go ahead here and actually go back to our very first one, index.html.
+And suppose I just want to really draw attention to "hello."
+I can actually use the strong tag, which implies bold, typically.
+Save that.
+Let me go back to the web server that I had open a moment ago.
+Click on index.html after reloading it.
+And now it's a little subtle because it's small.
+But you can probably see that "hello" is indeed boldfaced now.
+So if you've ever clicked the B icon in Gmail, that's all it's doing.
+Underneath the hood, Gmail is taking your word, hello, and
+secretly putting open bracket, strong, close bracket, and then the opposite,
+the close tag, after it.
+And that's what it's sending to the recipient of that message.
+So what else can you do?
+Well, let me go ahead and do this.
+Let me go ahead and open up, say, a few files that I created in advance.
+One is called paragraphs.html.
+And let me point this out first.
+So in paragraphs, I just have three paragraphs of Latin text.
+And they are rendered, for instance, as follows.
+If I go into source 5 and I go into paragraphs.html--
+looks nice-- don't know what it says.
+And, in fact, it's pretty much gibberish.
+But it's nice, three nice paragraphs.
+But notice how pedantic HTML is.
+I actually had to use another tag to achieve those paragraphs, even.
+If I only had, very reasonably, written these three paragraphs
+like you might in Google Docs or Microsoft Word,
+it's just three paragraphs.
+Indent each.
+Hit Enter, Enter in between them-- looks good.
+It's wrapping because it's a really long paragraph off to the right.
+But that's fine.
+And I save this.
+And I go to paragraphs and reload.
+Notice that it all bunches together.
+Intuitively, why is that happening, though?
+What's the logic behind this bug now, albeit an aesthetic bug?
+
+Yeah?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+Those additional spaces are not being accounted for.
+They're just being pushed together because
+even though HTML does respect one space--
+otherwise, everything would be completely smushed--
+it ignores multiple spaces, whether it's new lines or tabs
+or multiple hits of the space bar.
+And it only does, ultimately, what you tell it to do.
+So unless you explicitly, with tags in HTML, say, give me a new paragraph,
+that's it for this paragraph, give me a new paragraph,
+else that's-- now that's it for the paragraph,
+it's just going to clump them all together,
+maybe separating with a single space, which is clearly not the effect we
+want.
+So just remember that HTML is really nit-picky when it comes to that.
+And much like in C, your code won't compile if it's not quite right.
+In HTML, it will display.
+But it's not going to display quite right--
+is the key there.
+Well, what other features does this HTML have?
+The reality is-- we'll give you a general conceptual overview of HTML
+today.
+We'll give you a taste of some of the tags.
+But the reality is this, too, is the sort of language
+that you can really learn by doing and by looking
+at online references or texts that actually summarize the various tags.
+But let's look at least a few more.
+Let me go into now headings.html.
+And you'll see this--
+turns out that there are tags called h1, h2, h3, h4, h5, h6.
+These are very commonly used on websites that
+have different headings, like big and bold, a little smaller and bold,
+a little smaller and bold to do, like, chapter and section headings.
+CS50's website is very hierarchical.
+If you look through the syllabus, you'll see lots of different font sizes
+and boldfacing and the like.
+That derives from our using these built-in heading tags.
+If I go ahead and open this in my browser, we will see the effect.
+By default, h1 is big and bold.
+H2 is big, but not as big and bold.
+H3 is a little smaller.
+H4, 5, and 6--
+and this follows the paradigm in academic papers and books
+that have chapters and sections and subsections and the like.
+You just get this feature for free from HTML.
+Well, what else is there?
+Well, if you actually have tabular data, things
+you want to lay out in rows and columns, well, it
+turns out that HTML supports tables.
+Let's glimpse at this, too.
+And if I go into table.html, in my browser, we'll see this effect.
+It's not all that interesting.
+I kind of mimic the idea of a phone pad, where these numbers are lining up
+in columns and in rows.
+But invisibly, this thing is actually laid out with tags.
+If I go to the IDE and look down in here,
+you'll see some copy-paste of before--
+html, head, and body.
+But then notice here.
+Hey, browser, here comes a table.
+And you see, albeit surrounded by unfamiliar tags, probably, 1, 2, 3, 4,
+5, 6, 7, 8, 9, and then the symbols down there.
+So let's just infer, because the reality is much of your learning of HTML
+and soon another language, we'll see-- it will just be indirectly.
+If you're curious as to how some web page is implementing some feature,
+you actually look at its source code.
+And you infer, by example, how you could do the same.
+So take a guess.
+If this tag, effectively, says, hey, browser here comes the table,
+this tag here, even if you've never seen HTML, probably means table row.
+Hey, browser, here comes a row in my table.
+This one's less obvious.
+But td, td, td stands for table data or table cell.
+So, hey, browser, here comes a cell, another cell, another cell,
+three of them in total.
+Hey, browser, that's it for this row.
+And then repeat the pattern.
+So here's where HTML just gets a little mundane after a while.
+Once you see the name of the tag and once you know what attributes,
+if any, it supports, you just follow this pattern.
+That's it for HTML.
+There's start tags.
+There's end tags.
+And sometimes, they're not even end tags, if they're not needed.
+And there's attributes.
+And that's HTML.
+Now, if you want to be sure that your code is correct,
+you have a few options.
+Let me actually go ahead and open up, for instance, hello.html from earlier,
+just so I have a simple example--
+or index.html from earlier.
+Let me go to validator.w3.org--
+turns out there's tools out there that will just help give you feedback on
+whether or not your HTML is valid, is correct.
+And this is useful because sometimes, it might look OK to you on Chrome.
+But honestly, if your friend or family member visits the exact same page
+on Edge or IE or Safari or Firefox, it might not
+look the same because the companies that make those browsers sometimes
+disagree on how to render HTML.
+And so if it's not 100% correct, you're only
+incurring more risk that something might render incorrectly.
+I went ahead and clicked Check after pasting my code in.
+And this is good-- document checking complete,
+no errors or warnings to show.
+So when it comes time for Pset5 and you're dabbling with HTML,
+know that there are tools out there, this one included,
+and we'll point you at it in the spec, that just helps give you
+feedback on whether something is broken so that you can, with more confidence,
+know that it's going to work OK.
+Well, let's make something a little more interesting now.
+Let's re-implement Google, and not by this little copy-paste trick,
+where we just copy their HTML and use it ourselves.
+Let's actually now make a user interface that uses Google, in some way.
+So Google, of course, in all of its forms,
+ultimately has a text box into which you can type information.
+And if I go ahead and do this, it turns out
+that Google is generally going to redirect me to a certain URL.
+If I search for "cats" and hit Enter, notice
+I got redirected to a pretty cryptic-looking URL.
+There's a lot of metadata in there.
+There's a lot of advertising information these days and all that.
+But it turns out, and I know this just from experience,
+I could distill this URL into this.
+And it will still work.
+So let me go ahead and hit Enter.
+Whoops.
+Let me go ahead and hit Enter after simplifying this to question mark q
+equals cats.
+Enter.
+And indeed, I get the same page of cats back.
+So what's going on?
+So the URL itself is not all that remarkable.
+We've seen ww before.
+You've certainly used google.com before.
+This means it's secure.
+It's speaking HTTPS.
+All of this now is old hat.
+It's not requesting index.html because Google is dynamic.
+The content is constantly changing.
+There's not some human whose job it is to update Google's home page every day
+with HTML.
+So they, instead, have a piece of software running,
+written in Python or C++ or Java or who knows underneath the hood that is just
+listening at this address.
+So it doesn't have to be text files that humans created.
+It can actually be a program.
+This one is called Search.
+And in just a week or two's time, you, too,
+will write programs in a language called Python that can do the same thing.
+But for now, we'll let Google do the heavy lifting.
+And notice the question mark.
+If you ever see a question mark in a URL, this means to the browser,
+here comes some user input, something that the user probably
+typed into the form, just like I did "cats" a moment ago.
+And then you're going to see something equals
+something, which indicates what the human typed in.
+Now, just because Larry and Sergey, some 20 years ago,
+decided with google.com that this text box that we saw a moment ago,
+the big box that's now positioned here--
+they decided years ago that the name for that text box
+is going to be q for query--
+but you can call it anything you want.
+"Cats" is, obviously, what I typed in.
+The equal sign is just associating the two together.
+So this URL just means to Google, hey, Google, run the search program,
+passing in a user input name of q whose value shall be "cats."
+And that is how Google knows what to search for, for any of us.
+And frankly, I can search for "dogs," not even just
+by typing the word "dogs" in here.
+I can be a little more precise and type it into this query
+because I now know Google's URL format.
+And voila.
+Now I get search results for "dogs" instead.
+But that's it.
+That's the basic building block that's been happening all this time.
+And even though the URL a moment ago was longer and uglier,
+that was just uninteresting detail.
+It's not the core business that the search is actually providing.
+So what does this mean?
+I can actually now make my own user interface for Google
+by using a few new tags as well.
+Let me go ahead and copy this, as a starting point.
+Let me go ahead and create a new file called search.html.
+Just to save time, I'll type that in there.
+And I'll call this search.
+And I'm going to get rid of the "hello" body.
+So I just have a starting point.
+That's just the same HTML I'm copying and pasting every time.
+Well, it turns out in HTML, there is a tag
+called form that will give you a form for user input.
+And it turns out that inside of a form, you can have different tags as well--
+specifically, an input.
+And inputs have names.
+So I can say name equals "q" to mimic Larry and Sergey's decision years ago,
+the founders of Google.
+The type of this input is text.
+So it's not a button or a check box or something like that.
+Those exist, too.
+It's just text.
+And then I want a Submit button.
+And I just know, from having done this before,
+that I can get a Submit button by doing type equals submit.
+And then the value of that is going to be Search,
+which is the word I'm going to see on the screen.
+You would only know this by having seen it
+by someone else doing it, looking at someone's source code,
+reading an online tutorial.
+It's not necessarily obvious.
+But the pattern is the same-- tag name, attribute equals something,
+attribute equals something, and so forth.
+Well, now let me go ahead and save this, go into the web server,
+and reload the index.
+So there's my search.html.
+And it's not quite as pretty as Google's.
+Let me zoom in so it's bigger.
+But I do have a text box.
+And I have a button whose label is Search.
+But I don't know yet where to send it.
+I need one more attribute or two here.
+It turns out that I want this form to take the action of sending this
+information to www.google.com/search, the search program on Google's server.
+But I want it to use that special verb we saw a moment ago.
+And again, this was deeper in the envelope.
+The method I wanted to use is get, in lowercase in this case--
+so a little low-level and technical now.
+But this just means that's the verb you should use inside the envelope
+to get the web page.
+But that's it.
+I've told the web page the action you should take
+is submit this form to this URL using get, the method we saw earlier.
+Submit a parameter, as it's called, called
+q, with whatever the human typed in.
+And then have it give us a Search button here.
+So let me save this, go back to my page, reload.
+And now let's go ahead and search for "mice" this time and click Search.
+And voila.
+There we have a whole lot of mice search results.
+But why, is the question?
+Well, all I've done is, using HTML and an HTML form,
+is I've generated the prescribed format of a URL,
+calling Google's Search program with a input of q equals mice.
+And now, as an aside, if I did take more inputs,
+they would be something like this--
+something equals value ampersand something equals value.
+Ampersands just separate these key-value pairs
+if you have multiple inputs on the page.
+But the principle is ultimately the same.
+So it's pretty powerful.
+I've not implemented Google, per se.
+I've implemented the front end, the user interface.
+And in future, we can we maybe start to work on the logic behind the scenes.
+So any questions then on HTTP and now the convergence with HTML?
+
+You feel comfy with HTML, because we're about to move on to another language?
+Yeah?
+So all of my examples have looked ugly thus far, except for PayPal.
+That looked pretty nice.
+But I just copied and pasted it.
+So how do we begin to style our websites in a more compelling way?
+HTML, at the end of the day, is mostly used for structure of a web page,
+just laying out the data that you care about, the words that you care about,
+the images that you care about.
+But the aesthetics that last miles, so to speak,
+of the really pretty colors and the right font sizes and positioning
+things exactly where you want them--
+that is the job of another language called CSS, Cascading Style Sheets.
+This, too-- not a programming language.
+It's entirely aesthetic in its nature.
+So let's go ahead and take a look at an example.
+Let me go ahead and open up the same web server as before,
+open up an example I saw early--
+that I made earlier called css0.html.
+Suppose that this is the home page that I want to create for John Harvard.
+And notice I've got his name, big and bold, at the top.
+And I've got a slightly smaller font in the middle and a slightly smaller font
+below it.
+But these are just minor font size differences.
+It's all centered in the page here.
+How would I actually make this website?
+Well, let me go ahead and go into a new file here.
+I'll call it css0.html.
+Let me go ahead and paste my starting point, as before.
+And I'll call this css0.
+And then in the body of this page is where
+I'm going to go ahead and lay out that content.
+So as I recall, I had John Harvard.
+And then below that, it was "Welcome to my home page!
+Copyright," and funky symbol-- so I'll just do that for now--
+"John Harvard."
+Save.
+So that's css0.html.
+Let me go ahead and reload it back from my server.
+And voila.
+So what's wrong, aesthetically?
+It's, obviously, all on one line.
+But why?
+How do I fix this, as before?
+Yeah?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+So I could add the paragraph tags, just to put these
+all on individual paragraphs.
+And the IDE sometimes can be a little annoying
+because now I'm going in retroactively and adding this stuff.
+So it's trying to be helpful.
+But then I have to delete it.
+So sometimes, this autocomplete can get in the way.
+But it's an easy enough fix-- open p.
+Let me move this over here and move this over here.
+Save.
+Go back to the browser.
+It's not going to change on its own.
+I need to click Reload.
+And now-- better.
+It's a little ugly-- more whitespace than I want.
+But it's closer, certainly.
+Let's clean up that copyright symbol.
+It turns out there's some keys you just can't type on your keyboard.
+You could certainly copy-paste it from elsewhere.
+But HTML, as an aside, supports what are called entities.
+And these are numeric codes that are sometimes
+written in hexadecimal, sometimes written in decimal, depending
+on your preference.
+And it's just a weird number that represents a symbol.
+You couldn't, otherwise, type.
+Watch as I reload now.
+So what happens to that copyright symbol?
+Now it's the one you might expect--
+so minor detail.
+It's not all that interesting.
+But those do exist, as well, for aesthetics.
+But this isn't quite what I want.
+And here is where CSS comes in.
+I can lay out the structure of this page.
+Yes, I have my three separate paragraphs.
+But they're not centered.
+Their font sizes are all the same.
+And there's weird gaps there.
+This is where CSS can help.
+So let me introduce a few new tags instead.
+These aren't strictly paragraphs.
+It's not sentences and sentences of text.
+This is kind of like the header of my page.
+So let me actually rename this to header.
+This is maybe the main part of my page.
+So let me rename this to main.
+And this is like the footer of my page, I would claim.
+Now, it's a super simple website.
+But these tags exist.
+And in the most recent version of HTML called HTML5,
+the world has started moving away from generic tags, like p for paragraph,
+to more semantic tags that are a little more descriptive that say,
+hey, browser, here's the header of my page, annoyingly,
+not to be confused with the head of your page, which is, like, the title.
+And, hey, browser, here's the main part of my page.
+Here's the footer of my page.
+And we'll see why this is useful, if only
+because it describes my page a little more compellingly.
+But it turns out that any HTML tag can have a style
+attribute, which we've not seen before.
+And if I want to alter the font size of this tag, I can say, make this large.
+And down here, I can say, style equals font-size, let's say, medium.
+And then down here, I can say style equals font-size small.
+And let me save that, go back to the browser, reload.
+And it's not centered yet.
+But now it's kind of big, medium--
+large, medium, and small, which is what I intended the first time.
+So how can I actually add centering?
+Well, it turns out inside of these quotes,
+you can use semicolons to separate multiple ideas.
+If I put a semicolon here, I can now say, text-align center.
+And let me go ahead and copy and paste that here and here.
+Save.
+And notice the pattern.
+There's a keyword, a colon, and then a value.
+A semicolon separates it.
+Then there's a keyword, a colon, and a value.
+That's the same pattern we're going to see.
+If I go back to the browser, reload now, now we're on our way.
+Now it looks more like what I intended it to look like.
+It took a little more effort.
+But thanks to CSS, I was able to do it.
+So what I've highlighted here and what the IDE has highlighted in green
+is what are called CSS properties, Cascading Style Sheets.
+CSS lets you deal with things like centering and font sizes
+and colors and positioning and all the aesthetics I alluded to earlier.
+And you just have to know what these key values are.
+Honestly, I don't know all of them, certainly.
+I always Google when I want to know how could I
+do something with this type of tag.
+That's because there's a lot of online free references
+that just shows you this.
+But they all follow the same pattern--
+key, colon, value-- maybe semicolon-- key, colon, value, and so forth.
+But even if you've never written HTML before,
+you could probably argue that I am not making--
+designing this very well.
+In C, too, you might have found fault any time my instinct was to copy-paste.
+What is redundant in this example?
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Yeah.
+I'm centering all three, which honestly, it just looks a little stupid.
+It literally was copied and pasted.
+And that should always rub you the wrong way.
+So Cascading Style Sheets--
+the first C in Cascading Style Sheets, or the only C
+in Cascading Style Sheets, stands for Cascading,
+which implies a hierarchy to it, too.
+So let me, actually, make a new example.
+Let me call this css1.html.
+Let me paste that same exact code.
+But it occurs to me that header and main and footer are all children of body,
+if you will.
+They're indented inside.
+And you can-- you actually can use family tree references
+in the context of HTML, where header is a child
+of body insofar as it's inside of her, tucked, indented, inside of it.
+So if these all have the same parent, so to speak,
+let me actually erase this from all three tags.
+And let me actually apply it to the parent tag, saying,
+style equals text-align center because cascading
+style sheets, indeed, cascade.
+So if you apply one property, like aligning in the center, to the parent,
+it's going to cascade down on all of the children nested inside.
+So let me go ahead and save this, go back to the listing,
+and open up css1.html.
+And voila-- no aesthetic difference.
+But it's just better designed, like 5 out of 5 for design
+now, but not necessarily because this is a little ugly, honestly.
+And we've not had occasion to do this yet in C
+because we only had one language in C. It, generally,
+is frowned upon to combine one language, like CSS, with another, like HTML.
+And they might look very similar.
+And they're all in the same context.
+But this gets annoying.
+And especially in the real world, some people
+might be better with aesthetics than others.
+Clearly, from my examples, I'm not among those people.
+And so I might want to work with a colleague or a friend who's
+much better at design and colors and fonts than I am.
+And so I might want them to work independently of me.
+I'll work on the structure of the web page or, if you will, my final project,
+and let them actually contribute more of the aesthetics.
+So how can we begin to decouple these things?
+Much like in C, we, at least, had header files.
+We could factor out commonalities.
+Well, it turns out we can do this a little differently from before.
+Let me go ahead and open up an example 2 that I made earlier called css2.html.
+And let's scroll through this for just a moment.
+Notice now that in the body of this web page, I've introduced a different tag--
+rather, a different attribute called "class."
+So it turns out that you don't have to just copy and paste or type out
+manually all of these nit-picky font size changes and text alignment
+changes.
+You can give them more descriptive names.
+And arguably, it's a lot more readable to me and my partner
+to read the word "centered" and "large" and "medium" and "small"
+and not see all the stupid colons and the semicolons and the distractions.
+That's the stuff that's not interesting when writing any sort of code.
+So where did these words come from-- centered, large, medium, and small?
+Well, notice that they're all values of a class attribute, which
+is-- allows for customization.
+Let me scroll up to the head of my web page.
+And you'll see, and it's mostly whitespace because I just
+kept hitting Enter to clean it up--
+notice that inside of my html tag is, as before, my head tag.
+If I scroll down, there's also still a title tag.
+But there's a new tag that I alluded to earlier among the few
+you can put up there called "style."
+You can factor out to the top of your page
+all of the stylizations that you care about.
+And you can do it as follows.
+Notice here that I've literally written the word "centered" with a dot in front
+of it, the word "large" with a dot in front of it,
+the word "medium" with a dot, "small" with a dot.
+Those define classes.
+So CSS lets you define your own collections
+of configuration properties.
+And you can give them names, just so it's a little more
+descriptive and user-friendly.
+So you can define class, class, class, class.
+And then inside the curly braces, which I've lined up here, just like in C,
+you can have one property, two properties, 100 properties.
+But you can keep them nice and orderly, away from all of your HTML, so
+that someone else can work on them or just you can keep the aesthetics
+separate from the contents of your page.
+It's the notion of separation of concerns.
+Keep the data separate from the presentation thereof.
+AUDIENCE: [INAUDIBLE]
+DAVID J. MALAN: Is there a library you can use that's done this for you?
+Yes.
+And we'll see a little teaser for that in just a bit.
+So where are I using these words, to be clear?
+Here, I'm saying give me a class called centered,
+a class called large, medium, and small, each of which
+have these respective properties associated with them.
+And then down here, I can just use those words.
+And I don't have to get into the business
+of the semicolons, curly braces, and all of that in my actual HTML.
+But it turns out I can do this even more fancily.
+Let me open up css3.html, another example.
+In this case, notice what I've done.
+Now my code is really getting pretty, relatively speaking,
+or from one person's perspective.
+Now I don't have any attributes.
+This is just tighter.
+I'm using fewer characters, fewer words, fewer lines of code.
+This is just, generally, a good thing.
+It's less work.
+It's less to maintain, fewer opportunities for mistakes.
+But I've gotten rid of, it seems, all of the aesthetics,
+but not necessarily, because CSS, this second language,
+also lets you apply properties not to tags by way of classes,
+but to the actual tags themselves.
+So if you only have one body, it is safe to say, OK, CSS, apply to the body tag
+this or these properties.
+Hey, browser, apply to the header tag this or these properties--
+to the main tag, the footer tag, and so forth.
+So I don't even need to complicate my world with small, medium, large,
+and so forth.
+I can just apply those properties at the top of my file
+to the respective tag names, whatever they are.
+And I could use the p tag.
+I could use the image tag, the a tag, any of those.
+I can style them in different ways.
+In fact, if you wondered or started to wonder how could you resize an image,
+you can apply CSS to the image tag and say,
+make it this many pixels or this many pixels, or something like that.
+Yeah?
+
+AUDIENCE: Is it bad design to then keep pushing [INAUDIBLE]
+
+DAVID J. MALAN: Yes.
+Is it not bad design to just keep adding more stuff to the top
+and pushing your actual content down and down
+and down and just bloating the file?
+Yes-- which is a wonderful segue to our fourth and final example here, which
+is css4.html.
+This example-- let me just zoom out.
+That's it.
+This css4.html has even fewer lines of code and, indeed, no CSS in it
+whatsoever.
+This is just the website I care about, the words and the data I care about.
+All of the aesthetic stuff, while important,
+is relegated to a separate file that you can probably infer is called css4.css.
+Unfortunately, and this was a stupid design decision by humans years ago,
+the way you include CSS from a separate file
+is, paradoxically, to use a link tag, not the a tag,
+which probably should have been called the link tag.
+But you have a relationship of style sheet.
+So sometimes, humans make poor decisions.
+This is one of them, I would say.
+But if you just copy-paste and trust that this means, hey, browser,
+open up this file and use those features from the file in this file,
+it's similar, in spirit, to C's hash include mechanism.
+It just looks a little different.
+So what's in that file?
+Well, you can probably guess, if I go into css4.css,
+it's just that same content.
+But I factored it out, as you notes-- wasn't the best design to keep it
+all together.
+So I can simply put it there instead.
+
+Any questions?
+Yeah?
+AUDIENCE: In the other one, the fourth perfect one, the best one,
+what does "stylesheet" do?
+DAVID J. MALAN: Good question.
+What does stylesheet do in this example?
+Short answer is that just makes clear to the browser
+that the relationship between this file, css4.css, and this file,
+which is the HTML file, is that of a "style sheet."
+So CSS, Cascading Style Sheets-- it's a lot of words
+just to convey the idea of aesthetics.
+But that is your style sheet, literally.
+It's an actual file that ends in .css that should be applied to this HTML.
+Yeah?
+AUDIENCE: [INAUDIBLE]
+
+DAVID J. MALAN: Better design why?
+AUDIENCE: [INAUDIBLE]
+
+DAVID J. MALAN: It's really good question.
+So to summarize, is it-- isn't it--
+wouldn't that be better design, to have one file with your HTML and your CSS,
+rather than two because things can get misplaced?
+Now they're decoupled.
+There's not the same inherent link.
+Maybe, honestly.
+That is a reasonable concern.
+Reasonable people will disagree.
+Generally, I would say that the programming
+world has decided that separation of concerns is a good thing.
+So keep your HTML in one file, your CSS in another file.
+Keep them in the same folder.
+And, frankly, if you go losing your files in a folder all the time,
+the problem is probably a--
+is human problem, not a technical one.
+But you make a good point, too.
+And you could argue, quite credibly, that you're just over-engineering this
+now.
+I like it better altogether.
+And you'll see in CS50's website and Facebook and Google and others--
+sometimes, you do see CSS together with HTML
+because humans decided this does make more sense.
+But there are these mechanisms in place to facilitate collaboration,
+to facilitate separation, so that you can keep things a little more organized
+in separate files.
+Any questions then?
+So to recap where we're at, because this is a lot quickly,
+HTTP is this protocol via which you can just exchange information
+from A to B and B to A. HTML is the language in which web pages are
+written, that structure of the web page, and actually have your data.
+And CSS lets you fine-tune it.
+Now, I didn't fine-tune it all that much.
+I just centered it and changed the font size.
+But honestly, we can very quickly get into the weeds of colors
+and positioning and all of that.
+But that we'll do in sections and in Psets and in googling and looking
+at online references that we'll point you
+to because it just all follows the same patterns of tags with attributes
+and then CSS properties.
+So even though you've not seen the whole vocabulary of CSS and HTML,
+you have seen the entire structure, the fundamental concepts.
+So let's introduce then one final piece of the puzzle
+and bring back to bear some of our programming
+capabilities of the past several weeks.
+So it turns out that in the world of HTML and CSS,
+you can actually introduce a programming language, as well,
+to make your websites even more dynamic using something called JavaScript.
+Many of you have taken APCS and know Java--
+no relation.
+JavaScript was just a marketing decision to them--
+call it something similar to an already popular language.
+So JavaScript is a language used in browsers, typically,
+to give you more control over the users' experience.
+For instance, when you visit Gmail these days and you get a new mail,
+it just appears magically as a new row in your inbox.
+You don't have to reload or keep clicking Refresh to see your new mail.
+It just appears magically.
+When you're using Google Maps or something,
+you can just click and drag and see more of the map.
+Back in my day, you have to click a right arrow
+to go this way, a left arrow to go that way.
+And the whole web page would actually reload.
+But JavaScript gives you logic and programming capabilities
+in your users' Macs and PCs and phones that gets executed not on your server,
+but on their browser, which means you can do many more things by running code
+on their computers.
+So what does this actually mean?
+Well, in JavaScript, fortunately, we have
+a language that's super similar to C. But it's interpreted top
+to bottom, left to right.
+The browser just reads the instructions in JavaScript and just does them.
+There's no compilation for you.
+There's no zeros and ones.
+And so in that sense, it's just easier than C.
+Also, it has no pointers, which also makes it easier than C.
+But it gives us the ability to alter a web page
+once it's been delivered to a user.
+And we'll see what we can actually do with that capability.
+But first, let's compare and contrast.
+You'll recall a few weeks ago, in week 1, when we introduced C,
+we pulled up some Scratch we pulled up some C, just to show
+that the ideas are still the same.
+Let's do the same real quick here.
+So we went from Scratch to C. Let's now go to JavaScript with variables.
+So in C, if you wanted to set a counter to 0 a la Scratch,
+you would literally say counter equals 0, semicolon.
+But you would have the data type to the left.
+In JavaScript, the code is almost the same.
+But you actually don't specify data types.
+You, the programmer, don't worry about ints or floats or strings
+or all of that.
+You do define the variable.
+And the keyword to use, though there's several options that
+do slightly different things, is let.
+Add the thinking is let the counter equal 0, please, if you will.
+But you don't specify the type, even though JavaScript supports
+numbers and strings, and so forth.
+You just don't have to care about them as much anymore.
+Suppose you want to update a variable.
+In Scratch, you would just change the counter by one.
+In C, you would do counter equals counter plus 1, semicolon.
+In JavaScript, you would do the exact same thing.
+Code is identical.
+In C, you could also write this more succinctly
+as counter plus equals 1, semicolon, if you recall.
+If you don't, that's fine.
+This is just shorthand notation.
+In JavaScript-- same exact thing.
+In C, you could also do counter plus, plus,
+semicolon to increment the value--
+in JavaScript, same.
+So this is what's nice about JavaScript.
+You already know much of it just by nature
+of having spent so many weeks in the weeds with C.
+Suppose you had an if condition, like this-- is if x is less than y.
+In C, we would write it like this at right.
+JavaScript syntax is the same.
+If you had an if-else, syntax is the same.
+If else, if else--
+syntax is the same.
+If you want a forever loop, syntax is the same, while true.
+If you want a for loop, syntax is almost the same.
+Let needs to be used instead.
+So this is C because it says int i equals 0, and so forth.
+That's a data type.
+JavaScript-- I just claim doesn't worry--
+you don't need to worry about those data types.
+So in JavaScript, you would instead say "let" instead.
+But otherwise, the syntax is the same.
+So that's a nice starting point because there's
+nothing new to learn syntactically.
+We just need to apply the same logic that we saw in week 0 and 1
+since to HTML.
+So if this is a representative web page, albeit super simple--
+this is the one I brought up earlier--
+how can we now start thinking about this web page
+in a way that is conducive to programming it
+and actually changing it dynamically?
+Well, let me propose that you think of this same web page as just a tree.
+And we introduced trees just a week ago, albeit in the context of C.
+And frankly, in C, they're a headache because you
+have to wire things together using pointers and nodes and all of that.
+Don't worry about that now.
+It's the browser's job to build this in memory or RAM for you.
+And indeed, when I keep saying that a browser, upon receiving
+an envelope with HTML, reads it top to bottom, left to right,
+I haven't said what it does with it.
+What it essentially does with it is it creates this data structure
+in memory for you.
+And it is Chrome or Edge or Firefox or whatever browser you're using that
+itself is written in probably C or C++ or some other language.
+Some other human at those companies wrote the code
+that builds all of the pointers and/or whatever is
+used to build this structure in memory.
+But this is what the browser has in mind once it's read your HTML.
+And now that it's a data structure in memory,
+you can make changes to it, just like last week,
+we were inserting humans into our linked list, changing the data structure.
+The browser can add more nodes or more tags to the page, dynamically.
+So if you run with this in your mind, when
+you get a new email in Gmail, what is happening?
+Well, the web page, when you first load it in Gmail,
+has a whole bunch of td tags, probably, or tr tags, rather, for table row--
+table row, table row-- each of which represents an email, perhaps.
+When you get a new email, the browser is probably just adding another tr node
+to this tree because notice the words here.
+Html lines up with this tag.
+Head lines up with this tag.
+Body lines up with this tag.
+So it stands to reason that when you get another row in your inbox
+with another email, someone is just adding a node to that tree.
+And that someone is JavaScript, the language
+in which you can control the users' browser even after they've loaded
+your web page for the first time.
+So what can we actually do with this?
+Let's start simple, as follows.
+Let me go ahead and just whip up, really quickly, a file called hello0.html.
+And we'll do it, as before, with our DOCTYPE html--
+my html tag here, my head tag here.
+My title here will be hello0.
+And notice I've been moving these to separate lines.
+You don't strictly need to do that-- just to keep the hierarchy.
+The whitespace, again doesn't matter.
+But I'll be consistent there.
+And in my body here, I'll say this time just "hello, world" by default.
+So that's a pretty simple web page as well.
+Let's, actually, now make it interactive.
+All of my web pages thus far have been static content,
+except for the Google one.
+But even that wasn't so much interactive as it was the moment I hit Submit,
+it made the problem Google's problem to deal with.
+Let's keep the user with me this time.
+Let me go ahead and do this.
+Let me get rid of this form here.
+Let me create a new file now called hello1 as my next version.
+And let me go ahead and paste that same code.
+But this time, let me have the browser be a little interactive.
+Let me go ahead and have a form here because what I want is a text box--
+type equals text.
+I'm not going to bother giving it a name yet.
+And let me have another one called type equals submit.
+Save.
+And let me go ahead and open up my server so I can see this file.
+This, I said, was what-- hello1.html.
+So it's just a simple form.
+But there's no connection to Google this time.
+Let me start to use this form interactively
+because if I have the ability to program,
+I bet I could take the users' input and do something with it.
+So how do I do this?
+Well, let me propose first that I want the human to type
+their name into this form.
+And then when they click Submit, I want it
+to say "hello, David" or "hello, Veronica" or "hello, Brian,"
+whatever the name actually is, like some of our C examples.
+So you know what?
+Let me write that function first.
+It turns out that in the head of your web page,
+you can have not just the title and not just style,
+but also a tag called script for JavaScript, for instance.
+And in this tag, I can actually write code.
+And there's something a little different in JavaScript.
+Instead of writing void greet as the name of my function
+and then writing the body of my function here and then
+saying void here, for instance, JavaScript's a little looser.
+If you don't want to take any arguments, just
+don't mention them-- no mention of void.
+If you don't have a--
+and actually, don't even mention a return type.
+Just call it a function-- so slight difference
+from C. It's a little lazier.
+You don't worry about input types.
+You don't worry about output types.
+You just say, give me a function called greet.
+Well, what do I want this function to do?
+Turns out in JavaScript, there's a function called alert
+that's just going to pop up a window that says something in it.
+And I can pass, as an argument to this JavaScript function,
+whatever it is I want it to say.
+So let's go ahead and say "hello, world," semicolon.
+It's almost identical to C, again, except that I'm saying
+function instead of a return type.
+And alert, apparently, exists.
+And there's no sharp include or any of that that we typically had in C.
+It's just literally in my browser right now.
+So let me go ahead and save that and go down to the form tag here.
+And it turns out, on the form tag, there's
+a special attribute called onsubmit.
+And as the word implies, it says when the form
+is submitted, on the submission of this form, go ahead and execute this, greet.
+So I can actually tell the browser, on submission of this form,
+to call a function that I wrote.
+And now let me just preemptively write return
+false for reasons we'll come back to in a moment,
+just to make sure this actually works.
+Now let me go ahead and save this, go to hello1.html, open that up.
+And let me just change the title, for consistency--
+so hello1.html.
+And let me go ahead and say David, Submit--
+hello, world-- not really sure what the point of typing my name was.
+But it, at least, seems to work as programmed.
+But obviously, where I'm going with this is I want to display my name.
+So when the human has typed in their name to the box and clicked Submit,
+that's triggering a submission of the form.
+But wait.
+When the form is submitted, I'm calling greet.
+So it sounds like it's greet's job to figure out what
+the word is that the human typed in.
+So how can I do this?
+It's a little cryptic.
+And this is where now it becomes JavaScript-specific
+and not C. Let me go ahead and define a variable called name.
+And let me use this fancy technique, document.querySelector.
+
+And then in here, I'm going to need to specify
+what node in the tree I want to select.
+So I'm actually getting ahead of myself.
+Let's look at the HTML.
+At the moment, I've got a form tag and two input tags, neither of which
+has a name.
+And I could fix that.
+But let me actually do a different technique.
+HTML also supports unique identifiers.
+And you can give them literally that, unique IDs.
+You can call it whatever you want-- foobar, baz, xyz.
+I'm going to make it more descriptive and call it
+ID equals name because what I can now do up here
+in querySelector is actually specify what
+it is I want to select from the tree.
+That tree is called a DOM, or Document Object Model, verbosely.
+And I need to do one last thing-- turns out,
+and you would only know this from experience,
+that if "name" is the unique identifier of an element
+and not the name of a tag, I actually need to prefix it with a hash,
+unrelated to C's hash.
+But otherwise, this function, querySelector,
+is going to think that there's a tag called "name."
+So this means an ID whose value is "name."
+It's a bit of a mouthful.
+But here we go.
+Once I select that node from the tree, I want to get its value and set it--
+I want to get its value, semicolon.
+What is going on?
+First, recall from this tree here that whenever the browser loads HTML,
+it has some HTML.
+It builds a tree structure therein.
+Each of those nodes is selectable via this function called querySelector.
+What is document?
+Well, it turns out in JavaScript, there's
+this special global variable called document
+that refers to the whole document, the whole web page.
+Built into that is a function called querySelector.
+That dot notation is reminiscent of C's struct syntax.
+So you can think of document as a struct that represents the whole page.
+Inside of it is a function, not just data,
+but a function, called querySelector.
+You're going to see this all over the place in JavaScript, dots,
+because people-- the JavaScript world is much more voluminous than C.
+So there's lots of functions inside of other containers or structures.
+So with that said, this is just saying, hey, browser,
+let me have a variable called name and store
+the value of the node that has a unique identifier of name
+and get that by using this function, select it.
+That grabs the rectangle from the picture
+and gives me access to the value that the human typed in.
+Now, I'm not done with this.
+I need to actually display that value.
+And it's not going to be correct to do this.
+Otherwise, I'm just going to see "hello, name."
+So there's not this convention, which we had in C. There's
+another way to do this.
+But I'm going to go ahead and do it as follows.
+I'm just going to use concatenation.
+So this is not possible in C. But in JavaScript,
+if you have a string on the left and a string on the right,
+using plus will not add them together, which would make no sense.
+It will concatenate them, like glue one to the other.
+In C, how would you do this?
+It is an utter nightmare.
+In C, how would you do this?
+This would be an array of characters on the left that
+has a null character at the end.
+This would be another array of characters
+on the right with a null character at the end.
+Neither is big enough to fit the other as well.
+So you'd have to allocate a new array of characters,
+copy these in, get rid of the backslash 0, copy these in, keep the backslash 0,
+throw those away.
+And then you have concatenated strings.
+That is so many damn steps in C. And this
+is why no one likes programming in C. And you don't have to do it anymore.
+In JavaScript, just use the plus operator.
+That does all of that for you.
+But hopefully, you do have an underlying appreciation of what the plus
+operator is actually doing underneath the hood
+because the computer is still doing the same work.
+The difference is this week onward, we, the human, do less of that work
+ourselves.
+So plus is an abstraction for all of that complexity.
+So if I didn't mess this up, let me go ahead and save now.
+I'll go to the browser, reload, and type in my name, David.
+Submit.
+And there we have it--
+hello, David.
+Let's do one more test.
+We'll try, say, Veronica.
+Submit.
+And voila.
+You'll notice that it's trying to be helpful now, my browser.
+If I start D, then it sees autocomplete, or V--
+well, forgot about Veronica, apparently.
+Veronica-- let's see if we reload.
+V-- that's weird.
+Don't tell Veronica Chrome doesn't remember her.
+But we can turn that feature off-- is the point--
+by actually doing things like this.
+And you would know this from the online manual.
+Autocomplete equals off turns off that feature.
+Autofocus also does something handy.
+If you've ever been to a web page and you can just start typing,
+Chrome and macOS highlights it in blue.
+That just means give focus.
+Put the cursor there.
+If you don't have that, the web page starts like this.
+And we've all visited websites, and I think my.hardvard's among them,
+where you have to stupidly click there just
+to start interacting with the page.
+That is not necessary.
+That's bad programming.
+Just using the tags can fix that kind of thing.
+Questions?
+AUDIENCE: What if we have two IDs with the same name?
+DAVID J. MALAN: What if we have two IDs with the same name?
+You should not.
+That is human error.
+An ID, by definition, must be unique.
+And if you have two by the same name, the human messed up.
+And what it does--
+I don't know what the behavior is.
+It's probably unofficially not documented or maybe it picks the first.
+Maybe it picks the last.
+I don't know.
+But you shouldn't rely on it, anyway.
+Good question.
+Good corner case.
+Other questions?
+
+Let me jump ahead to one example.
+And then we'll come back to a fancier version of this.
+Let me open up a program that's in today's source 5
+directory called background.html.
+It's got some familiar letters, which probably stand for red, green, blue,
+probably.
+These are three buttons.
+And we've seen buttons.
+We saw the Search button and the Submit buttons that I've created before.
+But using JavaScript, I can do fun things like this.
+If I click on R, the web page just changed.
+G, B, R, G, B-- this is now interactive.
+If you were just writing HTML and CSS, you'd have to pick one of those colors
+and stick with it.
+But with JavaScript, you can respond.
+And that's because a browser has lots and lots
+of events happening all the time.
+Events include clicks or mice moving or dragging or, in a mobile device,
+touching.
+So there's lots of things that a human can be doing with a web browser.
+And you can write code that responds to all of those kinds of events.
+And so let me actually go ahead and open up background.html
+and show how this is working.
+So for the most part, it's just HTML at first.
+Here's the html tag, the head tag, the body tag, and three new tags.
+This is another way of creating buttons.
+And again, this isn't interesting.
+You learn this in the online reference or manual.
+And it just tells you, here's how to use a button.
+It follows the same paradigm-- tag name, attribute equals value.
+The label is just going to be R, G, and B.
+And now this is where things get a little scary-looking at first.
+But that's it.
+There's just lines of code here inside of the web page.
+Now, let's walk through this line by line,
+even though it's a little verbose at first.
+So this first line here says, hey, browser,
+give me a variable called body.
+And store, in that variable, the node--
+the rectangle, so to speak--
+that has the name body.
+So that is, pluck that rectangle out of the picture
+so that I have direct access to it.
+Why-- because I'm going to manipulate it in just a moment.
+This is the scariest the JavaScript will look for now.
+Document.querySelector hash red-- could someone
+translate that into just English?
+What's that doing for me?
+AUDIENCE: Giving the ID of red that you just--
+DAVID J. MALAN: Yeah.
+Be a little more verbose.
+Someone else?
+Hey, browser, select for me the node whose unique ID is red.
+That's fine.
+Give me access to that node, the structure in memory.
+And this is where it's a little weird.
+So it turns out that every tag in a web page or node in a tree--
+the DOM tree, so to speak--
+Document Object Model-- can have event listeners associated with it.
+And you would only know this from the documentation.
+But if you literally say, go into this structure,
+this node, that represents the red button
+and get its on-click value, what's cool with JavaScript,
+even though the syntax is a little scary-looking,
+is you can associate a function with that event.
+So this is saying, hey, browser, when the red button is clicked on,
+call the following function.
+And what's new in JavaScript here is that this function, at the moment,
+has no name, which is weird.
+You could technically do this in C. But we always gave our functions names.
+But you don't really need to give a function a name
+if you don't need to mention it ever again.
+And the detail that's happening here for us is this.
+This says, hey, browser, on click, call this function.
+What does that mean in real terms?
+Hey, browser, call all of the lines of code
+in between this open curly brace and this close curly brace.
+So even if you're not comfy with the syntax,
+it just literally means execute the following lines of code
+when this button is clicked.
+This is what's known as an anonymous function insofar as it has no name.
+It's just function, open paren, close paren.
+So you can probably infer what it's doing on this line here.
+Let me highlight this line in blue.
+It's a little cryptic.
+And again, I promise that you're going to see lots of these dots.
+But this is saying, hey, browser, modify the body,
+or specifically, the style of the body, and specifically,
+the background color of the style of the body, to be, of course, red.
+And the rest of the code is copy-paste for now for green and blue as well.
+So what is happening?
+Every time you click on one of those buttons--
+R or G or B--
+literally, this line of code is getting executed that I've just highlighted
+or this line of code is getting executed or this line of code
+is getting executed.
+So even though the syntax is, yes, admittedly, way
+more complicated than we've seen thus far, the idea is relatively simple.
+Select the button.
+Tell it, on clicking, to call this function.
+And it's fine early on if you just copy and paste this.
+And for Pset5, you won't have to use any of this code.
+This is in-- preemptive look at what you can
+do with an eye toward fancier features, like final projects and beyond.
+Any questions then on this background example?
+Yeah?
+AUDIENCE: Why did we use the pound symbol for red, green, blue, and not
+for body?
+DAVID J. MALAN: Good question.
+Why do we use the pound symbol for red, green, and blue, but not for body?
+If you look at the HTML, you'll see the following.
+Body is, apparently, the name of a tag.
+So that's why we just selected "body" with that line of code around here.
+However, red, green, and blue are not the names of tags.
+They are the unique identifiers, values that I just came up with.
+I could have called it x, y, z.
+But I chose more descriptive terms.
+So whenever you want to reference or select
+a node who-- that has an identifier, you use the hash instead.
+That's all.
+These are just human conventions that are non-obvious unless you
+were told what they all mean.
+Let's try one other example with JavaScript.
+It's not uncommon on news websites to have the ability
+to change the font size, which you can, actually,
+do on your Mac and PC sometimes using keyboard shortcuts.
+But sometimes, it's built into the web page itself.
+Let me go into, for instance, size.html.
+And here's some Latin text or Latin-like text.
+And notice that it has a little select menu.
+Normally, when you have a select menu, you select something.
+And then you click Submit.
+And then the server deals with it.
+The information goes somewhere.
+But you don't need to do that.
+You can actually make little menus interactive, just like text boxes.
+Suppose I want to make this text a little smaller.
+I can do that.
+I can choose extra small.
+I can do extra-extra small or I can do extra-extra large.
+And so what's going on here?
+Well, just like there are click events in a browser,
+there are also change events or selection events.
+Just anything that can happen on the web page you can listen for.
+So let's take a look at this code, for instance.
+We've not seen this tag before.
+But we have seen paragraph.
+And there's a paragraph of Latin.
+And then there's a select tag, which gives you a select menu.
+A dropdown menu is called a select menu in HTML.
+And here's how you have all of the options.
+Now, there is a bit of duality here.
+There's what the human sees, which is between the open tag and close tag.
+And then there's this value, which the computer sees-- but more on that
+another time, when we get to Python.
+But this just gives me that whole menu of size options.
+And if I scroll down now, notice I have a script tag down here.
+And in this script tag, I have document.querySelector "select"
+because I want to select the name, the tag whose name is select.
+And then there's this event, onchange.
+And you'd only know this from the documentation.
+But like onsubmit, onchange is called any time you change that menu.
+What function should get called?
+Well, this one here, which is an anonymous in the sense
+that it has no name.
+And go ahead and do this.
+Select from the document the body tag.
+Get access to its style.
+And change its font size to, and this is funky here, this.value.
+So what did I do here?
+Let me do this, no pun intended.
+This refers to whatever element in the web page
+induced this function to be called.
+So this is-- you can think of as a variable, a special variable, that
+always refers to whatever element you are listening to.
+And so this.value just saves me some keystrokes because I don't-- you need
+to use document.querySelector to get at this select menu.
+But we'll see this again, perhaps, down the road.
+Questions?
+And let me point out one thing that's stupid.
+This here, fontSize, looks different from CSS.
+In CSS, what did we call this?
+
+Do you remember?
+We did font size small, medium, large.
+It was font-size.
+So this was left hand not talking to right hand
+when these things were invented.
+It turns out that dash is JavaScript means what, maybe?
+Minus or subtraction.
+And so this syntax just breaks in the context of JavaScript.
+So what did humans do?
+They decided that any time you have a CSS property that's word,
+dash, something, get rid of the dash.
+Capitalize the next word.
+And that's now the mapping in JavaScript-- so just a simple heuristic
+there that you can perhaps keep in mind.
+Let's take a look, perhaps, at one final value--
+oh, how about two final values?
+Let's go ahead and do this with blink.html.
+So back in the day, when the web was first being invented
+and HTML was in its infancy, there was a wonderful tag
+that was probably on my own personal home page
+called blink that literally did that.
+You could have a tag that was open bracket, B-L-I-N-K, close bracket,
+put some words, then close the tag, and then your web page would just do this
+to all visitors, which humans eventually realized, well,
+this is dumb and really annoying to look at-- bad user experience, or UX.
+And so they took it away.
+It's one of the few tags, I think, from HTML that was actually removed
+by committee, as opposed to added.
+There was also marquee at the time, too, that-- like a theater sign would just
+scroll words across your page.
+So you've probably seen websites like this that recreate them in some way.
+But you can do this with JavaScript.
+Think about this logically.
+We know how, in code, we can change the style of an element.
+We've not seen how to do this yet.
+But you can make an element show or hide, show or hide.
+Turns out in JavaScript, you can use a timer.
+You have access to a clock.
+And you could actually write code that says, you know what?
+Every half-second, call this function.
+Call this function.
+Call this function.
+Call this function.
+And what that function does is it changes the style of the page
+to hide or show, hide or show.
+Now, this used to be built into browsers.
+But now you can recreate it with something like that.
+And I'll wave my hand at what the code is.
+But that's just one feature there.
+Let's look at one final example, though, that's a little creepy.
+Here's the code first.
+And this is called geolocation.
+This is all the rage now with apps like Uber and Waze
+and Find My Friends on iPhone and the like.
+Here is relatively little code that will figure out
+where your user is in the world.
+Now, it's a bit of a mouthful here.
+But it's mostly this file, html with a script tag.
+But there's this other special global variable.
+And we won't use this much.
+And indeed, you might not ever use it if you don't care about this feature.
+But it's called navigator, for historical reasons.
+And navigator has a feature called geolocation.
+And geolocation, which stands for locate people geographically,
+has a function called getCurrentPosition.
+And for reasons we won't really get into,
+it takes a function as an argument.
+This is a very common JavaScript paradigm,
+but more on this toward final projects, perhaps.
+This line of code is going to write to the document the user's
+latitude and, if we scroll to the right, their longitude.
+So this is where it gets creepy.
+So if you were to use this code in your websites and a user were to visit,
+like I will now, and they click the link, they will be prompted,
+do you want the website to know your location?
+Sometimes, you might say yes.
+Sometimes, you might say no.
+Frankly, most of us probably just click Allow instinctively
+without really thinking about this.
+But there's where I am, apparently.
+Let me go ahead and highlight that.
+Let me go to maps.google.com because whatever website you just visited,
+whether it's Facebook or CNN or--
+a lot of news websites want to know where you are.
+If you go to like, what, fandango.com or the like for movie tickets,
+they might want to know where you are.
+Well, you're giving them very precise information.
+If I go ahead and search for these GPS coordinates on Google,
+that's not where I am.
+What the hell?
+[LAUGHTER]
+
+Why are we in Oklahoma?
+[LAUGHTER]
+
+I don't understand what's going on.
+This was not part of the demonstration.
+This was going to be the big climax.
+Let's turn off the wired internet in here.
+And apparently, we're going through Oklahoma today.
+Let's turn on the Wi-Fi, which will just give me
+a different IP address, which is a wonderful way to tie
+the start of the lecture together.
+If I wait a second, it should go green.
+Come on-- no IP address.
+Now these words might make a little more sense.
+Come on.
+Give me an IP address.
+Come on.
+Harvard-- there we go.
+There's my IP address.
+Let's reload.
+
+[LAUGHTER]
+
+We'll email the IT people about this later.
+But all of my internet--
+what this means is my--
+no, this is really weird.
+We have a lot of footage to cut out of today's video.
+So what this does is, with low probability,
+tell you where your users are in terms of latitude and longitude
+so that you could geolocate them, figure out what the local movie theaters are
+or what the starting times of stores are,
+give them directions to places, and the like.
+And while that was supposed to be the big climactic finish,
+apparently, none of this works.
+Today was completely wrong.
+We're in Oklahoma.
+But let's end here today.
+I'll stick around for questions.
+We'll see you next time.

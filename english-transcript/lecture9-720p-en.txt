@@ -1,0 +1,1229 @@
+[MUSIC PLAYING]
+
+SPEAKER 1: All right, this is CS50, and this is, sadly, the end,
+where we wrap up the semester and take a look back at the past several weeks,
+give you a look at what's ahead in the next several weeks,
+and then really the next several years, how you can sort of go on,
+beyond CS50, with the proverbial training wheels now completely off.
+And so that even without things like CS50 IDE, and Check 50,
+and Help 50, and other such tools, you actually
+feel like you can apply all of these lessons learned, and all of these tools
+you've experienced in CS50 to your own Macs and PCs in the real world.
+But I thought it would be perhaps helpful or reassuring, especially
+on the heels of so many problems sets, some of them especially challenging,
+and a recent quiz here on campus, to just think back at this tenant here.
+And we do mean this.
+And realize if you're a little uneasy as to what
+remains in store for the next few weeks, that
+what ultimately matters in this course is not so much
+where you end up relative to your classmates,
+but where you end up in week 10, which is today, relative to yourself
+in week zero, some 10 weeks ago.
+So that was just a bold claim, a pie in the sky back then.
+But you've made it to this now finish line, where all that remains
+is that one final milestone, where there's no specification.
+You're not told what to do, but you get to design and implement yourself.
+And consider too, over the past several weeks,
+odds are many of you never really felt like you got your footing, like ever.
+Just as you started to grasp something, we sort of pulled the rug out
+from under you, or kind of asked you to take another step up cognitively,
+and actually understand something new.
+Well, that's very much the design of this.
+I was trying to think of metaphors yesterday.
+And if you're into like weight lifting or such, which I'm not,
+I suppose the analog here might be you're
+sort of doing your weight lifting and someone
+keeps putting more and more weight on the thing as you get better and better.
+And so you never actually necessarily feel
+like you're making progress, because it never gets any easier.
+But that's just because the weight on either end is,
+so I'm told, is getting added to and added to.
+And I do mean that more academically here too,
+is that with every passing week, we start
+to hope that you were reasonably comfortable with what was in the past,
+so that we could lead you further along in that journey.
+And perhaps most stark is the fact that 10 weeks ago, many of you
+probably found this difficult, right?
+It's probably not all that distant a memory how many minutes, or hours,
+or a few days that it actually took just to get Mario, so to speak--
+and Mario's not even in the picture--
+to just ascend this kind of pyramid by using hashtags.
+And honestly, just a week ago, did you all
+build this, CS50 finance, which had a back end implemented
+in Python, generating HTML and CSS dynamically,
+that was talking to a front end, that itself
+was built with client-side languages, like HTML, and CSS, and JavaScript,
+talking meanwhile to an API, via HTTP, that brought in data from a third party
+source.
+Like, that's where you now are.
+And so even if you don't feel 100% like you could build this from scratch,
+and that's fine, indeed what many students do for their final project is
+start with something like P Set 8, tear out all the finance specific stuff,
+and then start to add their own thoughts, and ideas,
+and their own code, notice just what the Delta truly is.
+And that's what we mean by that Delta between week zero and week 10.
+I received, just this past week, actually, an email
+from one of your classmates, who I thought
+was wonderfully reflective on what their experience had been like.
+And quite consistent with this idea of not quite ever getting their footing,
+wrote this, "Besides learning the new material,
+I felt that I started to be more comfortable with being
+uncomfortable and being OK with working towards building a skill,
+rather than getting the right answer."
+This is the kind of quote that you kind of see
+in like a Harvard brochure or whatnot, but it's like, it really is true,
+this idea of being comfortable being uncomfortable is very much the case.
+And honestly, you're never really going to get your footing in this world.
+Because honestly, everything we just taught this past semester
+is going to evolve, starting tomorrow, and in the years to come.
+But hopefully, what we've done in the class,
+by choosing certain languages, some of the most foundational, like C,
+and SQL, and now Python, even as those languages evolve themselves,
+or become less used, the principles of memory management,
+and data structures, and tradeoffs, and abstraction, and encapsulation, all
+of those principles, those aren't going away.
+And that's the advantage, I think, of starting from the so-called ground up.
+It wasn't that long ago we were talking about zeros and ones.
+So you're not just software engineers, you're
+computer scientists, or budding computer scientists,
+because you have those mental models that
+can then be applied to any new technologies or domains that
+are down the road.
+And if it's reassuring too, even I feel this way.
+Like, I don't feel like I've mastered CS50 or all of the material therein.
+I kind of feel like that graph that we drew,
+that was that green curved line, where like,
+fortunately, I'm always making some forward progress,
+but I'm never actually reaching the peak of anything,
+because there's always something new to learn.
+And it's scary, too.
+And, in fact, the most relevant instance of being
+comfortable being uncomfortable, or maybe if in my case,
+being uncomfortable being uncomfortable, was just a few years ago.
+For many years, CS50 had used a language called PHP for the web programming
+portion of the course.
+And eventually, we as the staff, decided it's time to transition
+to Python, which has a number of upsides.
+Among them, the applicability in the real world.
+It can be used more effectively for command line
+programs, data science, data analytics, and it just felt like it was time.
+The one to catch was I didn't know Python.
+And so this sounded like a wonderful idea, sort of philosophically,
+that summer, yes, we shall teach Python this fall.
+Then October came around, and I realized,
+oh, Python's coming up in a week or two, we should probably, we, meaning I,
+should probably go learn Python.
+And so that entire semester, was I learning,
+and we're repaving the road as we went.
+And I swear, if you look back at the videos from just a few years ago,
+the Python lecture was like the longest lecture ever we have.
+Because I was so damn determined to prove to everyone that I knew Python
+by that point in the semester.
+So perhaps overcompensating a little bit.
+But this is just to reassure that none of us
+even the smartest of your teaching fellows and CAs, whom
+you interacted with this year, and myself, like none of us
+ever stop learning or stop being a little uncomfortable with this stuff.
+So even if you feel like, wow, I didn't quite absorb everything this semester,
+you weren't ever going to, because we never did either.
+So take that to heart if you would.
+Before we forge ahead-- oh, in fact, I thought I'd mentioned to,
+don't aspire to build this, for instance, mirrored
+backgrounds kind of went out of vogue a long, long, long time ago.
+But this was the first example of me building something, or trying
+to solve a problem, that I had no idea how to do.
+CS50 at the time did not teach web programming.
+CS51 at the time did not teach web programming,
+did not teach Perl, or CSV files, or the kind of ingredients
+I needed to build this, or even HTML or CSS for that--
+actually, there was no CSS at that time, or even HTML.
+And so for me, too, this was an example of being
+comfortable being uncomfortable, just volunteering I will build the Frosh I
+Am's website, and then turning to my roommate,
+and saying, how am I going to build the Frosh I Am's website,
+and just getting comfortable with that idea.
+You'll figure it out.
+And honestly, the key secret is to just surround yourself
+by really smart, smarter people, who know way more than you,
+who are more comfortable than you, so you can stand on their shoulders
+and learn from them along the way.
+And indeed, allow me to thank, before we forge ahead, just a few
+of the folks that you've either seen or not seen,
+especially those behind the scenes here today,
+Mike, and Luke, and Jose, and Tom, who, with media services,
+have helped us with all of this amazing stuff over the past year.
+CS50's production team, Dan and Tara, and Ian, and Andrew, a couple of whom
+are new this year.
+And I know they were really thrown into the fire.
+You see one of them too, Max, the guy who's creepily got a camera on his head
+today here-- oh, OK, who doesn't at the moment--
+on our production team as well, all helped capture this.
+And you'll see too, even this world, of videos influenced by software,
+this other camera here, that's just robotically been going back and forth,
+left to right all semester, controlled essentially by a PS4 controller,
+via software and via a Wi-Fi connection thereto.
+So thank you to the team for making possible so many of the experiences you
+all have had here online.
+And of course, there's a whole bigger team
+teaching the class, the CAs, and the TFs, our preceptors,
+and the heads of the class, without whom I certainly could not do this.
+These are all of their names there, sandwiched in.
+And perhaps if we could, and we'll let them
+know by playing the video for them, such a round
+of applause that they got here at lecture is thanks for their time
+with us this year.
+If we could.
+[APPLAUSE]
+
+In particular, you might have noticed the notes
+that are on the course's website, usually a couple of days
+after the lecture.
+And this is all thanks to a former teaching
+fellow, Cheng Gong, who graduated a few years ago in computer science,
+and has wonderfully continue to watch the course's videos, just
+a few hours, typically, after they air, so as to provide you
+with a canonical set of notes, so that you're not yourselves,
+heads down, scribbling everything down.
+Cheng, therefore, is going to be hearing and listening to these very words.
+And therefore, I've been told to say just what a wonderful person Chang
+Gong is, and how we couldn't do the course so well without him,
+and we really forever appreciate all of his contributions to CS50,
+and he would make a wonderful addition to any tech company out there.
+So, thank you.
+Thank you to Chang, as well.
+[APPLAUSE]
+
+And allow me to call out a couple of folks
+in particular, two of our undergrads, who among the most involved
+in the course, behind the scenes and in front of the scenes.
+One of whom is in the process of translating the course into Spanish
+with us, so that we can make it available not only to students here,
+but also natively to folks elsewhere in the world for whom
+English is a second, or not even, a third language.
+And therefore, the English aspects of the class despite,
+its being open courseware, are just an unnecessary hurdle,
+in terms of the software, and the content, and so forth.
+And so, in fact, I thought I'd give you a glimpse
+of what CS50's own Veronica has been doing over the past few months.
+For instance, this is what awaits students online soon,
+as they, themselves, tackle, just as the Myla helped us here in English, Mario,
+for instance.
+VERONICA: [SPEAKING SPANISH]
+SPEAKER 1: My thanks to other folks behind the scenes, some of whom
+you might have met, Aaron, and Greg, and Doug, and then one other member
+of the course's heads, who sadly, will be graduating this coming spring.
+Brian Yu literally wandered into my office a few years ago.
+And we got to chatting about whether he could get
+involved in some form in the course.
+And here now, three or so years later, he spent January's with us,
+summers here with us, and pretty much runs the show now.
+And honestly, of all of the head teaching fellows we've had, all of them
+are amazing, but there really is something special about Brian Yu.
+And honestly, in a word, he is extraordinary.
+And what I thought we'd do is, as thanks to the staff,
+and as an invitation to you all, to consider applying to join us as a TF,
+as a CA, as a photographer, as a producer, any number of hats
+that the team here wears, we filmed in advance, thanks to CS50's production
+team, and thanks CS50's own Connor Doyle, and undergrad,
+put together the following film that Brian has beautifully introduced us to.
+And then we'll take a quick look back at some of our volunteers
+who have appeared here in lectures past on stage, CS50 Puzzle Day
+lunches, and more, as a bit of reflection on where you've all
+come this past year.
+If we could dim the lights again.
+
+[PIANO MUSIC]
+
+[MUSIC PLAYING]
+(SINGING) And it's an open door.
+And off [INAUDIBLE]
+
+[MUSIC PLAYING]
+
+(SINGING) Help me out, let me down.
+I could learn from you, I could learn from you.
+Help me out, let me down.
+I could learn from you.
+I could learn from you.
+
+So if we could, a round of applause again for the staff.
+[APPLAUSE]
+
+So let's take a quick look back then at what
+it meant to be 10 weeks ago, when we tore, and I was actually just thinking,
+we probably should have added the meme clip to that part of the video here,
+we tore this phone book in half and began our discussion
+of computational thinking and all things thereafter.
+And what we hope to do with this quick look,
+is to just remind you just how far, truly, you've come,
+and to sort of remind how hopefully a number of these topics
+have all coincided and intermingled.
+So this was computer science, right?
+In week zero, we proposed this black box, that we revealed to be algorithms.
+And we had inputs and outputs.
+We needed to represent those inputs and outputs, and thus
+were it was born zeros, and ones, and binary.
+And from there, did we talk about higher level abstractions,
+talking about how you might have decimal or letters of the alphabet, ASCII
+and Unicode, the number 65, representing the same there,
+the same pattern of bits might represents something like a dot,
+or a pixel of yellow.
+If you have a whole bunch of those dots or pixels,
+you might have a crying face of joy.
+And if you might have multiple images like that,
+you might have animojis or videos, more generally,
+which are just yet another abstraction on top of that.
+And so, as you go out into the real world now, after CS50,
+and see pretty fancy and newfangled technologies,
+just start to critique them in your mind.
+And consider, well, I know how this feature is done,
+and I know how that feature implements that feature.
+Odds are, you can reverse engineer in your mind how many
+of today's technologies work, just by building
+backwards to those lower levels.
+We then introduced pseudo-codes, so we could
+talk about what it meant to express yourself
+more carefully, more methodically.
+And we introduced loops, and conditions, and variables,
+and other such tenants, that we then translated,
+eventually to another language.
+And we also talked not about correctness, but about efficiency.
+So that you have a mental model of just how good your code, or your algorithm,
+or your thought ultimately is.
+And then was introduced Scratch, so that you
+had a way, albeit graphically, to express
+all of these various components, by programming Scratch up and down,
+and left and right.
+Of course, things got pretty scary, or ugly, pretty quickly.
+We then transitioned to C, when all of a sudden, the simplest of "Hello world,"
+started to look like that.
+Odds are, that first week, if you'd never seen any programming
+language before, let alone C, most of those lines
+did not look familiar, except for perhaps the "Hello world,"
+but even that thing was followed by some random backslash n.
+And all of that have we, hopefully, teased apart over the past many weeks.
+That, of course, gets compiled down to zeros and ones,
+which the computer only understands.
+And thankfully, we humans live in an age where
+we don't need to worry about that level, or relatively few
+of us do, because we have abstractions, and libraries,
+and other developments on top.
+In week two, did we then introduce other aspects of programming,
+and functions, and return values, and the like.
+And we also talked about what's really going on underneath the hood.
+Code, like this here, for instance, gets compiled often
+into multiple files, CS50s, standard iOS and your own code,
+and then they all get linked together.
+But there too, that's what you're getting for free,
+so to speak, by running a compiler like Clang, albeit again
+and again, whenever you make a change to your code.
+We introduced the notion of memory, a little chip that
+might be in your computer.
+And if we zoom in on that, it really is just
+this beautiful, simple canvas of bytes, top to bottom,
+left to right, that you can do anything you want with.
+Like that is it.
+Despite all of the seeming complexity of a computer,
+that is the canvas that you have to work with.
+And that was allowing us to do any number of the data structures
+and algorithms on top of it.
+For instance, in week three, we talked about strings.
+And strings were very straightforward.
+You might not have heard the word initially
+in the context of programming, but just a sequence of characters,
+like a word, a phrase, a sentence, or such.
+And then things got scary again quickly, when we said,
+those are a little bit of a white lie, and abstraction,
+more properly, on top of pointers.
+Of course, pointers themselves got a little scary quickly.
+And even in retrospect, this might still look scary.
+And that's fine.
+The reality most of you will not have occasion to program in C again.
+The only occasions I have are generally in September and October of every year,
+myself, because in the real world, I tend not to use this language,
+though it does remain super popular and super commonly used,
+especially in hardware based contexts, where you really
+want to squeeze as much performance as possible out of the hardware,
+and you don't necessarily want the overhead of a higher level language,
+like Python.
+But what's important is just those principles.
+The fact that you can put things in memory, you can go there,
+you can move them.
+That's all this crazy syntax has been doing for us.
+Of course, it didn't end well for Binky, when you abused this.
+And indeed a lot of today's programming errors, even
+ones that are still with us today, reduce to misusing or accidentally
+touching memory that you should not.
+But once you have that primitive, this ability to stitch things together
+in memory, then you can start to build things in software.
+We introduced Structs, in C, which allow us to come up with our own custom data
+types that have multiple things inside of them.
+And once you have that, if one of those things
+is itself a pointer to something else, you
+can kind of string things together in memory,
+thereby giving you access to linked lists, which solve problems when
+it comes to the limitations of arrays.
+And you can do even fancier things like hash tables, that might conceptually
+and pictorial look like this, or even the crazier
+tri, which theoretically, is even more efficient,
+it just takes up so much more space.
+But that's it.
+With pointers, all you're doing is stitching these data structures
+together.
+And even though most languages on top of C, like Python, and Java, and PHP,
+and Ruby, don't have pointers per se, they
+have the idea of addresses or references still.
+So the concept is there, they've just made it a little easier
+not to shoot yourself in the foot by making mistakes and getting things
+like seg fault. The compilers and the interpreters
+are increasingly getting good at helping you protect yourself from human error.
+And then, thereafter, we began to transition, felt like a long time in C,
+but we began to talk about HTTP, and virtual envelopes and messages,
+just going from point A to point B. And among those things were headers.
+And you'll recall, perhaps among the more amusing headers,
+was this one, bought some years ago.
+If you use a browser or if you use Curl, like a program at the command
+line, and the IDE, or your Mac or PC, and you actually request this,
+what was the status code that came back?
+Anyone recall?
+AUDIENCE: [INAUDIBLE]
+SPEAKER 1: Wasn't 200, wasn't 404.
+AUDIENCE: [INAUDIBLE]
+SPEAKER 1: Yeah, it was like permanently redirected.
+I think 301 or 302 came back, and where did it lead to?
+AUDIENCE: [INAUDIBLE]
+SPEAKER 1: Yale University.
+So that was nice and fun.
+Of course, they bought HarvardSucks.org some time ago.
+And for those unfamiliar, this weekend is,
+of course, the Harvard-Yale football game, here in Cambridge this year.
+So as clever as Yale has been for like a decade of paying annually
+for, or rather as clever as we have been, whoever the alum,
+is paying for a decade for Safetyschool.org
+redirecting to Yale.edu, unfortunately, HarvardSucks.org also lives on.
+In fact, there's a whole wonderful back story there,
+that was about 12-plus years ago now.
+Where some enterprising students at Yale kind of really got us.
+Have folks seen or heard this story?
+So we really embarrassed ourselves some years ago.
+And it will all boil down to some very enterprising Yale students
+using a little bit of software and a computer program
+to create an actual bitmap, like a grid of pixels using humans.
+The problem was that those humans were us, on the Harvard side,
+in the Harvard stadium.
+Because we essentially created a bitmap message, thanks to their cleverness.
+So I thought we'd dim the lights and for about three minutes,
+look at just how bad they got us.
+Now to be fair, we got them for like 12 years, or 19 years of football
+thereafter, though they have been winning the past couple of years.
+So we can't really talk about this now.
+So without further ado, let's dim the lights and pull this look up too.
+[VIDEO PLAYBACK]
+- We're headed up to Boston, checking out the stadium for a prank.
+- A few years ago, I was at a math conference.
+And I was sitting around at the table at dinner,
+with a few other mathematicians.
+And one of them went to Harvard, and started
+telling the story of this amazing prank that was against Harvard.
+And at that point, I felt I had to interrupt,
+and said, well, actually I can tell you a lot more about that.
+- OK.
+- OK.
+- The idea was perfected in a dorm room.
+- We came up with the idea, actually, to prank them
+with signs at the football game.
+We threw some ideas out there as far as what the signs would say.
+We eventually settled on "We Suck."
+and my immediate reaction was, no, this will never work.
+However, the problem solver in me started thinking, well, maybe we
+can make this work.
+- The problem, they had to infiltrate Harvard stadium without getting caught,
+sneak in 1,800 placards, distribute them to unsuspecting Harvard fans,
+and then convince those fans to prank themselves.
+- That's great.
+- We thought about basically every possible thing that could go wrong
+and tried to come up with a solution for it.
+- And then you put two guys on top of it.
+- They made fake Harvard IDs and fake backstories, fake placard designs,
+and a 28-member fake pep squad.
+On November 20th, 2004, the fake Harvard students
+smuggled the placards into the game.
+- What do you think of Yale, sir?
+- They suck.
+
+- It's not going to say something like Yale sucks, is it?
+- It says go Harvard.
+- But then, trouble.
+- What houses are you guys in?
+- That's not a real house.
+- Ho-fo?
+- Yeah.
+- You guys aren't from Harvard, are you?
+- Can I see your Harvard ID because I really think you guys are from Yale.
+- I just showed him the front of this ID,
+and all the sudden, he just ran away, and he felt so embarrassed.
+- Having escaped one confrontation, they couldn't risk another.
+It was time.
+- This just looks like a total mess.
+- We have absolutely no idea if this is going to work.
+- Look at them, they have the paper.
+It's actually going to happen.
+I can't [BEEP] believe this.
+- What was once a prank, became a legend.
+- We did it.
+
+- And immediately, we started hearing chants from the other side.
+You suck.
+- You suck, you suck, you suck.
+- And I think it was at that point in time that we knew we had pulled it off.
+- One more time.
+- There it goes again.
+
+- I really think it didn't matter that Harvard
+won, because of the prank for a lot of Yale students and alumni,
+we definitely won that year.
+[END PLAYBACK]
+
+SPEAKER 1: So there you go problem solving at Harvard, Yale as well.
+All right, the bar has been set.
+So thereafter, let's try to somehow make this more academic
+again, so thereafter, did we transition from looking at the principles of HTTP,
+and the envelopes with which you can send messages,
+and actually introduced a language with which
+we can create user interfaces and things far more interesting
+than terminal windows alone.
+Of course, there was a connection even to the material past,
+because underneath the hood, what your browser is
+doing is reading that HTML, top to bottom, left to right,
+and building really a tree structure in memory,
+that you can then manipulate using JavaScript, yet another language.
+And then in week six, did we tragically point out
+that all that complexity we'd wrestled with just a few weeks ago,
+trying to build a linked list with null at the end and pointers throughout,
+actually reduces to just this in Python, just a single line of code.
+And then this amazing data structure that theoretically
+has constant time access and dynamic growth,
+because you can chain everything off of it.
+You just have to write a lot of code to do all the memory management,
+is just this in Python.
+But underneath the hood, that is what Python is doing.
+In fact, a lot of the Python interpreter, the program called Python,
+is itself written in C. And so someone, just thankfully not you,
+has had to write all of that functionality.
+But Python itself is just an abstraction.
+These functions are abstractions on top of these lower level implementation
+details.
+And that should really become part of your vocabulary,
+distinguishing between design, and abstractions, and lower level
+implementation details, all of which are important,
+but they don't all need to be at the tip of your mind
+when you're thinking about how to solve a problem.
+You can solve problems at this level.
+And then lower down into the implementation details.
+So after that, we tried to tie everything together.
+And we looked more generally at web programming.
+We just looked at one paradigm of web programming, the MVC model,
+so to speak.
+There are dozens, probably more these days,
+all of them with fancy confusing acronyms.
+But it's just different ways to solve problem.
+Because we humans, with each passing year,
+realize that, hey, I, in my company, and you, in your company,
+and you, in your dorm, we're all trying to solve similar ideas.
+We're all trying to make an app.
+We're all trying to make a website.
+And we're all reinventing wheels.
+And so new frameworks are invented, and new methodologies, and people
+start sharing.
+And the world starts to collaborate by way of open source tools,
+that we, ourselves, have used, like Flask being one such example thereof,
+jQuery a little bit, Bootstrap as well, all of which
+allow us to sort of solve problems collectively
+and get real, more interesting work done without having to deal with all
+of those implementation details.
+And then lastly, did we introduce one last language, SQL,
+which gave us all the more of a back end, where
+we can store stuff, a lot more stuff, and a lot
+more easily than we could with CSVs alone.
+And if you like this world of statistics, and data science,
+and the like, or if you're going back to the world of the humanities,
+or medicine, or any number of fields, where there's just lots of words,
+lots of books, lots of texts, lots of data, ultimately, SQL,
+and all of these languages can be used to help you answer questions
+that you might have in those domains.
+So from there, where do we go?
+So after Thanksgiving break here in Cambridge is the CS50 hackathon.
+It will begin at 7:00 PM in the evening, and it will end at 7:00 AM
+the next night.
+And it's meant to be one of those uniquely collegiate experiences, where
+you have alongside you all of your friends and classmates,
+and all of the course's staff into the night, working on final projects.
+An opportunity to be productive.
+An opportunity far enough away from the deadline to feel good about it
+and to take breaks, and to have dinner with us at 9:00 PM,
+to have second dinner with us around 1:00 AM.
+And then if you're still awake, around 5:00
+AM we charter some Harvard shuttles, and take ourselves
+to IHOP for breakfast as well.
+But you're welcome to go to sleep at any point in between.
+Just to give you a sense of what it's like.
+On arrival, the students from both Harvard and Yale
+ascend the stairs, joining the staff for the evening of programming.
+We have reserved the entire space above the Innovation Lab
+across the river at HBS, where everyone will
+be able to tuck themselves away into a corner with their partners,
+or with their friends, or classmates more
+generally, and just work throughout the night on their final projects.
+There's a photo booth, and a Myla as well,
+as well as other members of the staff.
+There are therapy dogs in some years, if you'd like to take a little break
+and meet such puppies as these.
+And then, of course, at 5:00 AM, is IHOP.
+And this is Maria Zlatkova, now at Facebook,
+greeting us at last year's breakfast.
+And then the CS50 fair.
+On both campuses is this event.
+An opportunity for all of you to show off
+just what you accomplish this semester, truly meant
+to be the capstone of what you've done, not exhibiting your own problems
+sets that you were told how to build, but your own project that you yourself
+decided how to.
+We'll invite the entire campus, the faculty, students, and staff
+from across campus.
+Usually it's about 2,000-plus people.
+We'll be in the beautifully renovated Smith Center this year,
+right in Harvard Square.
+So we expect to have quite a few passers by and tourists as well.
+It's always coupled with a fabulous raffle, whereby
+you'll all be given, as student presenters, little smiley face
+stickers or such.
+Anyone who chats you up and asks you about your project
+and for a quick demo on your laptop or phone,
+you'll be able to hand them a sticker and be eligible, therefore,
+for fabulous prizes.
+Along the way though, there'll be popcorn, and snacks,
+and music, and more.
+Some of our alumni from industry to talk to you
+about the real world, and summer time, and full-time opportunities as well.
+And what you'll see is a space that looks, and feels, and sounds,
+rather like this, with folks just mingling around,
+really proud and happy to see what it is that you and your friends pulled off.
+With popcorn in attendance, stress balls in attendance, and staff, and students
+alike, hopefully delighting in what it is that you did.
+Everyone will end the semester with a I took CS50 t-shirt.
+Hopefully, this is something you two will wear proud.
+In fact, this truly is where I got my start.
+1996, CS50 changed my life.
+And, in fact-- in fact, here, is indeed proof
+of just how proud I am to have actually gotten my way through this course
+so long ago, when I, myself, had not had the nerve freshman year even to shop.
+So hopefully, you feel yourselves a member of that community as well.
+So of course, we thought we'd give you a sense of what the next few weeks might
+be like, especially if you don't necessarily budget your time properly.
+A few years ago, we used before the CS50 IDE,
+the software called CS59 Appliance, which
+was like a downloadable version of it for your Mac and PC.
+It tended to be a little slower, and you'll see an allusion to that.
+But this video produced by CS50's production team, and particularly
+Dan Coffee, was CS50's first experimentation with puppetry.
+And you'll see that we tell the story by proxy
+of a CS50 student working on their final project, just as the deadline nears.
+And so if we could dim the lights, this will
+be our last of the videos for today before we now look ahead at the years
+after.
+[PHONE RINGING]
+
+[MUSIC PLAYING
+- "MISSION IMPOSSIBLE"]
+So our thanks to Dan Coffee and the team for producing that
+as well, if we could.
+[APPLAUSE]
+
+That is indeed exactly how deadlines work.
+Every time we have a deadline, I--
+So life after 50.
+So the training wheels are off, you can keep the rubber duck
+and have someone to talk to as you wrestle with problems.
+But the CS50 IDE, while you can keep using it,
+it's not something you, odds are, going to use in the real world for very long.
+And there really is no check 50 and help 50 in the real world,
+though there are lots of humans.
+They are not called TFs anymore, they're called friends and colleagues.
+But you can lean on those folks as well.
+And what we thought we'd give you is some list
+of suggestions for next steps, so that you feel like there's offboarding.
+And honestly, some of this will happen naturally
+as you tackle your final projects, depending on the nature.
+And if you take another class, or CS50 beyond this winter, or you experience
+these things yourselves, but we thought we'd at least give you
+some links in today's slides, so that you
+have something to tinker with over Thanksgiving, or winter break,
+or beyond.
+So CS50 IDE is meant to be representative of a very
+common programming environment.
+It happens to be web based, it happens to be in our domain name.
+But this idea of having a file browser of some sort,
+and tabs where you write code, and a terminal window
+with which you interact, incredibly, incredibly, common,
+whether it's in the cloud, or more commonly for real world
+software developers on your own Mac or your PC.
+Frankly, some years from now, this will probably be the way it is, none of us
+use our Mac, PCs per se, everything probably is remotely.
+So odds are, at some point in the future, we'll come full circle.
+But for now, it's quite common to replicate this kind
+of setup on your own Mac or PC.
+So how do you go about having a command line, which hopefully you've gleaned,
+while frustrating, is more powerful than only having
+menus and icons available to you that someone else,
+like a company, like Microsoft or Apple has given you.
+Well, in both Macs and PCs, can you install the same tools
+that we used this semester, Clang, and Make,
+and you get CD, and LS, and [? Miktor, ?] and all of those commands
+on both Mac OS or Windows.
+And the starting points can be here.
+Both of those provide their own sort of terminal windows, and the software
+therein.
+You can just install via those two starting points.
+Now what about Git?
+You've seen or heard about Git, even though we
+don't use it hands on in the class.
+Odds are you will use this in higher level CS courses, if you take it.
+It's one of the most popular programs with which
+to save versions of your software.
+Now you may have noticed the CS50 IDE does this automatically for you.
+You can go to File, Revision History, and you can kind of
+go back and forth in time.
+And that's great and wonderfully useful, but it doesn't really lend itself
+to collaborating with others.
+And so, if you're working with partners for the final project,
+in the simplest form, you can just have one of you
+share your CS50 IDE with the other user names.
+And you'll all just share the same account.
+And that's fine.
+But it gets a little annoying and complicated
+if you're both trying to edit the same files,
+you're not necessarily talking to one another, or you're in different rooms.
+Like, at some point you want to have good workflows.
+And so via this URL here, does Brian introduce you to Git, a command line
+tool that's super, super, super popular these days, that lets
+you save versions of your code.
+So you no longer call it Mario 1.C, and Mario 2.C,
+and Mario 3 AM.C and the like.
+You actually call it Mario.C.
+But you let Git take care of time-stamping it and versioning it
+for you.
+And Git allows you to share your code in the cloud.
+What we use GitHub for is for, of course, submissions, and such,
+and for commenting.
+But more generally, it's used for just storing
+code and sharing with other people.
+So what you'll do with Git is literally Git
+push it to a service like a GitHub, or GitLabs, or others.
+Where someone else can then Git pull it onto their own Mac or PC.
+And, therefore, you're sharing files.
+You don't email.
+You don't Dropbox, or the like.
+You actually use a standardized software tool.
+You can install it via these instructions
+here, if you don't have it already.
+And more usefully too, can you sign up for free repositories
+GitHub.com, you already have an account.
+Since you have a student ID, you can go to this URL
+here and tell them you're a student at Harvard, or Yale, or beyond.
+And then say, can I please have free private repos,
+so you can keep your own personal or school projects private,
+without needing access to CS50's own organization.
+So what do you write code in?
+So, there's bunches of editors these days.
+Among the most popular is a tools that's called
+Atom, which is an open source text editor that
+has lots and lots of plug-ins.
+This is like the tabbed windows for writing code.
+It does syntax, highlighting, and so much more,
+so that your code is easy to edit, and it looks pretty wild
+you're working on it, and just makes life pretty easy.
+Also super popular these days is VS Code or Visual Studio Code.
+They are functionally pretty much equivalent.
+You can ask your teaching fellows or friends which you prefer,
+or just try them both.
+They are free, and there's dozens of other options.
+These two just currently have a lot of momentum in industry.
+Within the terminal window, though, is what a lot of CS students would use,
+something called Vim.
+And there's alternatives there, called [? Emax ?] and a few others.
+But Vim is actually what I grew up on, and still to this day tend to use.
+I tend not to use a GUI.
+I just use a bigger terminal window with lots and lots of code inside of it.
+And Vim is more of a command line tool, where
+you have to memorize keyboard shortcuts more so,
+but it's also more powerful in the same way
+a terminal window tends to be as well.
+So whatever you are most comfortable with is fine.
+So suppose you want to post a website, like your own personal home
+page, your resume, an artistic portfolio, or whatnot,
+where do you even begin?
+You can certainly make it on your Mac or PC in an HTML file,
+but no one in the world can access it.
+You can put it in CS50 IDE, but that goes
+to sleep eventually, when you're not using it,
+which makes it hard for people on the internet to visited at any hour.
+But fortunately, there's so many free services out there,
+at least if you have modest usage.
+If you're trying to build a business, odds
+are you're going to pay someone for the bandwidth, and the support,
+and so forth.
+But if you just have a home page, where you're getting dozens, hundreds, maybe
+low thousands of visits, which is probably
+likely the case for personal sites, you can
+use something called GitHub Pages, a free service where you store your HTML
+files, JavaScript, and CSS on GitHub.com,
+and they host it for you for free.
+Netlify is another free one too, and dot, dot, dot,
+you can Google ad nauseam and find any number of free such services.
+These just tend to be two popular ones with which I too am familiar.
+Hosting a web app, so not a static website, but something more dynamic,
+we'll have instructions that we'll circulate for this final project
+as well, so that you can sort of graduate from CS50 IDE
+and run your final project, or your website,
+or your student group's tool, or your startup's website
+on a third-party service.
+Heroku tends to be very popular.
+They too have a free tier of service.
+So long as your website's not being hammered by lots and lots of users,
+you can use it for free.
+You get free access to a database, something called Post [? Gress, ?]
+which we alluded to earlier in the semester,
+using the same data types we discussed.
+Wix is another common one too, that very recently launched support for code, not
+just static web sites too.
+So these are starting points.
+But certainly use Google or the like to find other options as well.
+Then there's infrastructure, as a service, so to speak.
+There's some bigger fish out there, Amazon, and Microsoft, and Google,
+that have cloud-based services.
+The learning curve tends to be a little higher, frankly.
+So I would encourage you to maybe start with the previous examples, which
+are businesses built on top of these layers.
+But if you're interested, absolutely sign up
+as a student for any number of these services,
+and they tend to give you lots of financial credits,
+so you can just try things for free, for like a month,
+or a year, or whatnot to get your feet wet.
+It's a wonderfully free world when you're just
+getting started in this space.
+And then more general advice.
+Read lots.
+And I'm sure if you ask the TFs and CAs, you'll
+get an even longer list of sites.
+But these tend to be the kinds of sites I go to if I just kind of want
+to stay in the loop on things.
+Subscribing to various sub-Reddits, so to speak,
+is compelling, where information, news, conversations, just get pushed at you.
+And honestly, whenever I'm asked how I kind of stay
+in touch with certain things, I hear things from friends,
+I get emails about technologies, I get curious, and so I poke around.
+And these tend to be the places that I might go, and a lot of tech people
+go, to talk about new trends and technologies.
+Or if you're trying to vet something, should I use x or should I use y,
+don't just use Google.
+Check out those websites as well.
+And then CS50, if you'd like to stay in touch.
+So CS50, not so much here on campus, but for students around the world,
+maintains a number of online communities, all of which
+you're welcome to partake in, answering questions, or asking questions,
+or the like.
+And those are just the few of the current ones now.
+Any questions on any or all of those past or future steps?
+Anything at all?
+No?
+All right.
+OK, so we'll adjourn in just a little bit
+time for our tradition of cake downstairs in the pub.
+But we also have one other tradition, especially now
+that you have some 10 weeks of experience behind you.
+For all intents and purposes, you are all now
+qualified as CS50 staff, because, indeed, at the end of the day,
+most of CS50 staff are recent alumni of the course themselves,
+sophomores, juniors, seniors, recent graduates, students online who
+have taken this class, maybe taken another class in the spring or beyond,
+and then joined us as staff.
+So realize that even if you're not feeling more comfortable yet,
+or most comfortable, nor are most of the staff,
+and myself included, with a lot of these things.
+And so long as you stay one step ahead and you know the kinds of resources
+to turn to, this is what it really is about when learning in this world.
+And in fact, a very common mindset, I do know, in the class,
+in the problem sets, in the quiz, is wait a minute,
+you didn't teach us this.
+And that, odds are, was quite true quite often.
+And I don't just mean to be rationalizing it.
+That was very much by design.
+In the real world, that's exactly the emotion you're hopefully going to feel,
+or realistically going to feel quite often.
+And we truly do hope that among the tools you've gotten,
+training wheels and beyond, is to know where to have the right instincts now
+with how to bootstrap yourself, so to speak, and solve problems, and learn
+things on your own.
+But we thought we would, in conclusion put that to the test.
+And I think for this, we need--
+let's see, we have a bunch of chairs up here, four student volunteers,
+for about to be--
+four about to be alumni volunteers.
+OK, over here in the front, yeah, come on down.
+Over here, in the front, and three.
+And let me try to see about four, over here, come on down.
+All right four, you have four?
+Colton's going to join us.
+Uh-oh, OK, we'll take five, that's fine, but you gotta bring a chair.
+We'll find a chair somewhere.
+Come on down.
+And now I need four staff volunteers, if we could.
+Who on the staff might--
+Oh, yes, ma'am come on up.
+Athena has volunteered.
+Oh, Erin, would you like to--
+oh, come up.
+Yeah, who?
+OK, yeah, come on up, Robert.
+OK, thank you so much for volunteering.
+OK, so-- but the catch is, we need the staff on their own team.
+So let's put the students here, because you need--
+that's OK.
+Could you guys go over here?
+OK, all five of you-- we have our student team over here.
+And we'll find you one more chair in just a moment.
+Staff, go ahead and take a seat here.
+You each have a piece of paper, a pen, and a microphone.
+And why don't we go ahead, as we get ready to go here--
+do you want to each just say hello and introduce yourself?
+ERIN: Hello.
+SPEAKER 1: Well, you can tell them.
+ERIN: Hello, I'm Erin, one of the course preceptors.
+ISAAC: I'm Isaac, I'm a TF.
+ROBERT: I'm Robert, I'm a CA.
+ATHENA: And I'm Athena, I'm a TF.
+ANDREA: Hi, I'm Andrea, I'm an alumni, soon.
+AVIVA: Hi, I'm Aviva, me too.
+JONATHAN: I'm Jonathan.
+APRIL: April.
+ERIC: I'm Eric.
+COLTON: Hi, I Colton, I'm a technologist.
+SPEAKER 1: All right, so what are we all doing up here, you might wonder.
+Well, we have this tradition of using all of those questions
+that you offered for the quiz, recall in problem set seven, just a couple
+of weeks ago, as refreshers.
+Now mind you, there is quite the difference between, I think,
+a lot of the questions you offered up at suggestions for quiz questions.
+Many of them were like, what is two in binary,
+or maybe what is three in binary.
+And so, that was great.
+But we were looking for a little harder questions.
+And we get some of those too.
+And so Colton kindly went through the thousands
+of questions that were submitted just a couple of weeks
+ago, to pluck out some of the most serious, some of the most playful ones.
+And I have here them clustered into categories,
+because we have this tradition of playing our own version, staff
+versus students, of Jeopardy.
+Now because you all wrote the questions in the form of questions,
+I'm going to read them in the form of questions and not answers.
+So it's more of a quiz show, if we could, staff versus students.
+The first person to raise their hand, we'll call on first.
+We don't have buzzer technology here.
+Colton will be our judge, if you don't mind being the judge.
+And we'll do just a few rounds of single and double,
+and on Final Jeopardy, followed by cake.
+So in a moment, we'll show you the categories,
+and begin asking the questions.
+Do you have any questions of your own?
+STUDENT: Are we answering with questions?
+SPEAKER 1: You will be answering as an answer.
+I'll ask the questions, you answer.
+So it's not really Jeopardy, but it just kind of sounds better
+if we call it Jeopardy.
+OK, so-- and also, also, look at what we made in HTML to facilitate this.
+
+Let's zoom in.
+Here we go, Enhance, whoo-hoo, look at those HTML tables and links.
+OK, so without further ado, I think before today began,
+we decided that the students had won the coin toss.
+Would you like to pick a category, and then I'll
+ask you a question in that category.
+STUDENT: Scratch for 1,000.
+SPEAKER 1: Scratch-- for $100?
+STUDENT: No, there's no $100.
+STUDENT: $1,000.
+SPEAKER 1: Oh, I heard 1,000.
+STUDENT: Yeah, 1,000.
+SPEAKER 1: OK, so week--
+week zero, week zero, the question is what institution develop Scratch.
+STUDENT: [INAUDIBLE]
+SPEAKER 1: Colton?
+STUDENT: [INAUDIBLE]
+SPEAKER 1: Whoever raises their hand first.
+COLTON: [INAUDIBLE]
+SPEAKER 1: OK, OK, students.
+STUDENT: MIT.
+SPEAKER 1: MIT is the correct answer for 1,000 points.
+Very nicely done.
+OK, if no one's going to clap--
+[APPLAUSE]
+SPEAKER 1: There we go.
+No it's OK.
+We have an HTML button for that too.
+All right, so students, you have control.
+What would you like?
+STUDENT: Scratch for 800.
+STUDENT: Yeah, I was--
+SPEAKER 1: Scratch for what?
+STUDENT: All the Scratch ones.
+STUDENT: Scratch for 800.
+SPEAKER 1: Scratch for 800, working our way through the Scratch questions.
+OK, what color is the cat?
+
+Students--
+STUDENT: Orange.
+SPEAKER 1: Orange, OK, now funny enough, two people asked this question
+in P Set 7, and we got two answers--
+yellow and orange.
+Perhaps by a show of hands-- yellow--
+
+orange.
+OK, orange, students get the $800.
+Very nicely done.
+
+Students--
+STUDENT: We should do something big.
+STUDENT: Don't do C. I'm terrible with C.
+STUDENT: Arrays.
+STUDENT: No.
+STUDENT: Arrays are easy.
+STUDENT: Fine.
+STUDENT: Fine, arrays.
+STUDENT: Arrays for 1,000.
+SPEAKER 1: Arrays for 1,000.
+So this is from week two for 1,000.
+This is going to be--
+what is the running time of merge sort?
+
+Staff?
+STAFF: End log in.
+SPEAKER 1: End log in is correct for a 1,000.
+STUDENT: [INAUDIBLE]
+SPEAKER 1: Staff, what would you like.
+
+STAFF: Memory.
+STAFF: Memory.
+SPEAKER 1: Memory for--
+STAFF: 1,000.
+SPEAKER 1: For a 1,000?
+STAFF: Yeah.
+SPEAKER 1: OK, for 1,000, what is the name of the tool you
+can run to see if your program--
+
+staff?
+STAFF: Valgrind.
+SPEAKER 1: If your program has memory leaks, Valgrind is correct, for 1,000.
+STAFF: [INAUDIBLE]
+STAFF: [INAUDIBLE]
+STAFF: That was nice.
+SPEAKER 1: Staff for 1,000, what do you want next?
+STAFF: Week Star, what is that?
+SPEAKER 1: Oh, week star is the wild card, so you can get any week.
+
+STAFF: Week Star for 1,000.
+SPEAKER 1: Week Star for 1,000.
+So I shall choose the category to be--
+
+what is rubber duck debugging?
+What is rubber duck debugging?
+Students?
+STUDENT: I'll answer it.
+It's when you read every line of code to a rubber
+duck and to try and find a mistake.
+SPEAKER 1: I think that's correct.
+Very well done for 1,000.
+[APPLAUSE]
+All right, I think we have time for one more question in single Jeopardy.
+Students you have control and the lead.
+STUDENT: Go for the lowest possible [INAUDIBLE]..
+STUDENT: No, why don't we try Week for 800, or C for--
+STUDENT: For like 200, because then they can't catch up.
+STUDENT: So 200.
+STUDENT: Yeah.
+SPEAKER 1: Students?
+STUDENT: C for 200.
+SPEAKER 1: For what?
+STUDENT: C for 200.
+SPEAKER 1: C for-- whoa, OK.
+C for 200 in week one.
+Week 1-- your question is going to be--
+is C the absolute worst?
+
+Students, for 200?
+
+STUDENT: OK, I think it's not, because--
+STUDENT: The person asking that would say, yes,
+so we just have to match their answer.
+STUDENT: We have to match their answer?
+SPEAKER 1: The correct answers are right here.
+STUDENT: Yes.
+SPEAKER 1: No.
+This is what I'm told.
+STUDENT: Yes.
+SPEAKER 1: I hear two yeses and one no.
+STUDENT: I stick by my opinion.
+STUDENT: Majority wins.
+SPEAKER 1: The answer is yes, it is the worst.
+STUDENT: Yes.
+SPEAKER 1: For 200.
+OK, so we're now moving on to Double Jeopardy,
+where all the dollar values are doubled and the categories
+have changed two later weeks, still with one wild card.
+Students.
+STUDENT: Oh, god.
+SPEAKER 1: Python for 2,000.
+SPEAKER 1: For 2,000.
+STUDENT: I'm sorry, I just made that decision.
+STUDENT: Python, 2,000.
+SPEAKER 1: What week?
+STUDENT: Python, 2,000.
+SPEAKER 1: Python for 2,000.
+So that's week six.
+Python for 2,000, and a question that a classmate asked was,
+what is an animal that you don't want to find under your pillow that shares
+its name with a programming language?
+
+Students.
+STUDENT: Python snake.
+A python snake.
+SPEAKER 1: Python is correct, yes, for $2,000.
+Very nice.
+
+Students, Python 6,000.
+SPEAKER 1: Time for just a few questions before we move on to final.
+STUDENT: Oh, let's do, like Web--
+do you guys want to do Web--
+STUDENT: Sure, Web 2,000.
+SPEAKER 1: Web for 2,000, that was week seven.
+And a question here was, who is your friend?
+STUDENT: What?
+SPEAKER 1: Students for 2,000.
+Oh, did you see Erin first?
+Sorry, Colton's the judge.
+STAFF: Developer tools?
+SPEAKER 1: I'm sorry, that's incorrect.
+Yes, students?
+STUDENT: Inspect Elements?
+STUDENT: Inspect Elements.
+SPEAKER 1: Inspect Element, also incorrect, I'm afraid.
+Students, again?
+STUDENT: A rubber duck.
+SPEAKER 1: A rubber duck is incorrect.
+STUDENT: Google.
+SPEAKER 1: Google, no.
+I think you're negative 8,000 now.
+But that's OK, we won't deduct.
+We won't deduct, it's fine.
+I know that's not how Jeopardy's played.
+OK.
+STAFF: W3 Schools?
+SPEAKER 1: W3 Schools, incorrect.
+Students-- What?
+STUDENT: David [INAUDIBLE]?
+SPEAKER 1: No, not him.
+Yeah?
+STUDENT: Stack Exchange?
+SPEAKER 1: What?
+STUDENT: Stack Exchange?
+SPEAKER 1: Not Stack Exchange.
+The answer is Bootstrap.
+
+OK, moving on.
+So time for two more questions in Double Jeopardy.
+The students I think had control, right?
+STUDENT: Yeah.
+STUDENT: What do you guys want to do?
+SPEAKER 1: Staff need to pull ahead here.
+STUDENT: Just like any for week for 2,000.
+STUDENT: Wild card 2,000?
+STUDENT: Week [INAUDIBLE] for 2,000.
+STUDENT: Wild card, 2,000.
+STUDENT: Wild card for 2,000.
+Audience, what week shall we give them?
+One through seven, 0 through 7.
+Four, I heard.
+Week four.
+Week four-- what is the code for OK?
+Staff?
+STAFF: 200.
+SPEAKER 1: 200 for 2,000.
+All right, so staff have control.
+We have time for one more question before we move on to Final Jeopardy.
+STAFF: [INAUDIBLE]
+STAFF: No, we want to be able to be in touch with it, right?
+Data structures, 1,200.
+SPEAKER 1: Data structures for 1,200.
+Data structures for 1,200.
+And that was, what week was that?
+Four, that's week four.
+What do you call the situation when a structure
+refers to itself in its definition?
+Students?
+STUDENT: Recursion.
+SPEAKER 1: Recursion is correct for $1,200, very nice.
+OK, so we now go into our last question of CS50 of staff versus students.
+Staff have 4,000, students have 6,200.
+You're about to be told the Final Jeopardy category, at which point
+each team needs to commit in writing, on the sheet of paper in front of them,
+with the CS50 pen in front of them, to a dollar amount,
+keeping in mind that you will either gain or lose this amount.
+
+All right, go ahead and choose your-- oh,
+here we go, the category for Final Jeopardy is going to be Buggy.
+Buggy will be your category.
+Any dollar amount.
+
+Any dollar amount.
+OK, so, so, here we go.
+The question is, they've all committed to a dollar amount.
+OK, I feel like you can hedge your bets there.
+All right, so here we go, Final Jeopardy, Buggy is the category.
+In which state, besides Massachusetts, does Google sometimes think we reside?
+In which state, besides Massachusetts, does Google sometimes think we reside?
+[MUSIC PLAYING - "JEOPARDY THEME SONG"]
+All right.
+So, I think staff were not in the lead, or not in the lead,
+so we start with you.
+Staff, first of all, how much did you wager?
+OK, depending, I think, on how the question went,
+they wagered either $4,000 or $40, apparently.
+STAFF: [INAUDIBLE]
+SPEAKER 1: $40, will go with 4,000.
+And what was your answer?
+STAFF: We picked Kansas.
+SPEAKER 1: Kansas, interesting.
+Now, students, how much did you wager?
+STUDENT: 2,000.
+SPEAKER 1: 2,000.
+and what was your answer?
+STUDENT: Also Kansas.
+SPEAKER 1: And also Kansas.
+So 2,000 would bring you to 8,200.
+4,000 would bring you to 8,000.
+So if you're both right, students you might have clinched it.
+Does the audience remember where Google thought
+we were a few weeks ago, despite the fact that I
+misstated where Google thinks we were?
+Oklahoma was my incorrect answer, it turns out.
+Wyoming, also incorrect.
+But we can do sort of binary search in that area.
+Anyone at all?
+AUDIENCE: [INAUDIBLE]
+SPEAKER 1: It is, in fact, Kansas.
+So congratulations to the students' team.
+A round of applause, if we could, for our students.
+Thank you so much for joining us in CS50.
+We are so proud of you all, cannot wait to see you at the fair.
+Cake is now served downstairs.
+And my thanks again to the staff.
