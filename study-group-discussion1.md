@@ -8,10 +8,22 @@ _Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
 
 _如意小熊猫🍒、精灵兔、Yuehua Veronica、f、AthenaX([athena-xcy](https://github.com/athena-xcy))和 blue hydrangea参与讨论，sharonron、精灵兔、亦清、菠萝包流沙包椰蓉包、Yuehua Li、毛灵杰、Leo提交翻译练习答案，对本文亦有贡献_
 
+- [例句讨论](#%e4%be%8b%e5%8f%a5%e8%ae%a8%e8%ae%ba)
+  - [00:42:45,660 三声猫叫](#004245660-%e4%b8%89%e5%a3%b0%e7%8c%ab%e5%8f%ab)
+  - [00:48:24,825 难以穷尽](#004824825-%e9%9a%be%e4%bb%a5%e7%a9%b7%e5%b0%bd)
+  - [存储有限](#%e5%ad%98%e5%82%a8%e6%9c%89%e9%99%90)
+- [翻译练习译本](#%e7%bf%bb%e8%af%91%e7%bb%83%e4%b9%a0%e8%af%91%e6%9c%ac)
+  - [练习例句一](#%e7%bb%83%e4%b9%a0%e4%be%8b%e5%8f%a5%e4%b8%80)
+  - [练习例句二](#%e7%bb%83%e4%b9%a0%e4%be%8b%e5%8f%a5%e4%ba%8c)
+  - [练习例句三](#%e7%bb%83%e4%b9%a0%e4%be%8b%e5%8f%a5%e4%b8%89)
+
 ## 例句讨论
+
 ### 00:42:45,660 三声猫叫
 
 If you've heard of the expression gigahertz, that's a unit of measure, and if your computer has a one gigahertz CPU, central processing unit, or brain, that means it can literally do like a billion things per second. It can certainly start three sounds super fast. And if they're effectively all happening one after the other before the sound even finishes, you're just hearing one net effect.
+
+`gigahertz` 可以译成千兆赫兹或者吉兆，常见的写法是 GHz。
 
 > And if they're effectively all happening one after the other before the sound even finishes
 
@@ -29,9 +41,14 @@ Using unary, my old school hashmark approach, I can count to five on this hand. 
 
 `unary`一进制
 
-### 00:48:07,001 存储有限 
+数据存储位数不够是一个很常见的事情，从当年的[千年虫问题](https://zh.wikipedia.org/zh-hans/2000%E5%B9%B4%E9%97%AE%E9%A2%98)，到[《文明》系列游戏](https://zh.wikipedia.org/wiki/%E6%96%87%E6%98%8E%E7%B3%BB%E5%88%97)的[第一部《文明》](https://zh.wikipedia.org/wiki/%E6%96%87%E6%98%8E_(%E6%B8%B8%E6%88%8F))中存在的“核弹甘地”问题。（[参见1](https://www.zhihu.com/question/24830939)、[参见2](https://mp.weixin.qq.com/s?__biz=MzIzNzI2NTEyNA==&mid=2652485329&idx=1&sn=0ba9deeb14aa168de622f00110f5c0f0&chksm=f3265f5ac451d64cae2d632148654dcfa6b36c30ca561763d745f33f848e45c82da4eb1c42a3&scene=4#wechat_redirect)。）
+
+### 存储有限
 
 But what happens here? Well, because computers, at the end of the day, are just storing information digitally-- but that information digitally has to be physically stored using electricity, using these lower level switches called transistors. At the end of the day, my phone, my laptop, whatever device in question only has a finite amount of those things.
+
+`electricity` 这里指的就是“电”、“用电做某事”。译为“电力”并不大准确，“电力系统”往往指那种城市工业用电、生活用电的环境
+
 
 > At the end of the day, my phone, my laptop, whatever device in question only has a finite amount of those things.
 
@@ -40,6 +57,7 @@ But what happens here? Well, because computers, at the end of the day, are just 
 `at the end of the day` 这个词组字面上是时间的最终，但这个词组可以用来引导结论，take everything into consideration。在本句中可以翻译为：说到底、到头来。
 
 `whatever device in question` 其中 `in question` 可以理解为 being considered，这句话就是说，除了前面说的这些，任何跟有类似问题的设备。
+
 
 ## 翻译练习译本
 
