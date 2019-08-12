@@ -1,8 +1,26 @@
-# CS50字幕译者计划
+# CS50 课程学习与字幕翻译计划
+
+![poster](images/poster.jpg)
+
+CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机科学入门课程。目前 edX 上最新版 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 课程，由全职摄影团队拍摄制片，采用工业电影级摄影设备，将你带回哈佛大学的桑德斯剧场（Sanders Theater），和现场 800+ 名哈佛学子及 edX上来自全球的一百万学习者，一同聆听 David J. Malan 教授极富感染力的课程讲座。
+
+该项目是计算机、MOOC、及翻译爱好者联合发起教育公益项目，现进行第二次新成员招募。
 
 ##  招募与推广
 
-* 翻译计划：[CS50字幕译者计划招募帖](https://www.douban.com/group/topic/144969173/)
+【学习组】认识志同道合的学友，挑战编程难题，参与计算知识科普，课程内容讨论，作业答疑等线上活动。（长期有效）
+
+【翻译组】参与翻译、校对或调时间轴，和教育无边界字幕组合作，共同完成本课程视频翻译（截止时间为北京时间 8 月 16 日 22:00）
+
+详情参见：[CS50 课程学习与字幕翻译计划招募帖](hello,new.md) [豆瓣小组招募帖](https://www.douban.com/group/topic/148602699/)
+
+欢迎填写[报名表](http://wjx.cn/jq/43792277.aspx)！(也可扫描上方二维码报名)
+
+## 学习讨论
+
+* 翻译讨论：[CS50学习组第0次分享讨论](study-group-discussion/study-group-discussion0.md)
+* 翻译讨论：[CS50学习组第1次分享讨论](study-group-discussion/study-group-discussion1.md)
+* 翻译讨论：[CS50学习组第2次分享讨论](study-group-discussion/study-group-discussion2.md)
 
 ## 翻译原则 
 
@@ -19,12 +37,6 @@
 ## 翻译软件
 
 本项目使用 Aegisub 辅助翻译工作，请参见[简明 Aegisub 教程](Aegisub_Tutorial.md)
-
-## 学习讨论
-
-* 翻译讨论：[CS50学习组第0次分享讨论](study-group-discussion/study-group-discussion0.md)
-* 翻译讨论：[CS50学习组第1次分享讨论](study-group-discussion/study-group-discussion1.md)
-* 翻译讨论：[CS50学习组第2次分享讨论](study-group-discussion/study-group-discussion2.md)
 
 ## 版权声明
 
