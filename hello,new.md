@@ -2,7 +2,7 @@
 
 ## CS50 是什么？
 
-CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机科学入门课程。目前 edX 上最新版 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 课程，由全职摄影团队拍摄制片，采用工业电影级摄影设备，将你带回哈佛大学的桑德斯剧场（Sanders Theater），和现场 800+ 名哈佛学子及 edX上来自全球的一百万学习者，一同聆听 David J. Malan 教授极富感染力的课程讲座。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
+CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机科学入门课程。目前 edX 上最新版 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 课程，由全职摄影团队拍摄制片，采用工业电影级摄影设备，将你带回哈佛大学的桑德斯剧场（Sanders Theater），和现场 800+ 名哈佛学子及 edX上来自全球的一百万学习者，一同聆听 [David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授极富感染力的课程讲座。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
 
 ## 我们是谁？
 
