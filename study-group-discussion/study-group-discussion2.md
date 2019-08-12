@@ -2,7 +2,7 @@
 
 _郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1)) 主讲_
 
-_郝亚南 Cris供稿_
+_郝亚南 Cris 供稿_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
 
