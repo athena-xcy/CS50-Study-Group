@@ -1,6 +1,6 @@
 # CS50 学习组第1次分享讨论
 
-_颜木林 主讲_
+_颜木林([mulin](https://github.com/yanmulin)) 主讲_
 
 _颜木林 供稿_
 
