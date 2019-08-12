@@ -22,7 +22,9 @@
 
 ## 学习讨论
 
-* 翻译讨论：[CS50学习组第0次分享讨论](study-group-discussion0.md)
+* 翻译讨论：[CS50学习组第0次分享讨论](study-group-discussion/study-group-discussion0.md)
+* 翻译讨论：[CS50学习组第1次分享讨论](study-group-discussion/study-group-discussion1.md)
+* 翻译讨论：[CS50学习组第2次分享讨论](study-group-discussion/study-group-discussion2.md)
 
 ## 版权声明
 
