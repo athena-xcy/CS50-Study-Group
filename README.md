@@ -7,7 +7,7 @@ CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机
 
 Malan 教授本人很有人格魅力，讲课极富激情，教学方式深入浅出，对计算机零基础 (less comfortable) 非常友好，有一定基础的学生零基础 (less comfortable)，也能学到足够多的知识。
 
-课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，极好的再现了哈佛大学桑德斯剧场 (Sanders Theater) 课堂现场，让 edX 上全球 100 万学习者，能和 800+ 名哈佛学子一起聆听 [David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授极富感染力的课程讲座。
+课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，极好的再现了哈佛大学桑德斯剧场 (Sanders Theater) 课堂现场，让 edX 上全球 100 万学习者，能和 800+ 名哈佛学子一起聆听 [David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授极富感染力的课程讲座。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
 
 ##  招募与推广
 
