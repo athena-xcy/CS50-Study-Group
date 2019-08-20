@@ -1,5 +1,13 @@
 # CS50 学习组第3次分享讨论
 
+_Elvarez 主讲_
+
+_Elvarez 供稿_
+
+_精灵兔 整理_
+
+_blue hydrangea、 Leo([LeoTsui](https://www.github.com/LeoTsui)) 和 AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦有贡献_
+
 ## 代词还原
 
 由于字幕的短时性，还原指代内容会对学习者的理解有很大的帮助
