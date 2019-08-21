@@ -54,6 +54,9 @@ This is CS50
    * 对话类：不同两人的对白开头都要加英文半角的短横 “–” 引导，后一句和前一句对白内容之间为 2 个空格。
       * 比如：-你吃了吗  -我吃了。译为：-AAAAA  -BBBBB
    * 翻译文本要求细则请参见[字幕翻译原则](principles-of-subtitle-translation.md)
+   
+## 调时间轴
+* 说明视频：链接: https://pan.baidu.com/s/1EYoTzAjPpgeTpcrh2QDXhw 提取码: cv7s 
 
 ## 文本导出
 
