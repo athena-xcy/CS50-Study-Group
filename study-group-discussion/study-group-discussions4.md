@@ -64,11 +64,11 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 
 点击lecture进入的界面
 
-! [lecture 1 字幕] (https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
+! [lecture1](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
 
 点击上方三条横线 进入字幕
 
-! [lecture 1 分类] (https://github.com/tomato018/CS50-Study-Group/blob/master/images/image14.png）
+! [lecture 1 分类](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image14.png）
 
 这里按知识点分割了各个视频
 
