@@ -60,15 +60,15 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 
 点击上方图标进入的界面中可以开关字幕 调语速
 
-![lecture 1](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
+！[lecture 1](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
 
 点击lecture进入的界面
 
-![lecture 1 字幕](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
+! [lecture 1 字幕](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
 
 点击上方三条横线 进入字幕
 
-![lecture 1 分类](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image14.png）
+! [lecture 1 分类](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image14.png）
 
 这里按知识点分割了各个视频
 
@@ -100,7 +100,9 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 ## 教授采访
 
 教授在接受Nas Daily采访时讲了他为什么花这么多心血来制作一门高质量的课程、以及为什么这门课是免费的。
+
 E1022 World’s Biggest Teacher: 
+
 https://www.facebook.com/watch/?v=488104335019376
 
 ## 插播广告
