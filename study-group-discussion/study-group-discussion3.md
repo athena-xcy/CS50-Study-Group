@@ -4,7 +4,7 @@ _Elvarez 主讲_
 
 _Elvarez 供稿_
 
-_精灵兔 整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui))、精灵兔、Scarlett整理_
 
 _blue hydrangea、 Leo([LeoTsui](https://www.github.com/LeoTsui)) 和 AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦有贡献_
 
