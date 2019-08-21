@@ -60,7 +60,7 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 
 点击上方图标进入的界面中可以开关字幕 调语速
 
-![lecture1]  (https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png）
+![lecture1](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png)
 
 点击lecture进入的界面
 
