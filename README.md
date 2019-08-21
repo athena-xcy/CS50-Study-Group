@@ -20,9 +20,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 欢迎填写[报名表](http://wjx.cn/jq/43792277.aspx)！(也可扫描上方二维码报名)
 
 ## 学习组
-### 团队成员
-* 管理：崔文辰、肖楚悦、张雯倩、宋苗苗
-* 助教：(招新中) 
+
 ### 讨论
 * 第0次分享讨论：[第一次招新译者培训](study-group-discussion/study-group-discussion0.md) 肖楚悦
 * 第1次分享讨论：[L0 翻译讨论](study-group-discussion/study-group-discussion1.md) 颜木林
@@ -30,10 +28,6 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 * 第3次分享讨论：[L2 翻译讨论](study-group-discussion/study-group-discussion3.md) 纪远尧
 
 ## 翻译组 
-### 团队成员
-* 管理：肖楚悦、蔺琳、郝亚南、胡伊然
-* 翻译：颜律文、郝亚南、胡伊然、纪远尧、夏仕坤、陈瑜 (招新中)  
-* 校对：孙心怡、颜律文、肖楚悦  (招新中)    
 * 时间轴：蔺琳  
 ### 翻译原则 
 * 【翻译原则零】信达雅：力求准确，适度意译，润色表达
@@ -49,12 +43,6 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
  
 ### 翻译软件
 * 本项目使用 Aegisub 辅助翻译工作，请参见[简明 Aegisub 教程](Aegisub_Tutorial.md)
-
-## 网站开发组 (招新中)  
-
-## 数据分析组 (招新中)  
-
-## 艺术设计组 (招新中)  
 
 ## 版权声明
 
