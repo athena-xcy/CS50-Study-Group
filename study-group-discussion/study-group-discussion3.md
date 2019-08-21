@@ -120,21 +120,61 @@ and lots of time, this is a problem.
 63 01:43:36,760 --> 01:43:39,760 就跟Scratch里的功能块差不多 虽然排版上的留空 quite like the Scratch blocks, even though again a lot of white space
 这个也是结合了教授在显示屏上演示的界面，把“white space（空白，留白）”补充解释为了“排版上的留空”。
 
-3. 【反译】
+
+
+##反译
 
 由于中英文用词/表达习惯不同，有时候直译就会显得翻译腔很重，所以在处理的时候可以考虑“正话反说”“反话正说”，让字幕看起来更符合中文的表达习惯。
-例一：
-127 01:37:06,410 --> 01:37:09,030 计算机科学离不开权衡利弊 and computer science more generally there's always a trade-off.
-128 01:37:09,030 --> 01:37:13,160 使用双精度浮点数 在精确度上的确更占优势 And yes, if you use a double, you will avoid this problem a bit more,
-129 01:37:13,160 --> 01:37:15,880但代价是什么呢 but what price will you pay, so to speak?
-“you will avoid this problem a bit more”直译为“你就能更好地避免这个问题”多少会有点别扭，此处“避免问题”反译成了“占优势”。
-例二：
-3 01:40:40,080 --> 01:40:42,350 有时你需要的不是一整段 一整句 If you don't want a whole string, like a whole word
-4 01:40:42,350 --> 01:40:45,320 也不是一个完整词 而只是一个字母 or a paragraph or sentence or whatever, you just want one character.
-5 01:40:45,320 --> 01:40:48,230 这时字符类型就派上用场了 You can actually use what's called a char or character.
+
+###例一（反译）
+
+    127 
+    01:37:06,410 --> 01:37:09,030 
+    计算机科学离不开权衡利弊 
+    and computer science more generally there's always a trade-off. 
+    
+    128 
+    01:37:09,030 --> 01:37:13,160 
+    使用双精度浮点数 在精确度上的确更占优势 
+    And yes, if you use a double, you will avoid this problem a bit       more, 
+    
+    129 
+    01:37:13,160 --> 01:37:15,880
+    但代价是什么呢 
+    but what price will you pay, so to speak?
+
+在上例中，“you will avoid this problem a bit more”直译为“你就能更好地避免这个问题”多少会有点别扭，此处“避免问题”反译成了“占优势”。
+
+###例二（反译）
+
+    3 
+    01:40:40,080 --> 01:40:42,350 
+    有时你需要的不是一整段 一整句 
+    If you don't want a whole string, like a whole word 
+    
+    4 
+    01:40:42,350 --> 01:40:45,320 
+    也不是一个完整词 而只是一个字母 
+    or a paragraph or sentence or whatever, you just want one character.
+    
+    5 
+    01:40:45,320 --> 01:40:48,230 
+    这时字符类型就派上用场了 
+    You can actually use what's called a char or character. 
+
 上例中“don't want”翻成“你并不想要…”感觉也并不那么通顺，此处结合上下两行，把否定后移，“不想要”反译成“需要”。
-例三：
-65 01:43:41,750 --> 01:43:43,840 我先试运行看看 So if I go ahead and run this-
-66 01:43:43,840 --> 01:43:46,150 有点看不见我把终端窗口拉上来 let me pull up the terminal window so I can see it.
-上例中“so I can see it”略过不合适，翻成“这样我就看得见了”也不合适，索性正话反说
+
+###例三（反译）
+
+    65 
+    01:43:41,750 --> 01:43:43,840 
+    我先试运行看看 
+    So if I go ahead and run this- 
+    
+    66 
+    01:43:43,840 --> 01:43:46,150 
+    有点看不见我把终端窗口拉上来 
+    let me pull up the terminal window so I can see it.
+
+上例中“so I can see it”略过不合适，翻成“这样我就看得见了”也不合适，索性正话反说 
 *常见的可能就是 否定词/表示否定意思的词
