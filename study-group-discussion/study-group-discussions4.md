@@ -60,19 +60,23 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 
 点击上方图标进入的界面中可以开关字幕 调语速
 
+
 ![lecture1](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png)
 
 点击lecture进入的界面
 
+
 ![lecture01](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image12.png)
 
 点击上方三条横线 进入字幕
+
 
 ![lecture001](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image14.png)
 
 这里按知识点分割了各个视频
 
 大家做作业的时候 发现有没明白的知识点 可以返回来看
+
 
 ![lecture 1 list](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image15.png)
 
@@ -83,6 +87,7 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 大家发现不熟悉的术语 可以搜索然后看教授的解释
 
 比方说 binary
+
 
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
 
