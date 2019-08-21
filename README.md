@@ -2,7 +2,6 @@
 
 ![poster](images/poster.jpg)
 
-## CS50 课程
 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/)是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的课程，在哈佛校内，每年有 800+ 学生同时学习 CS50，edX 上则有来自全球 100 万学习者。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
 
 CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，有一定基础的学生零基础 (less comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了哈佛大学桑德斯剧场 (Sanders Theater) 课堂现场，力求给学习者带来最好的学习体验。 
