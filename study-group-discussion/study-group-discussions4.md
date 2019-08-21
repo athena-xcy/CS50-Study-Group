@@ -20,17 +20,17 @@ edX：https://www.edx.org/course/cs50s-introduction-to-computer-science
 （CS50有很多资源，但是比较分散，可以用Google）
 
 #### Youtube链接
-CS50x 2019: https://www.youtube.com/watch?v=3oFAJtFE8YU&feature=youtu.be
+- CS50x 2019: https://www.youtube.com/watch?v=3oFAJtFE8YU&feature=youtu.be
 
-Youtube: https://www.youtube.com/user/cs50tv/featured
+- Youtube: https://www.youtube.com/user/cs50tv/featured
 
 #### FB论坛链接
 
-Facebook: https://www.facebook.com/cs50/ （比较活跃）
+- Facebook: https://www.facebook.com/cs50/ （比较活跃）
 
 #### Github小组链接（会有每次讨论整理和课程notes哦）
 
-GitHub: https://github.com/athena-xcy/CS50-Study-Group
+- GitHub: https://github.com/athena-xcy/CS50-Study-Group
 
 ## 课程指南
 
