@@ -22,13 +22,12 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 ## 学习组
 
 ### 讨论
-* 第0次分享讨论：[第一次招新译者培训](study-group-discussion/study-group-discussion0.md) 肖楚悦
-* 第1次分享讨论：[L0 翻译讨论](study-group-discussion/study-group-discussion1.md) 颜木林
-* 第2次分享讨论：[L1 翻译讨论](study-group-discussion/study-group-discussion2.md) 郝亚南
-* 第3次分享讨论：[L2 翻译讨论](study-group-discussion/study-group-discussion3.md) 纪远尧
+* 第0次分享讨论：[译者培训](study-group-discussion/study-group-discussion0.md)  
+* 第1次分享讨论：[L0 翻译](study-group-discussion/study-group-discussion1.md)  
+* 第2次分享讨论：[L1 翻译](study-group-discussion/study-group-discussion2.md)  
+* 第3次分享讨论：[L2 翻译](study-group-discussion/study-group-discussion3.md)  
 
 ## 翻译组 
-* 时间轴：蔺琳  
 ### 翻译原则 
 * 【翻译原则零】信达雅：力求准确，适度意译，润色表达
 * 【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩
