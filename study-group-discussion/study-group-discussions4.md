@@ -85,6 +85,7 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 比方说 binary
 
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
+
 这个界面对译者也很友好～
 
 #### 提问讨论
@@ -109,4 +110,5 @@ https://www.facebook.com/watch/?v=488104335019376
 ##### 数据分析：
 比如根据数据来设计好的教育体验；还比如分析学习者的信息， 比方说学科背景，MOOC经历等等；还包括根据大家填写的反馈表，给管理团队提供 data-driven 的决策建议。目前特别想做的是报名者所在国家的world map可视化，可以放在网站上，这样未来网站访问者、在上或上过CS50的，也可以自己在网站上check in，标注自己的位置。具体例子如下图：
 ![visualization](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image17.png)
+
 也欢迎组里各位大佬多回答新人问题，给 CS50 GitHub 开源项目贡献代码 https://github.com/cs50
