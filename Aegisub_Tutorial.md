@@ -60,7 +60,7 @@ This is CS50
 
 ## 文本导出
 
-在 Aegisub 里选择【导出】再【存储】成 `.srt` 文件，文件命名格式：`Lecture[i]part[j]-[译者姓名].srt`。比如：`Lecture0part1-Ann.srt`。
+在 Aegisub 里选择【导出】再【存储】，命名以 `.srt` 结尾，存储成 srt 文件。
 
 ## 常见问题 
 
