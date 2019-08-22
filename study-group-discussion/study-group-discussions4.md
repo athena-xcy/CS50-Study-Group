@@ -102,6 +102,14 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 请问教授讲的 style50 在 IDE 里为什么运行不了？
 和 CS50 自己课程论坛一样，大家提问的时候，请不要在群里发自己的作业代码截图，这个算是课程 honor code 的一部分
 
+#### Q&A
+
+问0: Add export C_INCLUDE_PATH=/usr/local/include to your .bashrc 是什么意思？
+出处：https://github.com/cs50/libcs50
+
+答0: 你去自己的计算机里 搜索 .bashhrc 这个文件
+找到之后 把 export C_INCLUDE_PATH=/usr/local/include 复制进文件里
+
 ## 教授采访
 
 教授在接受Nas Daily采访时讲了他为什么花这么多心血来制作一门高质量的课程、以及为什么这门课是免费的。
