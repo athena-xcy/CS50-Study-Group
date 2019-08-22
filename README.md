@@ -20,11 +20,12 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 ## 学习组
 
-### 讨论
-* 第0次分享讨论：[译者培训](study-group-discussion/study-group-discussion0.md)  
+### 活动
+* 第0次分享讨论：[新译者培训](study-group-discussion/study-group-discussion0.md)  
 * 第1次分享讨论：[L0 翻译](study-group-discussion/study-group-discussion1.md)  
 * 第2次分享讨论：[L1 翻译](study-group-discussion/study-group-discussion2.md)  
 * 第3次分享讨论：[L2 翻译](study-group-discussion/study-group-discussion3.md)  
+* 第4次分享讨论：[新组员迎新](study-group-discussion/study-group-discussion4.md)  
 
 ## 翻译组 
 ### 翻译原则 
