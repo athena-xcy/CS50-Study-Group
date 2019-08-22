@@ -64,22 +64,21 @@ and so <nobr style="color:red;">it</nobr> doesn't execute again.
 
 ### 例三（从句指代）
 
-```
-461
+<pre><code><div>461
 00:21:20,601 --> 00:21:23,404
 如果我继续拉近 最终你能看到的
 And if I go an even further, you can actually see
 
 462
 00:21:23,405 --> 00:21:25,835
-就是组成这个表情的像素小方块
-the tiny little squares that compose this image,
+就是组成这个表情的<nobr style="color:red;">像素小方块</nobr>
+<nobr style="color:red;">the tiny little squares</nobr> that compose this image,
 
 463
 00:21:25,836 --> 00:21:28,395
-在这个范围中 大部分像素点都是黄色的
-most of which at the zoom level are yellow,
-```
+在这个范围中 <nobr style="color:red;">大部分像素点</nobr>都是黄色的
+<nobr style="color:red;">most of which</nobr> at the zoom level are yellow,
+</div></code></pre>
 
 上例中 which 指代的是像素小方块（the tiny little squares），故 most of which 译为“大部分像素点”
 
@@ -87,8 +86,7 @@ most of which at the zoom level are yellow,
 
 ### 例四（代词还原）
 
-```
-81
+<pre><code><div>81
 01:35:02,410 --> 01:35:06,160
 简单来说 在科学或金融
 So long story short, any time you have scientific or financial
@@ -100,9 +98,9 @@ or any sort of large data sets that involve big numbers and lots of them
 
 83
 01:35:10,270 --> 01:35:12,640
-时间一长 精确度不足就会暴露出问题
-and lots of time, this is a problem.
-```
+时间一长 <nobr style="color:red;">精确度不足</nobr>就会暴露出问题
+and lots of time, <nobr style="color:red;">this</nobr> is a problem.
+</div></code></pre>
 
 语境是在这几句之前教授举了火箭和金融领域的例子，花了比较长的篇幅解释计算机的精确度在实践中的重要性，81-83 句属于总结部分，这部分的核心问题“精确度不足”需要还原出来
 
@@ -120,61 +118,66 @@ and lots of time, this is a problem.
 63 01:43:36,760 --> 01:43:39,760 就跟Scratch里的功能块差不多 虽然排版上的留空 quite like the Scratch blocks, even though again a lot of white space
 这个也是结合了教授在显示屏上演示的界面，把“white space（空白，留白）”补充解释为了“排版上的留空”。
 
-
-
 ## 反译
 
-由于中英文用词/表达习惯不同，有时候直译就会显得翻译腔很重，所以在处理的时候可以考虑“正话反说”“反话正说”，让字幕看起来更符合中文的表达习惯。
+由于中英文用词/表达习惯不同，有时候直译就会显得翻译腔很重，所以在处理的时候可以考虑“正话反说”、“反话正说”，让字幕看起来更符合中文的表达习惯。
 
 ### 例一（反译）
 
-    127 
-    01:37:06,410 --> 01:37:09,030 
-    计算机科学离不开权衡利弊 
-    and computer science more generally there's always a trade-off. 
-    
-    128 
-    01:37:09,030 --> 01:37:13,160 
-    使用双精度浮点数 在精确度上的确更占优势 
-    And yes, if you use a double, you will avoid this problem a bit       more, 
-    
-    129 
-    01:37:13,160 --> 01:37:15,880
-    但代价是什么呢 
-    but what price will you pay, so to speak?
+```
+127
+01:37:06,410 --> 01:37:09,030
+计算机科学离不开权衡利弊
+and computer science more generally there's always a trade-off.
+
+128
+01:37:09,030 --> 01:37:13,160
+使用双精度浮点数 在精确度上的确更占优势
+And yes, if you use a double, you will avoid this problem a bit more,
+
+129
+01:37:13,160 --> 01:37:15,880
+但代价是什么呢
+but what price will you pay, so to speak?
+```
 
 在上例中，“you will avoid this problem a bit more”直译为“你就能更好地避免这个问题”多少会有点别扭，此处“避免问题”反译成了“占优势”。
 
 ### 例二（反译）
 
-    3 
-    01:40:40,080 --> 01:40:42,350 
-    有时你需要的不是一整段 一整句 
-    If you don't want a whole string, like a whole word 
-    
-    4 
-    01:40:42,350 --> 01:40:45,320 
-    也不是一个完整词 而只是一个字母 
-    or a paragraph or sentence or whatever, you just want one character.
-    
-    5 
-    01:40:45,320 --> 01:40:48,230 
-    这时字符类型就派上用场了 
-    You can actually use what's called a char or character. 
+```
+3
+01:40:40,080 --> 01:40:42,350
+有时你需要的不是一整段 一整句
+If you don't want a whole string, like a whole word
 
-上例中“don't want”翻成“你并不想要…”感觉也并不那么通顺，此处结合上下两行，把否定后移，“不想要”反译成“需要”。
+4
+01:40:42,350 --> 01:40:45,320
+也不是一个完整词 而只是一个字母
+or a paragraph or sentence or whatever, you just want one character.
+
+5
+01:40:45,320 --> 01:40:48,230
+这时字符类型就派上用场了
+You can actually use what's called a char or character.
+```
+
+上例中“don't want”翻成“你并不想要……”感觉也并不那么通顺，此处结合上下两行，把否定后移，“不想要”反译成“需要”。
 
 ### 例三（反译）
 
-    65 
-    01:43:41,750 --> 01:43:43,840 
-    我先试运行看看 
-    So if I go ahead and run this- 
-    
-    66 
-    01:43:43,840 --> 01:43:46,150 
-    有点看不见我把终端窗口拉上来 
-    let me pull up the terminal window so I can see it.
+```
+65
+01:43:41,750 --> 01:43:43,840
+我先试运行看看
+So if I go ahead and run this-
 
-上例中“so I can see it”略过不合适，翻成“这样我就看得见了”也不合适，索性正话反说 
-*常见的可能就是 否定词/表示否定意思的词
+66 
+01:43:43,840 --> 01:43:46,150
+有点看不见我把终端窗口拉上来
+let me pull up the terminal window so I can see it.
+```
+
+上例中“so I can see it”略过不合适，翻成“这样我就看得见了”也不合适，索性正话反说
+
+常见的可能就是 否定词/表示否定意思的词

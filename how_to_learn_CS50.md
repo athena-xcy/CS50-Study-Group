@@ -1,4 +1,4 @@
-# CS50 学习组第4次分享讨论-Orientation
+# CS50 怎么学
 
 _AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
 
@@ -7,19 +7,23 @@ _HXT、Jenny Z、AthenaX、Leo整理_
 ## 怎么上课
 
 ### 注册两个网站
+
 https://edx.org (课程视频）
 
 https://github.com （学习小组，资料更新）
 
 ### 课程网址
+
 edX：https://www.edx.org/course/cs50s-introduction-to-computer-science
 
 （不要证书可以免费选课。目前是2018年课程，明年会更新2019年视频）
 
 ### 其他网址
+
 （CS50有很多资源，但是比较分散，可以用Google）
 
 #### Youtube链接
+
 - CS50x 2019: https://www.youtube.com/watch?v=3oFAJtFE8YU&feature=youtu.be
 
 - Youtube: https://www.youtube.com/user/cs50tv/featured
@@ -87,7 +91,6 @@ Problem set是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开
 大家发现不熟悉的术语 可以搜索然后看教授的解释
 
 比方说 binary
-
 
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
 

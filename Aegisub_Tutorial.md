@@ -1,11 +1,11 @@
 # 简明 Aegisub 教程
 
-- [下载安装](#下载安装)
+- [下载安装](#%e4%b8%8b%e8%bd%bd%e5%ae%89%e8%a3%85)
 - [文件格式](#%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f)
-- [文本格式](#文本格式)
+- [文本格式](#%e6%96%87%e6%9c%ac%e6%a0%bc%e5%bc%8f)
 - [翻译格式](#%e7%bf%bb%e8%af%91%e6%a0%bc%e5%bc%8f)
+- [调时间轴](#%e8%b0%83%e6%97%b6%e9%97%b4%e8%bd%b4)
 - [文本导出](#%e6%96%87%e6%9c%ac%e5%af%bc%e5%87%ba)
-- [调时间轴](#调时间轴)
 - [常见问题](#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
 ## 下载安装
@@ -56,6 +56,7 @@ This is CS50
    * 翻译文本要求细则请参见[字幕翻译原则](principles-of-subtitle-translation.md)
    
 ## 调时间轴
+
 * 说明视频：链接: https://pan.baidu.com/s/1EYoTzAjPpgeTpcrh2QDXhw 提取码: cv7s 
 
 ## 文本导出
