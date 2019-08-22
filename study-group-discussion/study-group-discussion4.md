@@ -1,8 +1,8 @@
 # CS50 学习组第4次分享讨论-Orientation
 
-_AthenaX([athena-xcy](https://github.com/athena-xcy))和Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
+_AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
 
-_HXT、Jenny Z、AthenaX([athena-xcy](https://github.com/athena-xcy))和Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
+_HXT、Jenny Z、AthenaX、Leo整理_
 
 ## 怎么上课
 
@@ -28,7 +28,7 @@ edX：https://www.edx.org/course/cs50s-introduction-to-computer-science
 
 - Facebook: https://www.facebook.com/cs50/ （比较活跃）
 
-#### Github小组链接（会有每次讨论整理和课程notes哦）
+#### Gitub小组链接（会有每次讨论整理和课程notes哦）
 
 - GitHub: https://github.com/athena-xcy/CS50-Study-Group
 
