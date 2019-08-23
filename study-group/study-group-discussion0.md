@@ -1,4 +1,4 @@
-# CS50 学习组第0次分享讨论 
+# 第一次招募试译分析
 
 _Athena([athena-xcy](https://www.github.com/athena-xcy)) 主讲_
 

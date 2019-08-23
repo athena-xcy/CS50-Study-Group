@@ -1,4 +1,4 @@
-# CS50 学习组第1次分享讨论
+# L0 翻译经验分享
 
 _颜木林([mulin](https://github.com/yanmulin)) 主讲_
 

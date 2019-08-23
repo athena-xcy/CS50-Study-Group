@@ -28,14 +28,22 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 ### CS50 学习
 
-计划从 8 月 21 日开始一轮 CS50 学习活动。详情请参见[CS50 入门指南](how_to_learn_CS50.md)
+计划从 8 月 21 日开始一轮 CS50 学习活动。详情请参见[CS50 入门指南](study-group/how_to_learn_CS50.md)
 
 ### 分享讨论活动
 
-* 第0次分享讨论：[试译分析](study-group-discussion/study-group-discussion0.md)
-* 第1次分享讨论：[L0 翻译](study-group-discussion/study-group-discussion1.md)
-* 第2次分享讨论：[L1 翻译](study-group-discussion/study-group-discussion2.md)
-* 第3次分享讨论：[L2 翻译](study-group-discussion/study-group-discussion3.md)
+目前活动涉及两大主题：**CS50 学习经验交流**和**字幕翻译经验交流**
+
+* CS50 学习
+    * [CS50 入门指南](study-group/how_to_learn_CS50.md)
+    * [Week 0 Scratch Walkthrough]()（即将开始）
+* 字幕翻译
+    * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
+    * [第一次招募试译分析](study-group/study-group-discussion0.md)
+    * [L0 翻译经验分享](study-group/study-group-discussion1.md)
+    * [L1 翻译经验分享](study-group/study-group-discussion2.md)
+    * [L2 翻译经验分享](study-group/study-group-discussion3.md)
+    * [第二次招募试译分析]()（即将开始）
 
 ## 翻译组
 
@@ -50,11 +58,11 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 * 【翻译原则六】注意专业术语：查找资料搞懂术语含义
 * 【翻译原则七】遵守格式：遵守字幕文件格式和翻译格式
 
-要求细则请参见[字幕翻译原则](principles-of-subtitle-translation.md)
+要求细则请参见[字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
  
 ### 翻译软件
 
-* 本项目使用 Aegisub 辅助翻译工作，请参见[简明 Aegisub 教程](Aegisub_Tutorial.md)
+* 本项目使用 Aegisub 辅助翻译工作，请参见[简明 Aegisub 教程](translation-group/Aegisub_Tutorial.md)
 
 ## 版权声明
 

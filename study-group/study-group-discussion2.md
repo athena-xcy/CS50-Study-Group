@@ -1,4 +1,4 @@
-# CS50 学习组第2次分享讨论
+# L1 翻译经验分享
 
 _郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1)) 主讲_
 
