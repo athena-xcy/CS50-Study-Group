@@ -1,5 +1,9 @@
 # 简明 Aegisub 教程
 
+_Liliana 主讲、录制_
+
+_AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
+
 - [下载安装](#%e4%b8%8b%e8%bd%bd%e5%ae%89%e8%a3%85)
 - [文件格式](#%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f)
 - [文本格式](#%e6%96%87%e6%9c%ac%e6%a0%bc%e5%bc%8f)
