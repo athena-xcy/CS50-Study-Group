@@ -28,7 +28,28 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 ### CS50 学习
 
-计划从 8 月 21 日开始一轮 CS50 学习活动。详情请参见[CS50 入门指南](study-group/how_to_learn_CS50.md)
+### 入门指南
+
+* 注册: [edX](https://edx.org) 及 [Github](https://github.com)
+* 选修: [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+
+详情请见[CS50 入门指南](study-group/how_to_learn_CS50.md)
+
+### 进度安排
+
+自 8 月 21 日开始第 0 轮 CS50 学习活动。
+
+| 时间       | 课时   | 进度 |
+| :----------: | :------: | :------: |
+| 08月21日 - 08月31日   | week 0 | 进行中 |
+| 09月02日 - 09月08日   | week 1 | |
+| 09月09日 - 09月15日   | week 2 | |
+| 09月16日 - 09月22日   | week 3 | |
+| 09月23日 - 10月06日 | week 4  | |
+| 10月07日 - 10月14日  | week 5 | |
+| 待定     | ...    | |
+
+时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
 
 ### 分享讨论活动
 
