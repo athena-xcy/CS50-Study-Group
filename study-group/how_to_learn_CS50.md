@@ -12,6 +12,7 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 - [中文学习组](#中文学习组)
   - [进度安排](#进度安排)
   - [提问答疑](#提问答疑)
+  - [讨论分享](#讨论分享)
 - [团队招募](#团队招募)
     - [网站开发](#网站开发)
     - [数据分析](#数据分析)
@@ -84,7 +85,7 @@ Problem Set 是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己�
     * [CS50 主页](https://www.facebook.com/cs50)
     * [CS50 小组](https://www.facebook.com/groups/cs50)
 * GitHub 账号
-    * [CS50 官方] (https://github.com/cs50)
+    * [CS50 官方](https://github.com/cs50)
 
 ### CS50 中文学习组  
 CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/43792277.aspx)的报名者开放，学习组绝大多数活动会在 CS50 学习组微信群进行
@@ -108,7 +109,7 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
 | 10月07日 - 10月14日  | week 5 | |
 | 待定     | ...    | |
 
-学习组的讨论答疑会，时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
+时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
 
 ### 提问答疑
 
@@ -117,6 +118,22 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
 ```
 #提问 #L2 请问教授讲的 style50 在 IDE 里为什么运行不了？
 ```
+
+### 讨论分享
+
+目前活动涉及两大主题：**CS50 学习经验交流** 和 **字幕翻译经验交流**
+
+* CS50 学习
+    * [CS50 入门指南](study-group/how_to_learn_CS50.md)
+    * [Week 0 Scratch Walkthrough]()（即将开始）
+* 字幕翻译
+    * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
+    * [第一次招募试译分析](study-group/study-group-discussion0.md)
+    * [L0 翻译经验分享](study-group/study-group-discussion1.md)
+    * [L1 翻译经验分享](study-group/study-group-discussion2.md)
+    * [L2 翻译经验分享](study-group/study-group-discussion3.md)
+    * [第二次招募试译分析]()（即将开始）
+    
 --------
 
 ## 管理团队招募
