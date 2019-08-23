@@ -5,11 +5,11 @@ _AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://ww
 _Leo、HXT、Jenny Z、AthenaX 整理_
 
 - [课前准备](#课前准备)
-- [学习社区](#学习社区)
 - [学习资源](#学习资源)
   - [网站地图](#网站地图)
   - [课程视频](#课程视频)
-- [学习组](#学习组)
+- [学习社区](#学习社区)
+- [中文学习组](#中文学习组)
   - [进度安排](#进度安排)
   - [提问答疑](#提问答疑)
 - [团队招募](#团队招募)
@@ -75,16 +75,27 @@ Sandbox 是课程中的代码（可以自己跑几个）
 
 Problem Set 是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开发的在线编程环境，需要有比较稳定的互联网连接。教授会在后面的课程中提到，等正式编程作业开始后，我们也会简单介绍。）
 ## 学习社区
-* [CS50 官方社交平台索引](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)
+### CS50 官方平台
+* [索引](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)
 * Youtube 视频
     * [CS50x 2019](https://www.youtube.com/watch?v=3oFAJtFE8YU)
     * [Youtube 频道](https://www.youtube.com/user/cs50tv)
 * Facebook 社区
     * [CS50 主页](https://www.facebook.com/cs50)
     * [CS50 小组](https://www.facebook.com/groups/cs50)
-* [GitHub 账号](https://github.com/cs50)
+* GitHub 账号
+    * [CS50 官方] (https://github.com/cs50)
 
-## 学习组
+### CS50 中文学习组  
+CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/43792277.aspx)的报名者开放，学习组绝大多数活动会在 CS50 学习组微信群进行
+* 微信
+  * 申请表提交后，学习组管理员会邀请入群
+* 豆瓣
+  * [CS50 学习小组](https://www.douban.com/group/cs50)
+* GitHub
+  * [CS50 学习组](https://github.com/athena-xcy/CS50-Study-Group)
+
+## 中文学习组
 ### 进度安排
 
 | 时间       | 课时   | 进度 |
