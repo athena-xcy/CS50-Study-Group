@@ -5,12 +5,14 @@ _AthenaX([athena-xcy](https://www.github.com/athena-xcy))、Leo([LeoTsui](https:
 _Leo、HXT、Jenny Z、AthenaX 整理_
 
 - [课前准备](#课前准备)
+  - [注册选修](#注册选修)
 - [学习资源](#学习资源)
+  - [主要资源](#主要资源)
   - [资源索引](#资源索引)
 - [网络平台](#网络平台)
   - [官方平台](#官方平台)
   - [中文平台](#中文平台)
-- [中文学习组](#中文学习组)
+- [学习小组](#学习小组)
   - [进度安排](#进度安排)
   - [提问答疑](#提问答疑)
   - [讨论分享](#讨论分享)
@@ -20,20 +22,17 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 
 ## 课前准备
 
-注册: 
-* [edX](https://edx.org) 
-* [GitHub](https://github.com)
-
-选修: 
-* [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+### 注册选修
+* 注册 [edX](https://edx.org) 并选修 [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+* 注册 [GitHub](https://github.com)
 
 说明: 
 * 免费: CS50 课程内容向全世界学习者免费开放，教授在 Nas Daily 的视频中 [World's Biggest Teacher!](https://www.facebook.com/watch/?v=488104335019376) 有解释
 * 证书: 课程完成后，可自愿选择购买 edX 官方认证的 CS50 结课证书
 
 ## 学习资源
-### 资源索引
-* CS50 官方资源很多，可使用 [CS50 Resource Guide](https://cs50.harvard.edu/college/2019/fall/guide.pdf) 查找所需资源
+
+### 主要资源
 
 ![网站地图](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image10.png)
 
@@ -75,6 +74,9 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
 
+### 资源索引
+* CS50 官方资源很多，可使用 [CS50 Resource Guide](https://cs50.harvard.edu/college/2019/fall/guide.pdf) 查找所需资源
+
 
 ### 网络平台
 #### 官方平台
@@ -97,7 +99,7 @@ CS50 中文学习平台向所有提交了 [CS50课程学习与字幕翻译计划
 * GitHub
   * [CS50 学习组](https://github.com/athena-xcy/CS50-Study-Group)
 
-## CS50 学习组
+## 学习小组
 ### 进度安排
 
 | 时间                  | 课时      | 进度     |
