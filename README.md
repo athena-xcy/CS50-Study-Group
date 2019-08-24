@@ -20,8 +20,8 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 ## 招募与推广
 
-学习组**长期**欢迎 CS50 学习者的加入。第二次新成员招募详情参见：[CS50 课程学习与字幕翻译计划招募帖](hello,new.md)([豆瓣小组招募帖](https://www.douban.com/group/topic/148602699/))
-
+学习组**长期**欢迎 CS50 学习者的加入。第二次新成员招募详情参见：[CS50 课程学习与字幕翻译计划招募帖](hello_new.md)([豆瓣小组招募帖](https://www.douban.com/group/topic/148602699/))
+ ——
 欢迎填写[报名表](http://wjx.cn/jq/43792277.aspx)！(也可扫描上方二维码报名)
 
 ## 学习组
@@ -30,11 +30,32 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 ### 入门指南
 
-* 注册: [edX](https://edx.org) 及 [Github](https://github.com)
-* 选修: [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+注册: 
+* [edX](https://edx.org) 
+* [GitHub](https://github.com)
 
-详情请见[CS50 入门指南](study-group/how_to_learn_CS50.md)
+选修: 
+* [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
 
+说明: 
+* 免费: CS50 课程内容向全世界学习者免费开放，教授在 Nas Daily 的视频中 [World's Biggest Teacher!](https://www.facebook.com/watch/?v=488104335019376) 有解释
+* 证书: 课程完成后，可自愿选择购买 edX 官方认证的 CS50 结课证书
+
+### 分享讨论
+
+目前活动涉及两大主题：**CS50 学习经验交流**和**字幕翻译经验交流**
+
+* CS50 学习
+    * [CS50 入门指南](study-group/how_to_learn_CS50.md)
+    * [Week 0 Scratch Walkthrough]()（即将开始）
+* 字幕翻译
+    * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
+    * [第一次招募试译分析](study-group/study-group-discussion0.md)
+    * [L0 翻译经验分享](study-group/study-group-discussion1.md)
+    * [L1 翻译经验分享](study-group/study-group-discussion2.md)
+    * [L2 翻译经验分享](study-group/study-group-discussion3.md)
+    * [第二次招募试译分析]()（即将开始）
+    
 ### 进度安排
 
 自 8 月 21 日开始第 0 轮 CS50 学习活动。
@@ -50,21 +71,6 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 | 待定     | ...    | |
 
 时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
-
-### 分享讨论活动
-
-目前活动涉及两大主题：**CS50 学习经验交流**和**字幕翻译经验交流**
-
-* CS50 学习
-    * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [Week 0 Scratch Walkthrough]()（即将开始）
-* 字幕翻译
-    * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
-    * [第一次招募试译分析](study-group/study-group-discussion0.md)
-    * [L0 翻译经验分享](study-group/study-group-discussion1.md)
-    * [L1 翻译经验分享](study-group/study-group-discussion2.md)
-    * [L2 翻译经验分享](study-group/study-group-discussion3.md)
-    * [第二次招募试译分析]()（即将开始）
 
 ## 翻译组
 
