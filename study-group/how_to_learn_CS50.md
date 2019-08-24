@@ -7,7 +7,9 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 - [课前准备](#课前准备)
 - [学习资源](#学习资源)
   - [资源索引](#资源索引)
-- [学习社区](#学习社区)
+- [网络平台](#网络平台)
+  - [官方平台](#官方平台)
+  - [中文平台](#中文平台)
 - [中文学习组](#中文学习组)
   - [进度安排](#进度安排)
   - [提问答疑](#提问答疑)
@@ -74,8 +76,8 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
 
 
-## 学习社区
-### CS50 官方平台
+### 网络平台
+#### 官方平台
 * Youtube 视频
     * [CS50x 2019](https://www.youtube.com/watch?v=3oFAJtFE8YU)
     * [Youtube 频道](https://www.youtube.com/user/cs50tv)
@@ -86,8 +88,8 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
     * [CS50 官方](https://github.com/cs50)
 * [更多](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)
 
-### CS50 中文学习组  
-CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/43792277.aspx)的报名者开放，学习组绝大多数活动会在 CS50 学习组微信群进行
+### 中文平台  
+CS50 中文学习平台向所有提交了 [CS50课程学习与字幕翻译计划报名表](http://wjx.cn/jq/43792277.aspx) 的报名者开放，学习组绝大多数活动会在 CS50 学习组微信群进行
 * 微信
   * 申请表提交后，学习组管理员会邀请入群
 * 豆瓣
@@ -95,7 +97,7 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
 * GitHub
   * [CS50 学习组](https://github.com/athena-xcy/CS50-Study-Group)
 
-## 中文学习组
+## CS50 学习组
 ### 进度安排
 
 | 时间                  | 课时      | 进度     |
@@ -108,8 +110,7 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
 | 10月07日 - 10月14日   | week 5   |          |
 | 待定                 | ...      |          |
 
-学习组时间表及进度
-仅供参考，鼓励组员根据自己的情况自由调整进度
+以上为学习组学习讨论活动时间表，组员可根据自身情况，自由调整学习进度
 
 ### 提问答疑
 
