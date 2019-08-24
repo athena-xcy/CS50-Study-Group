@@ -1,13 +1,12 @@
 # CS50 入门指南
 
-_AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
+_AthenaX([athena-xcy](https://www.github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
 
 _Leo、HXT、Jenny Z、AthenaX 整理_
 
 - [课前准备](#课前准备)
 - [学习资源](#学习资源)
-  - [网站地图](#网站地图)
-  - [课程视频](#课程视频)
+  - [资源索引](#资源索引)
 - [学习社区](#学习社区)
 - [中文学习组](#中文学习组)
   - [进度安排](#进度安排)
@@ -19,19 +18,29 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 
 ## 课前准备
 
-* 注册: [edX](https://edx.org) 及 [Github](https://github.com)
-* 选修: [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+注册: 
+* [edX](https://edx.org) 
+* [GitHub](https://github.com)
+
+选修: 
+* [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
 
 说明: 
-* 免费: CS50 课程内容向全世界学习者免费开放，教授在 Nas Daily 的视频中[World's Biggest Teacher!](https://www.facebook.com/watch/?v=488104335019376)有解释
+* 免费: CS50 课程内容向全世界学习者免费开放，教授在 Nas Daily 的视频中 [World's Biggest Teacher!](https://www.facebook.com/watch/?v=488104335019376) 有解释
 * 证书: 课程完成后，可自愿选择购买 edX 官方认证的 CS50 结课证书
 
 ## 学习资源
 ### 资源索引
-* CS50 官方资源很多，可使用[CS50 Resource Guide](https://cs50.harvard.edu/college/2019/fall/guide.pdf)查找所需资源
+* CS50 官方资源很多，可使用 [CS50 Resource Guide](https://cs50.harvard.edu/college/2019/fall/guide.pdf) 查找所需资源
 
-### 课程视频
+![网站地图](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image10.png)
 
+* Lecture: 课程视频（群主也会发压制了字幕的视频）
+* Notes: 包含每节课的全部知识点（要看！！！有经验了可以不看视频，但一定要看notes。 Notes非常全面，包括了每门课所有重要知识点，看完视频后也可以用来复习）
+* Sandbox: 课堂代码（可以自己跑几个）
+* Problem Set: 编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开发的在线编程环境，需要有比较稳定的互联网连接。教授会在后面的课程中提到，等正式编程作业开始后，我们也会简单介绍。）
+
+* 课程视频
 ![视频界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image11.png)
 
 两个地方都能看到视频
@@ -65,19 +74,8 @@ _Leo、HXT、Jenny Z、AthenaX 整理_
 ![lecture 1界面](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image16.png)
 
 
-### 网站地图
-
-![网站地图](https://github.com/tomato018/CS50-Study-Group/blob/master/images/image10.png)
-Lecture是视频（群主也会发压制了字幕的视频）
-
-Notes包含每节课的全部知识点（要看！！！有经验了可以不看视频，但一定要看notes。 Notes非常全面，包括了每门课所有重要知识点，看完视频后也可以用来复习）
-
-Sandbox 是课程中的代码（可以自己跑几个）
-
-Problem Set 是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己开发的在线编程环境，需要有比较稳定的互联网连接。教授会在后面的课程中提到，等正式编程作业开始后，我们也会简单介绍。）
 ## 学习社区
 ### CS50 官方平台
-* [索引](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)
 * Youtube 视频
     * [CS50x 2019](https://www.youtube.com/watch?v=3oFAJtFE8YU)
     * [Youtube 频道](https://www.youtube.com/user/cs50tv)
@@ -86,6 +84,7 @@ Problem Set 是编程作业（通过CS50 IDE提交。IDE 是 CS50 团队自己�
     * [CS50 小组](https://www.facebook.com/groups/cs50)
 * GitHub 账号
     * [CS50 官方](https://github.com/cs50)
+* [更多](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)
 
 ### CS50 中文学习组  
 CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/43792277.aspx)的报名者开放，学习组绝大多数活动会在 CS50 学习组微信群进行
@@ -99,17 +98,18 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
 ## 中文学习组
 ### 进度安排
 
-| 时间       | 课时   | 进度 |
-| :----------: | :------: | :------: |
-| 08月21日 - 08月31日   | week 0 | 进行中 |
-| 09月02日 - 09月08日   | week 1 | |
-| 09月09日 - 09月15日   | week 2 | |
-| 09月16日 - 09月22日   | week 3 | |
-| 09月23日 - 10月06日 | week 4  | |
-| 10月07日 - 10月14日  | week 5 | |
-| 待定     | ...    | |
+| 时间                  | 课时      | 进度     |
+| :------------------: | :------: | :------: |
+| 08月21日 - 08月31日   | week 0   | 进行中    |
+| 09月02日 - 09月08日   | week 1   |          |
+| 09月09日 - 09月15日   | week 2   |          |
+| 09月16日 - 09月22日   | week 3   |          |
+| 09月23日 - 10月06日   | week 4   |          |
+| 10月07日 - 10月14日   | week 5   |          |
+| 待定                 | ...      |          |
 
-时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
+学习组时间表及进度
+仅供参考，鼓励组员根据自己的情况自由调整进度
 
 ### 提问答疑
 
@@ -136,7 +136,7 @@ CS50 中文学习组向所有填写了[学习组报名表](http://wjx.cn/jq/4379
     
 --------
 
-## 管理团队招募
+## 团队招募
 数据分析组和网站开发组长期招人！对经验没有硬性要求，欢迎咨询
 ### 网站开发
 给项目搭建网站，网站上会发布我们的中英双语视频，GitHub 上的文稿，项目介绍等等，也有考虑在未来把讨论答疑平台从微信群移到网站上
