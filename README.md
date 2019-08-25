@@ -6,13 +6,13 @@
 
 ## 课程简介
 
-CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，有一定基础的学生零基础 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了哈佛大学桑德斯剧场 (Sanders Theater) 课堂现场，力求给学习者带来最好的学习体验。 
+CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，有一定基础的学生零基础 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了[哈佛大学桑德斯剧场课堂现场](https://www.eventbrite.com/e/attend-a-cs50-lecture-in-person-tickets-70166767691)，力求给学习者带来最好的学习体验。 
 
 ## 学习组
 
 ### 注册选修
 * 注册 [edX](https://edx.org) 并选修 [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
-* 注册 [GitHub](https://github.com)
+* 注册 [GitHub](https://github.com)，欢迎 watch，star 或者fork [学习组 GitHub 项目](https://github.com/athena-xcy/CS50-Study-Group) 
 
 说明: CS50 课程内容向全世界学习者免费开放。课程完成后，学习者可自愿选择购买 edX 官方认证的 CS50 结课证书。
 
@@ -22,14 +22,14 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [Week 0 Scratch Walkthrough]()（即将开始）
+    * Week 0 Scratch Walkthrough（文稿整理中）
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
     * [第一次招募试译分析](study-group/study-group-discussion0.md)
     * [L0 翻译经验分享](study-group/study-group-discussion1.md)
     * [L1 翻译经验分享](study-group/study-group-discussion2.md)
     * [L2 翻译经验分享](study-group/study-group-discussion3.md)
-    * [第二次招募试译分析]()（即将开始）
+    * 第二次招募试译分析（文稿整理中）
     
 ### 进度安排
 
@@ -37,7 +37,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 | 时间       | 课时   | 进度 |
 | :----------: | :------: | :------: |
-| 08月21日 - 08月31日   | week 0 | 进行中 |
+| 08月21日 - 09月01日   | week 0 | 进行中 |
 | 09月02日 - 09月08日   | week 1 | |
 | 09月09日 - 09月15日   | week 2 | |
 | 09月16日 - 09月22日   | week 3 | |
@@ -45,7 +45,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 | 10月07日 - 10月14日  | week 5 | |
 | 待定     | ...    | |
 
-时间表仅供参考学习者，鼓励根据自己的情况自由调整进度
+时间表仅供参考，鼓励学习者根据自己的情况自由调整
 
 ## 翻译组
 
@@ -65,23 +65,6 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 ### 翻译软件
 
 * 本项目使用 Aegisub 辅助翻译工作，请参见[简明 Aegisub 教程](translation-group/Aegisub_Tutorial.md)
-
-## 我们是谁？
-
-因为语言和网络平台受限的问题，CS50 在国内知者较少。现由计算机、MOOC、及翻译爱好者联合发起教育公益项目，旨在消除语言壁垒，促进高质量且免费的教学资源在国内传播。目前分设**学习组**和**翻译组**两个小组。
-
-【学习组】认识志同道合的学友，挑战编程难题等等，参与计算知识科普，课程内容讨论，作业答疑等线上活动
-
-【翻译组】参与翻译、校对或调时间轴，和[教育无边界字幕组](http://www.edu-infinity.org/20851201102510520204.html)合作，共同完成本课程视频翻译
-
-详细组织介绍参见：[关于我们](about_us.md)
-
-## 加入我们
-
-学习组**长期**欢迎 CS50 学习者的加入。第二次新成员招募详情参见：[CS50 课程学习与字幕翻译计划招募帖](hello_new.md)([豆瓣小组招募帖](https://www.douban.com/group/topic/148602699/))
- ——
-欢迎填写[报名表](http://wjx.cn/jq/43792277.aspx)！(也可扫描上方二维码报名)
-
 
 ## 版权声明
 
