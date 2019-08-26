@@ -1,12 +1,12 @@
 # CS50学习组第二次招募试译分析
 
-_AthenaX([athena-xcy](https://github.com/athena-xcy))、伊然 主讲_
+_伊然、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
 
 _伊然 供稿_
 
 _Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) 整理_
 
-_Leo([LeoTsui](https://github.com/LeoTsui))、 M、 Jenny Z([Meijuan Zeng](https://github.com/tomato018))、 stronger、 刀刀参与讨论，对本文亦有贡献_
+_Leo([LeoTsui](https://github.com/LeoTsui))、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、 stronger、 刀刀参与讨论，对本文亦有贡献_
 
 * 翻译原则
     * 【翻译原则零】信达雅
