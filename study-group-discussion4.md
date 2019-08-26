@@ -1,13 +1,12 @@
 # CS50学习组第二次招募试译分析
 
-标签（空格分隔）： CS50_学习组分享讨论
+_AthenaX([athena-xcy](https://github.com/athena-xcy))、伊然 主讲_
 
----
+_伊然 供稿_
 
-*AthenaX([athena-xcy](https://github.com/athena-xcy))、伊然 主讲*
-*AthenaX([athena-xcy](https://github.com/athena-xcy))、 伊然 供稿*
-*Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) 整理*
-*Leo([LeoTsui](https://github.com/LeoTsui))、 M、 Jenny Z、 stronger、 刀刀参与讨论，对本文亦有贡献*
+_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) 整理_
+
+_Leo([LeoTsui](https://github.com/LeoTsui))、 M、 Jenny Z([Meijuan Zeng](https://github.com/tomato018))、 stronger、 刀刀参与讨论，对本文亦有贡献_
 
 * 翻译原则
     * 【翻译原则零】信达雅
@@ -26,30 +25,27 @@
     * 试译例句一的参考译文
 * 试译例句二
 
----
-
 ## 翻译原则
 
-相关链接：[字幕翻译原则 Principles of Subtitle Translation](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/principles-of-subtitle-translation.md)
-GitHub 上有每周翻译讲解的文稿，搭配了每周翻译视频中的例句，由翻译组译者分别主讲，之后会整理好文档发在 GitHub 上。
+详细讲解见：[字幕翻译原则](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/principles-of-subtitle-translation.md)。除此之外，可参考学习组翻译讨论分享文稿，结合具体的课程视频中的例句，更好理解翻译原则在实际翻译中的应用。
 
-### 【翻译原则零】信达雅：力求准确，适度意译，润色表达
+【翻译原则零】信达雅：力求准确，适度意译，润色表达
 
-### 【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩
+【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩
 
-### 【翻译原则二】全文理解：开展翻译工作前，应看完对应视频、文件
+【翻译原则二】全文理解：开展翻译工作前，应看完对应视频、文件
 
-### 【翻译原则三】简练准确：译文单句不宜过长，观众需要一眼就能看懂中文字幕
+【翻译原则三】简练准确：译文单句不宜过长，观众需要一眼就能看懂中文字幕
 
-### 【翻译原则四】避免翻译腔：说人话，说中国话
+【翻译原则四】避免翻译腔：说人话，说中国话
 
-### 【翻译原则五】灵活变通：根据需要调整语序
+【翻译原则五】灵活变通：根据需要调整语序
 
-### 【翻译原则六】注意专业术语：查找资料搞懂术语含义
+【翻译原则六】注意专业术语：查找资料搞懂术语含义
 
-翻译组有总计的[术语表](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/Glossary.md) 和供查询的[计算机翻译字典](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/cs-dictionary.textile)。
+* 可参考翻译组[术语表](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/Glossary.md)和供查询的[计算机翻译字典](https://github.com/athena-xcy/CS50-Study-Group/blob/master/translation-group/cs-dictionary.textile)。
 
-### 【翻译原则七】遵守格式：遵守字幕文件格式和翻译格式
+【翻译原则七】遵守格式：遵守字幕文件格式和翻译格式
 
 ## 试译例句一
 
@@ -76,16 +72,16 @@ GitHub 上有每周翻译讲解的文稿，搭配了每周翻译视频中的例�
 
 > three tools to have in the proverbial toolbox
 
-其中，proverbial toolbox这里翻译的五花八门。常见的译法有
-> 1. “谚语的工具箱”
+其中，proverbial toolbox这里翻译的五花八门。试译答案里的几种译法有: 
+> 1.“谚语的工具箱”
 
 > 2.“众所周知的工具箱”
 
 > 3.“常见的工具箱”
 
-第一种估计是机翻了或者没有联系上下文，不太可取。大多数人翻译成了 “众所周知”。“众所周知”虽然是proverbial最准确的中文释义，但是代到文中和“工具箱”搭配就很怪，中文一般不会这么说。在没有很好的直译的情况下 “常见工具”这个翻译比较直白，信息量也很充分。还有另外一个译本，“熟知的工具”，也是通顺易懂。所以对于这半句来讲，最佳翻译版本是“在大家熟知的工具箱中有三个工具”。
+第一种可能是来自机器翻译或者没有联系上下文，不太可取。大多数人翻译成了 “众所周知”。“众所周知”虽然是proverbial最准确的中文释义，但是代到文中和“工具箱”搭配就很怪，中文一般不会这么说。在没有很好的直译的情况下 “常见工具”这个翻译比较直白，信息量也很充分。还有另外一个译本，“熟知的工具”，也是通顺易懂。所以对于这半句来讲，最佳翻译版本是“在大家熟知的工具箱中有三个工具”。
 
-当然，“工具箱”其实有点难理解意思，所以翻译成“常见工具”也可以。由于教授个人语言习惯很官方正式，所以还是官方文件的翻译风格比较贴这门课程的翻译。
+当然，“工具箱”在这个语境下不好理解，所以翻译成“常见工具”也可以。由于教授个人语言习惯很官方正式，所以还是官方文件的翻译风格比较贴这门课程的翻译。
 
 综上所述，在翻译时还是要符合翻译原则，结合语境，尽量直译，适度意译。
 
@@ -93,7 +89,7 @@ GitHub 上有每周翻译讲解的文稿，搭配了每周翻译视频中的例�
 
 > now are help50 anytime you see an error message that you don't understand, whether it's with make or Clang or, perhaps, something else.
 
-首先是开头这个now, 它连着短句一的 three tools ，是说我们现在总共有三个了，“加起来现在有” 的意思。
+首先是开头这个now, 它连着短句一的 `three tools`，是说我们现在总共有三个了，“加起来现在有” 的意思。
 
 然后从整句结构来看，接下来该分别讲三个工具。这里可以适当意译，加上“第一”“第二”“第三”，让语句更连贯。如果看视频翻译的话，教授在屏幕上有列出这三个工具，所以“【翻译原则一】不盲翻”是很重要的。
 
