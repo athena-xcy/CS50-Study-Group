@@ -2,19 +2,20 @@
 
 ![poster](images/poster.jpg)
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/)是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的课程，在哈佛校内，每年有 800+ 学生同时学习 CS50，edX 上则有来自全球 100 万学习者。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/)是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。本计划致力于组织维护一个 CS50 学习者社区（[学习组](#学习组)），并促进 CS50 课程在华文世界中的传播（[翻译组](#翻译组)）。详情可见[招新贴](hello,new.md)。
 
 ## 课程简介
 
-CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，有一定基础的学生零基础 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了[哈佛大学桑德斯剧场课堂现场](https://www.eventbrite.com/e/attend-a-cs50-lecture-in-person-tickets-70166767691)，力求给学习者带来最好的学习体验。 
+CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，并且有一定基础的学生 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了[哈佛大学桑德斯剧场课堂现场](https://www.eventbrite.com/e/attend-a-cs50-lecture-in-person-tickets-70166767691)，力求给学习者带来最好的学习体验。 
 
-## 学习组
+## 注册选修
 
-### 注册选修
 * 注册 [edX](https://edx.org) 并选修 [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
-* 注册 [GitHub](https://github.com)，欢迎 watch，star 或者fork [学习组 GitHub 项目](https://github.com/athena-xcy/CS50-Study-Group) 
+* 注册 [GitHub](https://github.com)，欢迎 watch、star 或者 fork [学习组 GitHub 项目](https://github.com/athena-xcy/CS50-Study-Group) 
 
 说明: CS50 课程内容向全世界学习者免费开放。课程完成后，学习者可自愿选择购买 edX 官方认证的 CS50 结课证书。
+
+## 学习组
 
 ### 分享讨论
 
