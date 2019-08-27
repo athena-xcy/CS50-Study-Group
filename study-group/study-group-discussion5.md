@@ -1,10 +1,10 @@
 # CS50学习组第二次招募试译分析2
 
-_郝亚南Chris 主讲_
+_郝亚南 Chris 主讲_
 
-_刀刀 整理_
+_刀刀([k_huang](https://github.com/karen-huangxt)) 整理_
 
-_AthenaX、Leo、Ming、lyh、Alison参与讨论_
+_AthenaX([athena-xcy](https://github.com/athena-xcy)) 、Leo([LeoTsui](https://github.com/LeoTsui))、Ming、lyh、Alison参与讨论_
 
 - 试译例句2
   - 短句1分析（it多重并列）
