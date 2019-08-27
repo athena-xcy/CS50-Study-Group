@@ -2,7 +2,7 @@
 
 ![poster](images/poster.jpg)
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/)是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。本计划致力于组织维护一个 CS50 学习者社区（[学习组](#学习组)），并促进 CS50 课程在华文世界中的传播（[翻译组](#翻译组)）。详情可见[招新贴](hello,new.md)。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。本计划致力于组织维护一个 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在华文世界中的传播([翻译组](#翻译组))。详情可见[招新贴](hello,new.md)。
 
 ## 课程简介
 
@@ -23,7 +23,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * Week 0 Scratch Walkthrough（文稿整理中）
+    * Week 0 Scratch Walkthrough (文稿整理中)
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
     * [第一次招募试译分析](study-group/study-group-discussion0.md)
