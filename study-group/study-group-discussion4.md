@@ -4,7 +4,7 @@ _伊然、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
 
 _伊然 供稿_
 
-_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) Leo([LeoTsui](https://github.com/LeoTsui))整理_
+_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))、Leo([LeoTsui](https://github.com/LeoTsui)) 整理_
 
 _Leo([LeoTsui](https://github.com/LeoTsui))、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、 stronger、 刀刀参与讨论，对本文亦有贡献_
 
