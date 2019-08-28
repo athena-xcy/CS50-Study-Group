@@ -19,7 +19,7 @@ _Ming、lyh、Alison、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))
   - [短句二分析（so-and-so）](#%e7%9f%ad%e5%8f%a5%e4%ba%8c%e5%88%86%e6%9e%90so-and-so)
   - [短句三分析（green smiley face）](#%e7%9f%ad%e5%8f%a5%e4%b8%89%e5%88%86%e6%9e%90green-smiley-face)
   - [短句四分析（slug）](#%e7%9f%ad%e5%8f%a5%e5%9b%9b%e5%88%86%e6%9e%90slug)
-  - [短句五分析(nothing's going to work)](#%e7%9f%ad%e5%8f%a5%e4%ba%94%e5%88%86%e6%9e%90nothings-going-to-work)
+  - [短句五分析（nothing's going to work）](#%e7%9f%ad%e5%8f%a5%e4%ba%94%e5%88%86%e6%9e%90nothings-going-to-work)
   - [试译例句二的参考译文](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%ba%8c%e7%9a%84%e5%8f%82%e8%80%83%e8%af%91%e6%96%87)
 
 ## 试译例句一（CS50 工具箱）
@@ -188,7 +188,7 @@ tips: 翻译时遇到陌生的短语，推荐查看英文释义与前后文做�
 
 重点：slug
 
-slug本义为"鼻涕虫",当然我们并不能这样直接翻译。
+slug本义为"鼻涕虫"，当然我们并不能这样直接翻译。
 
 在本语境中，slug 的含义应该这样理解：
 
@@ -200,20 +200,20 @@ slug本义为"鼻涕虫",当然我们并不能这样直接翻译。
 
 其中的`what-is-a-slug-in-django`结构，就是slug。而且该链接也解释了slug的含义。
 
-但是,在中文中没有特定词语对应本语境的slug的含义。所以，翻译的时候建议保留英文。
+但是，在中文中没有特定词语对应本语境的slug的含义。所以，翻译的时候建议保留英文。
 
-### 短句五分析(nothing's going to work)
+### 短句五分析（nothing's going to work）
 
 > checked that hello.c exists, because if I forgot to write the file or if I misnamed it, nothing's going to work.
 
-重点:nothing's going to work
+重点：nothing's going to work
 
 很多同学翻译为
 
 > 一切都白费  
 > 什么都不会发生
 
-直译看上去没有问题,但是结合前后文的话,可能会有点“太大了”
+直译看上去没有问题，但是结合前后文的话，可能会有点“太大了”
 
 它的实际含义是：屏幕上加载的这种情况不会发生
 
@@ -221,7 +221,7 @@ slug本义为"鼻涕虫",当然我们并不能这样直接翻译。
 
 > 它就不会这样运行
 
-tip: 这是照顾语境，结合前后文的翻译原则
+tips: 这是照顾语境，结合前后文的翻译原则
 
 ### 试译例句二的参考译文
 
