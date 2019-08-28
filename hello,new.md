@@ -4,6 +4,24 @@
 
 CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机科学入门课程。目前 edX 上最新版 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 课程，由全职摄影团队拍摄制片，采用工业电影级摄影设备，将你带回哈佛大学的桑德斯剧场（Sanders Theater），和现场 800+ 名哈佛学子及 edX上来自全球的一百万学习者，一同聆听 [David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授极富感染力的课程讲座。毫不夸张的说，CS50 是世界上最具影响力的 MOOC，也是最受全球 MOOC 学习者欢迎的计算机科学入门课。
 
+## 如何学习？
+
+* 注册 [edX](https://edx.org) 并选修 [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
+* 注册 [GitHub](https://github.com)，欢迎 watch、star 或者 fork [学习组 GitHub 项目](https://github.com/athena-xcy/CS50-Study-Group) 
+* 按照课程主页的要求，开始学习，学习进度可自由掌握。
+    * Lecture: 课程视频（翻译组在制作中文视频）
+    * Notes: 包含每节课的全部知识点（Notes总结非常全面，建议浏览）
+    * Sandbox: 课堂代码，建议运行实践
+    * Problem Set: 编程作业（通过CS50 IDE 提交，需要有比较稳定的互联网连接。）
+
+说明: CS50 课程内容向全世界学习者免费开放。课程完成后，学习者可自愿选择购买 edX 官方认证的 CS50 结课证书。
+
+## 去哪里找同学？
+
+CS50 的社区平台[很多](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)。其中 Facebook 社区比较活跃，官方社区有：[CS50 主页](https://www.facebook.com/cs50)、[CS50 小组](https://www.facebook.com/groups/cs50)
+
+华语学习者，亦可加入我们！
+
 ## 我们是谁？
 
 CS50 课程学习与字幕翻译计划由 CS50 学习及受益者 Athena 发起，共分为翻译组及学习组两个行动组，由前字幕组总监 Liliana 及 MOOC 社区助教 Leo 共同管理，是由计算机爱好者，MOOC 爱好者，及翻译爱好者组成的教育公益组织。
@@ -22,4 +40,4 @@ CS50 课程学习与字幕翻译计划由 CS50 学习及受益者 Athena 发起�
 
 ## 加入我们！
 
-请填写[报名表](http://wjx.cn/jq/43792277.aspx)加入我们。报名表会根据报名组别跳转不同问题，其中，报名翻译组需提交试译例句译文，建议用电脑填写。报名截止时间为北京时间 8 月 18 日 22:00。提交报名表后，组织方会发出邀请。关于 CS50 更多信息，请见豆瓣 [CS50 小组](https://www.douban.com/group/cs50/)。
+学习组长期欢迎新同学加入。请填写[报名表](http://wjx.cn/jq/43792277.aspx)加入我们。（翻译组已经暂停招人）亦可参见豆瓣 [CS50 小组](https://www.douban.com/group/cs50/)。
