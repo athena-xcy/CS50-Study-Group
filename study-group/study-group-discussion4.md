@@ -1,12 +1,12 @@
 # CS50 学习组第二次招募试译分析
 
-_伊然、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
+_伊然、郝亚南 Chris、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
 
-_伊然 供稿_
+_伊然、郝亚南 Chris 供稿_
 
-_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))、Leo([LeoTsui](https://github.com/LeoTsui)) 整理_
+_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))、刀刀([k_huang](https://github.com/karen-huangxt))、Leo([LeoTsui](https://github.com/LeoTsui)) 整理_
 
-_Leo([LeoTsui](https://github.com/LeoTsui))、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、 stronger、 刀刀参与讨论，对本文亦有贡献_
+_Ming、lyh、Alison、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、stronger、AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://github.com/LeoTsui))参与讨论，对本文亦有贡献_
 
 - [试译例句一（CS50 工具箱）](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%b8%80cs50-%e5%b7%a5%e5%85%b7%e7%ae%b1)
   - [短句一分析（三个工具箱）](#%e7%9f%ad%e5%8f%a5%e4%b8%80%e5%88%86%e6%9e%90%e4%b8%89%e4%b8%aa%e5%b7%a5%e5%85%b7%e7%ae%b1)
@@ -14,6 +14,13 @@ _Leo([LeoTsui](https://github.com/LeoTsui))、M、Jenny Z([Meijuan Zeng](https:/
   - [短句三分析（printf）](#%e7%9f%ad%e5%8f%a5%e4%b8%89%e5%88%86%e6%9e%90printf)
   - [短句四分析（style50）](#%e7%9f%ad%e5%8f%a5%e5%9b%9b%e5%88%86%e6%9e%90style50)
   - [试译例句一的参考译文](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%b8%80%e7%9a%84%e5%8f%82%e8%80%83%e8%af%91%e6%96%87)
+- [试译例句二](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%ba%8c)
+  - [短句一分析（it多重并列）](#%e7%9f%ad%e5%8f%a5%e4%b8%80%e5%88%86%e6%9e%90it%e5%a4%9a%e9%87%8d%e5%b9%b6%e5%88%97)
+  - [短句二分析（so-and-so）](#%e7%9f%ad%e5%8f%a5%e4%ba%8c%e5%88%86%e6%9e%90so-and-so)
+  - [短句三分析（green smiley face）](#%e7%9f%ad%e5%8f%a5%e4%b8%89%e5%88%86%e6%9e%90green-smiley-face)
+  - [短句四分析（slug）](#%e7%9f%ad%e5%8f%a5%e5%9b%9b%e5%88%86%e6%9e%90slug)
+  - [短句五分析(nothing's going to work)](#%e7%9f%ad%e5%8f%a5%e4%ba%94%e5%88%86%e6%9e%90nothings-going-to-work)
+  - [试译例句二的参考译文](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%ba%8c%e7%9a%84%e5%8f%82%e8%80%83%e8%af%91%e6%96%87)
 
 ## 试译例句一（CS50 工具箱）
 
@@ -101,3 +108,123 @@ _Leo([LeoTsui](https://github.com/LeoTsui))、M、Jenny Z([Meijuan Zeng](https:/
 ### 试译例句一的参考译文
 
 > 好，我们现在来复习一下，常用工具箱里的三种工具：1. help50, 用于你不理解的错误讯息，可以是 Make, Clang 或其他编译器产生的；2. Printf，用于处理程序中出现 bug、程序无法正常运行时；3. Style50，用于确保所写代码是否风格一致以及是否可读。
+
+## 试译例句二
+
+> It's looking at my code, it's getting ready for submission, it's now uploading it to GitHub.com, and once it's on the servers, then it's going to tell CS50 server, here is so-and-so's submission,
+go ahead and run a few automated tests on it, checking therefore its correctness, and hopefully we're about to see some green, happy smiley faces, and voila, yes,
+it looks like this check50 command for this problem or slug, so to speak--checked that hello.c exists, because if I forgot to write the file
+or if I misnamed it, nothing's going to work.
+
+### 短句一分析（it多重并列）
+
+> It's looking at my code, it's getting ready for submission, it's now uploading it to GitHub.com
+
+重点：it的多重并列
+
+首先结合视频，可以明白it指代的是屏幕上运行的画面
+
+大家的常见译法是逐字翻译
+
+> 它正在查看我的代码 它正在准备提交……
+
+由于David说话飞速，字幕闪现的时间不会超过2秒，所以推荐适当意译，省去部分的主语“它”：
+
+> 它正在查看我的代码 之后准备上传 现在代码正在上传到Github
+
+tips: 这一句话中，短句多，主语相同，省略主语不影响理解，因此可以省略
+
+### 短句二分析（so-and-so）
+
+> and once it's on the servers, then it's going to tell CS50 server, here is so-and-so's submission
+
+重点：so-and-so
+
+首先它的英文释义是：
+
+> _noun._ a person or thing whose name the speaker does not need to specify or does not know or remember.
+
+所以翻译成
+
+> 某/某某/某某某/谁/谁谁/谁谁谁
+
+都是可以的
+
+但是译成“这样这样”“如此的”不太合适
+
+tips: 翻译时遇到陌生的短语，推荐查看英文释义与前后文做对比
+
+### 短句三分析（green smiley face）
+
+> go ahead and run a few automated tests on it, checking therefore its correctness, and hopefully we're about to see some green, happy smiley faces, and voila, yes
+
+重点：green smiley face
+
+这个如果直译的话，就是“绿色快乐的笑脸”
+
+其实这一段后面David还讲了一段，其中有
+
+> green, happy smiley faces  
+> red unhappy face  
+> yellow flat face
+
+为了使字幕简洁，也为了符合中文习惯，可以直接译为
+
+> 绿色笑脸  
+> 红色怒脸  
+> 黄色平脸
+
+![image](https://t3.ftcdn.net/jpg/02/02/82/40/240_F_202824017_c0tmyNaowtZT0nJbKSjeH7McGzj5UMFx.jpg)
+
+也可以给它们起外号
+
+> 高兴绿  
+> 悲伤红  
+> 平静黄
+
+### 短句四分析（slug）
+
+> it looks like this check50 command for this problem or slug, so to speak
+
+重点：slug
+
+slug本义为"鼻涕虫",当然我们并不能这样直接翻译。
+
+在本语境中，slug 的含义应该这样理解：
+
+比如，你想让你的网站域名叫做：`www.example.com/article/The 46 Year Old Virgin`。但是，由于URL规则需要用`%20`替代空格。就变成了：`www.example.com/article/The%2046%20Year%20Old%20Virgin`。
+
+这样看起来就十分不美观，也不好用。因此，`-`连接单词，将链接写为：`www.example.com/article/the-46-year-old-virgin`。在URL中唯一确定的一串字符串，就叫做slug。
+
+比如链接：[`https://stackoverflow.com/questions/427102/what-is-a-slug-in-django`](https://stackoverflow.com/questions/427102/what-is-a-slug-in-django)。
+
+其中的`what-is-a-slug-in-django`结构，就是slug。而且该链接也解释了slug的含义。
+
+但是,在中文中没有特定词语对应本语境的slug的含义。所以，翻译的时候建议保留英文。
+
+### 短句五分析(nothing's going to work)
+
+> checked that hello.c exists, because if I forgot to write the file or if I misnamed it, nothing's going to work.
+
+重点:nothing's going to work
+
+很多同学翻译为
+
+> 一切都白费  
+> 什么都不会发生
+
+直译看上去没有问题,但是结合前后文的话,可能会有点“太大了”
+
+它的实际含义是：屏幕上加载的这种情况不会发生
+
+所以更准确的译法为
+
+> 它就不会这样运行
+
+tip: 这是照顾语境，结合前后文的翻译原则
+
+### 试译例句二的参考译文
+
+> （连接GitHub服务器) 我的代码正在被确认，之后准备上传…现在代码正在上传到GitHub.com。当代码传到服务器上的时候，它就会告诉CS50服务器，这是什么-什么的代码，并自动运行一些测试，以测试代码是否正确。理想的话，我们会看到绿色的笑脸，然后好啦，这就是Check50对这个代码做的一些操作-也可以叫页面记录（slug）。（第一行）检查了hello.c是否存在，因为如果我忘了写这个文件或者我把文件名搞错了，那什么操作都执行不了的。——林雪勤
+
+> (check50)在检查所写的代码，它在做提交准备，它在上传至GitHub.com. 等它上传至服务器后，会告诉CS50服务器这是提交的代码，让服务器对代码运行自动检测，检查其正确性。希望我们能看见绿色的笑脸，那么太好了，是的，check50程序检验到hello.c已经建立了，因为如果我忘记写这个文件或者我写错了文件名，它不会这样运行。——钟鸣
