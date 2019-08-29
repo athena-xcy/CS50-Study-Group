@@ -4,9 +4,9 @@ _颜木林([mulin](https://github.com/yanmulin)) 主讲_
 
 _颜木林 供稿_
 
-_Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
 
-_如意小熊猫🍒、精灵兔、Yuehua Veronica、f、AthenaX([athena-xcy](https://github.com/athena-xcy))和 blue hydrangea参与讨论，sharonron、精灵兔、亦清、菠萝包流沙包椰蓉包、Yuehua Li、毛灵杰、Leo提交翻译练习答案，对本文亦有贡献_
+_如意小熊猫🍒、精灵兔、Yuehua Veronica、f、AthenaX([athena-xcy](https://github.com/athena-xcy))、Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) 参与讨论，sharonron、精灵兔、亦清、菠萝包流沙包椰蓉包、Yuehua Li、毛灵杰、Leo 提交翻译练习答案，对本文亦有贡献_
 
 - [例句讨论](#%e4%be%8b%e5%8f%a5%e8%ae%a8%e8%ae%ba)
   - [00:42:45,660 三声猫叫](#004245660-%e4%b8%89%e5%a3%b0%e7%8c%ab%e5%8f%ab)
