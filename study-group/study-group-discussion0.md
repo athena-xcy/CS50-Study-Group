@@ -6,7 +6,7 @@ _Liliana、Athena 供稿_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
 
-_如意小熊猫🍒、精灵兔、郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1))、颜木林、Elvarez、Maggie、Kelu([kelzr](https://www.github.com/kelzr))、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono 和胖香皂参与讨论，对本文亦有贡献_
+_如意小熊猫🍒、精灵兔、郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1))、颜木林([mulin](https://github.com/yanmulin))、Elvarez、Maggie、Kelu([kelzr](https://www.github.com/kelzr))、L!nk ooooo、Sharonron、精灵兔、菠萝包流沙包椰蓉包🥞、Tina、nono 和胖香皂参与讨论，对本文亦有贡献_
 
 _参考 [翻译原则](principles-of-subtitle-translation.md)_
 
