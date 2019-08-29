@@ -2,9 +2,9 @@
 
 _该文档内容繁杂，有待调整编辑，并不建议阅读参考_
 
-_AthenaX([athena-xcy](https://www.github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui))主讲_
+_AthenaX([athena-xcy](https://www.github.com/athena-xcy))、Leo([LeoTsui](https://www.github.com/LeoTsui)) 主讲_
 
-_Leo、HXT、Jenny Z、AthenaX 整理_
+_Leo、HXT([k_huang](https://github.com/karen-huangxt))、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、AthenaX 整理_
 
 - [课前准备](#课前准备)
   - [注册选修](#注册选修)
