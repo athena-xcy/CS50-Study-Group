@@ -1,6 +1,6 @@
 # CS50 学习组第二次招募试译分析
 
-_伊然、郝亚南 Chris([Cr1s1](https://github.com/Cr1s1))、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
+_伊然([YiRan005](https://github.com/YiRan005))、郝亚南 Chris([Cr1s1](https://github.com/Cr1s1))、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
 
 _伊然、郝亚南 Chris 供稿_
 
