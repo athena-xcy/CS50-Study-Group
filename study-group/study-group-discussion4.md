@@ -1,12 +1,12 @@
 # CS50 学习组第二次招募试译分析
 
-_伊然、郝亚南 Chris、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
+_伊然、郝亚南 Chris([Cr1s1](https://github.com/Cr1s1))、AthenaX([athena-xcy](https://github.com/athena-xcy)) 主讲_
 
 _伊然、郝亚南 Chris 供稿_
 
-_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))、刀刀([k_huang](https://github.com/karen-huangxt))、Leo([LeoTsui](https://github.com/LeoTsui)) 整理_
+_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))、刀刀([k_huang](https://github.com/karen-huangxt))、Leo 整理_
 
-_Ming、lyh、Alison、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、stronger、AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://github.com/LeoTsui))参与讨论，对本文亦有贡献_
+_Ming、lyh、Alison、M、Jenny Z([Meijuan Zeng](https://github.com/tomato018))、stronger、AthenaX、Leo 参与讨论，对本文亦有贡献_
 
 - [试译例句一（CS50 工具箱）](#%e8%af%95%e8%af%91%e4%be%8b%e5%8f%a5%e4%b8%80cs50-%e5%b7%a5%e5%85%b7%e7%ae%b1)
   - [短句一分析（三个工具箱）](#%e7%9f%ad%e5%8f%a5%e4%b8%80%e5%88%86%e6%9e%90%e4%b8%89%e4%b8%aa%e5%b7%a5%e5%85%b7%e7%ae%b1)
