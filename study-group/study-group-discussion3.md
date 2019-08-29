@@ -4,9 +4,9 @@ _Elvarez 主讲_
 
 _Elvarez 供稿_
 
-_Leo([LeoTsui](https://www.github.com/LeoTsui))、精灵兔、Scarlett整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui))、精灵兔、Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))整理_
 
-_blue hydrangea、 Leo、AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦有贡献_
+_Scarlett、 Leo、AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦有贡献_
 
 - [代词还原](#%e4%bb%a3%e8%af%8d%e8%bf%98%e5%8e%9f)
   - [例一（动画书）](#%e4%be%8b%e4%b8%80%e5%8a%a8%e7%94%bb%e4%b9%a6)
