@@ -4,9 +4,9 @@ _郝亚南 Cris([Cr1s1](https://www.github.com/Cr1s1)) 主讲_
 
 _郝亚南 Cris 供稿_
 
-_Leo([LeoTsui](https://www.github.com/LeoTsui))整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
 
-_精灵兔、Yuehua Veronica 和 AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦有贡献_
+_精灵兔、Yuehua Veronica 和 AthenaX([athena-xcy](https://github.com/athena-xcy)) 参与讨论，对本文亦有贡献_
 
 - [例句讨论](#%e4%be%8b%e5%8f%a5%e8%ae%a8%e8%ae%ba)
   - [L0 1:01:45 复制粘贴](#l0-10145-%e5%a4%8d%e5%88%b6%e7%b2%98%e8%b4%b4)
