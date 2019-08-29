@@ -1,8 +1,8 @@
 # 字幕翻译原则 Principles of Subtitle Translation 
 
-_Athena、Liliana 供稿_
+_AthenaX([athena-xcy](https://github.com/athena-xcy))、Liliana 供稿_
 
-_Leo 整理_
+_Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
 
 - [【翻译原则零】信达雅：力求准确，适度意译，润色表达](#%e7%bf%bb%e8%af%91%e5%8e%9f%e5%88%99%e9%9b%b6%e4%bf%a1%e8%be%be%e9%9b%85%e5%8a%9b%e6%b1%82%e5%87%86%e7%a1%ae%e9%80%82%e5%ba%a6%e6%84%8f%e8%af%91%e6%b6%a6%e8%89%b2%e8%a1%a8%e8%be%be)
 - [【翻译原则一】严禁盲翻：只有结合场景剧情才能翻译的准确出彩](#%e7%bf%bb%e8%af%91%e5%8e%9f%e5%88%99%e4%b8%80%e4%b8%a5%e7%a6%81%e7%9b%b2%e7%bf%bb%e5%8f%aa%e6%9c%89%e7%bb%93%e5%90%88%e5%9c%ba%e6%99%af%e5%89%a7%e6%83%85%e6%89%8d%e8%83%bd%e7%bf%bb%e8%af%91%e7%9a%84%e5%87%86%e7%a1%ae%e5%87%ba%e5%bd%a9)
