@@ -1,3 +1,49 @@
+# 翻译组 L0 校对反馈答疑
+
+_颜木林([mulin](https://github.com/yanmulin)) 主讲_
+
+_Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
+
+### 总结，翻译的语言风格
+1. 语句精炼
+
+A. 虚词和重复的部分尽量省略  
+B. 长句可以适当添加空格断句，提高可读性
+
+2. 翻译的格式问题
+
+A. 专有名词（包括人名和缩写）保留原文
+
+那时候 Scratch 刚刚被MIT研究出来
+and Scratch had just been invented by MIT.
+
+因为Cambridge市和Somerville市要合用一本电话簿了
+because Cambridge and Somerville merged together in the phone book
+
+如果我想找到Mike Smith的联系方式
+And I could, of course, if trying to find Mike Smith,
+
+B. 计数用的数字尽量写阿拉伯数字，缩短字幕长度
+
+这就是为什么 我们会有1 10 100 1000等等
+And that's why you have ones, tens, hundreds, thousands, and so forth.
+
+C. 非计数，含有数字的表述/短语则可以使用中文的数字
+
+只是规模剩下一半了
+but it's half as big.
+
+二进制没有个位 十位 百位
+Instead of having a ones place, tens, a hundreds
+
+3. 调整语序，使译文符合中文的表述习惯
+
+A. 整句位置调整，如例4
+B. 句子中成分位置调整，如例10
+
+4. 翻译不准确，有时需要了解相应的计算机背景知识才能更好的理解原文
+
+### 校对例句
 1. 
 【译者】
 播放喵并等到其结束 
@@ -188,44 +234,3 @@ and this is a program that simulates petting.
 
 【点评】
 考虑到字幕会流传很久，尽量少用流行词汇
-
-
-总结，翻译的语言风格
-1. 语句精炼
-
-A. 虚词和重复的部分尽量省略
-B. 长句可以适当添加空格断句，提高可读性
-
-2. 翻译的格式问题
-
-A. 专有名词（包括人名和缩写）保留原文
-
-那时候 Scratch 刚刚被MIT研究出来
-and Scratch had just been invented by MIT.
-
-因为Cambridge市和Somerville市要合用一本电话簿了
-because Cambridge and Somerville merged together in the phone book
-
-如果我想找到Mike Smith的联系方式
-And I could, of course, if trying to find Mike Smith,
-
-B. 计数用的数字尽量写阿拉伯数字，缩短字幕长度
-
-这就是为什么 我们会有1 10 100 1000等等
-And that's why you have ones, tens, hundreds, thousands, and so forth.
-
-C. 非计数，含有数字的表述/短语则可以使用中文的数字
-
-只是规模剩下一半了
-but it's half as big.
-
-二进制没有个位 十位 百位
-Instead of having a ones place, tens, a hundreds
-
-
-3. 调整语序，使译文符合中文的表述习惯
-
-A. 整句位置调整，如例4
-B. 句子中成分位置调整，如例10
-
-4. 翻译不准确，有时需要了解相应的计算机背景知识才能更好的理解原文
