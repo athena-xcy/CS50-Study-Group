@@ -1,4 +1,4 @@
-# 翻译组 L0 校对反馈答疑
+# L0 校对反馈答疑
 
 _颜木林([mulin](https://github.com/yanmulin)) 主讲_
 
