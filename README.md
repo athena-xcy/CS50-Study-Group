@@ -2,7 +2,7 @@
 
 ![poster](images/poster.jpg)
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。本计划致力于组织维护一个 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在华文世界中的传播([翻译组](#翻译组))。**学习组永远欢迎新新朋友**，详情可见[招新贴](hello,new.md)。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。本计划致力于组织维护一个 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在华文世界中的传播([翻译组](#翻译组))。**学习组永远欢迎新朋友**，详情可见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
 
 ## 课程简介
 
@@ -22,16 +22,17 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 活动当前共涉及两大主题：**CS50 学习经验交流**和**字幕翻译经验交流**
 
 * CS50 学习
-    * CS50 入门指南（汇总至[招新贴](hello,new.md)）
+    * [CS50 入门指南](study-group/how_to_learn_CS50.md)（汇总至[招新贴](hello_new.md)）
     * Week 0 Scratch Walkthrough (文稿整理中)
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
     * [第一次招募试译分析](study-group/study-group-discussion0.md)
     * [L0 翻译经验分享](study-group/study-group-discussion1.md)
+    * [L0 校对反馈答疑](translation-group/translation-group-office-hour0.md)
     * [L1 翻译经验分享](study-group/study-group-discussion2.md)
     * [L2 翻译经验分享](study-group/study-group-discussion3.md)
     * [第二次招募试译分析](study-group/study-group-discussion4.md)
-    
+   
 ### 进度安排
 
 自 8 月 21 日开始第 0 轮 CS50 学习活动。
@@ -46,7 +47,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 | 10月07日 - 10月14日 | week 5 |        |
 |        待定         |  ...   |        |
 
-时间表仅供参考，鼓励学习者根据自己的情况自由调整
+以上为学习组学习讨论活动时间表，鼓励学习者根据自己的情况自由调整
 
 ## 翻译组
 
@@ -58,7 +59,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 * 【翻译原则三】简练准确：译文单句不宜过长，观众需要一眼就能看懂中文字幕
 * 【翻译原则四】避免翻译腔：说人话，说中国话
 * 【翻译原则五】灵活变通：根据需要调整语序
-* 【翻译原则六】注意专业术语：查找资料搞懂术语含义
+* 【翻译原则六】注意术语：查找资料搞懂专业术语含义
 * 【翻译原则七】遵守格式：遵守字幕文件格式和翻译格式
 
 要求细则请参见[字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
