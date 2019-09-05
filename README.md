@@ -23,7 +23,8 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)（汇总至[招新贴](hello_new.md)）
-    * [Week 0 Scratch Walkthrough](study-group/week-1-walkthrough.md) (文稿整理中)
+    * [Week 0 Scratch Walkthrough](study-group/week-1-walkthrough.md)
+    * Week 1 Walkthrough（即将开始）
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
     * [第一次招募试译分析](translation-group/translation-group-recruitment-0.md)
