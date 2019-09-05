@@ -4,7 +4,8 @@ _颜木林([mulin](https://github.com/yanmulin)) 主讲_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
 
-### 总结，翻译的语言风格
+## 总结，翻译的语言风格
+
 1. 语句精炼
 
 A. 虚词和重复的部分尽量省略  
@@ -43,7 +44,8 @@ B. 句子中成分位置调整，如例10
 
 4. 翻译不准确，有时需要了解相应的计算机背景知识才能更好的理解原文
 
-### 校对例句
+## 校对例句
+
 1. 
 【译者】
 播放喵并等到其结束 
@@ -80,7 +82,6 @@ And this is kind of the opposite of counting sheep.
 【点评】
 这是翻译不准确的问题，译作"对立面"更准确。
 
-
 4. 
 【译者】
 因为我手指数量是有限的 所以我不能数到无穷大
@@ -93,7 +94,6 @@ I cannot count to infinity on this hand because I only have five fingers.
 【点评】
 与英文不同，中文习惯原因等状语放在句首，所以要调换语序，表扬。
 但是，这一句翻译的略累赘，"因为"/"所以"保留一个即可，还有"我"重复了。
-
 
 5. 
 【译者】
@@ -198,7 +198,6 @@ Thank you so much for the spontaneity.
 【点评】
 "自发性"有点生硬，不太准确...这里可以结合语境进行意译，语境是台下的学生主动把手机提供给教授示范。
 
-
 12. 
 【译者】
 除非你大胆猜测或是谷歌一下又或者生来就知道这个知识点
@@ -211,7 +210,6 @@ other than by guessing or Googling or just coming in with this knowledge.
 【点评】
 翻译上没有错，但是句子太长可以用空格断成短句，提高字幕的可读性
 
-
 13.
 【译者】
 某种意义上我曾有格物致知的本领 所以来谈谈
@@ -223,7 +221,6 @@ I had the ability somehow to look underneath the hood, so to speak,
 
 【点评】
 "格物致知"太高端了...还是尽量用平易近人的语言...
-
 
 14.
 这是一个模拟撸猫的程序 
