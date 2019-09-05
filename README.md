@@ -23,15 +23,15 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)（汇总至[招新贴](hello_new.md)）
-    * Week 0 Scratch Walkthrough (文稿整理中)
+    * [Week 0 Scratch Walkthrough](study-group/week-1-walkthrough.md) (文稿整理中)
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
-    * [第一次招募试译分析](study-group/study-group-discussion0.md)
-    * [L0 翻译经验分享](study-group/study-group-discussion1.md)
+    * [第一次招募试译分析](translation-group-recruitment-0.md)
+    * [L0 翻译经验分享](translation-group-discussion-0.md)
     * [L0 校对反馈答疑](translation-group/translation-group-office-hour0.md)
-    * [L1 翻译经验分享](study-group/study-group-discussion2.md)
-    * [L2 翻译经验分享](study-group/study-group-discussion3.md)
-    * [第二次招募试译分析](study-group/study-group-discussion4.md)
+    * [L1 翻译经验分享](translation-group-discussion-1.md)
+    * [L2 翻译经验分享](translation-group-discussion-2.md)
+    * [第二次招募试译分析](translation-group-recruitment-1.md)
    
 ### 进度安排
 
