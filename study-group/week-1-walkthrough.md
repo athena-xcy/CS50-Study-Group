@@ -4,7 +4,7 @@ _Leo([LeoTsui](https://www.github.com/LeoTsui)) 供稿_
 
 _精灵兔 整理_
 
-_夜战八方哒叭将（[AnnaLu](https://github.com/xrlu0929)）、如意小熊猫🍒参与讨论，对本文亦有贡献_
+_夜战八方哒叭将([AnnaLu](https://github.com/xrlu0929))、如意小熊猫🍒参与讨论，对本文亦有贡献_
 
 ## 找作业四步走
 
