@@ -4,9 +4,9 @@
 
 
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 edX.org 上学习人数最多的计算机科学课程。计算机学习者，本计划由计算机爱好者，MOOC 爱好者，及翻译爱好者发起，致力于创立一个 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在华文世界中的传播([翻译组](#翻译组))。**学习组永远欢迎新朋友**，详情可见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 [edX](edx.org) 上学习人数最多的计算机科学课程。计算机学习者，本计划由计算机爱好者，MOOC 爱好者，及翻译爱好者发起，致力于组织维护高质量 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在中文学习者中的传播([翻译组](#翻译组))。**翻译组和学习组永远欢迎新成员**，详情可见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) is the largest course at Harvard University and on Massive Open Online Course(MOOC) platform edX.org. This initiative is started by Computer Science students, MOOC learners and translation learners. We aim to create a Chinese learning community and introduce quality free education resources to Chinese-speaking learners. **Study Group is always open to new learners**. Please see [CS50 Study Group and Subtitle Translation Recruitment](hello_new.md) for more information.  
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) is the largest course at Harvard University and on MOOC platform [edX](edx.org). This initiative is started by Computer Science students, MOOC learners and translation learners. We aim to create a Chinese learning community([Study Group](#学习组)) and introduce quality free education resources to Chinese-speaking learners([Translation Group](#翻译组)). **Study Group and Translation Group are always open to new members.** Please see [CS50 Study Group and Subtitle Translation Initiative Recruitment](hello_new.md) for more information.  
 
 ## 课程简介
 
