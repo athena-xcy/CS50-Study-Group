@@ -22,9 +22,11 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 活动当前共涉及两大主题：**CS50 学习经验交流**和**字幕翻译经验交流**
 
 * CS50 学习
-    * [CS50 入门指南](study-group/how_to_learn_CS50.md)（汇总至[招新贴](hello_new.md)）
-    * [Week 0 Scratch Walkthrough](study-group/week-1-walkthrough.md)
-    * Week 1 Walkthrough（即将开始）
+    * [CS50 入门指南](study-group/how_to_learn_CS50.md)
+    * [Week 0 Walkthrough](study-group/week-1-walkthrough.md)
+    * Week 1 Walkthrough（文稿整理中） 
+    * Week 2 Walkthrough（即将开始）
+    
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
     * [第一次招募试译分析](translation-group/translation-group-recruitment-0.md)
@@ -34,15 +36,15 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
     * [L2 翻译经验分享](translation-group/translation-group-discussion-2.md)
     * [第二次招募试译分析](translation-group/translation-group-recruitment-1.md)
    
-### 进度安排
+### 时间安排
 
-自 8 月 21 日开始第 0 轮 CS50 学习活动。
+自 8 月 21 日开始第 0 轮 CS50 学习活动，目前进度为: ▓▓▓░░░░░░░░░░░░ 20%
 
 |        时间         |  课时  |  进度  |
 | :-----------------: | :----: | :----: |
 | 08月21日 - 09月01日 | week 0 | 完成    |
-| 09月02日 - 09月08日 | week 1 | 进行中  |
-| 09月09日 - 09月15日 | week 2 |        |
+| 09月02日 - 09月08日 | week 1 | 完成    |
+| 09月09日 - 09月15日 | week 2 | 进行中  |
 | 09月16日 - 09月22日 | week 3 |        |
 | 09月23日 - 10月06日 | week 4 |        |
 | 10月07日 - 10月14日 | week 5 |        |
