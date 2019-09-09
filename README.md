@@ -4,9 +4,9 @@
 
 
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 [edX](edx.org) 上学习人数最多的计算机科学课程。本计划为教育公益项目，由计算机学习组者，MOOC 爱好者，及翻译爱好者联合组织管理，致力于创立维护高质量 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在中文学习者中的传播([翻译组](#翻译组))。**翻译组和学习组永远向新成员开放**，详情请见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 [edX](edx.org) 上学习人数最多的计算机科学课程。本计划为教育公益项目，由计算机学习组者，MOOC 爱好者，及翻译爱好者联合组织管理，致力于创立维护高质量 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在中文学习者中的传播([翻译组](#翻译组))。**翻译组和学习组永远欢迎新成员加入**，详情请见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) is the largest course at Harvard University and on MOOC platform [edX](edx.org). CS50 Study Group and Subtitle Translation Initiative is a non-profit education initiative organized and managed by Computer Science learners, MOOC learners and translation amateurs. We aim to foster a high quality learning community and introduce free education resources to Chinese learners. **Study Group and Translation Group always welcome new members.** Please see [Recruitment Post](hello_new.md) for more information.  
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) is the largest course at Harvard University and on MOOC platform [edX](edx.org). CS50 Study Group and Subtitle Translation Initiative is a non-profit education initiative organized and managed by Computer Science learners, MOOC learners and translation amateurs. We aim to foster a high quality learning community and introduce free education resources to Chinese learners through different groups. **Study Group and Translation Group always welcome new members.** Please see [Recruitment Post](hello_new.md) for more information.  
 
 ## 课程简介
 
