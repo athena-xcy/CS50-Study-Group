@@ -4,13 +4,13 @@
 
 
 
-[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 [edX](edx.org) 上学习人数最多的计算机科学课程。本计划为教育公益项目，由计算机学习组者，MOOC 爱好者，及翻译爱好者联合组织管理，致力于创立维护高质量 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在中文学习者中的传播([翻译组](#翻译组))。**翻译组和学习组永远欢迎新成员加入**，详情请见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
+[CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) 是哈佛大学校内以及 MOOC 平台 [edX](edx.org) 上学习人数最多的计算机科学课程。本计划为教育公益项目，由计算机学习组者，MOOC 爱好者，及翻译爱好者联合组织管理，致力于创立维护高质量 CS50 学习者社区([学习组](#学习组))，并促进 CS50 课程在中文学习者中的传播([翻译组](#翻译组))。**永远欢迎新成员加入翻译组和学习组**，详情请见[CS50 课程学习与字幕翻译计划招新贴](hello_new.md)。
 
 [CS50 2019](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/) is the largest course at Harvard University and on MOOC platform [edX](edx.org). CS50 Study Group and Subtitle Translation Initiative is a non-profit education initiative organized and managed by Computer Science learners, MOOC learners and translation amateurs. We aim to foster a high quality learning community and introduce free education resources to Chinese learners through different groups. **Study Group and Translation Group always welcome new members.** Please see [Recruitment Post](hello_new.md) for more information.  
 
 ## 课程简介
 
-CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，并且有一定基础的学生 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了[哈佛大学桑德斯剧场课堂现场](https://www.eventbrite.com/e/attend-a-cs50-lecture-in-person-tickets-70166767691)，力求给学习者带来最好的学习体验。 
+CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前后端开发等等。课程结束后，学习者将能独立制作动态网站。[David J. Malan](https://en.wikipedia.org/wiki/David\_J.\_Malan) 教授本人讲课极富激情，教学深入浅出，对计算机零基础 (less comfortable) 非常友好，并且有一定基础的学生 (more comfortable)，也能学到足够多的知识。 CS50 课程视频由全职摄影团队制片，采用工业电影级摄影及制作设备，再现了[哈佛大学桑德斯剧场课堂现场](https://www.eventbrite.com/e/attend-a-cs50-lecture-in-person-tickets-70166767691)，力求给学习者带来最好的学习体验。 
 
 ## 注册选修
 
@@ -27,7 +27,7 @@ CS50 课程内容包括：C，数据结构，Python (Flask)，前后端开发等
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [Week 0 Walkthrough](study-group/week-1-walkthrough.md)
+    * [Week 0 Walkthrough](study-group/week-0-walkthrough.md)
     * Week 1 Walkthrough（文稿整理中） 
     * Week 2 Walkthrough（即将开始）
     
