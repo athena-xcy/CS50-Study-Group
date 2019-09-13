@@ -8,6 +8,8 @@ _AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨论，对本文亦
 
 本周的作业题目详情在 [Problem Set 1](https://docs.cs50.net/2019/x/psets/1/index.html)，建议做作业之前看完课程视频，以及课程[Notes](https://cs50.harvard.edu/college/2018/fall/weeks/1/notes/)
 
+编写 C 程序时，建议参考 [cplusplus.com](http://www.cplusplus.com/)，其中包含着 C 语言相关的示例代码
+
 ## Hello
 
 * 参考授课提供的示例，完善作业
