@@ -95,15 +95,15 @@ CS50 中文学习平台向所有提交了[CS50课程学习与字幕翻译计划�
 ## 学习组
 ### 进度安排
 
-|        时间         |  课时  |  进度  |
-| :-----------------: | :----: | :----: |
-| 08月21日 - 08月31日 | week 0 | 进行中 |
-| 09月02日 - 09月08日 | week 1 |        |
-| 09月09日 - 09月15日 | week 2 |        |
-| 09月16日 - 09月22日 | week 3 |        |
-| 09月23日 - 10月06日 | week 4 |        |
-| 10月07日 - 10月14日 | week 5 |        |
-|        待定         |  ...   |        |
+|        时间         |  课时  |                              官方笔记                              |                               作业                               |  进度  |
+| :-----------------: | :----: | :----------------------------------------------------------------: | :--------------------------------------------------------------: | :----: |
+| 08月21日 - 08月31日 | week 0 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/0/notes/) | [Problem Set 0](https://docs.cs50.net/2019/x/psets/0/index.html) | 已完成 |
+| 09月02日 - 09月08日 | week 1 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/1/notes/) | [Problem Set 1](https://docs.cs50.net/2019/x/psets/1/index.html) | 已完成 |
+| 09月09日 - 09月15日 | week 2 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/2/notes/) | [Problem Set 2](https://docs.cs50.net/2019/x/psets/2/index.html) | 进行中 |
+| 09月16日 - 09月22日 | week 3 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/3/notes/) | [Problem Set 3](https://docs.cs50.net/2019/x/psets/3/index.html) |  ...   |
+| 09月23日 - 10月06日 | week 4 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/4/notes/) | [Problem Set 4](https://docs.cs50.net/2019/x/psets/4/index.html) |  ...   |
+| 10月07日 - 10月14日 | week 5 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/5/notes/) | [Problem Set 5](https://docs.cs50.net/2019/x/psets/5/index.html) |  ...   |
+|        待定         |  ...   |                                ...                                 |                               ...                                |  ...   |
 
 以上为学习组学习讨论活动时间表，组员可根据自身情况，自由调整学习进度
 

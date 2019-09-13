@@ -27,9 +27,9 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [Week 0 Walkthrough](study-group/week-0-walkthrough.md)
-    * Week 1 Walkthrough（文稿整理中） 
-    * Week 2 Walkthrough（即将开始）
+    * [Week 0 作业指北](study-group/week-0-walkthrough.md)
+    * [Week 1 作业指北](study-group/week-1-walkthrough.md)
+    * Week 2 作业指北（即将开始）
     
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
@@ -44,15 +44,16 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 自 8 月 21 日开始第 0 轮 CS50 学习活动，目前进度为: ▓▓▓░░░░░░░░░░░░ 20%
 
-|        时间         |  课时  |  进度  |
-| :-----------------: | :----: | :----: |
-| 08月21日 - 09月01日 | week 0 | 完成    |
-| 09月02日 - 09月08日 | week 1 | 完成    |
-| 09月09日 - 09月15日 | week 2 | 进行中  |
-| 09月16日 - 09月22日 | week 3 |        |
-| 09月23日 - 10月06日 | week 4 |        |
-| 10月07日 - 10月14日 | week 5 |        |
-|        待定         |  ...   |        |
+|        时间         |  课时  |                              官方笔记                              |                               作业                               |                             进度                             |
+| :-----------------: | :----: | :----------------------------------------------------------------: | :--------------------------------------------------------------: | :----------------------------------------------------------: |
+| 08月21日 - 09月01日 | week 0 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/0/notes/) | [Problem Set 0](https://docs.cs50.net/2019/x/psets/0/index.html) | 已完成：[Week 0 作业指北](study-group/week-0-walkthrough.md) |
+| 09月02日 - 09月08日 | week 1 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/1/notes/) | [Problem Set 1](https://docs.cs50.net/2019/x/psets/1/index.html) | 已完成：[Week 1 作业指北](study-group/week-1-walkthrough.md) |
+| 09月09日 - 09月15日 | week 2 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/2/notes/) | [Problem Set 2](https://docs.cs50.net/2019/x/psets/2/index.html) |                            进行中                            |
+| 09月16日 - 09月22日 | week 3 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/3/notes/) | [Problem Set 3](https://docs.cs50.net/2019/x/psets/3/index.html) |                             ...                              |
+| 09月23日 - 10月06日 | week 4 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/4/notes/) | [Problem Set 4](https://docs.cs50.net/2019/x/psets/4/index.html) |                             ...                              |
+| 10月07日 - 10月14日 | week 5 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/5/notes/) | [Problem Set 5](https://docs.cs50.net/2019/x/psets/5/index.html) |                             ...                              |
+|        待定         |  ...   |                                ...                                 |                               ...                                |                             ...                              |
+
 
 以上为学习组学习讨论活动时间表，鼓励学习者根据自己的情况自由调整
 
