@@ -1,4 +1,4 @@
-# Week 1 Walkthrough
+# Week 0 Walkthrough
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui)) 供稿_
 
