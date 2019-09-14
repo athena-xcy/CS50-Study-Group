@@ -1,5 +1,9 @@
 # Week 2 Walkthrough
 
+_夜战八方哒叭将([AnnaLu](https://github.com/xrlu0929)) 供稿_
+
+_夜战八方哒叭将 整理_
+
 ## 第一步 找到作业
 
 * 在 [edX Week 2](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/courseware/6f10d1f2fb0548ada175ba2ed508f50c/ad2ce21f33474bed96e87005fe3eba6d/1?activate_block_id=block-v1%3AHarvardX%2BCS50%2BX%2Btype%40vertical%2Bblock%4059c51356dbad4659bc36e061211313e7) 页面点击[Problem Set 2](https://docs.cs50.net/2019/x/psets/2/index.html)
