@@ -8,7 +8,6 @@ _AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://ww
 - [文件格式](#%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f)
 - [调时间轴](#%e8%b0%83%e6%97%b6%e9%97%b4%e8%bd%b4)
 - [文本导出](#%e6%96%87%e6%9c%ac%e5%af%bc%e5%87%ba)
-- [常见问题](#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
 
 ## 下载安装
 
@@ -18,7 +17,13 @@ _AthenaX([athena-xcy](https://github.com/athena-xcy))、Leo([LeoTsui](https://ww
 ## 文件格式
 
 字幕文件格式为`.srt`文件。先确认字幕文件的编码是 Unicode，然后用 Aegisub 打开后，点击【文件】再【配置】按照设置。Aegisub 可以同步显示字幕及视频。`.srt`文件也可以用记事本, Notepad++, Sublime Text 等其他文本编辑器打开，但译者依然需要对照视频翻译。
-   
+
+
+ 
+## 软件界面 
+![aegisub-interface](../images/image2.png)
+
+
 ## 调时间轴
 
 * 说明视频：链接: https://pan.baidu.com/s/1EYoTzAjPpgeTpcrh2QDXhw 提取码: cv7s 
