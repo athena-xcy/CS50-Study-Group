@@ -27,7 +27,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [GitHub 入门指南](study-group/how_to_use_GitHub.md)（待整理）
+    * [GitHub 入门指南](study-group/how_to_use_GitHub.pdf)（待整理）
     * [Week 0 作业指北](study-group/week-0-walkthrough.md)
     * [Week 1 作业指北](study-group/week-1-walkthrough.md)
     * [Week 2 作业指北](study-group/week-2-walkthrough.md)
