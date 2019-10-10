@@ -27,7 +27,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 * CS50 学习
     * [CS50 入门指南](study-group/how_to_learn_CS50.md)
-    * [GitHub 入门指南](study-group/how_to_use_GitHub.pdf)（待整理）
+    * [GitHub 入门指南](study-group/how_to_use_GitHub.pdf)（PDF）
     * [Week 0 作业指北](study-group/week-0-walkthrough.md)
     * [Week 1 作业指北](study-group/week-1-walkthrough.md)
     * [Week 2 作业指北](study-group/week-2-walkthrough.md)
@@ -38,11 +38,12 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * [第一次招募试译分析](translation-group/translation-group-recruitment-0.md)
     * [第二次招募试译分析](translation-group/translation-group-recruitment-1.md)
     * [L0 翻译经验分享](translation-group/translation-group-discussion-0.md)
-    * [L0 校对反馈答疑](translation-group/translation-group-office-hour-0.md)
     * [L1 翻译经验分享](translation-group/translation-group-discussion-1.md)
     * [L2 翻译经验分享](translation-group/translation-group-discussion-2.md)
+    * [L3 翻译经验分享](translation-group/translation-group-discussion-3.md)
+    * [L0 校对反馈答疑](translation-group/translation-group-office-hour-0.md)
+    * [L1 校对反馈答疑](translation-group/week1翻译反馈.pdf)（PDF）
 
-   
 ### 时间安排
 
 自 8 月 21 日开始第 0 轮 CS50 学习活动，目前进度为: ▓▓▓▓▓▓░░░░░░░░░ 40%
