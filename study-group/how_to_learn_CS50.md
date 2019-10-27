@@ -45,6 +45,10 @@ _Leo、HXT([k_huang](https://github.com/karen-huangxt))、Jenny Z([Meijuan Zeng]
 
 ### 中文平台
 
-* 填写[CS50课程学习组问卷](http://wjx.cn/jq/43792277.aspx)加微信群
+* 填写[CS50课程学习组问卷](http://wjx.cn/jq/43792277.aspx)加入我们
 * [豆瓣CS50 学习小组](https://www.douban.com/group/cs50)
 * [CS50 学习组 GitHub 仓库](https://github.com/athena-xcy/CS50-Study-Group)
+
+## 时间安排
+
+自2019年8月21日，学习组开始第0轮CS50学习活动，目前已经接近尾声。

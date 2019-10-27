@@ -13,14 +13,15 @@ CS50 是哈佛大学以及 MOOC 平台 edX.org 上学习人数最多的计算机
     * Notes: 包含每节课的全部知识点（Notes总结非常全面，建议浏览）
     * Sandbox: 课堂代码，建议运行实践
     * Problem Set: 编程作业（通过在线平台 CS50 IDE 提交，需要有比较稳定的互联网连接。）
+* 更多学习内容请参考[CS50 入门指南](study-group/how_to_learn_CS50.md)
 
-说明：CS50 课程内容向全世界学习者免费开放。课程完成后，学习者可自愿选择购买 edX 官方认证的 CS50 结课证书。
+说明：CS50 课程内容向全世界学习者免费开放。课程完成后，学习者可自愿选择购买 edX 官方认证的 CS50 结课证书。另外，CS50官方也提供免费、无身份认证的完成证明。
 
 ## 去哪里找同学？
 
 CS50 的社区平台[很多](https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/a7ec0c0a7b6e460f877da0734811c4cd/)。其中 Facebook 社区比较活跃，官方社区有：[CS50 主页](https://www.facebook.com/cs50)、[CS50 小组](https://www.facebook.com/groups/cs50)
 
-华语学习者，亦可加入我们！
+华语学习者，亦可填写[CS50课程学习组问卷](http://wjx.cn/jq/43792277.aspx)加入我们！
 
 ## 我们是谁？
 
