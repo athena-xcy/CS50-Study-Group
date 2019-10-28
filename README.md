@@ -33,8 +33,8 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * [Week 3 作业指北](study-group/week-3-walkthrough.md)
 
 * CS相关
-    * [GitHub 入门指南](study-group/how_to_use_GitHub.pdf)（PDF）
-    * [如何从数据中发现洞见](study-group/gain_insight_from_data.md)([PDF](study-group/灿星-如何从数据中获得洞见.pdf))
+    * GitHub 入门指南（[PPT](study-group/how_to_use_GitHub.pdf)）
+    * [如何从数据中发现洞见](study-group/gain_insight_from_data.md)（[PPT](study-group/灿星-如何从数据中获得洞见.pdf)）
 
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
