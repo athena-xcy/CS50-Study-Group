@@ -43,6 +43,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * [L1 翻译经验分享](translation-group/translation-group-discussion-1.md)
     * [L2 翻译经验分享](translation-group/translation-group-discussion-2.md)
     * [L3 翻译经验分享](translation-group/translation-group-discussion-3.md)
+    * [L4 翻译经验分享](translation-group/translation-group-discussion-4.md)
     * [L0 校对反馈答疑](translation-group/translation-group-review-0.md)
     * [L1 校对反馈答疑](translation-group/translation-group-review-1.md)
 
