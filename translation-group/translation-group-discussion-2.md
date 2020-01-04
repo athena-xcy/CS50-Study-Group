@@ -1,8 +1,8 @@
 # L2 翻译经验分享
 
-_Elvarez 主讲_
+_Elvarez、Yuehua 主讲_
 
-_Elvarez 供稿_
+_Elvarez、Yuehua 供稿_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui))、精灵兔、Scarlett([ScarlettSun9](https://github.com/ScarlettSun9))整理_
 
@@ -20,6 +20,7 @@ _Scarlett、 Leo、AthenaX([athena-xcy](https://github.com/athena-xcy))参与讨
   - [例一（双精度浮点数）](#%e4%be%8b%e4%b8%80%e5%8f%8c%e7%b2%be%e5%ba%a6%e6%b5%ae%e7%82%b9%e6%95%b0)
   - [例二（字符类型）](#%e4%be%8b%e4%ba%8c%e5%ad%97%e7%ac%a6%e7%b1%bb%e5%9e%8b)
   - [例三（终端窗口）](#%e4%be%8b%e4%b8%89%e7%bb%88%e7%ab%af%e7%aa%97%e5%8f%a3)
+- [外一例](#%e5%a4%96%e4%b8%80%e4%be%8b)
 
 ## 代词还原
 
@@ -216,3 +217,23 @@ let me pull up the terminal window <nobr style="color:red;">so I can see it</nob
 上例中“so I can see it”略过不合适，翻成“这样我就看得见了”也不合适，索性正话反说
 
 常见的可能就是 否定词/表示否定意思的词
+
+## 外一例
+
+<pre><code><div>89
+00:28:10,900 --> 00:28:13,885
+这些格子画成这样<nobr style="color:red;">是因为空间有限</nobr>
+And the fact that they wrap around is just <nobr style="color:red;">an artist rendition</nobr>.
+
+90
+00:28:13,881 --> 00:28:16,860
+你可以想象一下 就像这样从左到右排
+These things you can think of just virtually as going left to right, 
+
+91
+00:28:16,860 --> 00:28:19,836
+跟格子并不像 但画出来 只能这样了
+not in any kind of grid, but physically, they look like this.
+</div></code></pre>
+
+“an artist rendition”直译过来是艺术家对某种事物的艺术化诠释，在本例中的语境时教授画格子没有地方画了
