@@ -22,6 +22,25 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 ## 学习组
 
+### 时间安排
+
+自 2019 年 8 月 21 日开始第 0 轮 CS50 学习活动，本轮活动已经结束。
+
+|        时间         |   双语视频    |                              官方笔记                               |                               作业                               |                         进度                         |
+| :-----------------: | :-------: | :-----------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------: |
+| 08月21日 - 09月01日 |  [第 0 课](https://www.bilibili.com/video/av81002940)   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/0/notes/)  | [Problem Set 0](https://docs.cs50.net/2019/x/psets/0/index.html) | [Week 0 作业指北](study-group/week-0-walkthrough.md) |
+| 09月02日 - 09月08日 |  [第 1 课](https://www.bilibili.com/video/BV1LJ411a7RZ)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/1/notes/)  | [Problem Set 1](https://docs.cs50.net/2019/x/psets/1/index.html) | [Week 1 作业指北](study-group/week-1-walkthrough.md) |
+| 09月09日 - 09月15日 |  [第 2 课](https://www.bilibili.com/video/BV1bE411p7o4)   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/2/notes/)  | [Problem Set 2](https://docs.cs50.net/2019/x/psets/2/index.html) | [Week 2 作业指北](study-group/week-2-walkthrough.md) |
+| 09月16日 - 09月22日 |  [第 3 课](https://www.bilibili.com/video/BV16541167sV)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/3/notes/)  | [Problem Set 3](https://docs.cs50.net/2019/x/psets/3/index.html) | [Week 3 作业指北](study-group/week-3-walkthrough.md) |
+| 09月23日 - 10月06日 |  [第 4 课](https://www.bilibili.com/video/BV1A64y1u7Cf)   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/4/notes/)  | [Problem Set 4](https://docs.cs50.net/2019/x/psets/4/index.html) | [Week 4 作业指北](study-group/week-4-walkthrough.md) |
+| 10月07日 - 10月13日 |  [第 5 课](https://www.bilibili.com/video/BV12p4y1C7Rj)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/5/notes/)  | [Problem Set 5](https://docs.cs50.net/2019/x/psets/5/index.html) |              Week 5 作业指北（待整理）               |
+| 10月14日 - 10月20日 | [第 6 课](https://www.bilibili.com/video/BV1h54y197iU) | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/6/notes/)  | [Problem Set 6](https://docs.cs50.net/2019/x/psets/6/index.html) |              Week 6 作业指北（待整理）               |
+| 10月21日 - 10月27日 | [第 7 课](https://www.bilibili.com/video/BV11T4y1g7tv)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/7/notes/)  | [Problem Set 7](https://docs.cs50.net/2019/x/psets/7/index.html) |              Week 7 作业指北（待整理）               |
+| 10月28日 - 11月03日 |  第 8 课：校对中  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/8/notes/)  | [Problem Set 8](https://docs.cs50.net/2019/x/psets/8/index.html) |              Week 8 作业指北（待整理）               |
+|   11月04日 - ...    | 第 9 - 10 课：校对中  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/10/notes/) |    [Final Project](docs.cs50.net/2019/x/project/project.html)    |                         ...                          |
+
+以上为学习组学习讨论活动时间表，鼓励学习者根据自己的情况自由调整
+
 ### 分享讨论
 
 * CS50 学习
@@ -51,26 +70,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * [L4 L5 L7 翻译经验分享](translation-group/translation-group-discussion-6.md)
     * [L0 校对反馈答疑](translation-group/translation-group-review-0.md)
     * [L1 校对反馈答疑](translation-group/translation-group-review-1.md)
-
-### 时间安排
-
-自 2019 年 8 月 21 日开始第 0 轮 CS50 学习活动，本轮活动已经结束。
-
-|        时间         |   课时    |                              官方笔记                               |                               作业                               |                         进度                         |
-| :-----------------: | :-------: | :-----------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------: |
-| 08月21日 - 09月01日 |  week 0   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/0/notes/)  | [Problem Set 0](https://docs.cs50.net/2019/x/psets/0/index.html) | [Week 0 作业指北](study-group/week-0-walkthrough.md) |
-| 09月02日 - 09月08日 |  week 1   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/1/notes/)  | [Problem Set 1](https://docs.cs50.net/2019/x/psets/1/index.html) | [Week 1 作业指北](study-group/week-1-walkthrough.md) |
-| 09月09日 - 09月15日 |  week 2   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/2/notes/)  | [Problem Set 2](https://docs.cs50.net/2019/x/psets/2/index.html) | [Week 2 作业指北](study-group/week-2-walkthrough.md) |
-| 09月16日 - 09月22日 |  week 3   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/3/notes/)  | [Problem Set 3](https://docs.cs50.net/2019/x/psets/3/index.html) | [Week 3 作业指北](study-group/week-3-walkthrough.md) |
-| 09月23日 - 10月06日 |  week 4   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/4/notes/)  | [Problem Set 4](https://docs.cs50.net/2019/x/psets/4/index.html) | [Week 4 作业指北](study-group/week-4-walkthrough.md) |
-| 10月07日 - 10月13日 |  week 5   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/5/notes/)  | [Problem Set 5](https://docs.cs50.net/2019/x/psets/5/index.html) |              Week 5 作业指北（待整理）               |
-| 10月14日 - 10月20日 |  week 6   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/6/notes/)  | [Problem Set 6](https://docs.cs50.net/2019/x/psets/6/index.html) |              Week 6 作业指北（待整理）               |
-| 10月21日 - 10月27日 |  week 7   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/7/notes/)  | [Problem Set 7](https://docs.cs50.net/2019/x/psets/7/index.html) |              Week 7 作业指北（待整理）               |
-| 10月28日 - 11月03日 |  week 8   | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/8/notes/)  | [Problem Set 8](https://docs.cs50.net/2019/x/psets/8/index.html) |              Week 8 作业指北（待整理）               |
-|   11月04日 - ...    | week 9-10 | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/10/notes/) |    [Final Project](docs.cs50.net/2019/x/project/project.html)    |                         ...                          |
-
-以上为学习组学习讨论活动时间表，鼓励学习者根据自己的情况自由调整
-
+    
 ## 翻译组
 
 ### 翻译原则
