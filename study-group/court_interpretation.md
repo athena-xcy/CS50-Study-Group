@@ -1,10 +1,8 @@
 # 美国法庭翻译
 
-_Alex Jiabao 供稿_  
+_Alex Jiabao 主讲，提供 [PPT](./court_intepretation.pdf)_  
 
 _夜战八方哒叭将([AnnaLu](https://github.com/xrlu0929)) 整理_
-
-_[PPT](./court_intepretation.pdf)_
 
 大家好，现在我们开庭，开庭是要全体起立的，哈哈哈。首先让我想先给大家讲一下这个PPT第2页里面的这个法庭的分类。 
 

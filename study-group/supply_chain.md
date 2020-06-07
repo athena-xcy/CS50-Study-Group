@@ -1,6 +1,6 @@
 # 连接世界的供应链
 
-_京京🍒 供稿_
+_京京🍒 主讲，提供 [PPT](./supply_chain_ABC.pptx)_
 
 _Leo([LeoTsui](https://www.github.com/LeoTsui)) 整理_
 
