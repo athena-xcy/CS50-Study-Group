@@ -55,7 +55,9 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * GitHub 入门指南（[Slides](study-group/how_to_use_GitHub.pdf)）
     * [数据分析：如何从数据中发现洞见](study-group/gain_insight_from_data.md)（[Slides](study-group/灿星-如何从数据中获得洞见.pdf)）
     * [云计算概述](study-group/a_glimpse_of_cloud.md)
+    
 * [供应链](study-group/supply_chain.md)（[Slides](study-group/供应链管理ABC.pptx)）
+* [法庭翻译](study-group/court_intepretation.md) ([Slides](study-group/court_intepretation.pdf))
 
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
