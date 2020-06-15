@@ -1,6 +1,6 @@
 ﻿# CS50学习组L3翻译经验分享
 
-_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9) 主讲_
+_Scarlett([ScarlettSun9](https://github.com/ScarlettSun9)) 主讲_
 
 _Scarlett 供稿_
 
