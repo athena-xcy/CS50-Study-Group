@@ -34,8 +34,8 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 | 10月07日 - 10月13日 |  [第 5 课](https://www.bilibili.com/video/BV12p4y1C7Rj)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/5/notes/)  | [Problem Set 5](https://docs.cs50.net/2019/x/psets/5/index.html) |              Week 5 作业指北（待整理）               |
 | 10月14日 - 10月20日 | [第 6 课](https://www.bilibili.com/video/BV1h54y197iU) | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/6/notes/)  | [Problem Set 6](https://docs.cs50.net/2019/x/psets/6/index.html) |              Week 6 作业指北（待整理）               |
 | 10月21日 - 10月27日 | [第 7 课](https://www.bilibili.com/video/BV11T4y1g7tv)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/7/notes/)  | [Problem Set 7](https://docs.cs50.net/2019/x/psets/7/index.html) |              Week 7 作业指北（待整理）               |
-| 10月28日 - 11月03日 |  第 8 课：校对中  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/8/notes/)  | [Problem Set 8](https://docs.cs50.net/2019/x/psets/8/index.html) |              Week 8 作业指北（待整理）               |
-|   11月04日 - ...    | 第 9 - 10 课：校对中  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/10/notes/) |    [Final Project](docs.cs50.net/2019/x/project/project.html)    |                         ...                          |
+| 10月28日 - 11月03日 |  [第 8 课](https://www.bilibili.com/video/BV1Dz4y1X71D)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/8/notes/)  | [Problem Set 8](https://docs.cs50.net/2019/x/psets/8/index.html) |              Week 8 作业指北（待整理）               |
+|   11月04日 - ...    | [第 9 - 10 课](https://www.bilibili.com/video/BV1Wk4y1B7yv)  | [Notes](https://cs50.harvard.edu/college/2018/fall/weeks/10/notes/) |    [Final Project](docs.cs50.net/2019/x/project/project.html)    |                         ...                          |
 
 以上为学习组学习讨论活动时间表，鼓励学习者根据自己的情况自由调整
 
