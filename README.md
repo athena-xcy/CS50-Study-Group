@@ -55,7 +55,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
     * [云计算概述](study-group/a_glimpse_of_cloud.md)
     
 * [供应链](study-group/supply_chain.md)（[Slides](study-group/供应链管理ABC.pptx)）
-* [法庭翻译](study-group/court_intepretation.md) ([Slides](study-group/court_intepretation.pdf))
+* [法庭翻译](study-group/court_interpretation.md) ([Slides](study-group/court_interpretation.pdf))
 
 * 字幕翻译
     * [字幕翻译原则](translation-group/principles-of-subtitle-translation.md)
