@@ -14,7 +14,7 @@ CS50 课程内容包括：C，数据结构与算法基础，Python (Flask)，前
 
 ## 注册选修/Registration
 
-* 观看B站上传思字幕组出品的 [CS50 双语视频](https://www.bilibili.com/video/av81002940#reply2239101049)
+* 观看B站上传思字幕组出品的 [CS50 双语视频](https://www.bilibili.com/video/BV1DA411Y7jk?spm_id_from=333.999.0.0)
 * 注册 [edX](https://edx.org) 并选修 [CS50x 2019](https://www.edx.org/course/cs50s-introduction-to-computer-science)
 * 注册 [GitHub](https://github.com)，欢迎 watch、star 或者 fork [学习组 GitHub 项目](https://github.com/athena-xcy/CS50-Study-Group) 
 
